@@ -1,0 +1,28 @@
+//
+//  MSPrefixHeader.pch
+//  MyTemplateProject
+//
+//  Created by dengliwen on 16/7/7.
+//  Copyright © 2016年 dengliwen. All rights reserved.
+//
+/**
+ 选中项目 -> Build Setting -> All -> 搜索"prefix head" -> 修改Prefix Header的内容为:
+ 
+ "$(SRCROOT)/$(PRODUCT_NAME)/MSPrefixHeader.pch" (如果有问题，换下面的方式，可能会与中文有关)
+  或者"$(SRCROOT)/对应的文件夹名/MSPrefixHeader.pch"
+ */
+
+#ifndef MSPrefixHeader_pch
+#define MSPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "msconsts.h"
+#import "MSNetworking.h"
+#import <MJExtension.h>
+#import <Masonry.h>
+#import <UIImageView+WebCache.h>
+#import "UIView+MSUtil.h"
+#import "UIColor+MSUtil.h"
+
+#endif /* MSPrefixHeader_pch */

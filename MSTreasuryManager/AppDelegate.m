@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "MSTabBarControllerConfig.h"
+#import <IQKeyboardManager.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    MSTabBarControllerConfig *config = [[MSTabBarControllerConfig alloc]init];
+    self.window.rootViewController = config.tabBarController;
+    
+    [IQKeyboardManager sharedManager].enable = YES;
+    
     return YES;
 }
 
