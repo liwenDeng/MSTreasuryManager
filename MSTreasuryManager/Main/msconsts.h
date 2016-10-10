@@ -66,6 +66,6 @@
 */
 
 
-#define kBackgroundColor [UIColor ms_colorWithHexString:@"efeff4"]
+#define kBackgroundColor [UIColor ms_colorWithHexString:@"#efeff4"]
 
 #define MSWeakSelf __weak typeof(self) weakSelf = self;

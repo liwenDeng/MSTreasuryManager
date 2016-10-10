@@ -62,8 +62,8 @@
     UIButton *searchBtn = ({
         UIButton *btn = [UIButton buttonWithType:(UIButtonTypeSystem)];
         [self addSubview:btn];
-        
-        
+        [btn setImage:[UIImage imageNamed:@"search"] forState:(UIControlStateNormal)];
+        [searchBtn addTarget:self action:@selector(searchBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
         btn;
     });
     
@@ -83,24 +83,27 @@
     
     [input1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(titleLabel1);
-        make.right.equalTo(self.mas_right).offset(-60);
+        make.right.equalTo(searchBtn.mas_left).offset(-20);
         make.top.equalTo(line1.mas_bottom).offset(8);
         make.bottom.equalTo(self.mas_bottom).offset(-8);
     }];
     
     [searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.mas_right).offset(-10);
+        make.right.equalTo(self.mas_right).offset(-20);
         make.centerY.equalTo(input1);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.size.mas_equalTo(CGSizeMake(20, 20));
     }];
-    searchBtn.backgroundColor = [UIColor redColor];
-    
+
     __weak typeof(YZInputView) *weakInput = input1;
     input1.yz_textHeightChangeBlock =  ^(NSString *text,CGFloat textHeight){
         [weakInput mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(textHeight);
         }];
     };
+}
+
+- (void)searchBtnClicked:(UIButton *)sender {
+    
 }
 
 @end
