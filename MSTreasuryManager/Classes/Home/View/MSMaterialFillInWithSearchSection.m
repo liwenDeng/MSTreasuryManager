@@ -63,9 +63,9 @@
         UIButton *btn = [UIButton buttonWithType:(UIButtonTypeSystem)];
         [self addSubview:btn];
         [btn setImage:[UIImage imageNamed:@"search"] forState:(UIControlStateNormal)];
-        [searchBtn addTarget:self action:@selector(searchBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
         btn;
     });
+    self.searchBtn = searchBtn;
     
     [titleLabel1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(15);
@@ -85,7 +85,10 @@
         make.left.equalTo(titleLabel1);
         make.right.equalTo(searchBtn.mas_left).offset(-20);
         make.top.equalTo(line1.mas_bottom).offset(8);
-        make.bottom.equalTo(self.mas_bottom).offset(-8);
+    }];
+    
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(input1.mas_bottom).offset(8);
     }];
     
     [searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -100,10 +103,6 @@
             make.height.mas_equalTo(textHeight);
         }];
     };
-}
-
-- (void)searchBtnClicked:(UIButton *)sender {
-    
 }
 
 @end

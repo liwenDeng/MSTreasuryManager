@@ -15,6 +15,7 @@
 @interface MSMaterialFillInWithSearchSection : UIView
 
 @property (nonatomic, strong) YZInputView *inputView;
+@property (nonatomic, strong) UIButton *searchBtn;
 
 - (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder;
 

@@ -15,6 +15,7 @@
 #import "DNAsset.h"
 #import "DNImagePickerController.h"
 #import "PBViewController.h"
+#import "MSSearchTableViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -70,6 +71,7 @@
         make.top.mas_equalTo(20);
         make.width.mas_equalTo(kSCREEN_WIDTH);
     }];
+    [section1.searchBtn addTarget:self action:@selector(searchNameBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     
     MSMaterialFillInWithSearchSection *section2 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:@"物资技术参数" placeholder:@"请输入物资技术参数"];
     self.paramsInput = section2.inputView;
@@ -79,6 +81,7 @@
         make.top.equalTo(section1.mas_bottom).offset(20);
         make.width.mas_equalTo(kSCREEN_WIDTH);
     }];
+    [section2.searchBtn addTarget:self action:@selector(searchParamsBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     
     //物资库存
     UIView *section3HeaderView = [self createNomalSectionHeaderViewWithTitle:@"物资库存"];
@@ -374,6 +377,18 @@
 
 - (void)viewController:(PBViewController *)viewController didLongPressedPageAtIndex:(NSInteger)index presentedImage:(UIImage *)presentedImage {
     NSLog(@"didLongPressedPageAtIndex: %@", @(index));
+}
+
+#pragma mark - SearchBtnAction
+- (void)searchNameBtnClicked:(UIButton*)sender {
+    NSLog(@"搜索物资名称");
+    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    [self.navigationController pushViewController:s animated:YES];
+//    [self presentViewController:s animated:YES completion:nil];
+}
+
+- (void)searchParamsBtnClicked:(UIButton*)sender {
+    NSLog(@"搜索物资参数");
 }
 
 - (void)dismissKeyboard {

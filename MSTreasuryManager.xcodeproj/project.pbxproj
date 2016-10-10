@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C996191DABDB76002BAB0A /* MSSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C996181DABDB76002BAB0A /* MSSearchTableViewController.m */; };
 		37B909AF91BD9E1EEA2AC706 /* libPods-MSTreasuryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50451818B7BCADBBF7EDF5D /* libPods-MSTreasuryManager.a */; };
 		3A7C5FDB01369BBDCA4DC293 /* libPods-MSTreasuryManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */; };
 		43690FD02A5F3C579B2F199B /* libPods-MSTreasuryManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD14FB8AD8938064E1CA623 /* libPods-MSTreasuryManagerTests.a */; };
@@ -99,6 +100,8 @@
 
 /* Begin PBXFileReference section */
 		03C01CE9C2B33EF403CE9DCC /* Pods-MSTreasuryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.debug.xcconfig"; sourceTree = "<group>"; };
+		18C996171DABDB76002BAB0A /* MSSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchTableViewController.h; sourceTree = "<group>"; };
+		18C996181DABDB76002BAB0A /* MSSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchTableViewController.m; sourceTree = "<group>"; };
 		3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSTreasuryManagerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8E0C5D4687480595A21928 /* Pods-MSTreasuryManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManagerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManagerUITests/Pods-MSTreasuryManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75F47D9C8AB86418EDA43784 /* Pods-MSTreasuryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -537,6 +540,8 @@
 				BC25B9E21DA1F4E4008EDFB2 /* MSHomeViewController.m */,
 				BC00DCBC1DA8CC0F0063F7FE /* MSMaterialFillInViewController.h */,
 				BC00DCBD1DA8CC0F0063F7FE /* MSMaterialFillInViewController.m */,
+				18C996171DABDB76002BAB0A /* MSSearchTableViewController.h */,
+				18C996181DABDB76002BAB0A /* MSSearchTableViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1071,6 +1076,7 @@
 				BC25B9071DA1ED8B008EDFB2 /* AppDelegate.m in Sources */,
 				BC00DCC41DA8D5770063F7FE /* YZInputView.m in Sources */,
 				BCF898681DAB67EC001A825B /* DNPhotoBrowser.m in Sources */,
+				18C996191DABDB76002BAB0A /* MSSearchTableViewController.m in Sources */,
 				BCF8987A1DAB6E88001A825B /* UIImage+Custom.m in Sources */,
 				BCF8988D1DAB889D001A825B /* PBViewController.m in Sources */,
 				BCF898641DAB67EC001A825B /* DNAsset.m in Sources */,
@@ -1222,7 +1228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1264,7 +1270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1280,9 +1286,11 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Main/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MSTreasuryManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MS.MSTreasuryManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1294,9 +1302,11 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Main/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MSTreasuryManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MS.MSTreasuryManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
