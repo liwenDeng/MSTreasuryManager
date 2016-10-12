@@ -9,6 +9,8 @@
 #import "MSHomeViewController.h"
 #import "MSHomeCollectionCell.h"
 #import "MSMaterialFillInViewController.h"
+#import "MSMaterialInfoFetchViewController.h"
+#import "MSMaterialOutStoreViewController.h"
 
 #define kCellWidth ((kSCREEN_WIDTH - 30) / 2.0f)
 #define kCellHeight 100
@@ -83,12 +85,16 @@ typedef enum : NSUInteger {
             break;
         case MSCellIndexOfTypeMaterialQuery:
         {
-        
+            MSMaterialInfoFetchViewController *vc = [[MSMaterialInfoFetchViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case MSCellIndexOfTypeMaterialOut:
         {
-        
+            MSMaterialOutStoreViewController *vc = [[MSMaterialOutStoreViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case  MSCellIndexOfTypeMateriaIn:

@@ -40,6 +40,10 @@
     
 }
 
+- (void)dealloc {
+    [self.searchController.view removeFromSuperview];
+}
+
 #pragma mark- TableView
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -105,12 +109,9 @@
 //    [self.searchController dismissViewControllerAnimated:YES completion:^{
 //        [self.navigationController popViewControllerAnimated:YES];
 //    }];
-//    self.searchController.active = NO;
+    self.searchController.active = NO;
     [self.navigationController popViewControllerAnimated:YES];
-    [self.searchController dismissViewControllerAnimated:NO completion:nil];
-//    if (self.searchController.active) {
-//        [self.searchController dismissViewControllerAnimated:NO completion:nil];
-//    }
+
 }
 
 // 6.添加多个按钮在Cell
@@ -152,7 +153,7 @@
 - (void)createSearch{
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
-    self.searchController.searchBar.delegate = self;//*****这个很重要，一定要设置并引用了代理之后才能调用searchBar的常用方法*****
+//    self.searchController.searchBar.delegate = self;//*****这个很重要，一定要设置并引用了代理之后才能调用searchBar的常用方法*****
     self.searchController.dimsBackgroundDuringPresentation = NO;//是否添加半透明覆盖层
     self.searchController.hidesNavigationBarDuringPresentation = YES;//是否隐藏导航栏
     self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);

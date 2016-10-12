@@ -42,6 +42,17 @@
             textField;
         });
         
+        self.actionBtn = ({
+            UIButton *btn = [UIButton buttonWithType:(UIButtonTypeSystem)];
+            [self addSubview:btn];
+           
+            [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(self.textField);
+            }];
+            
+            btn;
+        });
+        
         [line mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(1);
             make.left.width.equalTo(self);

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18B57B3B1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B3A1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m */; };
+		18B57B3E1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B3D1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m */; };
+		18B57B411DAE73CC000F24A5 /* MSBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B401DAE73CC000F24A5 /* MSBaseButton.m */; };
+		18B57B441DAE7D19000F24A5 /* MSBaseDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B431DAE7D19000F24A5 /* MSBaseDatePickerView.m */; };
 		18C996191DABDB76002BAB0A /* MSSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C996181DABDB76002BAB0A /* MSSearchTableViewController.m */; };
 		37B909AF91BD9E1EEA2AC706 /* libPods-MSTreasuryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50451818B7BCADBBF7EDF5D /* libPods-MSTreasuryManager.a */; };
 		3A7C5FDB01369BBDCA4DC293 /* libPods-MSTreasuryManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */; };
@@ -100,6 +104,14 @@
 
 /* Begin PBXFileReference section */
 		03C01CE9C2B33EF403CE9DCC /* Pods-MSTreasuryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.debug.xcconfig"; sourceTree = "<group>"; };
+		18B57B391DAE6926000F24A5 /* MSMaterialInfoFetchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialInfoFetchViewController.h; sourceTree = "<group>"; };
+		18B57B3A1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialInfoFetchViewController.m; sourceTree = "<group>"; };
+		18B57B3C1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialOutStoreViewController.h; sourceTree = "<group>"; };
+		18B57B3D1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialOutStoreViewController.m; sourceTree = "<group>"; };
+		18B57B3F1DAE73CC000F24A5 /* MSBaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSBaseButton.h; path = MSTreasuryManager/Classes/Home/ViewController/MSBaseButton.h; sourceTree = SOURCE_ROOT; };
+		18B57B401DAE73CC000F24A5 /* MSBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSBaseButton.m; path = MSTreasuryManager/Classes/Home/ViewController/MSBaseButton.m; sourceTree = SOURCE_ROOT; };
+		18B57B421DAE7D19000F24A5 /* MSBaseDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSBaseDatePickerView.h; path = MSTreasuryManager/Classes/Home/ViewController/MSBaseDatePickerView.h; sourceTree = SOURCE_ROOT; };
+		18B57B431DAE7D19000F24A5 /* MSBaseDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSBaseDatePickerView.m; path = MSTreasuryManager/Classes/Home/ViewController/MSBaseDatePickerView.m; sourceTree = SOURCE_ROOT; };
 		18C996171DABDB76002BAB0A /* MSSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchTableViewController.h; sourceTree = "<group>"; };
 		18C996181DABDB76002BAB0A /* MSSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchTableViewController.m; sourceTree = "<group>"; };
 		3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSTreasuryManagerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -473,6 +485,10 @@
 		BC25B95B1DA1F10D008EDFB2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18B57B3F1DAE73CC000F24A5 /* MSBaseButton.h */,
+				18B57B401DAE73CC000F24A5 /* MSBaseButton.m */,
+				18B57B421DAE7D19000F24A5 /* MSBaseDatePickerView.h */,
+				18B57B431DAE7D19000F24A5 /* MSBaseDatePickerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -540,6 +556,10 @@
 				BC25B9E21DA1F4E4008EDFB2 /* MSHomeViewController.m */,
 				BC00DCBC1DA8CC0F0063F7FE /* MSMaterialFillInViewController.h */,
 				BC00DCBD1DA8CC0F0063F7FE /* MSMaterialFillInViewController.m */,
+				18B57B391DAE6926000F24A5 /* MSMaterialInfoFetchViewController.h */,
+				18B57B3A1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m */,
+				18B57B3C1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.h */,
+				18B57B3D1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m */,
 				18C996171DABDB76002BAB0A /* MSSearchTableViewController.h */,
 				18C996181DABDB76002BAB0A /* MSSearchTableViewController.m */,
 			);
@@ -1092,6 +1112,7 @@
 				BC25B9A81DA1F1E2008EDFB2 /* NSString+Code.m in Sources */,
 				BC25B9DD1DA1F469008EDFB2 /* MSBaseViewController.m in Sources */,
 				BCF898771DAB67EC001A825B /* JKPromptView.m in Sources */,
+				18B57B3E1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m in Sources */,
 				BC25B9D41DA1F3E4008EDFB2 /* MSNetworking.m in Sources */,
 				BCF8986A1DAB67EC001A825B /* NSURL+DNIMagePickerUrlEqual.m in Sources */,
 				BCF898661DAB67EC001A825B /* DNImagePickerController.m in Sources */,
@@ -1109,6 +1130,7 @@
 				BC25B9AA1DA1F1E2008EDFB2 /* UIColor+MSUtil.m in Sources */,
 				BC25B9041DA1ED8B008EDFB2 /* main.m in Sources */,
 				BCF898751DAB67EC001A825B /* DNTapDetectingImageView.m in Sources */,
+				18B57B3B1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m in Sources */,
 				BC25B9E01DA1F4B3008EDFB2 /* MSBaseNavigationController.m in Sources */,
 				BC00DCBF1DA8CC0F0063F7FE /* MSMaterialFillInViewController.m in Sources */,
 				BC25B9CD1DA1F3BB008EDFB2 /* ZCApiDownloadAction.m in Sources */,
@@ -1122,9 +1144,11 @@
 				BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */,
 				BC00DCC71DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m in Sources */,
 				BCF898371DAB4E4D001A825B /* MSPhotoPadView.m in Sources */,
+				18B57B411DAE73CC000F24A5 /* MSBaseButton.m in Sources */,
 				BC25B9DC1DA1F469008EDFB2 /* MSBaseTabBarController.m in Sources */,
 				BC25B9CE1DA1F3BB008EDFB2 /* ZCApiRunner.m in Sources */,
 				BCF898721DAB67EC001A825B /* DNBrowserCell.m in Sources */,
+				18B57B441DAE7D19000F24A5 /* MSBaseDatePickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

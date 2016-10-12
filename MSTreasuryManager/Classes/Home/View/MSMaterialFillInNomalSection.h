@@ -11,6 +11,7 @@
 @interface MSMaterialFillInNomalSection : UIView
 
 @property (nonatomic, strong) UITextField * textField;
+@property (nonatomic, strong) UIButton *actionBtn;  //用来响应点击事件
 
 - (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder;
 

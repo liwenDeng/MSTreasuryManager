@@ -49,7 +49,7 @@
 
     [self setupSections];
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboardAction)];
     tap.cancelsTouchesInView = NO;//防止tap影响subView响应事件
     [self.view addGestureRecognizer:tap];
 }
@@ -389,9 +389,11 @@
 
 - (void)searchParamsBtnClicked:(UIButton*)sender {
     NSLog(@"搜索物资参数");
+    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    [self.navigationController pushViewController:s animated:YES];
 }
 
-- (void)dismissKeyboard {
+- (void)dismissKeyboardAction {
     [self.view endEditing:YES];
 }
 
