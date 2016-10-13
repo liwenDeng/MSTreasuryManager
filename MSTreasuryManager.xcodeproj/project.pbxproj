@@ -52,6 +52,9 @@
 		BC25B9DD1DA1F469008EDFB2 /* MSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9DB1DA1F469008EDFB2 /* MSBaseViewController.m */; };
 		BC25B9E01DA1F4B3008EDFB2 /* MSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9DF1DA1F4B3008EDFB2 /* MSBaseNavigationController.m */; };
 		BC25B9E31DA1F4E4008EDFB2 /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9E21DA1F4E4008EDFB2 /* MSHomeViewController.m */; };
+		BC6A07811DAF618300ACDD76 /* MSSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A07801DAF618300ACDD76 /* MSSearchResultViewController.m */; };
+		BC6A07841DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */; };
+		BC6A07871DAF78C100ACDD76 /* MSBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A07861DAF78C100ACDD76 /* MSBaseTableViewController.m */; };
 		BCF898371DAB4E4D001A825B /* MSPhotoPadView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF898361DAB4E4D001A825B /* MSPhotoPadView.m */; };
 		BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983A1DAB67EC001A825B /* DNAlbumTableViewController.m */; };
 		BCF898641DAB67EC001A825B /* DNAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983C1DAB67EC001A825B /* DNAsset.m */; };
@@ -195,6 +198,12 @@
 		BC25B9DF1DA1F4B3008EDFB2 /* MSBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseNavigationController.m; sourceTree = "<group>"; };
 		BC25B9E11DA1F4E4008EDFB2 /* MSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeViewController.h; sourceTree = "<group>"; };
 		BC25B9E21DA1F4E4008EDFB2 /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
+		BC6A077F1DAF618300ACDD76 /* MSSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchResultViewController.h; sourceTree = "<group>"; };
+		BC6A07801DAF618300ACDD76 /* MSSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchResultViewController.m; sourceTree = "<group>"; };
+		BC6A07821DAF77F900ACDD76 /* MSOutInInfosQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInInfosQueryViewController.h; sourceTree = "<group>"; };
+		BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfosQueryViewController.m; sourceTree = "<group>"; };
+		BC6A07851DAF78C100ACDD76 /* MSBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseTableViewController.h; sourceTree = "<group>"; };
+		BC6A07861DAF78C100ACDD76 /* MSBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseTableViewController.m; sourceTree = "<group>"; };
 		BCF898351DAB4E4D001A825B /* MSPhotoPadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPhotoPadView.h; sourceTree = "<group>"; };
 		BCF898361DAB4E4D001A825B /* MSPhotoPadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPhotoPadView.m; sourceTree = "<group>"; };
 		BCF898391DAB67EC001A825B /* DNAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAlbumTableViewController.h; sourceTree = "<group>"; };
@@ -502,6 +511,8 @@
 				BC25B9D91DA1F469008EDFB2 /* MSBaseTabBarController.m */,
 				BC25B9DA1DA1F469008EDFB2 /* MSBaseViewController.h */,
 				BC25B9DB1DA1F469008EDFB2 /* MSBaseViewController.m */,
+				BC6A07851DAF78C100ACDD76 /* MSBaseTableViewController.h */,
+				BC6A07861DAF78C100ACDD76 /* MSBaseTableViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -562,6 +573,10 @@
 				18B57B3D1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m */,
 				18C996171DABDB76002BAB0A /* MSSearchTableViewController.h */,
 				18C996181DABDB76002BAB0A /* MSSearchTableViewController.m */,
+				BC6A077F1DAF618300ACDD76 /* MSSearchResultViewController.h */,
+				BC6A07801DAF618300ACDD76 /* MSSearchResultViewController.m */,
+				BC6A07821DAF77F900ACDD76 /* MSOutInInfosQueryViewController.h */,
+				BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1119,6 +1134,7 @@
 				BC25B9AC1DA1F1E2008EDFB2 /* UIView+RoundedCorner.m in Sources */,
 				BCF898731DAB67EC001A825B /* DNFullImageButton.m in Sources */,
 				BCF8986C1DAB67EC001A825B /* UIView+DNImagePicker.m in Sources */,
+				BC6A07811DAF618300ACDD76 /* MSSearchResultViewController.m in Sources */,
 				BC25B9CF1DA1F3BB008EDFB2 /* ZCApiUploadAction.m in Sources */,
 				BC25B9AE1DA1F1E2008EDFB2 /* UIView+MSUtil.m in Sources */,
 				BCF8986B1DAB67EC001A825B /* UIColor+Hex.m in Sources */,
@@ -1143,11 +1159,13 @@
 				BC25B9A71DA1F1E2008EDFB2 /* NSDate+MSExtension.m in Sources */,
 				BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */,
 				BC00DCC71DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m in Sources */,
+				BC6A07871DAF78C100ACDD76 /* MSBaseTableViewController.m in Sources */,
 				BCF898371DAB4E4D001A825B /* MSPhotoPadView.m in Sources */,
 				18B57B411DAE73CC000F24A5 /* MSBaseButton.m in Sources */,
 				BC25B9DC1DA1F469008EDFB2 /* MSBaseTabBarController.m in Sources */,
 				BC25B9CE1DA1F3BB008EDFB2 /* ZCApiRunner.m in Sources */,
 				BCF898721DAB67EC001A825B /* DNBrowserCell.m in Sources */,
+				BC6A07841DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m in Sources */,
 				18B57B441DAE7D19000F24A5 /* MSBaseDatePickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

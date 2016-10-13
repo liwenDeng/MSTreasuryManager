@@ -11,6 +11,10 @@
 @implementation MSMaterialFillInNomalSection
 
 - (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder {
+    return [self initWithTitle:title placeholder:placeholder canTouch:NO];
+}
+
+- (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder canTouch:(BOOL)canTouch {
     if (self = [super init]) {
         
         self.backgroundColor = [UIColor whiteColor];
@@ -33,9 +37,9 @@
             UITextField *textField = [[UITextField alloc]init];
             [self addSubview:textField];
             [textField setPlaceholder:placeholder];
-//            textField.layer.borderWidth = 1;
-//            textField.layer.borderColor = kBackgroundColor.CGColor;
-//            textField.layer.cornerRadius = 5;
+            //            textField.layer.borderWidth = 1;
+            //            textField.layer.borderColor = kBackgroundColor.CGColor;
+            //            textField.layer.cornerRadius = 5;
             [textField setTextAlignment:(NSTextAlignmentCenter)];
             [textField setKeyboardType:(UIKeyboardTypePhonePad)];
             [textField setBorderStyle:(UITextBorderStyleRoundedRect)];
@@ -45,13 +49,17 @@
         self.actionBtn = ({
             UIButton *btn = [UIButton buttonWithType:(UIButtonTypeSystem)];
             [self addSubview:btn];
-           
+            
             [btn mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.edges.equalTo(self.textField);
             }];
             
             btn;
         });
+        
+        if (!canTouch) {
+            self.actionBtn.hidden = YES;
+        }
         
         [line mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(1);

@@ -11,20 +11,12 @@
 #import "MSMaterialFillInViewController.h"
 #import "MSMaterialInfoFetchViewController.h"
 #import "MSMaterialOutStoreViewController.h"
+#import "MSOutInInfosQueryViewController.h"
 
 #define kCellWidth ((kSCREEN_WIDTH - 30) / 2.0f)
 #define kCellHeight 100
 
 static NSString * const kHomeCellId = @"kHomeCell";
-
-typedef enum : NSUInteger {
-    MSCellIndexOfTypeMaterialFillIn = 0, //物资信息填写
-    MSCellIndexOfTypeMaterialQuery,      //物资信息查询
-    MSCellIndexOfTypeMaterialOut,        //物资出库
-    MSCellIndexOfTypeMateriaIn,          //物资入库
-    MSCellIndexOfTypeOutInfosQuery,      //出库记录查询
-    MSCellIndexOfTypeInInfosQuery,       //入库记录查询
-} MSCellIndexOfType;
 
 @interface MSHomeViewController () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -92,24 +84,30 @@ typedef enum : NSUInteger {
             break;
         case MSCellIndexOfTypeMaterialOut:
         {
-            MSMaterialOutStoreViewController *vc = [[MSMaterialOutStoreViewController alloc]init];
+            MSMaterialOutStoreViewController *vc = [[MSMaterialOutStoreViewController alloc]initWithType:MSCellIndexOfTypeMaterialOut];
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case  MSCellIndexOfTypeMateriaIn:
         {
-        
+            MSMaterialOutStoreViewController *vc = [[MSMaterialOutStoreViewController alloc]initWithType:MSCellIndexOfTypeMateriaIn];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case MSCellIndexOfTypeOutInfosQuery:
         {
-        
+            MSOutInInfosQueryViewController *vc = [[MSOutInInfosQueryViewController alloc]initWithType:MSCellIndexOfTypeOutInfosQuery];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case MSCellIndexOfTypeInInfosQuery:
         {
-        
+            MSOutInInfosQueryViewController *vc = [[MSOutInInfosQueryViewController alloc]initWithType:MSCellIndexOfTypeInInfosQuery];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         

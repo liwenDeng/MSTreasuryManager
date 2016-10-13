@@ -7,11 +7,13 @@
 //
 
 #import "MSSearchTableViewController.h"
+#import "MSSearchResultViewController.h"
 
 @interface MSSearchTableViewController() <UITableViewDataSource,UITableViewDelegate,UISearchControllerDelegate,UISearchResultsUpdating,UISearchBarDelegate>
 
+@property (nonatomic, strong) MSSearchResultViewController *resultViewController;
 @property (nonatomic, strong) UISearchController *searchController;
-@property (nonatomic, strong) UITableView* tableView;
+
 @property (nonatomic, strong) NSMutableArray *dataList;
 @property (nonatomic, strong) NSMutableArray *searchList;
 @property (nonatomic, strong) NSString *cureHistoryDeleteBtnString; //删除按钮字样
@@ -24,11 +26,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
     //    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, kSCREEN_WIDTH, kSCREENH_HEIGHT)];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    [self.view addSubview:self.tableView ];
+
     
     [self createSearch];
     
@@ -57,110 +56,78 @@
 //设置区域的行数
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if (self.searchController.active) {
+    if (tableView == self.tableView) {
         //        _tableView.hidden = NO;
-        return [self.searchList count];
+        return [self.dataList count];
     }else{
         //        _tableView.hidden = YES;
-        return [self.dataList count];
+        return [self.searchList count];
     }
 }
 
 //返回单元格内容
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *flag=@"cellFlag";
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:flag];
-    if (cell==nil) {
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:flag];
-        //取消选中状态
-        //        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/256.0f green:arc4random()%255/256.0f  blue:arc4random()%255/256.0f  alpha:1];
-    }
-    if (self.searchController.active) {
-        //        _tableView.hidden = NO;
-        [cell.textLabel setText:self.searchList[indexPath.row]];
-    }
-    else{
-        //        _tableView.hidden = YES;
+
+    
+    if (tableView == self.tableView) {
+        static NSString *flag=@"cellFlag";
+        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:flag];
+        
+        if (cell==nil) {
+            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:flag];
+            //取消选中状态
+            //        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/256.0f green:arc4random()%255/256.0f  blue:arc4random()%255/256.0f  alpha:1];
+        }
+
         [cell.textLabel setText:self.dataList[indexPath.row]];
+        return cell;
+    }else {
+        static NSString *flag=@"resultCellFlag";
+        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:flag];
+        
+        if (cell==nil) {
+            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:flag];
+            //取消选中状态
+            //        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/256.0f green:arc4random()%255/256.0f  blue:arc4random()%255/256.0f  alpha:1];
+        }
+
+        [cell.textLabel setText:self.searchList[indexPath.row]];
+        return cell;
     }
-    //
-    
-    
-    return cell;
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    SecondViewController *sec = [[SecondViewController alloc] init];
-//    if (_searchList.count != 0) {
-//        sec.number = _searchList[indexPath.row];
-//    }else{
-//        sec.number = _dataList[indexPath.row];
-//    }
-//    //_searchController.active = NO;
-//    //这样的话就可以实现下边跳转到sec页面的方法了，因为取消了它的活跃，能看到有个动作是直接回到了最初的界面，然后才执行的跳转方法
-//    NSLog(@"sec.number = %@",sec.number);
-//    //下边这五个方法貌似没什么卵用。会在此时同时打印出来
-//    [self willPresentSearchController:_searchController];
-//    [self didPresentSearchController:_searchController];
-//    [self willDismissSearchController:_searchController];
-//    [self didDismissSearchController:_searchController];
-//    [self presentSearchController:_searchController];
-//    [self.searchController dismissViewControllerAnimated:YES completion:^{
-//        [self.navigationController popViewControllerAnimated:YES];
-//    }];
     self.searchController.active = NO;
     [self.navigationController popViewControllerAnimated:YES];
 
 }
 
-// 6.添加多个按钮在Cell
-- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    self.cureHistoryDeleteBtnString = @"删除";
-    // 添加一个删除按钮
-    UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:self.cureHistoryDeleteBtnString handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-        NSLog(@"删除本行");
-        /*
-         // 1.删除数据源
-         [self.dataArray removeObject:lastModel];
-         
-         // 2.删除数据库
-         NSArray *lastPointModels = [manager selectModelArrayInDatabase:localDatabaseName table:@"tcmt_cure_acupoints" modelName:@"LastPointModel" selectFactor:[NSString stringWithFormat:@"WHERE cure_id = '%@'", lastModel.cure_id]];
-         for (LastPointModel *lastPointModel in lastPointModels) {
-         [manager deleteModelWithDatabase:localDatabaseName table:@"tcmt_cure_acupoints" model:lastPointModel];
-         
-         }
-         [manager deleteModelWithDatabase:localDatabaseName table:@"tcmt_cure" model:lastModel];
-         
-         
-         // 3.更新UI
-         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-         
-         // 4.是否显示infoLabel
-         if (self.dataArray.count == 0) {
-         self.infoLabel.text = _cureHistoryInfoLabelString;
-         self.infoLabel.hidden = NO;
-         }
-         */
-    }];
-    return @[deleteRowAction];
-}
-
-
 #pragma mark- SearchController
 - (void)createSearch{
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    
+    self.resultViewController = [[MSSearchResultViewController alloc]init];
+    self.resultViewController.tableView.delegate = self;
+    self.resultViewController.tableView.dataSource = self;
+    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultViewController];
     self.searchController.searchResultsUpdater = self;
-//    self.searchController.searchBar.delegate = self;//*****这个很重要，一定要设置并引用了代理之后才能调用searchBar的常用方法*****
+    self.searchController.delegate = self;
+    self.searchController.searchBar.delegate = self;
+    
     self.searchController.dimsBackgroundDuringPresentation = NO;//是否添加半透明覆盖层
     self.searchController.hidesNavigationBarDuringPresentation = YES;//是否隐藏导航栏
-    self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
+    self.definesPresentationContext = YES;
+
+    [self.searchController.searchBar sizeToFit];
+//    self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
     self.tableView.tableHeaderView = self.searchController.searchBar;
     
 }
 
+#pragma mark - UISearchResultsUpdating
 //展示搜索结果
 -(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     NSString *searchString = [self.searchController.searchBar text];
@@ -171,8 +138,8 @@
     }
     //过滤数据
     self.searchList= [NSMutableArray arrayWithArray:[self.dataList filteredArrayUsingPredicate:preicate]];
-    //刷新表格
-    [self.tableView reloadData];
+    
+    [self.resultViewController.tableView reloadData];
 }
 
 //
@@ -202,7 +169,7 @@
     NSLog(@"presentSearchController");
 }
 
-//以下的两个方法必须设置_searchController.searchBar.delegate 才可以
+#pragma mark - UISearchBarDelegate
 -(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
     NSLog(@"开始编辑");
     return YES;

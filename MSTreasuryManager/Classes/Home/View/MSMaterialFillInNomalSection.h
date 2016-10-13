@@ -15,4 +15,5 @@
 
 - (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder;
 
+- (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder canTouch:(BOOL)canTouch;
 @end

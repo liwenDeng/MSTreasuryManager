@@ -13,6 +13,7 @@
 #import "MSBaseButton.h"
 #import "MSBaseDatePickerView.h"
 #import "NSDate+MSExtension.h"
+#import "MSSearchTableViewController.h"
 
 @interface MSMaterialOutStoreViewController () <MSBaseDatePickerViewDelegate>
 
@@ -24,10 +25,20 @@
 @property (nonatomic, strong) UITextField *dateInput;
 @property (nonatomic, strong) UITextField *handleUserInput; //经办人
 @property (nonatomic, strong) UITextField *reviewUserInput;   //审核人
+@property (nonatomic, strong) MSBaseDatePickerView *datePickerView;
+
+@property (nonatomic, assign) MSCellIndexOfType type;
 
 @end
 
 @implementation MSMaterialOutStoreViewController
+
+- (instancetype)initWithType:(MSCellIndexOfType)type {
+    if (self = [super init]) {
+        self.type = type;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,7 +47,13 @@
 }
 
 - (void)setupSubViews {
-    self.title = @"物资出库";
+
+    if (self.type == MSCellIndexOfTypeMaterialOut) {
+        self.title = @"物资出库";
+    }else {
+        self.title = @"物资入库";
+    }
+    
     self.scrollView = [[UIScrollView alloc]init];
     [self.view addSubview:self.scrollView];
     self.scrollView.backgroundColor = kBackgroundColor;
@@ -68,7 +85,9 @@
     }];
     [section1.searchBtn addTarget:self action:@selector(searchNameBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    MSMaterialFillInWithSearchSection *section2 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:@"出库位置" placeholder:@"请选择出库位置"];
+    NSString *title = self.type == MSCellIndexOfTypeMaterialOut ? @"出库位置" : @"入库位置";
+    NSString *placehodler = self.type == MSCellIndexOfTypeMaterialOut ? @"请选择出库位置" : @"请选择入库位置";
+    MSMaterialFillInWithSearchSection *section2 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:title placeholder:placehodler];
     self.placeInput = section2.inputView;
     self.placeInput.editable = NO;
     [bgView addSubview:section2];
@@ -79,10 +98,17 @@
     }];
     [section2.searchBtn addTarget:self action:@selector(searchPlaceBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     
+    //为物资名称和技术参数输入框添加点击事件
+    UITapGestureRecognizer *tapName = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchNameBtnClicked:)];
+    [self.nameInput addGestureRecognizer:tapName];
+    
+    UITapGestureRecognizer *tapParams = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchPlaceBtnClicked:)];
+    [self.placeInput addGestureRecognizer:tapParams];
+    
     MSMaterialFillInNomalSection *section3 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"出库数量" placeholder:@"填写数量"];
-    MSMaterialFillInNomalSection *section4 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"出库日期" placeholder:@"2016-09-09"];
-    MSMaterialFillInNomalSection *section5 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"经办人" placeholder:@"选择人员"];
-    MSMaterialFillInNomalSection *section6 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"审核人" placeholder:@"选择人员"];
+    MSMaterialFillInNomalSection *section4 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"出库日期" placeholder:@"2016-09-09" canTouch:YES];
+    MSMaterialFillInNomalSection *section5 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"经办人" placeholder:@"选择人员" canTouch:YES];
+    MSMaterialFillInNomalSection *section6 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"审核人" placeholder:@"选择人员" canTouch:YES];
     
     [bgView addSubview:section3];
     [bgView addSubview:section4];
@@ -121,20 +147,12 @@
     self.dateInput = section4.textField;
     self.handleUserInput = section5.textField;
     self.reviewUserInput = section6.textField;
-    
-//    self.dateInput.editing = NO;
-//    self.handleUserInput.enabled = NO;
-//    self.reviewUserInput.enabled = NO;
+
+    //add touch action
     [section4.actionBtn addTarget:self action:@selector(dateInputClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+    [section5.actionBtn addTarget:self action:@selector(handleUserInputClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+    [section6.actionBtn addTarget:self action:@selector(reviewUserInputClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     
-//    UITapGestureRecognizer *tapDate = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dateInputClicked:)];
-//    [self.dateInput addGestureRecognizer:tapDate];
-    
-    UITapGestureRecognizer *tapHandleUser = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleUserInputClicked:)];
-    [self.handleUserInput addGestureRecognizer:tapHandleUser];
-    
-    UITapGestureRecognizer *tapReviewUser = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(reviewUserInputClicked:)];
-    [self.reviewUserInput addGestureRecognizer:tapReviewUser];
     
 //    //subMitBtn
     MSBaseButton *btn = [[MSBaseButton alloc]initWithTitle:@"提    交"];
@@ -145,6 +163,7 @@
         make.height.mas_equalTo(40);
         make.width.mas_equalTo(kSCREEN_WIDTH - 40);
     }];
+    [btn addTarget:self action:@selector(submitBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(kSCREEN_WIDTH);
@@ -159,73 +178,104 @@
 
 #pragma mark - ClickAction
 - (void)searchNameBtnClicked:(UIButton *)sender {
-
+    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    [self.navigationController pushViewController:s animated:YES];
 }
 
 - (void)searchPlaceBtnClicked:(UIButton *)sender {
-
+    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    [self.navigationController pushViewController:s animated:YES];
 }
 
-- (void)dateInputClicked:(UITapGestureRecognizer *)tap {
-    MSBaseDatePickerView *datePicker = [[MSBaseDatePickerView alloc]init];
-    [self.view addSubview:datePicker];
-    [datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.top.equalTo(self.mas_bottomLayoutGuideBottom);
-        make.width.mas_equalTo(kSCREEN_WIDTH);
-        make.height.mas_equalTo(200);
-    }];
-    datePicker.delegate = self;
-
-    [self.view layoutIfNeeded];
-    
-    [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{
-        [datePicker mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(-200);
-        }];
-        [self.view layoutIfNeeded];
-    } completion:nil];
-
+- (void)dateInputClicked:(UIButton *)sender {
+    [self showDatePickerView];
 }
 
-- (void)handleUserInputClicked:(UITapGestureRecognizer *)tap {
-
+- (void)handleUserInputClicked:(UIButton *)sender {
+    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    [self.navigationController pushViewController:s animated:YES];
 }
 
-- (void)reviewUserInputClicked:(UITapGestureRecognizer *)tap {
-
+- (void)reviewUserInputClicked:(UIButton *)sender {
+    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    [self.navigationController pushViewController:s animated:YES];
 }
 
 - (void)dismissKeyboardAction {
+    [self hideDatePickerView];
     [self.view endEditing:YES];
 }
 
-- (void)datePickerChanged {
-
+- (void)submitBtnClicked:(UIButton *)sender {
+    switch (self.type) {
+        case MSCellIndexOfTypeMaterialOut:
+        {
+            //物资出库
+        }
+            break;
+        case MSCellIndexOfTypeMateriaIn:
+        {
+            //物资入库
+        }
+        default:
+            break;
+    }
 }
 
 #pragma mark - MSBaseDatePickerViewDelegate
 - (void)datePickerView:(MSBaseDatePickerView *)datePicker submitWithDate:(NSDate *)date {
     NSLog(@"date:%@",date);
-    [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseIn) animations:^{
-        [datePicker mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(0);
-        }];
-        [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        [datePicker removeFromSuperview];
-    }];
+    [self hideDatePickerView];
 }
 
 - (void)datePickerView:(MSBaseDatePickerView *)datePicker cancleWithDate:(NSDate *)date {
-    [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseIn) animations:^{
-        [datePicker mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(0);
+    [self hideDatePickerView];
+}
+
+- (void)showDatePickerView {
+    if (self.datePickerView.hidden) {
+        self.datePickerView.hidden = NO;
+        [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{
+            [self.datePickerView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(-200);
+            }];
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+  
         }];
+    }
+}
+
+- (void)hideDatePickerView {
+    if (!self.datePickerView.hidden) {
+        [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseIn) animations:^{
+            [self.datePickerView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(0);
+            }];
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            self.datePickerView.hidden = YES;
+        }];
+    }
+}
+
+#pragma mark - LazyLoad
+- (MSBaseDatePickerView *)datePickerView {
+    if (!_datePickerView) {
+        _datePickerView = [[MSBaseDatePickerView alloc]init];
+        [self.view addSubview:_datePickerView];
+        
+        [_datePickerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(0);
+            make.top.equalTo(self.mas_bottomLayoutGuideBottom);
+            make.width.mas_equalTo(kSCREEN_WIDTH);
+            make.height.mas_equalTo(200);
+        }];
+        _datePickerView.delegate = self;
+        _datePickerView.hidden = YES;
         [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        [datePicker removeFromSuperview];
-    }];
+    }
+    return _datePickerView;
 }
 
 @end

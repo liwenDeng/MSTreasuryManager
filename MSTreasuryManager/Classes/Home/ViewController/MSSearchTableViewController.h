@@ -8,6 +8,6 @@
 
 #import "MSBaseViewController.h"
 
-@interface MSSearchTableViewController : MSBaseViewController
+@interface MSSearchTableViewController : UITableViewController
 
 @end
