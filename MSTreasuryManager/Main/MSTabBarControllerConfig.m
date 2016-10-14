@@ -10,6 +10,7 @@
 #import "MSBaseNavigationController.h"
 
 #import "MSHomeViewController.h"
+#import "MSToolManageViewController.h"
 
 //#pragma mark -HideTabBarMethod
 //@interface CYLBaseNavigationController : UINavigationController
@@ -112,7 +113,7 @@
     MSBaseNavigationController *navi2 = [[MSBaseNavigationController alloc]initWithRootViewController:vc2];
     vc2.navigationItem.title = @"现场工作";
     
-    UIViewController *vc3 = [[UIViewController alloc]init];
+    MSToolManageViewController *vc3 = [[MSToolManageViewController alloc]init];
     MSBaseNavigationController *navi3 = [[MSBaseNavigationController alloc]initWithRootViewController:vc3];
     vc3.navigationItem.title = @"工器具";
     

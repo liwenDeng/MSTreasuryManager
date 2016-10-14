@@ -8,6 +8,9 @@
 
 #import "MSOutInInfosQueryViewController.h"
 #import "MSBaseDatePickerView.h"
+#import "MSOutInInfoCell.h"
+#import "MSSearchResultViewController.h"
+#import "MSOutInInfoDetailViewController.h"
 
 typedef enum : NSUInteger {
     MSSearchTypeName = 0,
@@ -15,13 +18,16 @@ typedef enum : NSUInteger {
     MSSearchTypePerson,
 } MSSearchType;
 
+static NSString * const kCellIdentifier = @"OutInInfosQuery";
+static NSString * const kResCellIdentifier = @"OutInInfosResult";
+
 @interface MSOutInInfosQueryViewController () <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating,MSBaseDatePickerViewDelegate>
 
 @property (nonatomic, assign) MSCellIndexOfType type;
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) NSArray *searchList;
 @property (nonatomic, strong) MSBaseDatePickerView *datePickerView;
-@property (nonatomic, assign) MSSearchType currentSearchType;
+@property (nonatomic, strong) MSSearchResultViewController *resultViewController;
 
 @end
 
@@ -39,9 +45,12 @@ typedef enum : NSUInteger {
     // Do any additional setup after loading the view.
     NSString *title = self.type == MSCellIndexOfTypeOutInfosQuery ? @"出库记录查询" : @"入库记录查询";
     self.title = title;
+    self.resultViewController = [[MSSearchResultViewController alloc]init];
+    self.searchController = [[UISearchController alloc]initWithSearchResultsController:self.resultViewController];
+
+    self.resultViewController.tableView.dataSource = self;
+    self.resultViewController.tableView.delegate = self;
     
-    self.currentSearchType = MSSearchTypeName;
-    self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
     [self.searchController.searchBar sizeToFit];
     self.tableView.tableHeaderView = self.searchController.searchBar;
@@ -49,15 +58,72 @@ typedef enum : NSUInteger {
     self.searchController.delegate = self;
     self.searchController.dimsBackgroundDuringPresentation = NO; // default is YES
     self.searchController.searchBar.delegate = self; // so we can monitor text changes + others
+    self.searchController.searchBar.enablesReturnKeyAutomatically = NO;
     self.definesPresentationContext = YES;
     NSString *stitle = self.type == MSCellIndexOfTypeOutInfosQuery ? @"出库时间" : @"入库时间";
     self.searchController.searchBar.scopeButtonTitles = @[@"物资名称",stitle,@"经办人"];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - HTTP Request
+- (void)loadMore {
+    
+}
+
+- (void)searchWithProductName:(NSString *)productName {
+
+}
+
+- (void)searchWithDate:(NSString *)date {
+
+}
+
+- (void)searchWithPersonName:(NSString *) personName {
+
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (tableView == self.tableView) {
+        return 10;
+    }
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView == self.tableView) {
+        MSOutInInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+        if (!cell) {
+            cell = [[MSOutInInfoCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:kCellIdentifier];
+        }
+        return cell;
+    }
+    
+    MSOutInInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kResCellIdentifier];
+    if (!cell) {
+        cell = [[MSOutInInfoCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:kResCellIdentifier];
+    }
+    return cell;
+
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 46;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"clicked");
+    MSOutInInfoDetailViewController *vc = [[MSOutInInfoDetailViewController alloc]initWithType:self.type];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UISearchBarDelegate
@@ -71,12 +137,10 @@ typedef enum : NSUInteger {
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
     MSSearchType type = selectedScope;
-    self.currentSearchType = type;
     switch (type) {
         case MSSearchTypeName:
         {
             [self hideDatePickerView];
-            [searchBar becomeFirstResponder];
         }
             break;
         case MSSearchTypeDate:
@@ -87,7 +151,6 @@ typedef enum : NSUInteger {
         case MSSearchTypePerson:
         {
             [self hideDatePickerView];
-            [searchBar becomeFirstResponder];
         }
             break;
         default:
@@ -95,23 +158,10 @@ typedef enum : NSUInteger {
     }
 }
 
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    if (searchBar.selectedScopeButtonIndex == MSSearchTypeDate && !self.datePickerView.hidden) {
-        return NO;
-    }
-    return YES;
-}
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    if (searchBar.selectedScopeButtonIndex == MSSearchTypeDate) {
-        [self showDatePickerView];
-    }
-}
-
 #pragma mark - UISearchControllerDelegate
-- (void)presentSearchController:(UISearchController *)searchController {
-    
-}
+//- (void)presentSearchController:(UISearchController *)searchController {
+//    
+//}
 
 - (void)willPresentSearchController:(UISearchController *)searchController {
     // do something before the search controller is presented
@@ -127,17 +177,19 @@ typedef enum : NSUInteger {
 
 - (void)didDismissSearchController:(UISearchController *)searchController {
     // do something after the search controller is dismissed
+    searchController.searchBar.selectedScopeButtonIndex = 0;
 }
 
 #pragma mark - UISearchResultsUpdating
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    
+    [self.resultViewController.tableView reloadData];
 }
 
 #pragma mark - MSBaseDatePickerViewDelegate
 - (void)datePickerView:(MSBaseDatePickerView *)datePicker submitWithDate:(NSDate *)date {
     NSLog(@"date:%@",date);
     [self hideDatePickerView];
+    self.searchController.searchBar.text = @"2015-09-01";
 }
 
 - (void)datePickerView:(MSBaseDatePickerView *)datePicker cancleWithDate:(NSDate *)date {
@@ -166,8 +218,8 @@ typedef enum : NSUInteger {
 - (void)showDatePickerView {
     
     if (self.datePickerView.hidden) {
-        [self.searchController.searchBar endEditing:YES];
         self.datePickerView.hidden = NO;
+        [self.searchController.searchBar resignFirstResponder];
         [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{
             [self.datePickerView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(-200);
@@ -181,6 +233,7 @@ typedef enum : NSUInteger {
 
 - (void)hideDatePickerView {
     if (!self.datePickerView.hidden) {
+        [self.searchController.searchBar becomeFirstResponder];
         [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseIn) animations:^{
             [self.datePickerView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(0);

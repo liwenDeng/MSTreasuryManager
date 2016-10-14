@@ -29,7 +29,7 @@
             UILabel *label = [[UILabel alloc]init];
             label.text = title;
             [self addSubview:label];
-            
+            label.font = [UIFont systemFontOfSize:13.0f];
             label;
         });
         
@@ -37,9 +37,6 @@
             UITextField *textField = [[UITextField alloc]init];
             [self addSubview:textField];
             [textField setPlaceholder:placeholder];
-            //            textField.layer.borderWidth = 1;
-            //            textField.layer.borderColor = kBackgroundColor.CGColor;
-            //            textField.layer.cornerRadius = 5;
             [textField setTextAlignment:(NSTextAlignmentCenter)];
             [textField setKeyboardType:(UIKeyboardTypePhonePad)];
             [textField setBorderStyle:(UITextBorderStyleRoundedRect)];
@@ -74,7 +71,7 @@
         }];
         
         [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(kSCREEN_WIDTH / 4 + 5);
+            make.left.mas_equalTo(kSCREEN_WIDTH / 4 + 25);
             make.right.mas_equalTo(self.mas_right).offset(-15);
             make.centerY.equalTo(self);
             make.height.mas_equalTo(44 * 0.7);

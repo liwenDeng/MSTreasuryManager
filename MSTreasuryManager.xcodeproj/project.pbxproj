@@ -55,6 +55,16 @@
 		BC6A07811DAF618300ACDD76 /* MSSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A07801DAF618300ACDD76 /* MSSearchResultViewController.m */; };
 		BC6A07841DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */; };
 		BC6A07871DAF78C100ACDD76 /* MSBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A07861DAF78C100ACDD76 /* MSBaseTableViewController.m */; };
+		BC8A55281DB07ADF00E9485A /* MSOutInInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55271DB07ADF00E9485A /* MSOutInInfoCell.m */; };
+		BC8A552B1DB07C2C00E9485A /* MSBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A552A1DB07C2C00E9485A /* MSBaseTableViewCell.m */; };
+		BC8A55311DB0983100E9485A /* MSOutInInfoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55301DB0983100E9485A /* MSOutInInfoDetailViewController.m */; };
+		BC8A55341DB09B0B00E9485A /* MSOutInMultiLineSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55331DB09B0B00E9485A /* MSOutInMultiLineSection.m */; };
+		BC8A55371DB09D0800E9485A /* MSOutInOneLineSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55361DB09D0800E9485A /* MSOutInOneLineSection.m */; };
+		BC8A553A1DB0A15600E9485A /* MSToolManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55391DB0A15600E9485A /* MSToolManageViewController.m */; };
+		BC8A553D1DB0A2EF00E9485A /* MSToolInfoFillInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A553C1DB0A2EF00E9485A /* MSToolInfoFillInViewController.m */; };
+		BC8A55401DB0A38600E9485A /* MSToolInfoFillInSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A553F1DB0A38600E9485A /* MSToolInfoFillInSection.m */; };
+		BC8A55431DB0A98000E9485A /* MSToolBorrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55421DB0A98000E9485A /* MSToolBorrowViewController.m */; };
+		BC8A55461DB0A99B00E9485A /* MSToolLoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55451DB0A99B00E9485A /* MSToolLoanViewController.m */; };
 		BCF898371DAB4E4D001A825B /* MSPhotoPadView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF898361DAB4E4D001A825B /* MSPhotoPadView.m */; };
 		BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983A1DAB67EC001A825B /* DNAlbumTableViewController.m */; };
 		BCF898641DAB67EC001A825B /* DNAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983C1DAB67EC001A825B /* DNAsset.m */; };
@@ -204,6 +214,26 @@
 		BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfosQueryViewController.m; sourceTree = "<group>"; };
 		BC6A07851DAF78C100ACDD76 /* MSBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseTableViewController.h; sourceTree = "<group>"; };
 		BC6A07861DAF78C100ACDD76 /* MSBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseTableViewController.m; sourceTree = "<group>"; };
+		BC8A55261DB07ADF00E9485A /* MSOutInInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInInfoCell.h; sourceTree = "<group>"; };
+		BC8A55271DB07ADF00E9485A /* MSOutInInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfoCell.m; sourceTree = "<group>"; };
+		BC8A55291DB07C2C00E9485A /* MSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSBaseTableViewCell.h; path = MSTreasuryManager/Classes/Home/View/MSBaseTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		BC8A552A1DB07C2C00E9485A /* MSBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSBaseTableViewCell.m; path = MSTreasuryManager/Classes/Home/View/MSBaseTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		BC8A552F1DB0983100E9485A /* MSOutInInfoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInInfoDetailViewController.h; sourceTree = "<group>"; };
+		BC8A55301DB0983100E9485A /* MSOutInInfoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfoDetailViewController.m; sourceTree = "<group>"; };
+		BC8A55321DB09B0B00E9485A /* MSOutInMultiLineSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInMultiLineSection.h; sourceTree = "<group>"; };
+		BC8A55331DB09B0B00E9485A /* MSOutInMultiLineSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInMultiLineSection.m; sourceTree = "<group>"; };
+		BC8A55351DB09D0800E9485A /* MSOutInOneLineSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInOneLineSection.h; sourceTree = "<group>"; };
+		BC8A55361DB09D0800E9485A /* MSOutInOneLineSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInOneLineSection.m; sourceTree = "<group>"; };
+		BC8A55381DB0A15600E9485A /* MSToolManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSToolManageViewController.h; path = MSTreasuryManager/Classes/Home/View/MSToolManageViewController.h; sourceTree = SOURCE_ROOT; };
+		BC8A55391DB0A15600E9485A /* MSToolManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolManageViewController.m; path = MSTreasuryManager/Classes/Home/View/MSToolManageViewController.m; sourceTree = SOURCE_ROOT; };
+		BC8A553B1DB0A2EF00E9485A /* MSToolInfoFillInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSToolInfoFillInViewController.h; path = MSTreasuryManager/Classes/Home/View/MSToolInfoFillInViewController.h; sourceTree = SOURCE_ROOT; };
+		BC8A553C1DB0A2EF00E9485A /* MSToolInfoFillInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolInfoFillInViewController.m; path = MSTreasuryManager/Classes/Home/View/MSToolInfoFillInViewController.m; sourceTree = SOURCE_ROOT; };
+		BC8A553E1DB0A38600E9485A /* MSToolInfoFillInSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSToolInfoFillInSection.h; path = MSTreasuryManager/Classes/Home/View/MSToolInfoFillInSection.h; sourceTree = SOURCE_ROOT; };
+		BC8A553F1DB0A38600E9485A /* MSToolInfoFillInSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolInfoFillInSection.m; path = MSTreasuryManager/Classes/Home/View/MSToolInfoFillInSection.m; sourceTree = SOURCE_ROOT; };
+		BC8A55411DB0A98000E9485A /* MSToolBorrowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSToolBorrowViewController.h; path = MSTreasuryManager/Classes/Home/View/MSToolBorrowViewController.h; sourceTree = SOURCE_ROOT; };
+		BC8A55421DB0A98000E9485A /* MSToolBorrowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolBorrowViewController.m; path = MSTreasuryManager/Classes/Home/View/MSToolBorrowViewController.m; sourceTree = SOURCE_ROOT; };
+		BC8A55441DB0A99B00E9485A /* MSToolLoanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSToolLoanViewController.h; path = MSTreasuryManager/Classes/Home/View/MSToolLoanViewController.h; sourceTree = SOURCE_ROOT; };
+		BC8A55451DB0A99B00E9485A /* MSToolLoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolLoanViewController.m; path = MSTreasuryManager/Classes/Home/View/MSToolLoanViewController.m; sourceTree = SOURCE_ROOT; };
 		BCF898351DAB4E4D001A825B /* MSPhotoPadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPhotoPadView.h; sourceTree = "<group>"; };
 		BCF898361DAB4E4D001A825B /* MSPhotoPadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPhotoPadView.m; sourceTree = "<group>"; };
 		BCF898391DAB67EC001A825B /* DNAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAlbumTableViewController.h; sourceTree = "<group>"; };
@@ -371,6 +401,8 @@
 		BC00DCB41DA89AAA0063F7FE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC8A553E1DB0A38600E9485A /* MSToolInfoFillInSection.h */,
+				BC8A553F1DB0A38600E9485A /* MSToolInfoFillInSection.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -378,6 +410,14 @@
 		BC00DCB51DA89AAA0063F7FE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BC8A55381DB0A15600E9485A /* MSToolManageViewController.h */,
+				BC8A55391DB0A15600E9485A /* MSToolManageViewController.m */,
+				BC8A553B1DB0A2EF00E9485A /* MSToolInfoFillInViewController.h */,
+				BC8A553C1DB0A2EF00E9485A /* MSToolInfoFillInViewController.m */,
+				BC8A55411DB0A98000E9485A /* MSToolBorrowViewController.h */,
+				BC8A55421DB0A98000E9485A /* MSToolBorrowViewController.m */,
+				BC8A55441DB0A99B00E9485A /* MSToolLoanViewController.h */,
+				BC8A55451DB0A99B00E9485A /* MSToolLoanViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -498,6 +538,8 @@
 				18B57B401DAE73CC000F24A5 /* MSBaseButton.m */,
 				18B57B421DAE7D19000F24A5 /* MSBaseDatePickerView.h */,
 				18B57B431DAE7D19000F24A5 /* MSBaseDatePickerView.m */,
+				BC8A55291DB07C2C00E9485A /* MSBaseTableViewCell.h */,
+				BC8A552A1DB07C2C00E9485A /* MSBaseTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -550,10 +592,16 @@
 			children = (
 				BC00DCB61DA89FB20063F7FE /* MSHomeCollectionCell.h */,
 				BC00DCB71DA89FB20063F7FE /* MSHomeCollectionCell.m */,
-				BC00DCC51DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.h */,
-				BC00DCC61DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m */,
 				BC00DCC81DA8E9A50063F7FE /* MSMaterialFillInNomalSection.h */,
 				BC00DCC91DA8E9A50063F7FE /* MSMaterialFillInNomalSection.m */,
+				BC00DCC51DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.h */,
+				BC00DCC61DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m */,
+				BC8A55261DB07ADF00E9485A /* MSOutInInfoCell.h */,
+				BC8A55271DB07ADF00E9485A /* MSOutInInfoCell.m */,
+				BC8A55321DB09B0B00E9485A /* MSOutInMultiLineSection.h */,
+				BC8A55331DB09B0B00E9485A /* MSOutInMultiLineSection.m */,
+				BC8A55351DB09D0800E9485A /* MSOutInOneLineSection.h */,
+				BC8A55361DB09D0800E9485A /* MSOutInOneLineSection.m */,
 				BCF898351DAB4E4D001A825B /* MSPhotoPadView.h */,
 				BCF898361DAB4E4D001A825B /* MSPhotoPadView.m */,
 			);
@@ -577,6 +625,8 @@
 				BC6A07801DAF618300ACDD76 /* MSSearchResultViewController.m */,
 				BC6A07821DAF77F900ACDD76 /* MSOutInInfosQueryViewController.h */,
 				BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */,
+				BC8A552F1DB0983100E9485A /* MSOutInInfoDetailViewController.h */,
+				BC8A55301DB0983100E9485A /* MSOutInInfoDetailViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1111,8 +1161,10 @@
 				BC25B9071DA1ED8B008EDFB2 /* AppDelegate.m in Sources */,
 				BC00DCC41DA8D5770063F7FE /* YZInputView.m in Sources */,
 				BCF898681DAB67EC001A825B /* DNPhotoBrowser.m in Sources */,
+				BC8A55281DB07ADF00E9485A /* MSOutInInfoCell.m in Sources */,
 				18C996191DABDB76002BAB0A /* MSSearchTableViewController.m in Sources */,
 				BCF8987A1DAB6E88001A825B /* UIImage+Custom.m in Sources */,
+				BC8A55371DB09D0800E9485A /* MSOutInOneLineSection.m in Sources */,
 				BCF8988D1DAB889D001A825B /* PBViewController.m in Sources */,
 				BCF898641DAB67EC001A825B /* DNAsset.m in Sources */,
 				BCF8988B1DAB889D001A825B /* PBImageScrollView.m in Sources */,
@@ -1126,16 +1178,21 @@
 				BC25B9A91DA1F1E2008EDFB2 /* NSString+Util.m in Sources */,
 				BC25B9A81DA1F1E2008EDFB2 /* NSString+Code.m in Sources */,
 				BC25B9DD1DA1F469008EDFB2 /* MSBaseViewController.m in Sources */,
+				BC8A55401DB0A38600E9485A /* MSToolInfoFillInSection.m in Sources */,
 				BCF898771DAB67EC001A825B /* JKPromptView.m in Sources */,
 				18B57B3E1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m in Sources */,
 				BC25B9D41DA1F3E4008EDFB2 /* MSNetworking.m in Sources */,
+				BC8A55341DB09B0B00E9485A /* MSOutInMultiLineSection.m in Sources */,
+				BC8A553D1DB0A2EF00E9485A /* MSToolInfoFillInViewController.m in Sources */,
 				BCF8986A1DAB67EC001A825B /* NSURL+DNIMagePickerUrlEqual.m in Sources */,
 				BCF898661DAB67EC001A825B /* DNImagePickerController.m in Sources */,
 				BC25B9AC1DA1F1E2008EDFB2 /* UIView+RoundedCorner.m in Sources */,
 				BCF898731DAB67EC001A825B /* DNFullImageButton.m in Sources */,
 				BCF8986C1DAB67EC001A825B /* UIView+DNImagePicker.m in Sources */,
+				BC8A55461DB0A99B00E9485A /* MSToolLoanViewController.m in Sources */,
 				BC6A07811DAF618300ACDD76 /* MSSearchResultViewController.m in Sources */,
 				BC25B9CF1DA1F3BB008EDFB2 /* ZCApiUploadAction.m in Sources */,
+				BC8A55431DB0A98000E9485A /* MSToolBorrowViewController.m in Sources */,
 				BC25B9AE1DA1F1E2008EDFB2 /* UIView+MSUtil.m in Sources */,
 				BCF8986B1DAB67EC001A825B /* UIColor+Hex.m in Sources */,
 				BCF898651DAB67EC001A825B /* DNImageFlowViewController.m in Sources */,
@@ -1150,6 +1207,7 @@
 				BC25B9E01DA1F4B3008EDFB2 /* MSBaseNavigationController.m in Sources */,
 				BC00DCBF1DA8CC0F0063F7FE /* MSMaterialFillInViewController.m in Sources */,
 				BC25B9CD1DA1F3BB008EDFB2 /* ZCApiDownloadAction.m in Sources */,
+				BC8A552B1DB07C2C00E9485A /* MSBaseTableViewCell.m in Sources */,
 				BC25B9AB1DA1F1E2008EDFB2 /* UIImage+RoundedCorner.m in Sources */,
 				BCF898711DAB67EC001A825B /* DNBadgeLabel.m in Sources */,
 				BC25B9CC1DA1F3BB008EDFB2 /* ZCApiAction.m in Sources */,
@@ -1160,6 +1218,8 @@
 				BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */,
 				BC00DCC71DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m in Sources */,
 				BC6A07871DAF78C100ACDD76 /* MSBaseTableViewController.m in Sources */,
+				BC8A553A1DB0A15600E9485A /* MSToolManageViewController.m in Sources */,
+				BC8A55311DB0983100E9485A /* MSOutInInfoDetailViewController.m in Sources */,
 				BCF898371DAB4E4D001A825B /* MSPhotoPadView.m in Sources */,
 				18B57B411DAE73CC000F24A5 /* MSBaseButton.m in Sources */,
 				BC25B9DC1DA1F469008EDFB2 /* MSBaseTabBarController.m in Sources */,
