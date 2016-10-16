@@ -10,6 +10,7 @@
 #import "MSBaseNavigationController.h"
 
 #import "MSHomeViewController.h"
+#import "MSLiveWorkViewController.h"
 #import "MSToolManageViewController.h"
 
 //#pragma mark -HideTabBarMethod
@@ -44,8 +45,8 @@
     if (self = [super init]) {
         MSBaseTabBarController *tabBarVC = [[MSBaseTabBarController alloc]initWithViewControllers:self.viewControllers tabBarItemsAttributes:self.tabBarItemsAttributesForController];
         //设置tabBarItem 按钮样式
-//        [self customizeTabBarAppearance:tabBarVC];
-        
+        [self customizeTabBarAppearance:tabBarVC];
+
         self.tabBarController = tabBarVC;
     }
     return self;
@@ -69,7 +70,7 @@
     // set the text color for selected state
     // 选中状态下的文字属性
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
-    selectedAttrs[NSForegroundColorAttributeName] = [UIColor blackColor];
+    selectedAttrs[NSForegroundColorAttributeName] = kTitleColor;
     
     // set the text Attributes
     // 设置文字属性
@@ -89,9 +90,9 @@
     
     // set the bar shadow image
     // This shadow image attribute is ignored if the tab bar does not also have a custom background image.So at least set somthing.
-    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
-    [[UITabBar appearance] setBackgroundColor:[UIColor whiteColor]];
-    [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"tapbar_top_line"]];
+//    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
+//    [[UITabBar appearance] setBackgroundColor:[UIColor whiteColor]];
+//    [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"tapbar_top_line"]];
     
     // set the bar background image
     // 设置背景图片
@@ -109,7 +110,7 @@
     MSBaseNavigationController *navi1 = [[MSBaseNavigationController alloc]initWithRootViewController:vc1];
     vc1.navigationItem.title = @"首页";
     
-    MSHomeViewController *vc2 = [[MSHomeViewController alloc]init];
+    MSLiveWorkViewController *vc2 = [[MSLiveWorkViewController alloc]init];
     MSBaseNavigationController *navi2 = [[MSBaseNavigationController alloc]initWithRootViewController:vc2];
     vc2.navigationItem.title = @"现场工作";
     
@@ -131,23 +132,23 @@
 - (NSArray *)tabBarItemsAttributesForController {
     NSDictionary *firstTabBarItemsAttributes = @{
                                                  CYLTabBarItemTitle : @"首页",
-                                                 CYLTabBarItemImage : @"home_normal",
-                                                 CYLTabBarItemSelectedImage : @"home_highlight",
+                                                 CYLTabBarItemImage : @"material",
+                                                 CYLTabBarItemSelectedImage : @"material_s",
                                                  };
     NSDictionary *secondTabBarItemsAttributes = @{
                                                   CYLTabBarItemTitle : @"现场工作",
-                                                  CYLTabBarItemImage : @"mycity_normal",
-                                                  CYLTabBarItemSelectedImage : @"mycity_highlight",
+                                                  CYLTabBarItemImage : @"livework",
+                                                  CYLTabBarItemSelectedImage : @"livework_s",
                                                   };
     NSDictionary *thirdTabBarItemsAttributes = @{
                                                  CYLTabBarItemTitle : @"工器具",
-                                                 CYLTabBarItemImage : @"message_normal",
-                                                 CYLTabBarItemSelectedImage : @"message_highlight",
+                                                 CYLTabBarItemImage : @"tool",
+                                                 CYLTabBarItemSelectedImage : @"tool_s",
                                                  };
     NSDictionary *fourthTabBarItemsAttributes = @{
                                                   CYLTabBarItemTitle : @"我的",
-                                                  CYLTabBarItemImage : @"account_normal",
-                                                  CYLTabBarItemSelectedImage : @"account_highlight"
+                                                  CYLTabBarItemImage : @"my",
+                                                  CYLTabBarItemSelectedImage : @"my_s"
                                                   };
     NSArray *tabBarItemsAttributes = @[
                                        firstTabBarItemsAttributes,

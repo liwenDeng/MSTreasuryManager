@@ -18,9 +18,13 @@ static NSString * const kCellId = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:(UITableViewStylePlain)];
+    
+    _tableView = [[UITableView alloc]init];
     [self.view addSubview:_tableView];
+    
+    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
     
     _tableView.dataSource = self;
     _tableView.delegate = self;
@@ -31,6 +35,7 @@ static NSString * const kCellId = @"cell";
     if ([self respondsToSelector:@selector(loadMore)]) {
         self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
     }
+    // Do any additional setup after loading the view
 }
 
 - (void)didReceiveMemoryWarning {

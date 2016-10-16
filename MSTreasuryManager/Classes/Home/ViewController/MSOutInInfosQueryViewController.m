@@ -159,9 +159,9 @@ static NSString * const kResCellIdentifier = @"OutInInfosResult";
 }
 
 #pragma mark - UISearchControllerDelegate
-//- (void)presentSearchController:(UISearchController *)searchController {
-//    
-//}
+- (void)presentSearchController:(UISearchController *)searchController {
+    
+}
 
 - (void)willPresentSearchController:(UISearchController *)searchController {
     // do something before the search controller is presented

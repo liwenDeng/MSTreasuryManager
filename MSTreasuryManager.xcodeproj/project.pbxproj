@@ -7,10 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18580C971DB2259300631F00 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C7F1DB2259300631F00 /* QRCameraSwitchButton.m */; };
+		18580C981DB2259300631F00 /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C811DB2259300631F00 /* QRCodeReader.m */; };
+		18580C991DB2259300631F00 /* QRCodeReaderAanimationLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C851DB2259300631F00 /* QRCodeReaderAanimationLineView.m */; };
+		18580C9A1DB2259300631F00 /* QRCodeReaderMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C871DB2259300631F00 /* QRCodeReaderMaskView.m */; };
+		18580C9B1DB2259300631F00 /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C891DB2259300631F00 /* QRCodeReaderView.m */; };
+		18580C9C1DB2259300631F00 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C8B1DB2259300631F00 /* QRCodeReaderViewController.m */; };
+		18580C9D1DB2259300631F00 /* QRCodeBottomLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C8D1DB2259300631F00 /* QRCodeBottomLeft@2x.png */; };
+		18580C9E1DB2259300631F00 /* QRCodeBottomLeft@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C8E1DB2259300631F00 /* QRCodeBottomLeft@3x.png */; };
+		18580C9F1DB2259300631F00 /* QRCodeBottomRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C8F1DB2259300631F00 /* QRCodeBottomRight@2x.png */; };
+		18580CA01DB2259300631F00 /* QRCodeBottomRight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C901DB2259300631F00 /* QRCodeBottomRight@3x.png */; };
+		18580CA11DB2259300631F00 /* QRCodeLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C911DB2259300631F00 /* QRCodeLine@2x.png */; };
+		18580CA21DB2259300631F00 /* QRCodeLine@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C921DB2259300631F00 /* QRCodeLine@3x.png */; };
+		18580CA31DB2259300631F00 /* QRCodeTopLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C931DB2259300631F00 /* QRCodeTopLeft@2x.png */; };
+		18580CA41DB2259300631F00 /* QRCodeTopLeft@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C941DB2259300631F00 /* QRCodeTopLeft@3x.png */; };
+		18580CA51DB2259300631F00 /* QRCodeTopRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C951DB2259300631F00 /* QRCodeTopRight@2x.png */; };
+		18580CA61DB2259300631F00 /* QRCodeTopRight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C961DB2259300631F00 /* QRCodeTopRight@3x.png */; };
+		18580CA91DB225F700631F00 /* MSQRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580CA81DB225F700631F00 /* MSQRCodeReaderViewController.m */; };
+		18580CAD1DB267AB00631F00 /* MSBaseSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580CAC1DB267AB00631F00 /* MSBaseSearchTableViewController.m */; };
+		18580CB01DB2682000631F00 /* MSBaseSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580CAF1DB2682000631F00 /* MSBaseSearchResultViewController.m */; };
 		18B57B3B1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B3A1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m */; };
 		18B57B3E1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B3D1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m */; };
 		18B57B411DAE73CC000F24A5 /* MSBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B401DAE73CC000F24A5 /* MSBaseButton.m */; };
 		18B57B441DAE7D19000F24A5 /* MSBaseDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B431DAE7D19000F24A5 /* MSBaseDatePickerView.m */; };
+		18BF4BF81DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF4BF71DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m */; };
+		18BF4BFB1DB1148C00D6B2FE /* MSLiveWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF4BFA1DB1148C00D6B2FE /* MSLiveWorkViewController.m */; };
 		18C996191DABDB76002BAB0A /* MSSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C996181DABDB76002BAB0A /* MSSearchTableViewController.m */; };
 		37B909AF91BD9E1EEA2AC706 /* libPods-MSTreasuryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50451818B7BCADBBF7EDF5D /* libPods-MSTreasuryManager.a */; };
 		3A7C5FDB01369BBDCA4DC293 /* libPods-MSTreasuryManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */; };
@@ -117,6 +138,36 @@
 
 /* Begin PBXFileReference section */
 		03C01CE9C2B33EF403CE9DCC /* Pods-MSTreasuryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.debug.xcconfig"; sourceTree = "<group>"; };
+		18580C7E1DB2259300631F00 /* QRCameraSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCameraSwitchButton.h; sourceTree = "<group>"; };
+		18580C7F1DB2259300631F00 /* QRCameraSwitchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCameraSwitchButton.m; sourceTree = "<group>"; };
+		18580C801DB2259300631F00 /* QRCodeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReader.h; sourceTree = "<group>"; };
+		18580C811DB2259300631F00 /* QRCodeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReader.m; sourceTree = "<group>"; };
+		18580C821DB2259300631F00 /* QRCodeReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderDelegate.h; sourceTree = "<group>"; };
+		18580C841DB2259300631F00 /* QRCodeReaderAanimationLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderAanimationLineView.h; sourceTree = "<group>"; };
+		18580C851DB2259300631F00 /* QRCodeReaderAanimationLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderAanimationLineView.m; sourceTree = "<group>"; };
+		18580C861DB2259300631F00 /* QRCodeReaderMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderMaskView.h; sourceTree = "<group>"; };
+		18580C871DB2259300631F00 /* QRCodeReaderMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderMaskView.m; sourceTree = "<group>"; };
+		18580C881DB2259300631F00 /* QRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderView.h; sourceTree = "<group>"; };
+		18580C891DB2259300631F00 /* QRCodeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderView.m; sourceTree = "<group>"; };
+		18580C8A1DB2259300631F00 /* QRCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderViewController.h; sourceTree = "<group>"; };
+		18580C8B1DB2259300631F00 /* QRCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderViewController.m; sourceTree = "<group>"; };
+		18580C8D1DB2259300631F00 /* QRCodeBottomLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeBottomLeft@2x.png"; sourceTree = "<group>"; };
+		18580C8E1DB2259300631F00 /* QRCodeBottomLeft@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeBottomLeft@3x.png"; sourceTree = "<group>"; };
+		18580C8F1DB2259300631F00 /* QRCodeBottomRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeBottomRight@2x.png"; sourceTree = "<group>"; };
+		18580C901DB2259300631F00 /* QRCodeBottomRight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeBottomRight@3x.png"; sourceTree = "<group>"; };
+		18580C911DB2259300631F00 /* QRCodeLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeLine@2x.png"; sourceTree = "<group>"; };
+		18580C921DB2259300631F00 /* QRCodeLine@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeLine@3x.png"; sourceTree = "<group>"; };
+		18580C931DB2259300631F00 /* QRCodeTopLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopLeft@2x.png"; sourceTree = "<group>"; };
+		18580C941DB2259300631F00 /* QRCodeTopLeft@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopLeft@3x.png"; sourceTree = "<group>"; };
+		18580C951DB2259300631F00 /* QRCodeTopRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopRight@2x.png"; sourceTree = "<group>"; };
+		18580C961DB2259300631F00 /* QRCodeTopRight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopRight@3x.png"; sourceTree = "<group>"; };
+		18580CA71DB225F700631F00 /* MSQRCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSQRCodeReaderViewController.h; sourceTree = "<group>"; };
+		18580CA81DB225F700631F00 /* MSQRCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSQRCodeReaderViewController.m; sourceTree = "<group>"; };
+		18580CAA1DB25D9A00631F00 /* MSColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSColor.h; sourceTree = "<group>"; };
+		18580CAB1DB267AB00631F00 /* MSBaseSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseSearchTableViewController.h; sourceTree = "<group>"; };
+		18580CAC1DB267AB00631F00 /* MSBaseSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseSearchTableViewController.m; sourceTree = "<group>"; };
+		18580CAE1DB2682000631F00 /* MSBaseSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseSearchResultViewController.h; sourceTree = "<group>"; };
+		18580CAF1DB2682000631F00 /* MSBaseSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseSearchResultViewController.m; sourceTree = "<group>"; };
 		18B57B391DAE6926000F24A5 /* MSMaterialInfoFetchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialInfoFetchViewController.h; sourceTree = "<group>"; };
 		18B57B3A1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialInfoFetchViewController.m; sourceTree = "<group>"; };
 		18B57B3C1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialOutStoreViewController.h; sourceTree = "<group>"; };
@@ -125,6 +176,10 @@
 		18B57B401DAE73CC000F24A5 /* MSBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSBaseButton.m; path = MSTreasuryManager/Classes/Home/ViewController/MSBaseButton.m; sourceTree = SOURCE_ROOT; };
 		18B57B421DAE7D19000F24A5 /* MSBaseDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSBaseDatePickerView.h; path = MSTreasuryManager/Classes/Home/ViewController/MSBaseDatePickerView.h; sourceTree = SOURCE_ROOT; };
 		18B57B431DAE7D19000F24A5 /* MSBaseDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSBaseDatePickerView.m; path = MSTreasuryManager/Classes/Home/ViewController/MSBaseDatePickerView.m; sourceTree = SOURCE_ROOT; };
+		18BF4BF61DB1133300D6B2FE /* MSToolStateInfoQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSToolStateInfoQueryViewController.h; path = MSTreasuryManager/Classes/Home/ViewController/MSToolStateInfoQueryViewController.h; sourceTree = SOURCE_ROOT; };
+		18BF4BF71DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolStateInfoQueryViewController.m; path = MSTreasuryManager/Classes/Home/ViewController/MSToolStateInfoQueryViewController.m; sourceTree = SOURCE_ROOT; };
+		18BF4BF91DB1148C00D6B2FE /* MSLiveWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSLiveWorkViewController.h; path = MSTreasuryManager/Classes/Home/ViewController/MSLiveWorkViewController.h; sourceTree = SOURCE_ROOT; };
+		18BF4BFA1DB1148C00D6B2FE /* MSLiveWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSLiveWorkViewController.m; path = MSTreasuryManager/Classes/Home/ViewController/MSLiveWorkViewController.m; sourceTree = SOURCE_ROOT; };
 		18C996171DABDB76002BAB0A /* MSSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchTableViewController.h; sourceTree = "<group>"; };
 		18C996181DABDB76002BAB0A /* MSSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchTableViewController.m; sourceTree = "<group>"; };
 		3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSTreasuryManagerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,7 +266,7 @@
 		BC6A077F1DAF618300ACDD76 /* MSSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchResultViewController.h; sourceTree = "<group>"; };
 		BC6A07801DAF618300ACDD76 /* MSSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchResultViewController.m; sourceTree = "<group>"; };
 		BC6A07821DAF77F900ACDD76 /* MSOutInInfosQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInInfosQueryViewController.h; sourceTree = "<group>"; };
-		BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfosQueryViewController.m; sourceTree = "<group>"; };
+		BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 5; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfosQueryViewController.m; sourceTree = "<group>"; };
 		BC6A07851DAF78C100ACDD76 /* MSBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseTableViewController.h; sourceTree = "<group>"; };
 		BC6A07861DAF78C100ACDD76 /* MSBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseTableViewController.m; sourceTree = "<group>"; };
 		BC8A55261DB07ADF00E9485A /* MSOutInInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInInfoCell.h; sourceTree = "<group>"; };
@@ -327,6 +382,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18580C7D1DB2259300631F00 /* QRCodeReaderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18580C7E1DB2259300631F00 /* QRCameraSwitchButton.h */,
+				18580C7F1DB2259300631F00 /* QRCameraSwitchButton.m */,
+				18580C801DB2259300631F00 /* QRCodeReader.h */,
+				18580C811DB2259300631F00 /* QRCodeReader.m */,
+				18580C821DB2259300631F00 /* QRCodeReaderDelegate.h */,
+				18580C831DB2259300631F00 /* QRCodeReaderView */,
+				18580C8A1DB2259300631F00 /* QRCodeReaderViewController.h */,
+				18580C8B1DB2259300631F00 /* QRCodeReaderViewController.m */,
+				18580C8C1DB2259300631F00 /* Resources */,
+			);
+			path = QRCodeReaderViewController;
+			sourceTree = "<group>";
+		};
+		18580C831DB2259300631F00 /* QRCodeReaderView */ = {
+			isa = PBXGroup;
+			children = (
+				18580C841DB2259300631F00 /* QRCodeReaderAanimationLineView.h */,
+				18580C851DB2259300631F00 /* QRCodeReaderAanimationLineView.m */,
+				18580C861DB2259300631F00 /* QRCodeReaderMaskView.h */,
+				18580C871DB2259300631F00 /* QRCodeReaderMaskView.m */,
+				18580C881DB2259300631F00 /* QRCodeReaderView.h */,
+				18580C891DB2259300631F00 /* QRCodeReaderView.m */,
+			);
+			path = QRCodeReaderView;
+			sourceTree = "<group>";
+		};
+		18580C8C1DB2259300631F00 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18580C8D1DB2259300631F00 /* QRCodeBottomLeft@2x.png */,
+				18580C8E1DB2259300631F00 /* QRCodeBottomLeft@3x.png */,
+				18580C8F1DB2259300631F00 /* QRCodeBottomRight@2x.png */,
+				18580C901DB2259300631F00 /* QRCodeBottomRight@3x.png */,
+				18580C911DB2259300631F00 /* QRCodeLine@2x.png */,
+				18580C921DB2259300631F00 /* QRCodeLine@3x.png */,
+				18580C931DB2259300631F00 /* QRCodeTopLeft@2x.png */,
+				18580C941DB2259300631F00 /* QRCodeTopLeft@3x.png */,
+				18580C951DB2259300631F00 /* QRCodeTopRight@2x.png */,
+				18580C961DB2259300631F00 /* QRCodeTopRight@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		36406599D4298859C276174F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +478,8 @@
 		BC00DCB11DA89AAA0063F7FE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				18BF4BF91DB1148C00D6B2FE /* MSLiveWorkViewController.h */,
+				18BF4BFA1DB1148C00D6B2FE /* MSLiveWorkViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -414,6 +517,8 @@
 				BC8A55391DB0A15600E9485A /* MSToolManageViewController.m */,
 				BC8A553B1DB0A2EF00E9485A /* MSToolInfoFillInViewController.h */,
 				BC8A553C1DB0A2EF00E9485A /* MSToolInfoFillInViewController.m */,
+				18BF4BF61DB1133300D6B2FE /* MSToolStateInfoQueryViewController.h */,
+				18BF4BF71DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m */,
 				BC8A55411DB0A98000E9485A /* MSToolBorrowViewController.h */,
 				BC8A55421DB0A98000E9485A /* MSToolBorrowViewController.m */,
 				BC8A55441DB0A99B00E9485A /* MSToolLoanViewController.h */,
@@ -505,6 +610,7 @@
 		BC25B9351DA1F0B5008EDFB2 /* ThirdLibs */ = {
 			isa = PBXGroup;
 			children = (
+				18580C7D1DB2259300631F00 /* QRCodeReaderViewController */,
 				BCF8987B1DAB889D001A825B /* PhotoBrowser */,
 				BCF898381DAB67EC001A825B /* DNImagePicker */,
 				BC00DCC11DA8D5770063F7FE /* InputView */,
@@ -555,6 +661,12 @@
 				BC25B9DB1DA1F469008EDFB2 /* MSBaseViewController.m */,
 				BC6A07851DAF78C100ACDD76 /* MSBaseTableViewController.h */,
 				BC6A07861DAF78C100ACDD76 /* MSBaseTableViewController.m */,
+				18580CAB1DB267AB00631F00 /* MSBaseSearchTableViewController.h */,
+				18580CAC1DB267AB00631F00 /* MSBaseSearchTableViewController.m */,
+				18580CAE1DB2682000631F00 /* MSBaseSearchResultViewController.h */,
+				18580CAF1DB2682000631F00 /* MSBaseSearchResultViewController.m */,
+				18580CA71DB225F700631F00 /* MSQRCodeReaderViewController.h */,
+				18580CA81DB225F700631F00 /* MSQRCodeReaderViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -667,6 +779,7 @@
 			children = (
 				BC25B9D51DA1F41D008EDFB2 /* MSTabBarControllerConfig.h */,
 				BC25B9D61DA1F41D008EDFB2 /* MSTabBarControllerConfig.m */,
+				18580CAA1DB25D9A00631F00 /* MSColor.h */,
 				BC25B98D1DA1F12A008EDFB2 /* msconsts.h */,
 				BC25B98E1DA1F12A008EDFB2 /* MSPrefixHeader.pch */,
 			);
@@ -997,11 +1110,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCF898931DAB98C4001A825B /* add.png in Resources */,
+				18580CA11DB2259300631F00 /* QRCodeLine@2x.png in Resources */,
+				18580CA61DB2259300631F00 /* QRCodeTopRight@3x.png in Resources */,
+				18580CA31DB2259300631F00 /* QRCodeTopLeft@2x.png in Resources */,
+				18580CA51DB2259300631F00 /* QRCodeTopRight@2x.png in Resources */,
+				18580CA01DB2259300631F00 /* QRCodeBottomRight@3x.png in Resources */,
+				18580CA41DB2259300631F00 /* QRCodeTopLeft@3x.png in Resources */,
 				BCF898911DAB983C001A825B /* delete.png in Resources */,
 				BCF8986F1DAB67EC001A825B /* ImagesPicker.xcassets in Resources */,
+				18580CA21DB2259300631F00 /* QRCodeLine@3x.png in Resources */,
 				BC25B9121DA1ED8B008EDFB2 /* LaunchScreen.storyboard in Resources */,
+				18580C9F1DB2259300631F00 /* QRCodeBottomRight@2x.png in Resources */,
 				BCF8986E1DAB67EC001A825B /* imageResources.xcassets in Resources */,
+				18580C9D1DB2259300631F00 /* QRCodeBottomLeft@2x.png in Resources */,
 				BCF898951DAB9A80001A825B /* search.png in Resources */,
+				18580C9E1DB2259300631F00 /* QRCodeBottomLeft@3x.png in Resources */,
 				BCF898691DAB67EC001A825B /* DNImagePicker.strings in Resources */,
 				BC25B90F1DA1ED8B008EDFB2 /* Assets.xcassets in Resources */,
 				BCF898671DAB67EC001A825B /* DNImagePickerController.strings in Resources */,
@@ -1162,6 +1285,7 @@
 				BC00DCC41DA8D5770063F7FE /* YZInputView.m in Sources */,
 				BCF898681DAB67EC001A825B /* DNPhotoBrowser.m in Sources */,
 				BC8A55281DB07ADF00E9485A /* MSOutInInfoCell.m in Sources */,
+				18580C9A1DB2259300631F00 /* QRCodeReaderMaskView.m in Sources */,
 				18C996191DABDB76002BAB0A /* MSSearchTableViewController.m in Sources */,
 				BCF8987A1DAB6E88001A825B /* UIImage+Custom.m in Sources */,
 				BC8A55371DB09D0800E9485A /* MSOutInOneLineSection.m in Sources */,
@@ -1176,7 +1300,9 @@
 				BC25B9CB1DA1F3BB008EDFB2 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				BC25B9D01DA1F3BB008EDFB2 /* ZCChainProcessor.m in Sources */,
 				BC25B9A91DA1F1E2008EDFB2 /* NSString+Util.m in Sources */,
+				18580CAD1DB267AB00631F00 /* MSBaseSearchTableViewController.m in Sources */,
 				BC25B9A81DA1F1E2008EDFB2 /* NSString+Code.m in Sources */,
+				18580CB01DB2682000631F00 /* MSBaseSearchResultViewController.m in Sources */,
 				BC25B9DD1DA1F469008EDFB2 /* MSBaseViewController.m in Sources */,
 				BC8A55401DB0A38600E9485A /* MSToolInfoFillInSection.m in Sources */,
 				BCF898771DAB67EC001A825B /* JKPromptView.m in Sources */,
@@ -1188,10 +1314,12 @@
 				BCF898661DAB67EC001A825B /* DNImagePickerController.m in Sources */,
 				BC25B9AC1DA1F1E2008EDFB2 /* UIView+RoundedCorner.m in Sources */,
 				BCF898731DAB67EC001A825B /* DNFullImageButton.m in Sources */,
+				18580C991DB2259300631F00 /* QRCodeReaderAanimationLineView.m in Sources */,
 				BCF8986C1DAB67EC001A825B /* UIView+DNImagePicker.m in Sources */,
 				BC8A55461DB0A99B00E9485A /* MSToolLoanViewController.m in Sources */,
 				BC6A07811DAF618300ACDD76 /* MSSearchResultViewController.m in Sources */,
 				BC25B9CF1DA1F3BB008EDFB2 /* ZCApiUploadAction.m in Sources */,
+				18BF4BF81DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m in Sources */,
 				BC8A55431DB0A98000E9485A /* MSToolBorrowViewController.m in Sources */,
 				BC25B9AE1DA1F1E2008EDFB2 /* UIView+MSUtil.m in Sources */,
 				BCF8986B1DAB67EC001A825B /* UIColor+Hex.m in Sources */,
@@ -1207,23 +1335,29 @@
 				BC25B9E01DA1F4B3008EDFB2 /* MSBaseNavigationController.m in Sources */,
 				BC00DCBF1DA8CC0F0063F7FE /* MSMaterialFillInViewController.m in Sources */,
 				BC25B9CD1DA1F3BB008EDFB2 /* ZCApiDownloadAction.m in Sources */,
+				18580C9C1DB2259300631F00 /* QRCodeReaderViewController.m in Sources */,
 				BC8A552B1DB07C2C00E9485A /* MSBaseTableViewCell.m in Sources */,
 				BC25B9AB1DA1F1E2008EDFB2 /* UIImage+RoundedCorner.m in Sources */,
 				BCF898711DAB67EC001A825B /* DNBadgeLabel.m in Sources */,
 				BC25B9CC1DA1F3BB008EDFB2 /* ZCApiAction.m in Sources */,
 				BCF8986D1DAB67EC001A825B /* UIViewController+DNImagePicker.m in Sources */,
 				BC25B9C81DA1F3BB008EDFB2 /* CYLPlusButton.m in Sources */,
+				18580C9B1DB2259300631F00 /* QRCodeReaderView.m in Sources */,
 				BCF8988A1DAB889D001A825B /* PBImageScrollerViewController.m in Sources */,
+				18580CA91DB225F700631F00 /* MSQRCodeReaderViewController.m in Sources */,
 				BC25B9A71DA1F1E2008EDFB2 /* NSDate+MSExtension.m in Sources */,
 				BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */,
 				BC00DCC71DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m in Sources */,
 				BC6A07871DAF78C100ACDD76 /* MSBaseTableViewController.m in Sources */,
 				BC8A553A1DB0A15600E9485A /* MSToolManageViewController.m in Sources */,
 				BC8A55311DB0983100E9485A /* MSOutInInfoDetailViewController.m in Sources */,
+				18580C971DB2259300631F00 /* QRCameraSwitchButton.m in Sources */,
 				BCF898371DAB4E4D001A825B /* MSPhotoPadView.m in Sources */,
 				18B57B411DAE73CC000F24A5 /* MSBaseButton.m in Sources */,
 				BC25B9DC1DA1F469008EDFB2 /* MSBaseTabBarController.m in Sources */,
+				18BF4BFB1DB1148C00D6B2FE /* MSLiveWorkViewController.m in Sources */,
 				BC25B9CE1DA1F3BB008EDFB2 /* ZCApiRunner.m in Sources */,
+				18580C981DB2259300631F00 /* QRCodeReader.m in Sources */,
 				BCF898721DAB67EC001A825B /* DNBrowserCell.m in Sources */,
 				BC6A07841DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m in Sources */,
 				18B57B441DAE7D19000F24A5 /* MSBaseDatePickerView.m in Sources */,

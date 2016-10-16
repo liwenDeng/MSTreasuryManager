@@ -14,7 +14,7 @@
 #import "MSBaseDatePickerView.h"
 #import "MSBaseButton.h"
 
-@interface MSToolBorrowViewController ()
+@interface MSToolBorrowViewController () <MSBaseDatePickerViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
@@ -86,6 +86,10 @@
     [section3.actionBtn addTarget:self action:@selector(dateInputClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     [section4.actionBtn addTarget:self action:@selector(borrowUserInputClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     [section6.actionBtn addTarget:self action:@selector(reviewUserInputClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    //为工器具名称添加点击事件
+    UITapGestureRecognizer *tapName = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchNameBtnClicked:)];
+    [self.toolNameInput addGestureRecognizer:tapName];
     
     [section1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);

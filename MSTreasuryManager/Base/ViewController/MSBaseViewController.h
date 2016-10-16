@@ -16,6 +16,12 @@
 
 @end
 
+@protocol MSLoadQRScannButtonProtocol <NSObject>
+
+- (void)qrscannerBtnClick;
+
+@end
+
 
 @interface MSBaseViewController : UIViewController <MSHTTPRequestDelegate>
 

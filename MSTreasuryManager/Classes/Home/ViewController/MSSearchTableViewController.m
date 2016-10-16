@@ -24,11 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 
-    //    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, kSCREEN_WIDTH, kSCREENH_HEIGHT)];
-
-    
     [self createSearch];
     
     NSArray *arr1 = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12"];
@@ -39,9 +35,9 @@
     
 }
 
-- (void)dealloc {
-    [self.searchController.view removeFromSuperview];
-}
+//- (void)dealloc {
+//    [self.searchController.view removeFromSuperview];
+//}
 
 #pragma mark- TableView
 

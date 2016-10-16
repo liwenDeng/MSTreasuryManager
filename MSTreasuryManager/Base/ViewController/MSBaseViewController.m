@@ -17,6 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if ([self conformsToProtocol:@protocol(MSLoadQRScannButtonProtocol)]) {
+        if ([self respondsToSelector:@selector(qrscannerBtnClick)]) {
+            [self setupScanButton];
+        }
+    }
+}
+
+- (void)setupScanButton {
+    UIBarButtonItem *scan = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"scan"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:(UIBarButtonItemStylePlain) target:self action:@selector(qrscannerBtnClick)];
+    self.navigationItem.rightBarButtonItem = scan;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,5 +51,7 @@
     // 默认进去类型
     return   UIInterfaceOrientationPortrait;
 }
+
+
 
 @end

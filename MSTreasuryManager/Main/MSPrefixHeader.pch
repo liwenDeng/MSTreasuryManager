@@ -24,5 +24,6 @@
 #import <UIImageView+WebCache.h>
 #import "UIView+MSUtil.h"
 #import "UIColor+MSUtil.h"
+#import "MSColor.h"
 
 #endif /* MSPrefixHeader_pch */

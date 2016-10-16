@@ -11,8 +11,9 @@
 #import "MSPhotoPadView.h"
 #import "MSMaterialFillInNomalSection.h"
 #import "MSSearchTableViewController.h"
+#import "MSQRCodeReaderViewController.h"
 
-@interface MSMaterialInfoFetchViewController ()
+@interface MSMaterialInfoFetchViewController () <MSLoadQRScannButtonProtocol,QRCodeReaderDelegate,MSQRCodeReaderViewControllerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) YZInputView *nameInput;   //物资名称
@@ -223,6 +224,32 @@
 - (void)searchParamsBtnClicked:(UIButton*)sender {
     MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
     [self.navigationController pushViewController:s animated:YES];
+}
+
+- (void)qrscannerBtnClick {
+//    if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
+//        static QRCodeReaderViewController *reader = nil;
+//        static dispatch_once_t onceToken;
+//        
+//        dispatch_once(&onceToken, ^{
+//            reader = [QRCodeReaderViewController new];
+//        });
+    MSQRCodeReaderViewController *reader = [[MSQRCodeReaderViewController alloc]init];
+        reader.delegate = self;
+        
+        [reader setCompletionWithBlock:^(NSString *resultAsString) {
+            NSLog(@"Completion with result: %@", resultAsString);
+        }];
+        
+//        [self presentViewController:reader animated:YES completion:NULL];
+    [self.navigationController pushViewController:reader animated:YES];
+//    }
+//    else {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Reader not supported by the current device" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        
+//        [alert show];
+//    }
+
 }
 
 

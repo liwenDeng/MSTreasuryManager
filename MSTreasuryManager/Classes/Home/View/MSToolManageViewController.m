@@ -10,7 +10,9 @@
 #import "MSHomeCollectionCell.h"
 
 #import "MSToolInfoFillInViewController.h"
+#import "MSToolStateInfoQueryViewController.h"
 #import "MSToolBorrowViewController.h"
+#import "MSToolLoanViewController.h"
 
 #define kCellWidth ((kSCREEN_WIDTH - 30) / 2.0f)
 #define kCellHeight 100
@@ -79,7 +81,7 @@ static NSString * const kToolCellId = @"kToolCell";
             break;
         case MSToolCellIndexOfTypeStateQuery:
         {
-        
+            vc = [[MSToolStateInfoQueryViewController alloc]init];
         }
             break;
         case MSToolCellIndexOfTypeBorrow:
@@ -89,7 +91,7 @@ static NSString * const kToolCellId = @"kToolCell";
             break;
         case MSToolCellIndexOfTypeLoan:
         {
-        
+            vc = [[MSToolLoanViewController alloc]init];
         }
             break;
             
