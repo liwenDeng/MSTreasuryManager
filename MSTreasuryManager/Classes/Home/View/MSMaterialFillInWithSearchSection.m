@@ -60,7 +60,7 @@
     self.inputView = input1;
     
     UIButton *searchBtn = ({
-        UIButton *btn = [UIButton buttonWithType:(UIButtonTypeSystem)];
+        UIButton *btn = [UIButton buttonWithType:(UIButtonTypeCustom)];
         [self addSubview:btn];
         [btn setImage:[UIImage imageNamed:@"search"] forState:(UIControlStateNormal)];
         btn;

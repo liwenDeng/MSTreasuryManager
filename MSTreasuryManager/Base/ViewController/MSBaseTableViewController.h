@@ -9,8 +9,6 @@
 #import "MSBaseViewController.h"
 #import <MJRefresh.h>
 
-@interface MSBaseTableViewController : MSBaseViewController <UITableViewDelegate,UITableViewDataSource>
-
-@property (nonatomic, strong) UITableView *tableView;
+@interface MSBaseTableViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource>
 
 @end

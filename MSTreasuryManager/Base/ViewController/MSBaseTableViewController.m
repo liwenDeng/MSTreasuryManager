@@ -18,17 +18,7 @@ static NSString * const kCellId = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _tableView = [[UITableView alloc]init];
-    [self.view addSubview:_tableView];
-    
-    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
-    
-    _tableView.dataSource = self;
-    _tableView.delegate = self;
-    
+
     if ([self respondsToSelector:@selector(refresh)]) {
         self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
     }

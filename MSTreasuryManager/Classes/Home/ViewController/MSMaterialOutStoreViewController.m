@@ -13,7 +13,7 @@
 #import "MSBaseButton.h"
 #import "MSBaseDatePickerView.h"
 #import "NSDate+MSExtension.h"
-#import "MSSearchTableViewController.h"
+#import "MSCommonSearchViewController.h"
 
 @interface MSMaterialOutStoreViewController () <MSBaseDatePickerViewDelegate>
 
@@ -178,12 +178,12 @@
 
 #pragma mark - ClickAction
 - (void)searchNameBtnClicked:(UIButton *)sender {
-    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypeMaterialName)];
     [self.navigationController pushViewController:s animated:YES];
 }
 
 - (void)searchPlaceBtnClicked:(UIButton *)sender {
-    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypeMaterialParams)];
     [self.navigationController pushViewController:s animated:YES];
 }
 
@@ -192,12 +192,12 @@
 }
 
 - (void)handleUserInputClicked:(UIButton *)sender {
-    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypePerson)];
     [self.navigationController pushViewController:s animated:YES];
 }
 
 - (void)reviewUserInputClicked:(UIButton *)sender {
-    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypePerson)];
     [self.navigationController pushViewController:s animated:YES];
 }
 

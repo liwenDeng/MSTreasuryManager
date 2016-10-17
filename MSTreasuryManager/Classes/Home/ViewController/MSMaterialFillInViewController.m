@@ -15,9 +15,10 @@
 #import "DNAsset.h"
 #import "DNImagePickerController.h"
 #import "PBViewController.h"
-#import "MSSearchTableViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <AVFoundation/AVFoundation.h>
+#import "MSBaseButton.h"
+#import "MSCommonSearchViewController.h"
 
 @interface MSMaterialFillInViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,DNImagePickerControllerDelegate,MSPhotoPadViewDelegate,PBViewControllerDataSource, PBViewControllerDelegate>
 
@@ -136,7 +137,7 @@
         make.height.mas_equalTo(44);
     }];
     
-    UIButton *addBtn = [UIButton buttonWithType:(UIButtonTypeSystem)];
+    UIButton *addBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [addBtn setImage:[UIImage imageNamed:@"add"] forState:(UIControlStateNormal)];
     [addBtn addTarget:self action:@selector(addImages:) forControlEvents:(UIControlEventTouchUpInside)];
     [section4HeaderView addSubview:addBtn];
@@ -156,9 +157,23 @@
         make.height.mas_equalTo(kImageCellHeight + 20);
     }];
     
+    MSBaseButton *submitBtn = ({
+        MSBaseButton *btn = [[MSBaseButton alloc]initWithTitle:@"提  交"];
+        
+        btn;
+    });
+    [bgView addSubview:submitBtn];
+    
+    [submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(photoPadView.mas_bottom).offset(20);
+        make.left.mas_equalTo(20);
+        make.width.mas_equalTo(kSCREEN_WIDTH - 40);
+        make.height.mas_equalTo(40);
+    }];
+    
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(kSCREEN_WIDTH);
-        make.bottom.equalTo(photoPadView.mas_bottom).offset(20);
+        make.bottom.equalTo(submitBtn.mas_bottom).offset(20);
     }];
     
     photoPadView.delegate = self;
@@ -382,14 +397,14 @@
 #pragma mark - SearchBtnAction
 - (void)searchNameBtnClicked:(UIButton*)sender {
     NSLog(@"搜索物资名称");
-    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypeMaterialName)];
     [self.navigationController pushViewController:s animated:YES];
 //    [self presentViewController:s animated:YES completion:nil];
 }
 
 - (void)searchParamsBtnClicked:(UIButton*)sender {
     NSLog(@"搜索物资参数");
-    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypeMaterialParams)];
     [self.navigationController pushViewController:s animated:YES];
 }
 

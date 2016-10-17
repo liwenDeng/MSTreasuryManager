@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *scan = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"scan"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:(UIBarButtonItemStylePlain) target:self action:@selector(openPhotolib)];
+    UIBarButtonItem *scan = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"album"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:(UIBarButtonItemStylePlain) target:self action:@selector(openPhotolib)];
     self.navigationItem.rightBarButtonItem = scan;
 }
 

@@ -32,7 +32,6 @@
 		18B57B441DAE7D19000F24A5 /* MSBaseDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B431DAE7D19000F24A5 /* MSBaseDatePickerView.m */; };
 		18BF4BF81DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF4BF71DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m */; };
 		18BF4BFB1DB1148C00D6B2FE /* MSLiveWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF4BFA1DB1148C00D6B2FE /* MSLiveWorkViewController.m */; };
-		18C996191DABDB76002BAB0A /* MSSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C996181DABDB76002BAB0A /* MSSearchTableViewController.m */; };
 		37B909AF91BD9E1EEA2AC706 /* libPods-MSTreasuryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50451818B7BCADBBF7EDF5D /* libPods-MSTreasuryManager.a */; };
 		3A7C5FDB01369BBDCA4DC293 /* libPods-MSTreasuryManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */; };
 		43690FD02A5F3C579B2F199B /* libPods-MSTreasuryManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD14FB8AD8938064E1CA623 /* libPods-MSTreasuryManagerTests.a */; };
@@ -41,6 +40,8 @@
 		BC00DCC41DA8D5770063F7FE /* YZInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00DCC31DA8D5770063F7FE /* YZInputView.m */; };
 		BC00DCC71DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00DCC61DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m */; };
 		BC00DCCA1DA8E9A50063F7FE /* MSMaterialFillInNomalSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00DCC91DA8E9A50063F7FE /* MSMaterialFillInNomalSection.m */; };
+		BC0424331DB4824A00B5BBCD /* MSCommonSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0424321DB4824A00B5BBCD /* MSCommonSearchViewController.m */; };
+		BC0424361DB4C52400B5BBCD /* MSSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0424351DB4C52400B5BBCD /* MSSearchResultViewController.m */; };
 		BC25B9041DA1ED8B008EDFB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9031DA1ED8B008EDFB2 /* main.m */; };
 		BC25B9071DA1ED8B008EDFB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9061DA1ED8B008EDFB2 /* AppDelegate.m */; };
 		BC25B90A1DA1ED8B008EDFB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9091DA1ED8B008EDFB2 /* ViewController.m */; };
@@ -73,7 +74,6 @@
 		BC25B9DD1DA1F469008EDFB2 /* MSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9DB1DA1F469008EDFB2 /* MSBaseViewController.m */; };
 		BC25B9E01DA1F4B3008EDFB2 /* MSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9DF1DA1F4B3008EDFB2 /* MSBaseNavigationController.m */; };
 		BC25B9E31DA1F4E4008EDFB2 /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9E21DA1F4E4008EDFB2 /* MSHomeViewController.m */; };
-		BC6A07811DAF618300ACDD76 /* MSSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A07801DAF618300ACDD76 /* MSSearchResultViewController.m */; };
 		BC6A07841DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */; };
 		BC6A07871DAF78C100ACDD76 /* MSBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A07861DAF78C100ACDD76 /* MSBaseTableViewController.m */; };
 		BC8A55281DB07ADF00E9485A /* MSOutInInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55271DB07ADF00E9485A /* MSOutInInfoCell.m */; };
@@ -115,8 +115,6 @@
 		BCF8988D1DAB889D001A825B /* PBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF898851DAB889D001A825B /* PBViewController.m */; };
 		BCF8988E1DAB889D001A825B /* UIView+PBSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF898881DAB889D001A825B /* UIView+PBSnapshot.m */; };
 		BCF898911DAB983C001A825B /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF898901DAB983C001A825B /* delete.png */; };
-		BCF898931DAB98C4001A825B /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF898921DAB98C4001A825B /* add.png */; };
-		BCF898951DAB9A80001A825B /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF898941DAB9A80001A825B /* search.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,8 +178,6 @@
 		18BF4BF71DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolStateInfoQueryViewController.m; path = MSTreasuryManager/Classes/Home/ViewController/MSToolStateInfoQueryViewController.m; sourceTree = SOURCE_ROOT; };
 		18BF4BF91DB1148C00D6B2FE /* MSLiveWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSLiveWorkViewController.h; path = MSTreasuryManager/Classes/Home/ViewController/MSLiveWorkViewController.h; sourceTree = SOURCE_ROOT; };
 		18BF4BFA1DB1148C00D6B2FE /* MSLiveWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSLiveWorkViewController.m; path = MSTreasuryManager/Classes/Home/ViewController/MSLiveWorkViewController.m; sourceTree = SOURCE_ROOT; };
-		18C996171DABDB76002BAB0A /* MSSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchTableViewController.h; sourceTree = "<group>"; };
-		18C996181DABDB76002BAB0A /* MSSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchTableViewController.m; sourceTree = "<group>"; };
 		3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSTreasuryManagerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8E0C5D4687480595A21928 /* Pods-MSTreasuryManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManagerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManagerUITests/Pods-MSTreasuryManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75F47D9C8AB86418EDA43784 /* Pods-MSTreasuryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +191,10 @@
 		BC00DCC61DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialFillInWithSearchSection.m; sourceTree = "<group>"; };
 		BC00DCC81DA8E9A50063F7FE /* MSMaterialFillInNomalSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialFillInNomalSection.h; sourceTree = "<group>"; };
 		BC00DCC91DA8E9A50063F7FE /* MSMaterialFillInNomalSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialFillInNomalSection.m; sourceTree = "<group>"; };
+		BC0424311DB4824A00B5BBCD /* MSCommonSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCommonSearchViewController.h; sourceTree = "<group>"; };
+		BC0424321DB4824A00B5BBCD /* MSCommonSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCommonSearchViewController.m; sourceTree = "<group>"; };
+		BC0424341DB4C52400B5BBCD /* MSSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchResultViewController.h; sourceTree = "<group>"; };
+		BC0424351DB4C52400B5BBCD /* MSSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchResultViewController.m; sourceTree = "<group>"; };
 		BC25B8FF1DA1ED8B008EDFB2 /* MSTreasuryManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSTreasuryManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC25B9031DA1ED8B008EDFB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC25B9051DA1ED8B008EDFB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -263,8 +263,6 @@
 		BC25B9DF1DA1F4B3008EDFB2 /* MSBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseNavigationController.m; sourceTree = "<group>"; };
 		BC25B9E11DA1F4E4008EDFB2 /* MSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeViewController.h; sourceTree = "<group>"; };
 		BC25B9E21DA1F4E4008EDFB2 /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
-		BC6A077F1DAF618300ACDD76 /* MSSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchResultViewController.h; sourceTree = "<group>"; };
-		BC6A07801DAF618300ACDD76 /* MSSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchResultViewController.m; sourceTree = "<group>"; };
 		BC6A07821DAF77F900ACDD76 /* MSOutInInfosQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInInfosQueryViewController.h; sourceTree = "<group>"; };
 		BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 5; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfosQueryViewController.m; sourceTree = "<group>"; };
 		BC6A07851DAF78C100ACDD76 /* MSBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseTableViewController.h; sourceTree = "<group>"; };
@@ -345,8 +343,6 @@
 		BCF898871DAB889D001A825B /* UIView+PBSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PBSnapshot.h"; sourceTree = "<group>"; };
 		BCF898881DAB889D001A825B /* UIView+PBSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PBSnapshot.m"; sourceTree = "<group>"; };
 		BCF898901DAB983C001A825B /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
-		BCF898921DAB98C4001A825B /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
-		BCF898941DAB9A80001A825B /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		C4D0B10F7BE1F8C331A820F4 /* Pods-MSTreasuryManagerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManagerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManagerUITests/Pods-MSTreasuryManagerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5D3895E884ACF3F26C884EA /* Pods-MSTreasuryManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManagerTests/Pods-MSTreasuryManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFF8944BC6D2C468FDA8CA54 /* Pods-MSTreasuryManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManagerTests/Pods-MSTreasuryManagerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -536,6 +532,39 @@
 			path = InputView;
 			sourceTree = "<group>";
 		};
+		BC04242D1DB481ED00B5BBCD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BC04242E1DB481ED00B5BBCD /* Model */,
+				BC04242F1DB481ED00B5BBCD /* View */,
+				BC0424301DB481ED00B5BBCD /* ViewController */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BC04242E1DB481ED00B5BBCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC04242F1DB481ED00B5BBCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC0424301DB481ED00B5BBCD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BC0424311DB4824A00B5BBCD /* MSCommonSearchViewController.h */,
+				BC0424321DB4824A00B5BBCD /* MSCommonSearchViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		BC25B8F61DA1ED8B008EDFB2 = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +703,7 @@
 		BC25B95D1DA1F10D008EDFB2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BC04242D1DB481ED00B5BBCD /* Common */,
 				BC00DCAE1DA89AAA0063F7FE /* LiveWork */,
 				BC00DCB21DA89AAA0063F7FE /* Tool */,
 				BC25B95E1DA1F10D008EDFB2 /* Home */,
@@ -731,14 +761,12 @@
 				18B57B3A1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m */,
 				18B57B3C1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.h */,
 				18B57B3D1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m */,
-				18C996171DABDB76002BAB0A /* MSSearchTableViewController.h */,
-				18C996181DABDB76002BAB0A /* MSSearchTableViewController.m */,
-				BC6A077F1DAF618300ACDD76 /* MSSearchResultViewController.h */,
-				BC6A07801DAF618300ACDD76 /* MSSearchResultViewController.m */,
 				BC6A07821DAF77F900ACDD76 /* MSOutInInfosQueryViewController.h */,
 				BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */,
 				BC8A552F1DB0983100E9485A /* MSOutInInfoDetailViewController.h */,
 				BC8A55301DB0983100E9485A /* MSOutInInfoDetailViewController.m */,
+				BC0424341DB4C52400B5BBCD /* MSSearchResultViewController.h */,
+				BC0424351DB4C52400B5BBCD /* MSSearchResultViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -987,8 +1015,6 @@
 		BCF8988F1DAB983C001A825B /* sources */ = {
 			isa = PBXGroup;
 			children = (
-				BCF898941DAB9A80001A825B /* search.png */,
-				BCF898921DAB98C4001A825B /* add.png */,
 				BCF898901DAB983C001A825B /* delete.png */,
 			);
 			path = sources;
@@ -1069,6 +1095,7 @@
 				TargetAttributes = {
 					BC25B8FE1DA1ED8B008EDFB2 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 5PE9ABT84P;
 						ProvisioningStyle = Automatic;
 					};
 					BC25B9171DA1ED8C008EDFB2 = {
@@ -1109,7 +1136,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCF898931DAB98C4001A825B /* add.png in Resources */,
 				18580CA11DB2259300631F00 /* QRCodeLine@2x.png in Resources */,
 				18580CA61DB2259300631F00 /* QRCodeTopRight@3x.png in Resources */,
 				18580CA31DB2259300631F00 /* QRCodeTopLeft@2x.png in Resources */,
@@ -1123,7 +1149,6 @@
 				18580C9F1DB2259300631F00 /* QRCodeBottomRight@2x.png in Resources */,
 				BCF8986E1DAB67EC001A825B /* imageResources.xcassets in Resources */,
 				18580C9D1DB2259300631F00 /* QRCodeBottomLeft@2x.png in Resources */,
-				BCF898951DAB9A80001A825B /* search.png in Resources */,
 				18580C9E1DB2259300631F00 /* QRCodeBottomLeft@3x.png in Resources */,
 				BCF898691DAB67EC001A825B /* DNImagePicker.strings in Resources */,
 				BC25B90F1DA1ED8B008EDFB2 /* Assets.xcassets in Resources */,
@@ -1286,7 +1311,6 @@
 				BCF898681DAB67EC001A825B /* DNPhotoBrowser.m in Sources */,
 				BC8A55281DB07ADF00E9485A /* MSOutInInfoCell.m in Sources */,
 				18580C9A1DB2259300631F00 /* QRCodeReaderMaskView.m in Sources */,
-				18C996191DABDB76002BAB0A /* MSSearchTableViewController.m in Sources */,
 				BCF8987A1DAB6E88001A825B /* UIImage+Custom.m in Sources */,
 				BC8A55371DB09D0800E9485A /* MSOutInOneLineSection.m in Sources */,
 				BCF8988D1DAB889D001A825B /* PBViewController.m in Sources */,
@@ -1300,6 +1324,7 @@
 				BC25B9CB1DA1F3BB008EDFB2 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				BC25B9D01DA1F3BB008EDFB2 /* ZCChainProcessor.m in Sources */,
 				BC25B9A91DA1F1E2008EDFB2 /* NSString+Util.m in Sources */,
+				BC0424361DB4C52400B5BBCD /* MSSearchResultViewController.m in Sources */,
 				18580CAD1DB267AB00631F00 /* MSBaseSearchTableViewController.m in Sources */,
 				BC25B9A81DA1F1E2008EDFB2 /* NSString+Code.m in Sources */,
 				18580CB01DB2682000631F00 /* MSBaseSearchResultViewController.m in Sources */,
@@ -1317,7 +1342,6 @@
 				18580C991DB2259300631F00 /* QRCodeReaderAanimationLineView.m in Sources */,
 				BCF8986C1DAB67EC001A825B /* UIView+DNImagePicker.m in Sources */,
 				BC8A55461DB0A99B00E9485A /* MSToolLoanViewController.m in Sources */,
-				BC6A07811DAF618300ACDD76 /* MSSearchResultViewController.m in Sources */,
 				BC25B9CF1DA1F3BB008EDFB2 /* ZCApiUploadAction.m in Sources */,
 				18BF4BF81DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m in Sources */,
 				BC8A55431DB0A98000E9485A /* MSToolBorrowViewController.m in Sources */,
@@ -1353,6 +1377,7 @@
 				BC8A55311DB0983100E9485A /* MSOutInInfoDetailViewController.m in Sources */,
 				18580C971DB2259300631F00 /* QRCameraSwitchButton.m in Sources */,
 				BCF898371DAB4E4D001A825B /* MSPhotoPadView.m in Sources */,
+				BC0424331DB4824A00B5BBCD /* MSCommonSearchViewController.m in Sources */,
 				18B57B411DAE73CC000F24A5 /* MSBaseButton.m in Sources */,
 				BC25B9DC1DA1F469008EDFB2 /* MSBaseTabBarController.m in Sources */,
 				18BF4BFB1DB1148C00D6B2FE /* MSLiveWorkViewController.m in Sources */,
@@ -1519,6 +1544,7 @@
 			baseConfigurationReference = 03C01CE9C2B33EF403CE9DCC /* Pods-MSTreasuryManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5PE9ABT84P;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Main/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MSTreasuryManager/Info.plist;
@@ -1535,6 +1561,7 @@
 			baseConfigurationReference = 75F47D9C8AB86418EDA43784 /* Pods-MSTreasuryManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5PE9ABT84P;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Main/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MSTreasuryManager/Info.plist;

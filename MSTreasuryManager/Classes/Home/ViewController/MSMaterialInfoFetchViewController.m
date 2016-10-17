@@ -10,7 +10,7 @@
 #import "MSMaterialFillInWithSearchSection.h"
 #import "MSPhotoPadView.h"
 #import "MSMaterialFillInNomalSection.h"
-#import "MSSearchTableViewController.h"
+#import "MSCommonSearchViewController.h"
 #import "MSQRCodeReaderViewController.h"
 
 @interface MSMaterialInfoFetchViewController () <MSLoadQRScannButtonProtocol,QRCodeReaderDelegate,MSQRCodeReaderViewControllerDelegate>
@@ -217,12 +217,12 @@
 
 #pragma mark - searchAction
 - (void)searchNameBtnClicked:(UIButton*)sender{
-    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypeMaterialName)];
     [self.navigationController pushViewController:s animated:YES];
 }
 
 - (void)searchParamsBtnClicked:(UIButton*)sender {
-    MSSearchTableViewController *s = [[MSSearchTableViewController alloc]init];
+    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypeMaterialParams)];
     [self.navigationController pushViewController:s animated:YES];
 }
 

@@ -83,7 +83,8 @@
         self.startScanningAtLoad  = startScanningAtLoad;
         
         if (cancelTitle == nil) {
-            cancelTitle = NSLocalizedString(@"Cancel", @"Cancel");
+//            cancelTitle = NSLocalizedString(@"Cancel", @"Cancel");
+            cancelTitle = @"取消";
         }
         
         [self setupUIComponentsWithCancelButtonTitle:cancelTitle];

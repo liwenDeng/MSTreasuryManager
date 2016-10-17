@@ -13,8 +13,9 @@
 - (instancetype)initWithTitle:(NSString *)title {
     if (self = [super init]) {
         [self setTitle:title forState:(UIControlStateNormal)];
+        [self.titleLabel setFont:[UIFont boldSystemFontOfSize:18.0f]];
         [self setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
-        [self setBackgroundColor:[UIColor blueColor]];
+        [self setBackgroundColor:kTitleColor];
         self.layer.cornerRadius = 8;
     }
     return self;
