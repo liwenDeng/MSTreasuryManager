@@ -13,6 +13,7 @@
 #import "MSToolStateInfoQueryViewController.h"
 #import "MSToolBorrowViewController.h"
 #import "MSToolLoanViewController.h"
+#import "MSToolOutInInfosQueryViewController.h"
 
 #define kCellWidth ((kSCREEN_WIDTH - 30) / 2.0f)
 #define kCellHeight 100
@@ -45,7 +46,7 @@ static NSString * const kToolCellId = @"kToolCell";
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
-    self.titles = @[@"工器具信息填写",@"工器具状态查询",@"工器具借用",@"工器具归还"];
+    self.titles = @[@"工器具信息填写",@"工器具状态查询",@"工器具借用",@"工器具归还",@"工器具借用记录",@"工器具归还记录"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,6 +95,15 @@ static NSString * const kToolCellId = @"kToolCell";
             vc = [[MSToolLoanViewController alloc]init];
         }
             break;
+        case MSToolCellIndexOfTypeBorrowList:
+        {
+            vc = [[MSToolOutInInfosQueryViewController alloc]initWithType:type];
+        }
+            break;
+        case MSToolCellIndexOfTypeLoanList:
+        {
+            vc = [[MSToolOutInInfosQueryViewController alloc]initWithType:type];
+        }
             
         default:
             break;

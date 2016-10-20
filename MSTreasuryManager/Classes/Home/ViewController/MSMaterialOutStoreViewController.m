@@ -105,8 +105,10 @@
     UITapGestureRecognizer *tapParams = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchPlaceBtnClicked:)];
     [self.placeInput addGestureRecognizer:tapParams];
     
-    MSMaterialFillInNomalSection *section3 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"出库数量" placeholder:@"填写数量"];
-    MSMaterialFillInNomalSection *section4 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"出库日期" placeholder:@"2016-09-09" canTouch:YES];
+    NSString *title3 = self.type == MSCellIndexOfTypeMaterialOut ? @"出库数量" : @"入库数量";
+    NSString *title4 = self.type == MSCellIndexOfTypeMaterialOut ? @"出库日期" : @"入库日期";
+    MSMaterialFillInNomalSection *section3 = [[MSMaterialFillInNomalSection alloc]initWithTitle:title3 placeholder:@"填写数量"];
+    MSMaterialFillInNomalSection *section4 = [[MSMaterialFillInNomalSection alloc]initWithTitle:title4 placeholder:@"2016-01-01" canTouch:YES];
     MSMaterialFillInNomalSection *section5 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"经办人" placeholder:@"选择人员" canTouch:YES];
     MSMaterialFillInNomalSection *section6 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"审核人" placeholder:@"选择人员" canTouch:YES];
     

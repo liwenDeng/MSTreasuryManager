@@ -12,7 +12,9 @@ typedef enum : NSUInteger {
     MSToolCellIndexOfTypeFillIn = 0, //工器具信息填写
     MSToolCellIndexOfTypeStateQuery,
     MSToolCellIndexOfTypeBorrow,
-    MSToolCellIndexOfTypeLoan
+    MSToolCellIndexOfTypeLoan,
+    MSToolCellIndexOfTypeBorrowList, //借用记录列表
+    MSToolCellIndexOfTypeLoanList    //归还记录列表
     
 } MSToolCellIndexOfType;
 

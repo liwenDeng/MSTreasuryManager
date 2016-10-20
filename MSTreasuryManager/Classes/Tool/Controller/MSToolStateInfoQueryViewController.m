@@ -7,6 +7,7 @@
 //
 
 #import "MSToolStateInfoQueryViewController.h"
+#import "MSToolSectionHeaderView.h"
 
 static NSString *const kToolInfoCell = @"ToolInfoCell";
 static NSString *const kToolResultInfoCell = @"ToolResultInfoCell";
@@ -45,18 +46,21 @@ typedef enum : NSUInteger {
     return 10;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.tableView) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kToolInfoCell];
         if (!cell) {
-            cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:kToolInfoCell];
+            cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:kToolInfoCell];
         }
-        cell.textLabel.text = @"全部内容";
+        cell.textLabel.numberOfLines = 0;
+        cell.textLabel.text = @"全部内容全部内容全部内容全部内容";
+        cell.detailTextLabel.text = @"在库";
         return cell;
     }else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kToolResultInfoCell];
         if (!cell) {
-            cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:kToolResultInfoCell];
+            cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:kToolResultInfoCell];
         }
         cell.textLabel.text = @"筛选内容";
         return cell;
@@ -66,8 +70,19 @@ typedef enum : NSUInteger {
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
     
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 44;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    MSToolSectionHeaderView *headerView = [[MSToolSectionHeaderView alloc]initWithTitle:@"工器具名称" subTitle:@"状态"];
+    return headerView;
+}
+
 
 -(void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
     MSToolSearchType type = selectedScope;

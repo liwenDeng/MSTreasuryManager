@@ -23,25 +23,10 @@
 		18580CA41DB2259300631F00 /* QRCodeTopLeft@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C941DB2259300631F00 /* QRCodeTopLeft@3x.png */; };
 		18580CA51DB2259300631F00 /* QRCodeTopRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C951DB2259300631F00 /* QRCodeTopRight@2x.png */; };
 		18580CA61DB2259300631F00 /* QRCodeTopRight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C961DB2259300631F00 /* QRCodeTopRight@3x.png */; };
-		18580CA91DB225F700631F00 /* MSQRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580CA81DB225F700631F00 /* MSQRCodeReaderViewController.m */; };
-		18580CAD1DB267AB00631F00 /* MSBaseSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580CAC1DB267AB00631F00 /* MSBaseSearchTableViewController.m */; };
-		18580CB01DB2682000631F00 /* MSBaseSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580CAF1DB2682000631F00 /* MSBaseSearchResultViewController.m */; };
-		18B57B3B1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B3A1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m */; };
-		18B57B3E1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B3D1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m */; };
-		18B57B411DAE73CC000F24A5 /* MSBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B401DAE73CC000F24A5 /* MSBaseButton.m */; };
-		18B57B441DAE7D19000F24A5 /* MSBaseDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B57B431DAE7D19000F24A5 /* MSBaseDatePickerView.m */; };
-		18BF4BF81DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF4BF71DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m */; };
-		18BF4BFB1DB1148C00D6B2FE /* MSLiveWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF4BFA1DB1148C00D6B2FE /* MSLiveWorkViewController.m */; };
 		37B909AF91BD9E1EEA2AC706 /* libPods-MSTreasuryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50451818B7BCADBBF7EDF5D /* libPods-MSTreasuryManager.a */; };
 		3A7C5FDB01369BBDCA4DC293 /* libPods-MSTreasuryManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */; };
 		43690FD02A5F3C579B2F199B /* libPods-MSTreasuryManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD14FB8AD8938064E1CA623 /* libPods-MSTreasuryManagerTests.a */; };
-		BC00DCB81DA89FB20063F7FE /* MSHomeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00DCB71DA89FB20063F7FE /* MSHomeCollectionCell.m */; };
-		BC00DCBF1DA8CC0F0063F7FE /* MSMaterialFillInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00DCBD1DA8CC0F0063F7FE /* MSMaterialFillInViewController.m */; };
 		BC00DCC41DA8D5770063F7FE /* YZInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00DCC31DA8D5770063F7FE /* YZInputView.m */; };
-		BC00DCC71DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00DCC61DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m */; };
-		BC00DCCA1DA8E9A50063F7FE /* MSMaterialFillInNomalSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00DCC91DA8E9A50063F7FE /* MSMaterialFillInNomalSection.m */; };
-		BC0424331DB4824A00B5BBCD /* MSCommonSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0424321DB4824A00B5BBCD /* MSCommonSearchViewController.m */; };
-		BC0424361DB4C52400B5BBCD /* MSSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0424351DB4C52400B5BBCD /* MSSearchResultViewController.m */; };
 		BC25B9041DA1ED8B008EDFB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9031DA1ED8B008EDFB2 /* main.m */; };
 		BC25B9071DA1ED8B008EDFB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9061DA1ED8B008EDFB2 /* AppDelegate.m */; };
 		BC25B90A1DA1ED8B008EDFB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9091DA1ED8B008EDFB2 /* ViewController.m */; };
@@ -70,23 +55,43 @@
 		BC25B9D11DA1F3BB008EDFB2 /* ZCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9C71DA1F3BB008EDFB2 /* ZCNetworking.m */; };
 		BC25B9D41DA1F3E4008EDFB2 /* MSNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9D31DA1F3E4008EDFB2 /* MSNetworking.m */; };
 		BC25B9D71DA1F41D008EDFB2 /* MSTabBarControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9D61DA1F41D008EDFB2 /* MSTabBarControllerConfig.m */; };
-		BC25B9DC1DA1F469008EDFB2 /* MSBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9D91DA1F469008EDFB2 /* MSBaseTabBarController.m */; };
-		BC25B9DD1DA1F469008EDFB2 /* MSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9DB1DA1F469008EDFB2 /* MSBaseViewController.m */; };
-		BC25B9E01DA1F4B3008EDFB2 /* MSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9DF1DA1F4B3008EDFB2 /* MSBaseNavigationController.m */; };
-		BC25B9E31DA1F4E4008EDFB2 /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9E21DA1F4E4008EDFB2 /* MSHomeViewController.m */; };
-		BC6A07841DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */; };
-		BC6A07871DAF78C100ACDD76 /* MSBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A07861DAF78C100ACDD76 /* MSBaseTableViewController.m */; };
-		BC8A55281DB07ADF00E9485A /* MSOutInInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55271DB07ADF00E9485A /* MSOutInInfoCell.m */; };
-		BC8A552B1DB07C2C00E9485A /* MSBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A552A1DB07C2C00E9485A /* MSBaseTableViewCell.m */; };
-		BC8A55311DB0983100E9485A /* MSOutInInfoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55301DB0983100E9485A /* MSOutInInfoDetailViewController.m */; };
-		BC8A55341DB09B0B00E9485A /* MSOutInMultiLineSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55331DB09B0B00E9485A /* MSOutInMultiLineSection.m */; };
-		BC8A55371DB09D0800E9485A /* MSOutInOneLineSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55361DB09D0800E9485A /* MSOutInOneLineSection.m */; };
-		BC8A553A1DB0A15600E9485A /* MSToolManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55391DB0A15600E9485A /* MSToolManageViewController.m */; };
-		BC8A553D1DB0A2EF00E9485A /* MSToolInfoFillInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A553C1DB0A2EF00E9485A /* MSToolInfoFillInViewController.m */; };
-		BC8A55401DB0A38600E9485A /* MSToolInfoFillInSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A553F1DB0A38600E9485A /* MSToolInfoFillInSection.m */; };
-		BC8A55431DB0A98000E9485A /* MSToolBorrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55421DB0A98000E9485A /* MSToolBorrowViewController.m */; };
-		BC8A55461DB0A99B00E9485A /* MSToolLoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A55451DB0A99B00E9485A /* MSToolLoanViewController.m */; };
-		BCF898371DAB4E4D001A825B /* MSPhotoPadView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF898361DAB4E4D001A825B /* MSPhotoPadView.m */; };
+		BC7601691DB869440006A034 /* MSBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601551DB869440006A034 /* MSBaseButton.m */; };
+		BC76016A1DB869440006A034 /* MSBaseDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601571DB869440006A034 /* MSBaseDatePickerView.m */; };
+		BC76016B1DB869440006A034 /* MSBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601591DB869440006A034 /* MSBaseTableViewCell.m */; };
+		BC76016C1DB869440006A034 /* MSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76015C1DB869440006A034 /* MSBaseNavigationController.m */; };
+		BC76016D1DB869440006A034 /* MSBaseSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76015E1DB869440006A034 /* MSBaseSearchResultViewController.m */; };
+		BC76016E1DB869440006A034 /* MSBaseSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601601DB869440006A034 /* MSBaseSearchTableViewController.m */; };
+		BC76016F1DB869440006A034 /* MSBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601621DB869440006A034 /* MSBaseTabBarController.m */; };
+		BC7601701DB869440006A034 /* MSBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601641DB869440006A034 /* MSBaseTableViewController.m */; };
+		BC7601711DB869440006A034 /* MSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601661DB869440006A034 /* MSBaseViewController.m */; };
+		BC7601721DB869440006A034 /* MSQRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601681DB869440006A034 /* MSQRCodeReaderViewController.m */; };
+		BC7601B51DB8695D0006A034 /* MSCommonSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601791DB8695D0006A034 /* MSCommonSearchViewController.m */; };
+		BC7601B61DB8695D0006A034 /* MSHomeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76017D1DB8695D0006A034 /* MSHomeCollectionCell.m */; };
+		BC7601B71DB8695D0006A034 /* MSMaterialFillInNomalSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76017F1DB8695D0006A034 /* MSMaterialFillInNomalSection.m */; };
+		BC7601B81DB8695D0006A034 /* MSMaterialFillInWithSearchSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601811DB8695D0006A034 /* MSMaterialFillInWithSearchSection.m */; };
+		BC7601B91DB8695D0006A034 /* MSOutInInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601831DB8695D0006A034 /* MSOutInInfoCell.m */; };
+		BC7601BA1DB8695D0006A034 /* MSOutInMultiLineSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601851DB8695D0006A034 /* MSOutInMultiLineSection.m */; };
+		BC7601BB1DB8695D0006A034 /* MSOutInOneLineSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601871DB8695D0006A034 /* MSOutInOneLineSection.m */; };
+		BC7601BC1DB8695D0006A034 /* MSPhotoPadView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601891DB8695D0006A034 /* MSPhotoPadView.m */; };
+		BC7601BD1DB8695D0006A034 /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76018C1DB8695D0006A034 /* MSHomeViewController.m */; };
+		BC7601BE1DB8695D0006A034 /* MSMaterialFillInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76018E1DB8695D0006A034 /* MSMaterialFillInViewController.m */; };
+		BC7601BF1DB8695D0006A034 /* MSMaterialInfoFetchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601901DB8695D0006A034 /* MSMaterialInfoFetchViewController.m */; };
+		BC7601C01DB8695D0006A034 /* MSMaterialOutStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601921DB8695D0006A034 /* MSMaterialOutStoreViewController.m */; };
+		BC7601C11DB8695D0006A034 /* MSOutInInfoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601941DB8695D0006A034 /* MSOutInInfoDetailViewController.m */; };
+		BC7601C21DB8695D0006A034 /* MSOutInInfosQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601961DB8695D0006A034 /* MSOutInInfosQueryViewController.m */; };
+		BC7601C31DB8695D0006A034 /* MSSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601981DB8695D0006A034 /* MSSearchResultViewController.m */; };
+		BC7601C41DB8695D0006A034 /* MSSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76019A1DB8695D0006A034 /* MSSearchTableViewController.m */; };
+		BC7601C51DB8695D0006A034 /* MSLiveWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76019E1DB8695D0006A034 /* MSLiveWorkViewController.m */; };
+		BC7601C61DB8695D0006A034 /* MSToolBorrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601A81DB8695D0006A034 /* MSToolBorrowViewController.m */; };
+		BC7601C71DB8695D0006A034 /* MSToolInfoFillInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601AA1DB8695D0006A034 /* MSToolInfoFillInViewController.m */; };
+		BC7601C81DB8695D0006A034 /* MSToolLoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601AC1DB8695D0006A034 /* MSToolLoanViewController.m */; };
+		BC7601C91DB8695D0006A034 /* MSToolManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601AE1DB8695D0006A034 /* MSToolManageViewController.m */; };
+		BC7601CA1DB8695D0006A034 /* MSToolStateInfoQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601B01DB8695D0006A034 /* MSToolStateInfoQueryViewController.m */; };
+		BC7601CB1DB8695D0006A034 /* MSToolInfoFillInSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601B41DB8695D0006A034 /* MSToolInfoFillInSection.m */; };
+		BC7601CE1DB869B70006A034 /* MSToolDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601CD1DB869B70006A034 /* MSToolDetailViewController.m */; };
+		BC7601D21DB874080006A034 /* MSToolOutInInfosQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601D11DB874080006A034 /* MSToolOutInInfosQueryViewController.m */; };
+		BC7601D51DB882170006A034 /* MSToolSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601D41DB882170006A034 /* MSToolSectionHeaderView.m */; };
+		BC7601D81DB886BB0006A034 /* MSToolInfoStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601D71DB886BB0006A034 /* MSToolInfoStateCell.m */; };
 		BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983A1DAB67EC001A825B /* DNAlbumTableViewController.m */; };
 		BCF898641DAB67EC001A825B /* DNAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983C1DAB67EC001A825B /* DNAsset.m */; };
 		BCF898651DAB67EC001A825B /* DNImageFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983E1DAB67EC001A825B /* DNImageFlowViewController.m */; };
@@ -159,42 +164,12 @@
 		18580C941DB2259300631F00 /* QRCodeTopLeft@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopLeft@3x.png"; sourceTree = "<group>"; };
 		18580C951DB2259300631F00 /* QRCodeTopRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopRight@2x.png"; sourceTree = "<group>"; };
 		18580C961DB2259300631F00 /* QRCodeTopRight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopRight@3x.png"; sourceTree = "<group>"; };
-		18580CA71DB225F700631F00 /* MSQRCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSQRCodeReaderViewController.h; sourceTree = "<group>"; };
-		18580CA81DB225F700631F00 /* MSQRCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSQRCodeReaderViewController.m; sourceTree = "<group>"; };
 		18580CAA1DB25D9A00631F00 /* MSColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSColor.h; sourceTree = "<group>"; };
-		18580CAB1DB267AB00631F00 /* MSBaseSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseSearchTableViewController.h; sourceTree = "<group>"; };
-		18580CAC1DB267AB00631F00 /* MSBaseSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseSearchTableViewController.m; sourceTree = "<group>"; };
-		18580CAE1DB2682000631F00 /* MSBaseSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseSearchResultViewController.h; sourceTree = "<group>"; };
-		18580CAF1DB2682000631F00 /* MSBaseSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseSearchResultViewController.m; sourceTree = "<group>"; };
-		18B57B391DAE6926000F24A5 /* MSMaterialInfoFetchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialInfoFetchViewController.h; sourceTree = "<group>"; };
-		18B57B3A1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialInfoFetchViewController.m; sourceTree = "<group>"; };
-		18B57B3C1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialOutStoreViewController.h; sourceTree = "<group>"; };
-		18B57B3D1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialOutStoreViewController.m; sourceTree = "<group>"; };
-		18B57B3F1DAE73CC000F24A5 /* MSBaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSBaseButton.h; path = MSTreasuryManager/Classes/Home/ViewController/MSBaseButton.h; sourceTree = SOURCE_ROOT; };
-		18B57B401DAE73CC000F24A5 /* MSBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSBaseButton.m; path = MSTreasuryManager/Classes/Home/ViewController/MSBaseButton.m; sourceTree = SOURCE_ROOT; };
-		18B57B421DAE7D19000F24A5 /* MSBaseDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSBaseDatePickerView.h; path = MSTreasuryManager/Classes/Home/ViewController/MSBaseDatePickerView.h; sourceTree = SOURCE_ROOT; };
-		18B57B431DAE7D19000F24A5 /* MSBaseDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSBaseDatePickerView.m; path = MSTreasuryManager/Classes/Home/ViewController/MSBaseDatePickerView.m; sourceTree = SOURCE_ROOT; };
-		18BF4BF61DB1133300D6B2FE /* MSToolStateInfoQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSToolStateInfoQueryViewController.h; path = MSTreasuryManager/Classes/Home/ViewController/MSToolStateInfoQueryViewController.h; sourceTree = SOURCE_ROOT; };
-		18BF4BF71DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolStateInfoQueryViewController.m; path = MSTreasuryManager/Classes/Home/ViewController/MSToolStateInfoQueryViewController.m; sourceTree = SOURCE_ROOT; };
-		18BF4BF91DB1148C00D6B2FE /* MSLiveWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSLiveWorkViewController.h; path = MSTreasuryManager/Classes/Home/ViewController/MSLiveWorkViewController.h; sourceTree = SOURCE_ROOT; };
-		18BF4BFA1DB1148C00D6B2FE /* MSLiveWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSLiveWorkViewController.m; path = MSTreasuryManager/Classes/Home/ViewController/MSLiveWorkViewController.m; sourceTree = SOURCE_ROOT; };
 		3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSTreasuryManagerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8E0C5D4687480595A21928 /* Pods-MSTreasuryManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManagerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManagerUITests/Pods-MSTreasuryManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75F47D9C8AB86418EDA43784 /* Pods-MSTreasuryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.release.xcconfig"; sourceTree = "<group>"; };
-		BC00DCB61DA89FB20063F7FE /* MSHomeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeCollectionCell.h; sourceTree = "<group>"; };
-		BC00DCB71DA89FB20063F7FE /* MSHomeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeCollectionCell.m; sourceTree = "<group>"; };
-		BC00DCBC1DA8CC0F0063F7FE /* MSMaterialFillInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialFillInViewController.h; sourceTree = "<group>"; };
-		BC00DCBD1DA8CC0F0063F7FE /* MSMaterialFillInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialFillInViewController.m; sourceTree = "<group>"; };
 		BC00DCC21DA8D5770063F7FE /* YZInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZInputView.h; sourceTree = "<group>"; };
 		BC00DCC31DA8D5770063F7FE /* YZInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZInputView.m; sourceTree = "<group>"; };
-		BC00DCC51DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialFillInWithSearchSection.h; sourceTree = "<group>"; };
-		BC00DCC61DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialFillInWithSearchSection.m; sourceTree = "<group>"; };
-		BC00DCC81DA8E9A50063F7FE /* MSMaterialFillInNomalSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialFillInNomalSection.h; sourceTree = "<group>"; };
-		BC00DCC91DA8E9A50063F7FE /* MSMaterialFillInNomalSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialFillInNomalSection.m; sourceTree = "<group>"; };
-		BC0424311DB4824A00B5BBCD /* MSCommonSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCommonSearchViewController.h; sourceTree = "<group>"; };
-		BC0424321DB4824A00B5BBCD /* MSCommonSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCommonSearchViewController.m; sourceTree = "<group>"; };
-		BC0424341DB4C52400B5BBCD /* MSSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchResultViewController.h; sourceTree = "<group>"; };
-		BC0424351DB4C52400B5BBCD /* MSSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchResultViewController.m; sourceTree = "<group>"; };
 		BC25B8FF1DA1ED8B008EDFB2 /* MSTreasuryManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSTreasuryManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC25B9031DA1ED8B008EDFB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC25B9051DA1ED8B008EDFB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -255,40 +230,80 @@
 		BC25B9D31DA1F3E4008EDFB2 /* MSNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNetworking.m; sourceTree = "<group>"; };
 		BC25B9D51DA1F41D008EDFB2 /* MSTabBarControllerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTabBarControllerConfig.h; sourceTree = "<group>"; };
 		BC25B9D61DA1F41D008EDFB2 /* MSTabBarControllerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTabBarControllerConfig.m; sourceTree = "<group>"; };
-		BC25B9D81DA1F469008EDFB2 /* MSBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseTabBarController.h; sourceTree = "<group>"; };
-		BC25B9D91DA1F469008EDFB2 /* MSBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseTabBarController.m; sourceTree = "<group>"; };
-		BC25B9DA1DA1F469008EDFB2 /* MSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseViewController.h; sourceTree = "<group>"; };
-		BC25B9DB1DA1F469008EDFB2 /* MSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseViewController.m; sourceTree = "<group>"; };
-		BC25B9DE1DA1F4B3008EDFB2 /* MSBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseNavigationController.h; sourceTree = "<group>"; };
-		BC25B9DF1DA1F4B3008EDFB2 /* MSBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseNavigationController.m; sourceTree = "<group>"; };
-		BC25B9E11DA1F4E4008EDFB2 /* MSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeViewController.h; sourceTree = "<group>"; };
-		BC25B9E21DA1F4E4008EDFB2 /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
-		BC6A07821DAF77F900ACDD76 /* MSOutInInfosQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInInfosQueryViewController.h; sourceTree = "<group>"; };
-		BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 5; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfosQueryViewController.m; sourceTree = "<group>"; };
-		BC6A07851DAF78C100ACDD76 /* MSBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseTableViewController.h; sourceTree = "<group>"; };
-		BC6A07861DAF78C100ACDD76 /* MSBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseTableViewController.m; sourceTree = "<group>"; };
-		BC8A55261DB07ADF00E9485A /* MSOutInInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInInfoCell.h; sourceTree = "<group>"; };
-		BC8A55271DB07ADF00E9485A /* MSOutInInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfoCell.m; sourceTree = "<group>"; };
-		BC8A55291DB07C2C00E9485A /* MSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSBaseTableViewCell.h; path = MSTreasuryManager/Classes/Home/View/MSBaseTableViewCell.h; sourceTree = SOURCE_ROOT; };
-		BC8A552A1DB07C2C00E9485A /* MSBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSBaseTableViewCell.m; path = MSTreasuryManager/Classes/Home/View/MSBaseTableViewCell.m; sourceTree = SOURCE_ROOT; };
-		BC8A552F1DB0983100E9485A /* MSOutInInfoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInInfoDetailViewController.h; sourceTree = "<group>"; };
-		BC8A55301DB0983100E9485A /* MSOutInInfoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfoDetailViewController.m; sourceTree = "<group>"; };
-		BC8A55321DB09B0B00E9485A /* MSOutInMultiLineSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInMultiLineSection.h; sourceTree = "<group>"; };
-		BC8A55331DB09B0B00E9485A /* MSOutInMultiLineSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInMultiLineSection.m; sourceTree = "<group>"; };
-		BC8A55351DB09D0800E9485A /* MSOutInOneLineSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInOneLineSection.h; sourceTree = "<group>"; };
-		BC8A55361DB09D0800E9485A /* MSOutInOneLineSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInOneLineSection.m; sourceTree = "<group>"; };
-		BC8A55381DB0A15600E9485A /* MSToolManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSToolManageViewController.h; path = MSTreasuryManager/Classes/Home/View/MSToolManageViewController.h; sourceTree = SOURCE_ROOT; };
-		BC8A55391DB0A15600E9485A /* MSToolManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolManageViewController.m; path = MSTreasuryManager/Classes/Home/View/MSToolManageViewController.m; sourceTree = SOURCE_ROOT; };
-		BC8A553B1DB0A2EF00E9485A /* MSToolInfoFillInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSToolInfoFillInViewController.h; path = MSTreasuryManager/Classes/Home/View/MSToolInfoFillInViewController.h; sourceTree = SOURCE_ROOT; };
-		BC8A553C1DB0A2EF00E9485A /* MSToolInfoFillInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolInfoFillInViewController.m; path = MSTreasuryManager/Classes/Home/View/MSToolInfoFillInViewController.m; sourceTree = SOURCE_ROOT; };
-		BC8A553E1DB0A38600E9485A /* MSToolInfoFillInSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSToolInfoFillInSection.h; path = MSTreasuryManager/Classes/Home/View/MSToolInfoFillInSection.h; sourceTree = SOURCE_ROOT; };
-		BC8A553F1DB0A38600E9485A /* MSToolInfoFillInSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolInfoFillInSection.m; path = MSTreasuryManager/Classes/Home/View/MSToolInfoFillInSection.m; sourceTree = SOURCE_ROOT; };
-		BC8A55411DB0A98000E9485A /* MSToolBorrowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSToolBorrowViewController.h; path = MSTreasuryManager/Classes/Home/View/MSToolBorrowViewController.h; sourceTree = SOURCE_ROOT; };
-		BC8A55421DB0A98000E9485A /* MSToolBorrowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolBorrowViewController.m; path = MSTreasuryManager/Classes/Home/View/MSToolBorrowViewController.m; sourceTree = SOURCE_ROOT; };
-		BC8A55441DB0A99B00E9485A /* MSToolLoanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSToolLoanViewController.h; path = MSTreasuryManager/Classes/Home/View/MSToolLoanViewController.h; sourceTree = SOURCE_ROOT; };
-		BC8A55451DB0A99B00E9485A /* MSToolLoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSToolLoanViewController.m; path = MSTreasuryManager/Classes/Home/View/MSToolLoanViewController.m; sourceTree = SOURCE_ROOT; };
-		BCF898351DAB4E4D001A825B /* MSPhotoPadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPhotoPadView.h; sourceTree = "<group>"; };
-		BCF898361DAB4E4D001A825B /* MSPhotoPadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPhotoPadView.m; sourceTree = "<group>"; };
+		BC7601541DB869440006A034 /* MSBaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseButton.h; sourceTree = "<group>"; };
+		BC7601551DB869440006A034 /* MSBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseButton.m; sourceTree = "<group>"; };
+		BC7601561DB869440006A034 /* MSBaseDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseDatePickerView.h; sourceTree = "<group>"; };
+		BC7601571DB869440006A034 /* MSBaseDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseDatePickerView.m; sourceTree = "<group>"; };
+		BC7601581DB869440006A034 /* MSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseTableViewCell.h; sourceTree = "<group>"; };
+		BC7601591DB869440006A034 /* MSBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseTableViewCell.m; sourceTree = "<group>"; };
+		BC76015B1DB869440006A034 /* MSBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseNavigationController.h; sourceTree = "<group>"; };
+		BC76015C1DB869440006A034 /* MSBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseNavigationController.m; sourceTree = "<group>"; };
+		BC76015D1DB869440006A034 /* MSBaseSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseSearchResultViewController.h; sourceTree = "<group>"; };
+		BC76015E1DB869440006A034 /* MSBaseSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseSearchResultViewController.m; sourceTree = "<group>"; };
+		BC76015F1DB869440006A034 /* MSBaseSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseSearchTableViewController.h; sourceTree = "<group>"; };
+		BC7601601DB869440006A034 /* MSBaseSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseSearchTableViewController.m; sourceTree = "<group>"; };
+		BC7601611DB869440006A034 /* MSBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseTabBarController.h; sourceTree = "<group>"; };
+		BC7601621DB869440006A034 /* MSBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseTabBarController.m; sourceTree = "<group>"; };
+		BC7601631DB869440006A034 /* MSBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseTableViewController.h; sourceTree = "<group>"; };
+		BC7601641DB869440006A034 /* MSBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseTableViewController.m; sourceTree = "<group>"; };
+		BC7601651DB869440006A034 /* MSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseViewController.h; sourceTree = "<group>"; };
+		BC7601661DB869440006A034 /* MSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseViewController.m; sourceTree = "<group>"; };
+		BC7601671DB869440006A034 /* MSQRCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSQRCodeReaderViewController.h; sourceTree = "<group>"; };
+		BC7601681DB869440006A034 /* MSQRCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSQRCodeReaderViewController.m; sourceTree = "<group>"; };
+		BC7601781DB8695D0006A034 /* MSCommonSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCommonSearchViewController.h; sourceTree = "<group>"; };
+		BC7601791DB8695D0006A034 /* MSCommonSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCommonSearchViewController.m; sourceTree = "<group>"; };
+		BC76017C1DB8695D0006A034 /* MSHomeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeCollectionCell.h; sourceTree = "<group>"; };
+		BC76017D1DB8695D0006A034 /* MSHomeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeCollectionCell.m; sourceTree = "<group>"; };
+		BC76017E1DB8695D0006A034 /* MSMaterialFillInNomalSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialFillInNomalSection.h; sourceTree = "<group>"; };
+		BC76017F1DB8695D0006A034 /* MSMaterialFillInNomalSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialFillInNomalSection.m; sourceTree = "<group>"; };
+		BC7601801DB8695D0006A034 /* MSMaterialFillInWithSearchSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialFillInWithSearchSection.h; sourceTree = "<group>"; };
+		BC7601811DB8695D0006A034 /* MSMaterialFillInWithSearchSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialFillInWithSearchSection.m; sourceTree = "<group>"; };
+		BC7601821DB8695D0006A034 /* MSOutInInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInInfoCell.h; sourceTree = "<group>"; };
+		BC7601831DB8695D0006A034 /* MSOutInInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfoCell.m; sourceTree = "<group>"; };
+		BC7601841DB8695D0006A034 /* MSOutInMultiLineSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInMultiLineSection.h; sourceTree = "<group>"; };
+		BC7601851DB8695D0006A034 /* MSOutInMultiLineSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInMultiLineSection.m; sourceTree = "<group>"; };
+		BC7601861DB8695D0006A034 /* MSOutInOneLineSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInOneLineSection.h; sourceTree = "<group>"; };
+		BC7601871DB8695D0006A034 /* MSOutInOneLineSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInOneLineSection.m; sourceTree = "<group>"; };
+		BC7601881DB8695D0006A034 /* MSPhotoPadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPhotoPadView.h; sourceTree = "<group>"; };
+		BC7601891DB8695D0006A034 /* MSPhotoPadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPhotoPadView.m; sourceTree = "<group>"; };
+		BC76018B1DB8695D0006A034 /* MSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeViewController.h; sourceTree = "<group>"; };
+		BC76018C1DB8695D0006A034 /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
+		BC76018D1DB8695D0006A034 /* MSMaterialFillInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialFillInViewController.h; sourceTree = "<group>"; };
+		BC76018E1DB8695D0006A034 /* MSMaterialFillInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialFillInViewController.m; sourceTree = "<group>"; };
+		BC76018F1DB8695D0006A034 /* MSMaterialInfoFetchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialInfoFetchViewController.h; sourceTree = "<group>"; };
+		BC7601901DB8695D0006A034 /* MSMaterialInfoFetchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialInfoFetchViewController.m; sourceTree = "<group>"; };
+		BC7601911DB8695D0006A034 /* MSMaterialOutStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialOutStoreViewController.h; sourceTree = "<group>"; };
+		BC7601921DB8695D0006A034 /* MSMaterialOutStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialOutStoreViewController.m; sourceTree = "<group>"; };
+		BC7601931DB8695D0006A034 /* MSOutInInfoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInInfoDetailViewController.h; sourceTree = "<group>"; };
+		BC7601941DB8695D0006A034 /* MSOutInInfoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfoDetailViewController.m; sourceTree = "<group>"; };
+		BC7601951DB8695D0006A034 /* MSOutInInfosQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOutInInfosQueryViewController.h; sourceTree = "<group>"; };
+		BC7601961DB8695D0006A034 /* MSOutInInfosQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOutInInfosQueryViewController.m; sourceTree = "<group>"; };
+		BC7601971DB8695D0006A034 /* MSSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchResultViewController.h; sourceTree = "<group>"; };
+		BC7601981DB8695D0006A034 /* MSSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchResultViewController.m; sourceTree = "<group>"; };
+		BC7601991DB8695D0006A034 /* MSSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchTableViewController.h; sourceTree = "<group>"; };
+		BC76019A1DB8695D0006A034 /* MSSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchTableViewController.m; sourceTree = "<group>"; };
+		BC76019D1DB8695D0006A034 /* MSLiveWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveWorkViewController.h; sourceTree = "<group>"; };
+		BC76019E1DB8695D0006A034 /* MSLiveWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkViewController.m; sourceTree = "<group>"; };
+		BC7601A71DB8695D0006A034 /* MSToolBorrowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolBorrowViewController.h; sourceTree = "<group>"; };
+		BC7601A81DB8695D0006A034 /* MSToolBorrowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolBorrowViewController.m; sourceTree = "<group>"; };
+		BC7601A91DB8695D0006A034 /* MSToolInfoFillInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolInfoFillInViewController.h; sourceTree = "<group>"; };
+		BC7601AA1DB8695D0006A034 /* MSToolInfoFillInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolInfoFillInViewController.m; sourceTree = "<group>"; };
+		BC7601AB1DB8695D0006A034 /* MSToolLoanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolLoanViewController.h; sourceTree = "<group>"; };
+		BC7601AC1DB8695D0006A034 /* MSToolLoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolLoanViewController.m; sourceTree = "<group>"; };
+		BC7601AD1DB8695D0006A034 /* MSToolManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolManageViewController.h; sourceTree = "<group>"; };
+		BC7601AE1DB8695D0006A034 /* MSToolManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolManageViewController.m; sourceTree = "<group>"; };
+		BC7601AF1DB8695D0006A034 /* MSToolStateInfoQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolStateInfoQueryViewController.h; sourceTree = "<group>"; };
+		BC7601B01DB8695D0006A034 /* MSToolStateInfoQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolStateInfoQueryViewController.m; sourceTree = "<group>"; };
+		BC7601B31DB8695D0006A034 /* MSToolInfoFillInSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolInfoFillInSection.h; sourceTree = "<group>"; };
+		BC7601B41DB8695D0006A034 /* MSToolInfoFillInSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolInfoFillInSection.m; sourceTree = "<group>"; };
+		BC7601CC1DB869B70006A034 /* MSToolDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolDetailViewController.h; sourceTree = "<group>"; };
+		BC7601CD1DB869B70006A034 /* MSToolDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolDetailViewController.m; sourceTree = "<group>"; };
+		BC7601D01DB874080006A034 /* MSToolOutInInfosQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolOutInInfosQueryViewController.h; sourceTree = "<group>"; };
+		BC7601D11DB874080006A034 /* MSToolOutInInfosQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolOutInInfosQueryViewController.m; sourceTree = "<group>"; };
+		BC7601D31DB882170006A034 /* MSToolSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolSectionHeaderView.h; sourceTree = "<group>"; };
+		BC7601D41DB882170006A034 /* MSToolSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolSectionHeaderView.m; sourceTree = "<group>"; };
+		BC7601D61DB886BB0006A034 /* MSToolInfoStateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolInfoStateCell.h; sourceTree = "<group>"; };
+		BC7601D71DB886BB0006A034 /* MSToolInfoStateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolInfoStateCell.m; sourceTree = "<group>"; };
 		BCF898391DAB67EC001A825B /* DNAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAlbumTableViewController.h; sourceTree = "<group>"; };
 		BCF8983A1DAB67EC001A825B /* DNAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAlbumTableViewController.m; sourceTree = "<group>"; };
 		BCF8983B1DAB67EC001A825B /* DNAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAsset.h; sourceTree = "<group>"; };
@@ -447,82 +462,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		BC00DCAE1DA89AAA0063F7FE /* LiveWork */ = {
-			isa = PBXGroup;
-			children = (
-				BC00DCAF1DA89AAA0063F7FE /* Model */,
-				BC00DCB01DA89AAA0063F7FE /* View */,
-				BC00DCB11DA89AAA0063F7FE /* ViewController */,
-			);
-			path = LiveWork;
-			sourceTree = "<group>";
-		};
-		BC00DCAF1DA89AAA0063F7FE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BC00DCB01DA89AAA0063F7FE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BC00DCB11DA89AAA0063F7FE /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				18BF4BF91DB1148C00D6B2FE /* MSLiveWorkViewController.h */,
-				18BF4BFA1DB1148C00D6B2FE /* MSLiveWorkViewController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		BC00DCB21DA89AAA0063F7FE /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				BC00DCB31DA89AAA0063F7FE /* Model */,
-				BC00DCB41DA89AAA0063F7FE /* View */,
-				BC00DCB51DA89AAA0063F7FE /* ViewController */,
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
-		BC00DCB31DA89AAA0063F7FE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BC00DCB41DA89AAA0063F7FE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BC8A553E1DB0A38600E9485A /* MSToolInfoFillInSection.h */,
-				BC8A553F1DB0A38600E9485A /* MSToolInfoFillInSection.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BC00DCB51DA89AAA0063F7FE /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BC8A55381DB0A15600E9485A /* MSToolManageViewController.h */,
-				BC8A55391DB0A15600E9485A /* MSToolManageViewController.m */,
-				BC8A553B1DB0A2EF00E9485A /* MSToolInfoFillInViewController.h */,
-				BC8A553C1DB0A2EF00E9485A /* MSToolInfoFillInViewController.m */,
-				18BF4BF61DB1133300D6B2FE /* MSToolStateInfoQueryViewController.h */,
-				18BF4BF71DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m */,
-				BC8A55411DB0A98000E9485A /* MSToolBorrowViewController.h */,
-				BC8A55421DB0A98000E9485A /* MSToolBorrowViewController.m */,
-				BC8A55441DB0A99B00E9485A /* MSToolLoanViewController.h */,
-				BC8A55451DB0A99B00E9485A /* MSToolLoanViewController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		BC00DCC11DA8D5770063F7FE /* InputView */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,39 +469,6 @@
 				BC00DCC31DA8D5770063F7FE /* YZInputView.m */,
 			);
 			path = InputView;
-			sourceTree = "<group>";
-		};
-		BC04242D1DB481ED00B5BBCD /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				BC04242E1DB481ED00B5BBCD /* Model */,
-				BC04242F1DB481ED00B5BBCD /* View */,
-				BC0424301DB481ED00B5BBCD /* ViewController */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		BC04242E1DB481ED00B5BBCD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BC04242F1DB481ED00B5BBCD /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BC0424301DB481ED00B5BBCD /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BC0424311DB4824A00B5BBCD /* MSCommonSearchViewController.h */,
-				BC0424321DB4824A00B5BBCD /* MSCommonSearchViewController.m */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		BC25B8F61DA1ED8B008EDFB2 = {
@@ -590,9 +496,9 @@
 		BC25B9011DA1ED8B008EDFB2 /* MSTreasuryManager */ = {
 			isa = PBXGroup;
 			children = (
+				BC7601731DB8695D0006A034 /* Classes */,
+				BC7601511DB869440006A034 /* Base */,
 				BCF8988F1DAB983C001A825B /* sources */,
-				BC25B9591DA1F10D008EDFB2 /* Base */,
-				BC25B95D1DA1F10D008EDFB2 /* Classes */,
 				BC25B9661DA1F10D008EDFB2 /* Main */,
 				BC25B9671DA1F10D008EDFB2 /* Network */,
 				BC25B9821DA1F10D008EDFB2 /* Tools */,
@@ -647,159 +553,6 @@
 				BC25B9B81DA1F3BB008EDFB2 /* ZCNetworking */,
 			);
 			path = ThirdLibs;
-			sourceTree = "<group>";
-		};
-		BC25B9591DA1F10D008EDFB2 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				BC25B95A1DA1F10D008EDFB2 /* Model */,
-				BC25B95B1DA1F10D008EDFB2 /* View */,
-				BC25B95C1DA1F10D008EDFB2 /* ViewController */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		BC25B95A1DA1F10D008EDFB2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BC25B95B1DA1F10D008EDFB2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				18B57B3F1DAE73CC000F24A5 /* MSBaseButton.h */,
-				18B57B401DAE73CC000F24A5 /* MSBaseButton.m */,
-				18B57B421DAE7D19000F24A5 /* MSBaseDatePickerView.h */,
-				18B57B431DAE7D19000F24A5 /* MSBaseDatePickerView.m */,
-				BC8A55291DB07C2C00E9485A /* MSBaseTableViewCell.h */,
-				BC8A552A1DB07C2C00E9485A /* MSBaseTableViewCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BC25B95C1DA1F10D008EDFB2 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BC25B9DE1DA1F4B3008EDFB2 /* MSBaseNavigationController.h */,
-				BC25B9DF1DA1F4B3008EDFB2 /* MSBaseNavigationController.m */,
-				BC25B9D81DA1F469008EDFB2 /* MSBaseTabBarController.h */,
-				BC25B9D91DA1F469008EDFB2 /* MSBaseTabBarController.m */,
-				BC25B9DA1DA1F469008EDFB2 /* MSBaseViewController.h */,
-				BC25B9DB1DA1F469008EDFB2 /* MSBaseViewController.m */,
-				BC6A07851DAF78C100ACDD76 /* MSBaseTableViewController.h */,
-				BC6A07861DAF78C100ACDD76 /* MSBaseTableViewController.m */,
-				18580CAB1DB267AB00631F00 /* MSBaseSearchTableViewController.h */,
-				18580CAC1DB267AB00631F00 /* MSBaseSearchTableViewController.m */,
-				18580CAE1DB2682000631F00 /* MSBaseSearchResultViewController.h */,
-				18580CAF1DB2682000631F00 /* MSBaseSearchResultViewController.m */,
-				18580CA71DB225F700631F00 /* MSQRCodeReaderViewController.h */,
-				18580CA81DB225F700631F00 /* MSQRCodeReaderViewController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		BC25B95D1DA1F10D008EDFB2 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				BC04242D1DB481ED00B5BBCD /* Common */,
-				BC00DCAE1DA89AAA0063F7FE /* LiveWork */,
-				BC00DCB21DA89AAA0063F7FE /* Tool */,
-				BC25B95E1DA1F10D008EDFB2 /* Home */,
-				BC25B9621DA1F10D008EDFB2 /* My */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		BC25B95E1DA1F10D008EDFB2 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				BC25B95F1DA1F10D008EDFB2 /* Model */,
-				BC25B9601DA1F10D008EDFB2 /* View */,
-				BC25B9611DA1F10D008EDFB2 /* ViewController */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		BC25B95F1DA1F10D008EDFB2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BC25B9601DA1F10D008EDFB2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BC00DCB61DA89FB20063F7FE /* MSHomeCollectionCell.h */,
-				BC00DCB71DA89FB20063F7FE /* MSHomeCollectionCell.m */,
-				BC00DCC81DA8E9A50063F7FE /* MSMaterialFillInNomalSection.h */,
-				BC00DCC91DA8E9A50063F7FE /* MSMaterialFillInNomalSection.m */,
-				BC00DCC51DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.h */,
-				BC00DCC61DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m */,
-				BC8A55261DB07ADF00E9485A /* MSOutInInfoCell.h */,
-				BC8A55271DB07ADF00E9485A /* MSOutInInfoCell.m */,
-				BC8A55321DB09B0B00E9485A /* MSOutInMultiLineSection.h */,
-				BC8A55331DB09B0B00E9485A /* MSOutInMultiLineSection.m */,
-				BC8A55351DB09D0800E9485A /* MSOutInOneLineSection.h */,
-				BC8A55361DB09D0800E9485A /* MSOutInOneLineSection.m */,
-				BCF898351DAB4E4D001A825B /* MSPhotoPadView.h */,
-				BCF898361DAB4E4D001A825B /* MSPhotoPadView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BC25B9611DA1F10D008EDFB2 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BC25B9E11DA1F4E4008EDFB2 /* MSHomeViewController.h */,
-				BC25B9E21DA1F4E4008EDFB2 /* MSHomeViewController.m */,
-				BC00DCBC1DA8CC0F0063F7FE /* MSMaterialFillInViewController.h */,
-				BC00DCBD1DA8CC0F0063F7FE /* MSMaterialFillInViewController.m */,
-				18B57B391DAE6926000F24A5 /* MSMaterialInfoFetchViewController.h */,
-				18B57B3A1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m */,
-				18B57B3C1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.h */,
-				18B57B3D1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m */,
-				BC6A07821DAF77F900ACDD76 /* MSOutInInfosQueryViewController.h */,
-				BC6A07831DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m */,
-				BC8A552F1DB0983100E9485A /* MSOutInInfoDetailViewController.h */,
-				BC8A55301DB0983100E9485A /* MSOutInInfoDetailViewController.m */,
-				BC0424341DB4C52400B5BBCD /* MSSearchResultViewController.h */,
-				BC0424351DB4C52400B5BBCD /* MSSearchResultViewController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		BC25B9621DA1F10D008EDFB2 /* My */ = {
-			isa = PBXGroup;
-			children = (
-				BC25B9631DA1F10D008EDFB2 /* Model */,
-				BC25B9641DA1F10D008EDFB2 /* View */,
-				BC25B9651DA1F10D008EDFB2 /* ViewController */,
-			);
-			path = My;
-			sourceTree = "<group>";
-		};
-		BC25B9631DA1F10D008EDFB2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BC25B9641DA1F10D008EDFB2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BC25B9651DA1F10D008EDFB2 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		BC25B9661DA1F10D008EDFB2 /* Main */ = {
@@ -930,6 +683,278 @@
 				BC25B9C71DA1F3BB008EDFB2 /* ZCNetworking.m */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		BC7601511DB869440006A034 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BC7601521DB869440006A034 /* Model */,
+				BC7601531DB869440006A034 /* View */,
+				BC76015A1DB869440006A034 /* ViewController */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BC7601521DB869440006A034 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC7601531DB869440006A034 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC7601541DB869440006A034 /* MSBaseButton.h */,
+				BC7601551DB869440006A034 /* MSBaseButton.m */,
+				BC7601561DB869440006A034 /* MSBaseDatePickerView.h */,
+				BC7601571DB869440006A034 /* MSBaseDatePickerView.m */,
+				BC7601581DB869440006A034 /* MSBaseTableViewCell.h */,
+				BC7601591DB869440006A034 /* MSBaseTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC76015A1DB869440006A034 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BC76015B1DB869440006A034 /* MSBaseNavigationController.h */,
+				BC76015C1DB869440006A034 /* MSBaseNavigationController.m */,
+				BC76015D1DB869440006A034 /* MSBaseSearchResultViewController.h */,
+				BC76015E1DB869440006A034 /* MSBaseSearchResultViewController.m */,
+				BC76015F1DB869440006A034 /* MSBaseSearchTableViewController.h */,
+				BC7601601DB869440006A034 /* MSBaseSearchTableViewController.m */,
+				BC7601611DB869440006A034 /* MSBaseTabBarController.h */,
+				BC7601621DB869440006A034 /* MSBaseTabBarController.m */,
+				BC7601631DB869440006A034 /* MSBaseTableViewController.h */,
+				BC7601641DB869440006A034 /* MSBaseTableViewController.m */,
+				BC7601651DB869440006A034 /* MSBaseViewController.h */,
+				BC7601661DB869440006A034 /* MSBaseViewController.m */,
+				BC7601671DB869440006A034 /* MSQRCodeReaderViewController.h */,
+				BC7601681DB869440006A034 /* MSQRCodeReaderViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BC7601731DB8695D0006A034 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BC7601741DB8695D0006A034 /* Common */,
+				BC76017A1DB8695D0006A034 /* Home */,
+				BC76019B1DB8695D0006A034 /* LiveWork */,
+				BC7601A11DB8695D0006A034 /* My */,
+				BC7601A51DB8695D0006A034 /* Tool */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BC7601741DB8695D0006A034 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BC7601751DB8695D0006A034 /* Model */,
+				BC7601761DB8695D0006A034 /* View */,
+				BC7601771DB8695D0006A034 /* ViewController */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BC7601751DB8695D0006A034 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC7601761DB8695D0006A034 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC7601771DB8695D0006A034 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BC7601781DB8695D0006A034 /* MSCommonSearchViewController.h */,
+				BC7601791DB8695D0006A034 /* MSCommonSearchViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BC76017A1DB8695D0006A034 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BC7601CF1DB86A220006A034 /* Model */,
+				BC76017B1DB8695D0006A034 /* View */,
+				BC76018A1DB8695D0006A034 /* ViewController */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BC76017B1DB8695D0006A034 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC76017C1DB8695D0006A034 /* MSHomeCollectionCell.h */,
+				BC76017D1DB8695D0006A034 /* MSHomeCollectionCell.m */,
+				BC76017E1DB8695D0006A034 /* MSMaterialFillInNomalSection.h */,
+				BC76017F1DB8695D0006A034 /* MSMaterialFillInNomalSection.m */,
+				BC7601801DB8695D0006A034 /* MSMaterialFillInWithSearchSection.h */,
+				BC7601811DB8695D0006A034 /* MSMaterialFillInWithSearchSection.m */,
+				BC7601821DB8695D0006A034 /* MSOutInInfoCell.h */,
+				BC7601831DB8695D0006A034 /* MSOutInInfoCell.m */,
+				BC7601841DB8695D0006A034 /* MSOutInMultiLineSection.h */,
+				BC7601851DB8695D0006A034 /* MSOutInMultiLineSection.m */,
+				BC7601861DB8695D0006A034 /* MSOutInOneLineSection.h */,
+				BC7601871DB8695D0006A034 /* MSOutInOneLineSection.m */,
+				BC7601881DB8695D0006A034 /* MSPhotoPadView.h */,
+				BC7601891DB8695D0006A034 /* MSPhotoPadView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC76018A1DB8695D0006A034 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BC76018B1DB8695D0006A034 /* MSHomeViewController.h */,
+				BC76018C1DB8695D0006A034 /* MSHomeViewController.m */,
+				BC76018D1DB8695D0006A034 /* MSMaterialFillInViewController.h */,
+				BC76018E1DB8695D0006A034 /* MSMaterialFillInViewController.m */,
+				BC76018F1DB8695D0006A034 /* MSMaterialInfoFetchViewController.h */,
+				BC7601901DB8695D0006A034 /* MSMaterialInfoFetchViewController.m */,
+				BC7601911DB8695D0006A034 /* MSMaterialOutStoreViewController.h */,
+				BC7601921DB8695D0006A034 /* MSMaterialOutStoreViewController.m */,
+				BC7601931DB8695D0006A034 /* MSOutInInfoDetailViewController.h */,
+				BC7601941DB8695D0006A034 /* MSOutInInfoDetailViewController.m */,
+				BC7601951DB8695D0006A034 /* MSOutInInfosQueryViewController.h */,
+				BC7601961DB8695D0006A034 /* MSOutInInfosQueryViewController.m */,
+				BC7601971DB8695D0006A034 /* MSSearchResultViewController.h */,
+				BC7601981DB8695D0006A034 /* MSSearchResultViewController.m */,
+				BC7601991DB8695D0006A034 /* MSSearchTableViewController.h */,
+				BC76019A1DB8695D0006A034 /* MSSearchTableViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BC76019B1DB8695D0006A034 /* LiveWork */ = {
+			isa = PBXGroup;
+			children = (
+				BC76019C1DB8695D0006A034 /* Controller */,
+				BC76019F1DB8695D0006A034 /* Model */,
+				BC7601A01DB8695D0006A034 /* View */,
+			);
+			path = LiveWork;
+			sourceTree = "<group>";
+		};
+		BC76019C1DB8695D0006A034 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC76019D1DB8695D0006A034 /* MSLiveWorkViewController.h */,
+				BC76019E1DB8695D0006A034 /* MSLiveWorkViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC76019F1DB8695D0006A034 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC7601A01DB8695D0006A034 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC7601A11DB8695D0006A034 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				BC7601A21DB8695D0006A034 /* Controller */,
+				BC7601A31DB8695D0006A034 /* Model */,
+				BC7601A41DB8695D0006A034 /* View */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		BC7601A21DB8695D0006A034 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC7601A31DB8695D0006A034 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC7601A41DB8695D0006A034 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC7601A51DB8695D0006A034 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				BC7601A61DB8695D0006A034 /* Controller */,
+				BC7601B11DB8695D0006A034 /* Model */,
+				BC7601B21DB8695D0006A034 /* View */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		BC7601A61DB8695D0006A034 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC7601A71DB8695D0006A034 /* MSToolBorrowViewController.h */,
+				BC7601A81DB8695D0006A034 /* MSToolBorrowViewController.m */,
+				BC7601A91DB8695D0006A034 /* MSToolInfoFillInViewController.h */,
+				BC7601AA1DB8695D0006A034 /* MSToolInfoFillInViewController.m */,
+				BC7601AB1DB8695D0006A034 /* MSToolLoanViewController.h */,
+				BC7601AC1DB8695D0006A034 /* MSToolLoanViewController.m */,
+				BC7601AD1DB8695D0006A034 /* MSToolManageViewController.h */,
+				BC7601AE1DB8695D0006A034 /* MSToolManageViewController.m */,
+				BC7601AF1DB8695D0006A034 /* MSToolStateInfoQueryViewController.h */,
+				BC7601B01DB8695D0006A034 /* MSToolStateInfoQueryViewController.m */,
+				BC7601D01DB874080006A034 /* MSToolOutInInfosQueryViewController.h */,
+				BC7601D11DB874080006A034 /* MSToolOutInInfosQueryViewController.m */,
+				BC7601CC1DB869B70006A034 /* MSToolDetailViewController.h */,
+				BC7601CD1DB869B70006A034 /* MSToolDetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC7601B11DB8695D0006A034 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC7601B21DB8695D0006A034 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC7601B31DB8695D0006A034 /* MSToolInfoFillInSection.h */,
+				BC7601B41DB8695D0006A034 /* MSToolInfoFillInSection.m */,
+				BC7601D31DB882170006A034 /* MSToolSectionHeaderView.h */,
+				BC7601D41DB882170006A034 /* MSToolSectionHeaderView.m */,
+				BC7601D61DB886BB0006A034 /* MSToolInfoStateCell.h */,
+				BC7601D71DB886BB0006A034 /* MSToolInfoStateCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC7601CF1DB86A220006A034 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BCF898381DAB67EC001A825B /* DNImagePicker */ = {
@@ -1301,91 +1326,96 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC76016F1DB869440006A034 /* MSBaseTabBarController.m in Sources */,
 				BC25B9D11DA1F3BB008EDFB2 /* ZCNetworking.m in Sources */,
 				BC25B9C91DA1F3BB008EDFB2 /* CYLTabBar.m in Sources */,
 				BC25B90A1DA1ED8B008EDFB2 /* ViewController.m in Sources */,
 				BC25B9CA1DA1F3BB008EDFB2 /* CYLTabBarController.m in Sources */,
 				BC25B9D71DA1F41D008EDFB2 /* MSTabBarControllerConfig.m in Sources */,
+				BC7601C61DB8695D0006A034 /* MSToolBorrowViewController.m in Sources */,
 				BC25B9071DA1ED8B008EDFB2 /* AppDelegate.m in Sources */,
 				BC00DCC41DA8D5770063F7FE /* YZInputView.m in Sources */,
 				BCF898681DAB67EC001A825B /* DNPhotoBrowser.m in Sources */,
-				BC8A55281DB07ADF00E9485A /* MSOutInInfoCell.m in Sources */,
 				18580C9A1DB2259300631F00 /* QRCodeReaderMaskView.m in Sources */,
+				BC7601BF1DB8695D0006A034 /* MSMaterialInfoFetchViewController.m in Sources */,
+				BC7601D51DB882170006A034 /* MSToolSectionHeaderView.m in Sources */,
 				BCF8987A1DAB6E88001A825B /* UIImage+Custom.m in Sources */,
-				BC8A55371DB09D0800E9485A /* MSOutInOneLineSection.m in Sources */,
 				BCF8988D1DAB889D001A825B /* PBViewController.m in Sources */,
+				BC7601C01DB8695D0006A034 /* MSMaterialOutStoreViewController.m in Sources */,
+				BC7601721DB869440006A034 /* MSQRCodeReaderViewController.m in Sources */,
+				BC7601C71DB8695D0006A034 /* MSToolInfoFillInViewController.m in Sources */,
 				BCF898641DAB67EC001A825B /* DNAsset.m in Sources */,
 				BCF8988B1DAB889D001A825B /* PBImageScrollView.m in Sources */,
+				BC7601BC1DB8695D0006A034 /* MSPhotoPadView.m in Sources */,
 				BCF8988E1DAB889D001A825B /* UIView+PBSnapshot.m in Sources */,
-				BC00DCB81DA89FB20063F7FE /* MSHomeCollectionCell.m in Sources */,
+				BC7601C31DB8695D0006A034 /* MSSearchResultViewController.m in Sources */,
+				BC7601B61DB8695D0006A034 /* MSHomeCollectionCell.m in Sources */,
 				BCF8988C1DAB889D001A825B /* PBPresentAnimatedTransitioningController.m in Sources */,
 				BCF898761DAB67EC001A825B /* DNUnAuthorizedTipsView.m in Sources */,
 				BCF898701DAB67EC001A825B /* DNAssetsViewCell.m in Sources */,
 				BC25B9CB1DA1F3BB008EDFB2 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				BC25B9D01DA1F3BB008EDFB2 /* ZCChainProcessor.m in Sources */,
 				BC25B9A91DA1F1E2008EDFB2 /* NSString+Util.m in Sources */,
-				BC0424361DB4C52400B5BBCD /* MSSearchResultViewController.m in Sources */,
-				18580CAD1DB267AB00631F00 /* MSBaseSearchTableViewController.m in Sources */,
+				BC7601CA1DB8695D0006A034 /* MSToolStateInfoQueryViewController.m in Sources */,
+				BC7601701DB869440006A034 /* MSBaseTableViewController.m in Sources */,
+				BC7601B51DB8695D0006A034 /* MSCommonSearchViewController.m in Sources */,
 				BC25B9A81DA1F1E2008EDFB2 /* NSString+Code.m in Sources */,
-				18580CB01DB2682000631F00 /* MSBaseSearchResultViewController.m in Sources */,
-				BC25B9DD1DA1F469008EDFB2 /* MSBaseViewController.m in Sources */,
-				BC8A55401DB0A38600E9485A /* MSToolInfoFillInSection.m in Sources */,
+				BC7601C41DB8695D0006A034 /* MSSearchTableViewController.m in Sources */,
+				BC7601C91DB8695D0006A034 /* MSToolManageViewController.m in Sources */,
+				BC7601CE1DB869B70006A034 /* MSToolDetailViewController.m in Sources */,
 				BCF898771DAB67EC001A825B /* JKPromptView.m in Sources */,
-				18B57B3E1DAE6F6A000F24A5 /* MSMaterialOutStoreViewController.m in Sources */,
 				BC25B9D41DA1F3E4008EDFB2 /* MSNetworking.m in Sources */,
-				BC8A55341DB09B0B00E9485A /* MSOutInMultiLineSection.m in Sources */,
-				BC8A553D1DB0A2EF00E9485A /* MSToolInfoFillInViewController.m in Sources */,
 				BCF8986A1DAB67EC001A825B /* NSURL+DNIMagePickerUrlEqual.m in Sources */,
 				BCF898661DAB67EC001A825B /* DNImagePickerController.m in Sources */,
 				BC25B9AC1DA1F1E2008EDFB2 /* UIView+RoundedCorner.m in Sources */,
+				BC7601D21DB874080006A034 /* MSToolOutInInfosQueryViewController.m in Sources */,
 				BCF898731DAB67EC001A825B /* DNFullImageButton.m in Sources */,
+				BC7601BD1DB8695D0006A034 /* MSHomeViewController.m in Sources */,
 				18580C991DB2259300631F00 /* QRCodeReaderAanimationLineView.m in Sources */,
 				BCF8986C1DAB67EC001A825B /* UIView+DNImagePicker.m in Sources */,
-				BC8A55461DB0A99B00E9485A /* MSToolLoanViewController.m in Sources */,
 				BC25B9CF1DA1F3BB008EDFB2 /* ZCApiUploadAction.m in Sources */,
-				18BF4BF81DB1133300D6B2FE /* MSToolStateInfoQueryViewController.m in Sources */,
-				BC8A55431DB0A98000E9485A /* MSToolBorrowViewController.m in Sources */,
+				BC76016E1DB869440006A034 /* MSBaseSearchTableViewController.m in Sources */,
+				BC7601BB1DB8695D0006A034 /* MSOutInOneLineSection.m in Sources */,
 				BC25B9AE1DA1F1E2008EDFB2 /* UIView+MSUtil.m in Sources */,
 				BCF8986B1DAB67EC001A825B /* UIColor+Hex.m in Sources */,
+				BC7601BE1DB8695D0006A034 /* MSMaterialFillInViewController.m in Sources */,
 				BCF898651DAB67EC001A825B /* DNImageFlowViewController.m in Sources */,
-				BC25B9E31DA1F4E4008EDFB2 /* MSHomeViewController.m in Sources */,
-				BC00DCCA1DA8E9A50063F7FE /* MSMaterialFillInNomalSection.m in Sources */,
 				BC25B9AD1DA1F1E2008EDFB2 /* UIImageView+CornerRadius.m in Sources */,
+				BC7601D81DB886BB0006A034 /* MSToolInfoStateCell.m in Sources */,
 				BCF898741DAB67EC001A825B /* DNSendButton.m in Sources */,
 				BC25B9AA1DA1F1E2008EDFB2 /* UIColor+MSUtil.m in Sources */,
 				BC25B9041DA1ED8B008EDFB2 /* main.m in Sources */,
+				BC7601C81DB8695D0006A034 /* MSToolLoanViewController.m in Sources */,
 				BCF898751DAB67EC001A825B /* DNTapDetectingImageView.m in Sources */,
-				18B57B3B1DAE6926000F24A5 /* MSMaterialInfoFetchViewController.m in Sources */,
-				BC25B9E01DA1F4B3008EDFB2 /* MSBaseNavigationController.m in Sources */,
-				BC00DCBF1DA8CC0F0063F7FE /* MSMaterialFillInViewController.m in Sources */,
+				BC76016C1DB869440006A034 /* MSBaseNavigationController.m in Sources */,
 				BC25B9CD1DA1F3BB008EDFB2 /* ZCApiDownloadAction.m in Sources */,
+				BC7601B81DB8695D0006A034 /* MSMaterialFillInWithSearchSection.m in Sources */,
 				18580C9C1DB2259300631F00 /* QRCodeReaderViewController.m in Sources */,
-				BC8A552B1DB07C2C00E9485A /* MSBaseTableViewCell.m in Sources */,
 				BC25B9AB1DA1F1E2008EDFB2 /* UIImage+RoundedCorner.m in Sources */,
+				BC7601C11DB8695D0006A034 /* MSOutInInfoDetailViewController.m in Sources */,
 				BCF898711DAB67EC001A825B /* DNBadgeLabel.m in Sources */,
 				BC25B9CC1DA1F3BB008EDFB2 /* ZCApiAction.m in Sources */,
 				BCF8986D1DAB67EC001A825B /* UIViewController+DNImagePicker.m in Sources */,
 				BC25B9C81DA1F3BB008EDFB2 /* CYLPlusButton.m in Sources */,
+				BC7601691DB869440006A034 /* MSBaseButton.m in Sources */,
 				18580C9B1DB2259300631F00 /* QRCodeReaderView.m in Sources */,
 				BCF8988A1DAB889D001A825B /* PBImageScrollerViewController.m in Sources */,
-				18580CA91DB225F700631F00 /* MSQRCodeReaderViewController.m in Sources */,
 				BC25B9A71DA1F1E2008EDFB2 /* NSDate+MSExtension.m in Sources */,
 				BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */,
-				BC00DCC71DA8E5540063F7FE /* MSMaterialFillInWithSearchSection.m in Sources */,
-				BC6A07871DAF78C100ACDD76 /* MSBaseTableViewController.m in Sources */,
-				BC8A553A1DB0A15600E9485A /* MSToolManageViewController.m in Sources */,
-				BC8A55311DB0983100E9485A /* MSOutInInfoDetailViewController.m in Sources */,
+				BC7601BA1DB8695D0006A034 /* MSOutInMultiLineSection.m in Sources */,
+				BC7601711DB869440006A034 /* MSBaseViewController.m in Sources */,
 				18580C971DB2259300631F00 /* QRCameraSwitchButton.m in Sources */,
-				BCF898371DAB4E4D001A825B /* MSPhotoPadView.m in Sources */,
-				BC0424331DB4824A00B5BBCD /* MSCommonSearchViewController.m in Sources */,
-				18B57B411DAE73CC000F24A5 /* MSBaseButton.m in Sources */,
-				BC25B9DC1DA1F469008EDFB2 /* MSBaseTabBarController.m in Sources */,
-				18BF4BFB1DB1148C00D6B2FE /* MSLiveWorkViewController.m in Sources */,
+				BC7601C21DB8695D0006A034 /* MSOutInInfosQueryViewController.m in Sources */,
+				BC7601C51DB8695D0006A034 /* MSLiveWorkViewController.m in Sources */,
+				BC76016A1DB869440006A034 /* MSBaseDatePickerView.m in Sources */,
+				BC7601B71DB8695D0006A034 /* MSMaterialFillInNomalSection.m in Sources */,
+				BC76016B1DB869440006A034 /* MSBaseTableViewCell.m in Sources */,
+				BC7601B91DB8695D0006A034 /* MSOutInInfoCell.m in Sources */,
 				BC25B9CE1DA1F3BB008EDFB2 /* ZCApiRunner.m in Sources */,
+				BC76016D1DB869440006A034 /* MSBaseSearchResultViewController.m in Sources */,
+				BC7601CB1DB8695D0006A034 /* MSToolInfoFillInSection.m in Sources */,
 				18580C981DB2259300631F00 /* QRCodeReader.m in Sources */,
 				BCF898721DAB67EC001A825B /* DNBrowserCell.m in Sources */,
-				BC6A07841DAF77F900ACDD76 /* MSOutInInfosQueryViewController.m in Sources */,
-				18B57B441DAE7D19000F24A5 /* MSBaseDatePickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

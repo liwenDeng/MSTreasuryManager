@@ -216,13 +216,12 @@ static NSString * const kResCellIdentifier = @"OutInInfosResult";
 }
 
 - (void)showDatePickerView {
-    
     if (self.datePickerView.hidden) {
         self.datePickerView.hidden = NO;
         [self.searchController.searchBar resignFirstResponder];
         [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{
             [self.datePickerView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(-200);
+                make.top.equalTo(self.mas_bottomLayoutGuideTop).offset(-244);
             }];
             [self.view layoutIfNeeded];
         } completion:^(BOOL finished) {
@@ -236,7 +235,7 @@ static NSString * const kResCellIdentifier = @"OutInInfosResult";
         [self.searchController.searchBar becomeFirstResponder];
         [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseIn) animations:^{
             [self.datePickerView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(0);
+                make.top.equalTo(self.mas_bottomLayoutGuideTop).offset(0);
             }];
             [self.view layoutIfNeeded];
         } completion:^(BOOL finished) {
