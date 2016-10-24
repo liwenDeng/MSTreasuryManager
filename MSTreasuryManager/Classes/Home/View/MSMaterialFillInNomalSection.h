@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) UITextField * textField;
 @property (nonatomic, strong) UIButton *actionBtn;  //用来响应点击事件
+@property (nonatomic, strong) UILabel *titleLabel;
 
 - (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder;
 

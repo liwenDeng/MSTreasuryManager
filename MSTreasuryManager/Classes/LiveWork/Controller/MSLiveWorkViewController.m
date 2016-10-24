@@ -9,6 +9,7 @@
 #import "MSLiveWorkViewController.h"
 #import "MSHomeCollectionCell.h"
 #import "MSLiveWorkFillInViewController.h"
+#import "MSLiveWorkQueryViewController.h"
 
 #define kCellWidth ((kSCREEN_WIDTH - 30) / 2.0f)
 #define kCellHeight 100
@@ -77,7 +78,7 @@ static NSString * const kLiveWorkCell = @"LiveWorkCell";
             break;
         case MSLiveWorkCellIndexTypeQuery:
         {
-            
+            vc = [[MSLiveWorkQueryViewController alloc]init];
         }
             break;
         default:

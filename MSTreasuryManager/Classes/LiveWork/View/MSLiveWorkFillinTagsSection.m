@@ -76,13 +76,9 @@
     
     // 创建标签列表
     YZTagList *tagList = [[YZTagList alloc] init];
+    tagList.layer.borderWidth = 1;
+    tagList.layer.borderColor = kBackgroundColor.CGColor;
     _tagList = tagList;
-    
-    // 点击标签，就会调用,点击标签，删除标签
-    __weak typeof(_tagList) weakTagList = _tagList;
-    _tagList.clickTagBlock = ^(NSString *tag){
-        [weakTagList deleteTag:tag];
-    };
     
     // 设置标签背景色
     tagList.tagBackgroundColor = kTitleColor;
@@ -102,6 +98,16 @@
     [self mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(tagList.mas_bottom).offset(8);
     }];
+    
+    // 点击标签，就会调用,点击标签，删除标签
+    __weak typeof(_tagList) weakTagList = _tagList;
+    _tagList.clickTagBlock = ^(NSString *tag){
+        [weakTagList deleteTag:tag];
+        CGFloat height = weakTagList.height;
+        [weakTagList mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(height);
+        }];
+    };
     
 }
 

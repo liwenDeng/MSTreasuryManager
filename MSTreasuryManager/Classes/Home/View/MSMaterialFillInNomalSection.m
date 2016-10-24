@@ -32,6 +32,7 @@
             label.font = [UIFont systemFontOfSize:13.0f];
             label;
         });
+        self.titleLabel = titleLabel;
         
         self.textField = ({
             UITextField *textField = [[UITextField alloc]init];

@@ -19,6 +19,8 @@ static NSString * const kCellId = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.view.backgroundColor = kBackgroundColor;
+    self.tableView.backgroundColor = kBackgroundColor;
     if ([self respondsToSelector:@selector(refresh)]) {
         self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
     }
@@ -53,7 +55,15 @@ static NSString * const kCellId = @"cell";
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
 }
 
 @end

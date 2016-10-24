@@ -13,6 +13,8 @@
 #import "MSToolInfoFillInSection.h"
 #import "MSBaseButton.h"
 
+static int i = 0;
+
 @interface MSLiveWorkFillInViewController () <MSBaseDatePickerViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -176,7 +178,8 @@
 }
 
 - (void)addClassMember {
-    [_classMemberSection addUser:@"123"];
+    [_classMemberSection addUser:[NSString stringWithFormat:@"dlw%ld",i]];
+    i++;
     [self.view layoutSubviews];
 }
 
@@ -262,4 +265,5 @@
     }
     return _meetingMemberList;
 }
+
 @end
