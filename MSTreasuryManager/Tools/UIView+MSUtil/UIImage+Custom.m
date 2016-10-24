@@ -11,6 +11,7 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <AssetsLibrary/ALAssetsLibrary.h>
 #import <AssetsLibrary/ALAssetRepresentation.h>
+#import "NSString+Util.h"
 
 CGFloat TYDegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;};
 CGFloat TYRadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
@@ -606,16 +607,16 @@ static void addRoundedRectToPath(CGContextRef context,
 
 @implementation UIImage (TextImage)
 
-//+ (UIImage*)imageFromText:(NSString*)text font:(UIFont*)font
-//{
-//    CGSize size = [text stringSizeWithFont:font];
-//    UIGraphicsBeginImageContextWithOptions(size,NO,0.0);
-//    
-//    [text drawAtPoint:CGPointZero withAttributes:@{NSFontAttributeName: font}];
-//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    return image;
-//}
++ (UIImage*)imageFromText:(NSString*)text font:(UIFont*)font
+{
+    CGSize size = [text ms_stringSizeWithFont:font];
+    UIGraphicsBeginImageContextWithOptions(size,NO,0.0);
+    
+    [text drawAtPoint:CGPointZero withAttributes:@{NSFontAttributeName: font}];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 
 + (UIImage*)imageFromText:(NSString *)text font:(UIFont*)font textColor:(UIColor*)textColor
 {

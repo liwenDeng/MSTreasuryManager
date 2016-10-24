@@ -92,6 +92,10 @@
 		BC7601D21DB874080006A034 /* MSToolOutInInfosQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601D11DB874080006A034 /* MSToolOutInInfosQueryViewController.m */; };
 		BC7601D51DB882170006A034 /* MSToolSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601D41DB882170006A034 /* MSToolSectionHeaderView.m */; };
 		BC7601D81DB886BB0006A034 /* MSToolInfoStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601D71DB886BB0006A034 /* MSToolInfoStateCell.m */; };
+		BC770A801DBB68BA00B74772 /* MSLiveWorkFillInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC770A7F1DBB68BA00B74772 /* MSLiveWorkFillInViewController.m */; };
+		BC770A831DBB6E1400B74772 /* MSLiveWorkFillinTagsSection.m in Sources */ = {isa = PBXBuildFile; fileRef = BC770A821DBB6E1400B74772 /* MSLiveWorkFillinTagsSection.m */; };
+		BC770A891DBB6E9D00B74772 /* YZTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC770A861DBB6E9D00B74772 /* YZTagButton.m */; };
+		BC770A8A1DBB6E9D00B74772 /* YZTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = BC770A881DBB6E9D00B74772 /* YZTagList.m */; };
 		BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983A1DAB67EC001A825B /* DNAlbumTableViewController.m */; };
 		BCF898641DAB67EC001A825B /* DNAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983C1DAB67EC001A825B /* DNAsset.m */; };
 		BCF898651DAB67EC001A825B /* DNImageFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983E1DAB67EC001A825B /* DNImageFlowViewController.m */; };
@@ -304,6 +308,14 @@
 		BC7601D41DB882170006A034 /* MSToolSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolSectionHeaderView.m; sourceTree = "<group>"; };
 		BC7601D61DB886BB0006A034 /* MSToolInfoStateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolInfoStateCell.h; sourceTree = "<group>"; };
 		BC7601D71DB886BB0006A034 /* MSToolInfoStateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolInfoStateCell.m; sourceTree = "<group>"; };
+		BC770A7E1DBB68BA00B74772 /* MSLiveWorkFillInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveWorkFillInViewController.h; sourceTree = "<group>"; };
+		BC770A7F1DBB68BA00B74772 /* MSLiveWorkFillInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkFillInViewController.m; sourceTree = "<group>"; };
+		BC770A811DBB6E1400B74772 /* MSLiveWorkFillinTagsSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveWorkFillinTagsSection.h; sourceTree = "<group>"; };
+		BC770A821DBB6E1400B74772 /* MSLiveWorkFillinTagsSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkFillinTagsSection.m; sourceTree = "<group>"; };
+		BC770A851DBB6E9D00B74772 /* YZTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZTagButton.h; sourceTree = "<group>"; };
+		BC770A861DBB6E9D00B74772 /* YZTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZTagButton.m; sourceTree = "<group>"; };
+		BC770A871DBB6E9D00B74772 /* YZTagList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZTagList.h; sourceTree = "<group>"; };
+		BC770A881DBB6E9D00B74772 /* YZTagList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZTagList.m; sourceTree = "<group>"; };
 		BCF898391DAB67EC001A825B /* DNAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAlbumTableViewController.h; sourceTree = "<group>"; };
 		BCF8983A1DAB67EC001A825B /* DNAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAlbumTableViewController.m; sourceTree = "<group>"; };
 		BCF8983B1DAB67EC001A825B /* DNAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAsset.h; sourceTree = "<group>"; };
@@ -545,6 +557,7 @@
 		BC25B9351DA1F0B5008EDFB2 /* ThirdLibs */ = {
 			isa = PBXGroup;
 			children = (
+				BC770A841DBB6E9D00B74772 /* YZTagList */,
 				18580C7D1DB2259300631F00 /* QRCodeReaderViewController */,
 				BCF8987B1DAB889D001A825B /* PhotoBrowser */,
 				BCF898381DAB67EC001A825B /* DNImagePicker */,
@@ -850,6 +863,8 @@
 			children = (
 				BC76019D1DB8695D0006A034 /* MSLiveWorkViewController.h */,
 				BC76019E1DB8695D0006A034 /* MSLiveWorkViewController.m */,
+				BC770A7E1DBB68BA00B74772 /* MSLiveWorkFillInViewController.h */,
+				BC770A7F1DBB68BA00B74772 /* MSLiveWorkFillInViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -864,6 +879,8 @@
 		BC7601A01DB8695D0006A034 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC770A811DBB6E1400B74772 /* MSLiveWorkFillinTagsSection.h */,
+				BC770A821DBB6E1400B74772 /* MSLiveWorkFillinTagsSection.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -955,6 +972,17 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BC770A841DBB6E9D00B74772 /* YZTagList */ = {
+			isa = PBXGroup;
+			children = (
+				BC770A851DBB6E9D00B74772 /* YZTagButton.h */,
+				BC770A861DBB6E9D00B74772 /* YZTagButton.m */,
+				BC770A871DBB6E9D00B74772 /* YZTagList.h */,
+				BC770A881DBB6E9D00B74772 /* YZTagList.m */,
+			);
+			path = YZTagList;
 			sourceTree = "<group>";
 		};
 		BCF898381DAB67EC001A825B /* DNImagePicker */ = {
@@ -1359,8 +1387,10 @@
 				BC7601CA1DB8695D0006A034 /* MSToolStateInfoQueryViewController.m in Sources */,
 				BC7601701DB869440006A034 /* MSBaseTableViewController.m in Sources */,
 				BC7601B51DB8695D0006A034 /* MSCommonSearchViewController.m in Sources */,
+				BC770A8A1DBB6E9D00B74772 /* YZTagList.m in Sources */,
 				BC25B9A81DA1F1E2008EDFB2 /* NSString+Code.m in Sources */,
 				BC7601C41DB8695D0006A034 /* MSSearchTableViewController.m in Sources */,
+				BC770A801DBB68BA00B74772 /* MSLiveWorkFillInViewController.m in Sources */,
 				BC7601C91DB8695D0006A034 /* MSToolManageViewController.m in Sources */,
 				BC7601CE1DB869B70006A034 /* MSToolDetailViewController.m in Sources */,
 				BCF898771DAB67EC001A825B /* JKPromptView.m in Sources */,
@@ -1374,6 +1404,7 @@
 				18580C991DB2259300631F00 /* QRCodeReaderAanimationLineView.m in Sources */,
 				BCF8986C1DAB67EC001A825B /* UIView+DNImagePicker.m in Sources */,
 				BC25B9CF1DA1F3BB008EDFB2 /* ZCApiUploadAction.m in Sources */,
+				BC770A891DBB6E9D00B74772 /* YZTagButton.m in Sources */,
 				BC76016E1DB869440006A034 /* MSBaseSearchTableViewController.m in Sources */,
 				BC7601BB1DB8695D0006A034 /* MSOutInOneLineSection.m in Sources */,
 				BC25B9AE1DA1F1E2008EDFB2 /* UIView+MSUtil.m in Sources */,
@@ -1398,6 +1429,7 @@
 				BCF8986D1DAB67EC001A825B /* UIViewController+DNImagePicker.m in Sources */,
 				BC25B9C81DA1F3BB008EDFB2 /* CYLPlusButton.m in Sources */,
 				BC7601691DB869440006A034 /* MSBaseButton.m in Sources */,
+				BC770A831DBB6E1400B74772 /* MSLiveWorkFillinTagsSection.m in Sources */,
 				18580C9B1DB2259300631F00 /* QRCodeReaderView.m in Sources */,
 				BCF8988A1DAB889D001A825B /* PBImageScrollerViewController.m in Sources */,
 				BC25B9A71DA1F1E2008EDFB2 /* NSDate+MSExtension.m in Sources */,

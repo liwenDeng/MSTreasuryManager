@@ -22,6 +22,15 @@
     }
 }
 
+- (CGSize)stringSizeWithFont:(UIFont *)font
+{
+    if (font == nil || ![font isKindOfClass:[UIFont class]]) {
+        font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    }
+    
+    return [self sizeWithAttributes:@{NSFontAttributeName: font}];
+}
+
 - (CGSize)ms_sizeWithFont:(UIFont *)font
            constrainedToSize:(CGSize)size
                lineBreakMode:(NSLineBreakMode)lineBreakMode

@@ -16,6 +16,11 @@
  */
 - (BOOL)ms_containsString:(NSString *)string;
 
+/*!
+ *  计算字符串所占大小的快捷方法，此处不换行，只计算一行字符串大小
+ */
+- (CGSize)ms_stringSizeWithFont:(UIFont *)font;
+
 /**
  *  计算字符串所占大小的快捷方法
  * @param font 使用的字体

@@ -37,9 +37,12 @@ static NSString *const kResultCell = @"ResultCell";
     NSArray *arr1 = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12"];
     NSArray *arr2 = @[];
 
-    
     self.totalList = [NSArray arrayWithArray:arr1];//数据数组
     self.searchList = [NSMutableArray arrayWithArray:arr2];//search到的数组
+    
+    if (self.searchType == MSSearchTypePerson) {
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
