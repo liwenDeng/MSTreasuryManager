@@ -163,6 +163,7 @@ static int i = 0;
         make.edges.equalTo(bgView);
     }];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

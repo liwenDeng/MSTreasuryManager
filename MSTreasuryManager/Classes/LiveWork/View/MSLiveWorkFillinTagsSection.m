@@ -7,11 +7,9 @@
 //
 
 #import "MSLiveWorkFillinTagsSection.h"
-#import "YZTagList.h"
 
 @interface MSLiveWorkFillinTagsSection ()
 
-@property (nonatomic, strong) YZTagList *tagList;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *placeholder;
 
@@ -119,6 +117,13 @@
     }];
 }
 
+- (void)addUsers:(NSArray *)users {
+    [self.tagList addTags:users];
+    CGFloat height = self.tagList.height;
+    [self.tagList mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(height);
+    }];
+}
 - (NSArray *)users {
     return self.tagList.tagArray;
 }

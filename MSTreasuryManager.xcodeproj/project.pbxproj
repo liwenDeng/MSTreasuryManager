@@ -59,6 +59,8 @@
 		BC5DAE9A1DBDB7CC00D88C30 /* MSLiveWorkMeetingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5DAE991DBDB7CC00D88C30 /* MSLiveWorkMeetingCell.m */; };
 		BC5DAE9D1DBDB7DE00D88C30 /* MSLiveWorkNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5DAE9C1DBDB7DE00D88C30 /* MSLiveWorkNoteCell.m */; };
 		BC5DAEA01DBDDBA400D88C30 /* MSLiveWorkHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5DAE9F1DBDDBA400D88C30 /* MSLiveWorkHeaderView.m */; };
+		BC5DAEA31DBDED7100D88C30 /* MSLiveWorkQueryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5DAEA21DBDED7100D88C30 /* MSLiveWorkQueryDetailViewController.m */; };
+		BC5DAEA61DBDFADA00D88C30 /* MSLiveWorkEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5DAEA51DBDFADA00D88C30 /* MSLiveWorkEditViewController.m */; };
 		BC7601691DB869440006A034 /* MSBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601551DB869440006A034 /* MSBaseButton.m */; };
 		BC76016A1DB869440006A034 /* MSBaseDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601571DB869440006A034 /* MSBaseDatePickerView.m */; };
 		BC76016B1DB869440006A034 /* MSBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601591DB869440006A034 /* MSBaseTableViewCell.m */; };
@@ -246,6 +248,10 @@
 		BC5DAE9C1DBDB7DE00D88C30 /* MSLiveWorkNoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkNoteCell.m; sourceTree = "<group>"; };
 		BC5DAE9E1DBDDBA400D88C30 /* MSLiveWorkHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveWorkHeaderView.h; sourceTree = "<group>"; };
 		BC5DAE9F1DBDDBA400D88C30 /* MSLiveWorkHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkHeaderView.m; sourceTree = "<group>"; };
+		BC5DAEA11DBDED7100D88C30 /* MSLiveWorkQueryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveWorkQueryDetailViewController.h; sourceTree = "<group>"; };
+		BC5DAEA21DBDED7100D88C30 /* MSLiveWorkQueryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkQueryDetailViewController.m; sourceTree = "<group>"; };
+		BC5DAEA41DBDFADA00D88C30 /* MSLiveWorkEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveWorkEditViewController.h; sourceTree = "<group>"; };
+		BC5DAEA51DBDFADA00D88C30 /* MSLiveWorkEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkEditViewController.m; sourceTree = "<group>"; };
 		BC7601541DB869440006A034 /* MSBaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseButton.h; sourceTree = "<group>"; };
 		BC7601551DB869440006A034 /* MSBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseButton.m; sourceTree = "<group>"; };
 		BC7601561DB869440006A034 /* MSBaseDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseDatePickerView.h; sourceTree = "<group>"; };
@@ -879,6 +885,10 @@
 				BC770A7F1DBB68BA00B74772 /* MSLiveWorkFillInViewController.m */,
 				BC5DAE951DBDB18200D88C30 /* MSLiveWorkQueryViewController.h */,
 				BC5DAE961DBDB18200D88C30 /* MSLiveWorkQueryViewController.m */,
+				BC5DAEA11DBDED7100D88C30 /* MSLiveWorkQueryDetailViewController.h */,
+				BC5DAEA21DBDED7100D88C30 /* MSLiveWorkQueryDetailViewController.m */,
+				BC5DAEA41DBDFADA00D88C30 /* MSLiveWorkEditViewController.h */,
+				BC5DAEA51DBDFADA00D88C30 /* MSLiveWorkEditViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1375,6 +1385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC76016F1DB869440006A034 /* MSBaseTabBarController.m in Sources */,
+				BC5DAEA61DBDFADA00D88C30 /* MSLiveWorkEditViewController.m in Sources */,
 				BC25B9D11DA1F3BB008EDFB2 /* ZCNetworking.m in Sources */,
 				BC25B9C91DA1F3BB008EDFB2 /* CYLTabBar.m in Sources */,
 				BC25B90A1DA1ED8B008EDFB2 /* ViewController.m in Sources */,
@@ -1401,6 +1412,7 @@
 				BCF8988C1DAB889D001A825B /* PBPresentAnimatedTransitioningController.m in Sources */,
 				BCF898761DAB67EC001A825B /* DNUnAuthorizedTipsView.m in Sources */,
 				BCF898701DAB67EC001A825B /* DNAssetsViewCell.m in Sources */,
+				BC5DAEA31DBDED7100D88C30 /* MSLiveWorkQueryDetailViewController.m in Sources */,
 				BC25B9CB1DA1F3BB008EDFB2 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				BC25B9D01DA1F3BB008EDFB2 /* ZCChainProcessor.m in Sources */,
 				BC25B9A91DA1F1E2008EDFB2 /* NSString+Util.m in Sources */,

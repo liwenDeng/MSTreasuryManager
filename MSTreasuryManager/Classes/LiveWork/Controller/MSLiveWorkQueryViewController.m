@@ -12,6 +12,8 @@
 #import <UITableView+FDTemplateLayoutCell.h>
 #import "MSLiveWorkNoteCell.h"
 #import "MSLiveWorkMeetingCell.h"
+#import "MSLiveWorkQueryDetailViewController.h"
+#import "MSLiveWorkEditViewController.h"
 
 static NSString * const kLiveWorkLeaderCell = @"LiveWorkLeaderCell";
 static NSString * const kLiveWorkMeetingCell = @"LiveWorkMeetingCell";
@@ -114,15 +116,22 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
     switch (indexPath.section) {
         case 0:
         {
-            
+            MSLiveWorkQueryDetailViewController *detailVC = [[MSLiveWorkQueryDetailViewController alloc]init];
+            [self.navigationController pushViewController:detailVC animated:YES];
         }
             break;
         case 1:
         case 2:
-            [tableView deselectRowAtIndexPath:indexPath animated:NO];
+        {
+            MSLiveWorkEditViewController *editVC = [[MSLiveWorkEditViewController alloc]init];
+            [self.navigationController pushViewController:editVC animated:YES];
+        }
         default:
             break;
     }

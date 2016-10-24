@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YZTagList.h"
 
 /**
  标签选取SectionView
@@ -15,9 +16,12 @@
 
 @property (nonatomic, strong) NSArray *users;
 @property (nonatomic, strong) UIButton *addBtn;
+@property (nonatomic, strong) YZTagList *tagList;
 
 - (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder;
 
 - (void)addUser:(NSString *)user;
+
+- (void)addUsers:(NSArray *)users;
 
 @end
