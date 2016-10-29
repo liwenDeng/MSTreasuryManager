@@ -8,13 +8,15 @@
 
 #import "MSBaseSearchTableViewController.h"
 
+static NSString *const kSearchCell = @"SearchCell";
+static NSString *const kResultCell = @"ResultCell";
+
 typedef enum : NSUInteger {
     MSSearchTypeMaterialName = 0,
     MSSearchTypeMaterialParams,
     MSSearchTypeStorePlace,
     MSSearchTypePerson,
     MSSearchTypeToolName,
-    
 } MSSearchType;
 
 @class MSCommonSearchViewController;
@@ -29,8 +31,13 @@ typedef enum : NSUInteger {
 
 @interface MSCommonSearchViewController : MSBaseSearchTableViewController
 
+@property (nonatomic, strong) NSArray *totalList;
+@property (nonatomic, strong) NSMutableArray *searchList;
 @property (nonatomic, weak) id<MSCommonSearchViewControllerDelegate> delegate;
+
 - (instancetype)initWithSearchType:(MSSearchType)type;
 
+- (void)requestAllData;
+- (void)requestSearchData;
 
 @end

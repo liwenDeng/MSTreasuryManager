@@ -1,65 +1,32 @@
 //
-//  MSCommonSearchViewController.m
+//  MSSearchPersonViewController.m
 //  MSTreasuryManager
 //
-//  Created by 邓利文 on 2016/10/17.
+//  Created by 邓利文 on 2016/10/24.
 //  Copyright © 2016年 邓利文. All rights reserved.
 //
 
-#import "MSCommonSearchViewController.h"
+#import "MSSearchPersonViewController.h"
 
-@interface MSCommonSearchViewController ()
-
-@property (nonatomic, assign) MSSearchType searchType;
+@interface MSSearchPersonViewController ()
 
 @end
 
-@implementation MSCommonSearchViewController
-
-- (instancetype)initWithSearchType:(MSSearchType)type {
-    if (self = [super init]) {
-        _searchType = type;
-        _totalList = [NSArray array];
-        _searchList = [NSMutableArray array];
-    }
-    return self;
-}
+@implementation MSSearchPersonViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self requestAllData];
-
-    if (self.searchType == MSSearchTypePerson) {
-        
-    }
+    // Do any additional setup after loading the view.
 }
 
 - (void)requestAllData {
-    //test code
-    NSArray *arr1 = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12"];
-    NSArray *arr2 = @[];
     
-    self.totalList = [NSArray arrayWithArray:arr1];//数据数组
-    self.searchList = [NSMutableArray arrayWithArray:arr2];//search到的数组
 }
 
 - (void)requestSearchData {
-    
-}
 
+}
 #pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (tableView == self.tableView) {
-        return _totalList.count;
-    }
-    return _searchList.count;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.tableView) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSearchCell];
@@ -77,10 +44,6 @@
         return cell;
     }
     
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
 }
 
 #pragma mark - UITableViewDelegate
@@ -104,9 +67,6 @@
 }
 
 #pragma mark - UISearchBarDelegate
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    NSLog(@"开始搜索");
-    [self requestSearchData];
-}
+
 
 @end

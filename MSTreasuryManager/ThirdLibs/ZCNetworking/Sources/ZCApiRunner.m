@@ -127,7 +127,7 @@
     
     NSURLSessionDataTask *task;
     __weak typeof(self) weakSelf = self;
-    if (action.headers) {
+    if (action.headers || _addtionalHeaders) { //bug fix
         NSURLSessionConfiguration *configuration = [ZCNetworking sharedInstance].defaultConfigration.copy;
         NSMutableDictionary *headers = _addtionalHeaders.mutableCopy;
         [headers addEntriesFromDictionary:action.headers];
@@ -226,7 +226,7 @@
     !action.actionWillInvokeBlock ? : action.actionWillInvokeBlock();
     
     NSURLSessionDownloadTask *task;
-    if (action.headers) {
+    if (action.headers || _addtionalHeaders) {
         NSURLSessionConfiguration *configuration = [ZCNetworking sharedInstance].defaultConfigration.copy;
         NSMutableDictionary *headers = _addtionalHeaders.mutableCopy;
         [headers addEntriesFromDictionary:action.headers];

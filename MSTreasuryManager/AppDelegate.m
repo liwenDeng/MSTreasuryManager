@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MSTabBarControllerConfig.h"
 #import <IQKeyboardManager.h>
+#import "MSAccountManager.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,7 @@
     MSTabBarControllerConfig *config = [[MSTabBarControllerConfig alloc]init];
     self.window.rootViewController = config.tabBarController;
     
+    [MSAccountManager sharedManager];
     [IQKeyboardManager sharedManager].enable = YES;
     
     return YES;

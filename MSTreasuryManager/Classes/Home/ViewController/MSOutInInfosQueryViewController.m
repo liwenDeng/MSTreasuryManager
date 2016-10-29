@@ -159,22 +159,6 @@ static NSString * const kResCellIdentifier = @"OutInInfosResult";
 }
 
 #pragma mark - UISearchControllerDelegate
-- (void)presentSearchController:(UISearchController *)searchController {
-    
-}
-
-- (void)willPresentSearchController:(UISearchController *)searchController {
-    // do something before the search controller is presented
-}
-
-- (void)didPresentSearchController:(UISearchController *)searchController {
-    // do something after the search controller is presented
-}
-
-- (void)willDismissSearchController:(UISearchController *)searchController {
-    // do something before the search controller is dismissed
-}
-
 - (void)didDismissSearchController:(UISearchController *)searchController {
     // do something after the search controller is dismissed
     searchController.searchBar.selectedScopeButtonIndex = 0;

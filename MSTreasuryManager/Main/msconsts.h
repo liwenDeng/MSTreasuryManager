@@ -65,4 +65,4 @@
     #endif
 */
 
-#define MSWeakSelf __weak typeof(self) weakSelf = self;
+#define MSWeakSelf(self,weakSelf) __weak typeof(self) weakSelf = self;

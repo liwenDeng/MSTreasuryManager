@@ -18,9 +18,9 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <AVFoundation/AVFoundation.h>
 #import "MSBaseButton.h"
-#import "MSCommonSearchViewController.h"
+#import "MSSearchPersonViewController.h"
 
-@interface MSMaterialFillInViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,DNImagePickerControllerDelegate,MSPhotoPadViewDelegate,PBViewControllerDataSource, PBViewControllerDelegate>
+@interface MSMaterialFillInViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,DNImagePickerControllerDelegate,MSPhotoPadViewDelegate,PBViewControllerDataSource, PBViewControllerDelegate,MSCommonSearchViewControllerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) YZInputView *nameInput;   //物资名称
@@ -398,18 +398,24 @@
 - (void)searchNameBtnClicked:(UIButton*)sender {
     NSLog(@"搜索物资名称");
     MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypeMaterialName)];
+    s.delegate = self;
     [self.navigationController pushViewController:s animated:YES];
-//    [self presentViewController:s animated:YES completion:nil];
 }
 
 - (void)searchParamsBtnClicked:(UIButton*)sender {
     NSLog(@"搜索物资参数");
     MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypeMaterialParams)];
+    s.delegate = self;
     [self.navigationController pushViewController:s animated:YES];
 }
 
 - (void)dismissKeyboardAction {
     [self.view endEditing:YES];
+}
+
+#pragma mark - MSCommonSearchViewControllerDelegate
+- (void)searchViewController:(MSCommonSearchViewController *)searchController didSelectString:(NSString *)result {
+    
 }
 
 @end

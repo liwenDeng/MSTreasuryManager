@@ -9,6 +9,7 @@
 #import "MSToolInfoFillInViewController.h"
 #import "MSBaseButton.h"
 #import "MSToolInfoFillInSection.h"
+#import "MSLoginViewController.h"
 
 @interface MSToolInfoFillInViewController ()
 
@@ -21,6 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [MSLoginViewController loginSuccess:^{
+        
+    } failure:^{
+        [self.navigationController popViewControllerAnimated:NO];
+    }];
     
     self.title = @"工器具信息填写";
     self.scrollView = [[UIScrollView alloc]init];
