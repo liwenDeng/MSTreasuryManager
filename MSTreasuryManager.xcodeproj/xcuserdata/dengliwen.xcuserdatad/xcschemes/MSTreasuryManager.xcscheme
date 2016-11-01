@@ -26,7 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "NO">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -52,9 +52,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BC25B8FE1DA1ED8B008EDFB2"
-            BuildableName = "MSTreasuryManager.app"
-            BlueprintName = "MSTreasuryManager"
+            BlueprintIdentifier = "BC25B9171DA1ED8C008EDFB2"
+            BuildableName = "MSTreasuryManagerTests.xctest"
+            BlueprintName = "MSTreasuryManagerTests"
             ReferencedContainer = "container:MSTreasuryManager.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

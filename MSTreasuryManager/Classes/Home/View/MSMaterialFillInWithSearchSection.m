@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong)NSString *title;
 @property (nonatomic, strong)NSString *placeholder;
+@property (nonatomic, assign)BOOL hideSearchButton;
 
 @end
 
@@ -24,7 +25,13 @@
     }
     return self;
 }
+
 - (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder {
+    return [self initWithTitle:title placeholder:placeholder hideSearchButton:NO];
+}
+
+- (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder hideSearchButton:(BOOL)hideSearchButton {
+    _hideSearchButton = hideSearchButton;
     _title = title;
     _placeholder = placeholder;
     return [self init];
@@ -83,7 +90,11 @@
     
     [input1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(titleLabel1);
-        make.right.equalTo(searchBtn.mas_left).offset(-20);
+        if (_hideSearchButton) {
+            make.right.equalTo(self.mas_right).offset(-20);
+        }else {
+            make.right.equalTo(searchBtn.mas_left).offset(-20);
+        }
         make.top.equalTo(line1.mas_bottom).offset(8);
     }];
     
@@ -97,6 +108,10 @@
         make.size.mas_equalTo(CGSizeMake(20, 20));
     }];
 
+    if (_hideSearchButton) {
+        _searchBtn.hidden = YES;
+    }
+    
     __weak typeof(YZInputView) *weakInput = input1;
     input1.yz_textHeightChangeBlock =  ^(NSString *text,CGFloat textHeight){
         [weakInput mas_updateConstraints:^(MASConstraintMaker *make) {

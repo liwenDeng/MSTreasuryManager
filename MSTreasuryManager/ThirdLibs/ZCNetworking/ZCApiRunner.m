@@ -71,6 +71,9 @@
     _addtionalHeaders = [dict mutableCopy];
     NSURLSessionConfiguration *configuration = [ZCNetworking sharedInstance].defaultConfigration;
     NSMutableDictionary *headers = configuration.HTTPAdditionalHeaders.mutableCopy;
+    if (!headers) {
+        headers = @{}.mutableCopy;
+    }
     [headers addEntriesFromDictionary:dict];
     configuration.HTTPAdditionalHeaders = headers;
     [[ZCNetworking sharedInstance] setDefaultSessionConfiguration:configuration];
@@ -119,15 +122,12 @@
     [action.params addEntriesFromDictionary:self.globleParams];
     [self showLogByAction:action];
     
-#warning 这里使用相对url
-//    NSString *fullURL = [self actionURL:action];
-    NSString *fullURL = action.url;
-    
+    NSString *fullURL = [self actionURL:action];
     !action.actionWillInvokeBlock ? : action.actionWillInvokeBlock();
     
     NSURLSessionDataTask *task;
     __weak typeof(self) weakSelf = self;
-    if (action.headers || _addtionalHeaders) { //bug fix
+    if (action.headers) {
         NSURLSessionConfiguration *configuration = [ZCNetworking sharedInstance].defaultConfigration.copy;
         NSMutableDictionary *headers = _addtionalHeaders.mutableCopy;
         [headers addEntriesFromDictionary:action.headers];
@@ -226,7 +226,7 @@
     !action.actionWillInvokeBlock ? : action.actionWillInvokeBlock();
     
     NSURLSessionDownloadTask *task;
-    if (action.headers || _addtionalHeaders) {
+    if (action.headers) {
         NSURLSessionConfiguration *configuration = [ZCNetworking sharedInstance].defaultConfigration.copy;
         NSMutableDictionary *headers = _addtionalHeaders.mutableCopy;
         [headers addEntriesFromDictionary:action.headers];

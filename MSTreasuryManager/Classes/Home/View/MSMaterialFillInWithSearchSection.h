@@ -19,4 +19,6 @@
 
 - (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder;
 
+- (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder hideSearchButton:(BOOL)hideSearchButton;
+
 @end

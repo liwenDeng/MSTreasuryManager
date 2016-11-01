@@ -11,6 +11,9 @@
 #import <IQKeyboardManager.h>
 #import "MSAccountManager.h"
 
+#import "MSNetworking+Material.h"
+#import "ZCNetworking.h"
+
 @interface AppDelegate ()
 
 @end
@@ -27,10 +30,30 @@
     
     [MSAccountManager sharedManager];
     [IQKeyboardManager sharedManager].enable = YES;
+
+    
+    [self networkGlobleSettings];
+//    [MSNetworking getMaterialInfoSuccess:^(NSDictionary *object) {
+//        
+//        NSLog(@"s");
+//    } failure:^(NSError *error) {
+//        
+//        NSLog(@"e");
+//    }];
     
     return YES;
 }
 
+- (void)networkGlobleSettings {
+    [[ZCApiRunner sharedInstance] startWithDebugDomain:@"http://139.196.112.30:8080/web/" releaseDomain:@""];
+    [[ZCApiRunner sharedInstance] codeKey:@"code"];
+    [[ZCApiRunner sharedInstance] successCodes:@[@"200"]];
+    [[ZCApiRunner sharedInstance] warningReturnCodes:@[@"-1"] withHandler:^(NSString *code) {
+        if ([code isEqualToString:@"-1"]) {
+            //做自己的操作,例如登录等
+        }
+    }];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

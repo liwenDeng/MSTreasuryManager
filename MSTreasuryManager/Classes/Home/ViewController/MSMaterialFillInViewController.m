@@ -19,6 +19,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import "MSBaseButton.h"
 #import "MSSearchPersonViewController.h"
+#import "MSNetworking+Material.h"
+
+static NSString *const kMaterialImageUrl = @"http://139.196.112.30:8080/web";
 
 @interface MSMaterialFillInViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,DNImagePickerControllerDelegate,MSPhotoPadViewDelegate,PBViewControllerDataSource, PBViewControllerDelegate,MSCommonSearchViewControllerDelegate>
 
@@ -31,6 +34,8 @@
 @property (nonatomic, strong) UITextField *sysField;
 
 @property (nonatomic, strong) MSPhotoPadView *photoPadView;
+
+@property (nonatomic, strong) NSMutableArray *waitForUploadImgUrls;
 
 @end
 
@@ -64,7 +69,7 @@
     });
     
     //物资名称 物资技术参数
-    MSMaterialFillInWithSearchSection *section1 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:@"物资名称" placeholder:@"请输入物资名称"];
+    MSMaterialFillInWithSearchSection *section1 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:@"物资名称" placeholder:@"请输入物资名称" hideSearchButton:YES];
     self.nameInput = section1.inputView;
     [bgView addSubview:section1];
     [section1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -74,7 +79,7 @@
     }];
     [section1.searchBtn addTarget:self action:@selector(searchNameBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    MSMaterialFillInWithSearchSection *section2 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:@"物资技术参数" placeholder:@"请输入物资技术参数"];
+    MSMaterialFillInWithSearchSection *section2 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:@"物资技术参数" placeholder:@"请输入物资技术参数" hideSearchButton:YES];
     self.paramsInput = section2.inputView;
     [bgView addSubview:section2];
     [section2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -170,6 +175,7 @@
         make.width.mas_equalTo(kSCREEN_WIDTH - 40);
         make.height.mas_equalTo(40);
     }];
+    [submitBtn addTarget:self action:@selector(addMaterial:) forControlEvents:(UIControlEventTouchUpInside)];
     
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(kSCREEN_WIDTH);
@@ -416,6 +422,62 @@
 #pragma mark - MSCommonSearchViewControllerDelegate
 - (void)searchViewController:(MSCommonSearchViewController *)searchController didSelectString:(NSString *)result {
     
+}
+
+#pragma mark - HTTP Request
+- (void)addMaterial:(UIButton *)sender {
+    
+    //验证数据正确性
+    //to do
+    
+    sender.enabled = NO;
+    //先上传图片
+    dispatch_group_t group = dispatch_group_create();
+    
+    [self.waitForUploadImgUrls removeAllObjects];
+    for (int i = 0; i < self.photoPadView.imageArray.count; i++) {
+        dispatch_group_enter(group);
+    }
+    
+    for (UIImage *image in self.photoPadView.imageArray) {
+        [MSNetworking uploadImage:image success:^(NSDictionary *object) {
+            NSArray *imgs = object[@"imgs"];
+            if (imgs.count) {
+                NSString *url = [imgs firstObject];
+                if (url.length > 0) {
+                    url = [NSString stringWithFormat:@"%@%@",kMaterialImageUrl,url];
+                    [self.waitForUploadImgUrls addObject:url];
+                }
+            }
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            dispatch_group_leave(group);
+        }];
+    }
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        if (self.photoPadView.imageArray.count == self.waitForUploadImgUrls.count) {
+            //所有图片上传完成，上传物资数据
+            NSString *pictures = [self.waitForUploadImgUrls componentsJoinedByString:@","];
+            [MSNetworking addMaterialWithName:self.nameInput.text techParam:self.paramsInput.text storeRoom1:self.erfuField.text.integerValue storeRoom2:self.tuikuField.text.integerValue systemRoom:self.sysField.text.integerValue pictures:pictures success:^(NSDictionary *object) {
+                NSLog(@"上传成功");
+                sender.enabled = YES;
+            } failure:^(NSError *error) {
+                sender.enabled = NO;
+            }];
+        }else {
+            //失败
+            sender.enabled = YES;
+        }
+    });
+
+}
+
+- (NSMutableArray *)waitForUploadImgUrls {
+    if (!_waitForUploadImgUrls) {
+        _waitForUploadImgUrls = [NSMutableArray array];
+    }
+    return _waitForUploadImgUrls;
 }
 
 @end

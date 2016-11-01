@@ -81,11 +81,7 @@ static NSString * const kNomalCell = @"normalCell";
         //退出登录
         [self showLoginView];
     }else {
-        [MSNetworking getDouyuColumnList:^(NSDictionary *object) {
-            NSLog(@"");
-        } failure:^(NSError *error) {
-            NSLog(@"");
-        }];
+
     }
 }
 
