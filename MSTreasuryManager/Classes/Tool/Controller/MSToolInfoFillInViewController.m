@@ -37,7 +37,7 @@
     [self setupSections];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboardAction)];
-    tap.cancelsTouchesInView = NO;//防止tap影响subView响应事件
+//    tap.cancelsTouchesInView = NO;//防止tap影响subView响应事件
     [self.view addGestureRecognizer:tap];
 }
 

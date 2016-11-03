@@ -32,7 +32,7 @@
     [datePicker setTimeZone:[NSTimeZone localTimeZone]];
     
     datePicker.backgroundColor = kBackgroundColor;
-    [datePicker setDatePickerMode:(UIDatePickerModeDate)];
+    [datePicker setDatePickerMode:(UIDatePickerModeDateAndTime)];
     [datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];

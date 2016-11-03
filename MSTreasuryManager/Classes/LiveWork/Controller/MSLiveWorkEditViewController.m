@@ -41,7 +41,7 @@
     self.scrollView.backgroundColor = kBackgroundColor;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboardAction:)];
-    tap.cancelsTouchesInView = NO;//防止tap影响subView响应事件
+//    tap.cancelsTouchesInView = NO;//防止tap影响subView响应事件
     [self.view addGestureRecognizer:tap];
     
     [self setupSections];
@@ -59,8 +59,6 @@
     NSString *title = self.editType == MSEditTypeContent ? @"工作内容" : @"注意事项";
     
     MSToolInfoFillInSection *section1 = [[MSToolInfoFillInSection alloc]initWithTitle:title placeholder:nil];
-    _fillInview = section1.fillInView;
-    [_fillInview becomeFirstResponder];
     
     [bgView addSubview:section1];
     [section1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -90,6 +88,12 @@
         make.edges.equalTo(self.view);
         make.edges.equalTo(bgView);
     }];
+    
+    _fillInview = section1.fillInView;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [_fillInview becomeFirstResponder];
 }
 
 - (void)dismissKeyboardAction:(UITapGestureRecognizer *)tap {

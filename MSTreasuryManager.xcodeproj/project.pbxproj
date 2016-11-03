@@ -49,6 +49,9 @@
 		BC25B9CB1DA1F3BB008EDFB2 /* UIViewController+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9B71DA1F3BB008EDFB2 /* UIViewController+CYLTabBarControllerExtention.m */; };
 		BC25B9D41DA1F3E4008EDFB2 /* MSNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9D31DA1F3E4008EDFB2 /* MSNetworking.m */; };
 		BC25B9D71DA1F41D008EDFB2 /* MSTabBarControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BC25B9D61DA1F41D008EDFB2 /* MSTabBarControllerConfig.m */; };
+		BC2954EE1DC8A46B0044D9C9 /* MSDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2954ED1DC8A46B0044D9C9 /* MSDialog.m */; };
+		BC57309F1DCB5C440064243F /* MSLiveWorkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC57309E1DCB5C440064243F /* MSLiveWorkModel.m */; };
+		BC5730A51DCB5F860064243F /* MSNetworking+LiveWork.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5730A41DCB5F860064243F /* MSNetworking+LiveWork.m */; };
 		BC5814341DC051890077547E /* MSAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5814331DC051890077547E /* MSAccountManager.m */; };
 		BC5CBE6B1DC6CFF8003FA945 /* MSBaseApiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5CBE6A1DC6CFF8003FA945 /* MSBaseApiTest.m */; };
 		BC5CBE6E1DC6D039003FA945 /* MSMaterialApiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5CBE6D1DC6D039003FA945 /* MSMaterialApiTest.m */; };
@@ -116,6 +119,9 @@
 		BC7C07631DBF51BB00896351 /* MSMyCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C07621DBF51BB00896351 /* MSMyCenterHeaderView.m */; };
 		BC7C07661DBF66C200896351 /* MSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C07651DBF66C200896351 /* MSLoginViewController.m */; };
 		BC7C07691DBF66D400896351 /* MSLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C07681DBF66D400896351 /* MSLoginView.m */; };
+		BC9412FF1DC9C88000B68744 /* MSSearchStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9412FE1DC9C88000B68744 /* MSSearchStoreViewController.m */; };
+		BC9413021DC9CD0F00B68744 /* MSMaterialOutInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9413011DC9CD0F00B68744 /* MSMaterialOutInModel.m */; };
+		BC9413051DC9D02100B68744 /* MSSearchStaffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9413041DC9D02100B68744 /* MSSearchStaffViewController.m */; };
 		BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983A1DAB67EC001A825B /* DNAlbumTableViewController.m */; };
 		BCF898641DAB67EC001A825B /* DNAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983C1DAB67EC001A825B /* DNAsset.m */; };
 		BCF898651DAB67EC001A825B /* DNImageFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983E1DAB67EC001A825B /* DNImageFlowViewController.m */; };
@@ -240,6 +246,12 @@
 		BC25B9D31DA1F3E4008EDFB2 /* MSNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNetworking.m; sourceTree = "<group>"; };
 		BC25B9D51DA1F41D008EDFB2 /* MSTabBarControllerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTabBarControllerConfig.h; sourceTree = "<group>"; };
 		BC25B9D61DA1F41D008EDFB2 /* MSTabBarControllerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTabBarControllerConfig.m; sourceTree = "<group>"; };
+		BC2954EC1DC8A46B0044D9C9 /* MSDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDialog.h; sourceTree = "<group>"; };
+		BC2954ED1DC8A46B0044D9C9 /* MSDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDialog.m; sourceTree = "<group>"; };
+		BC57309D1DCB5C440064243F /* MSLiveWorkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveWorkModel.h; sourceTree = "<group>"; };
+		BC57309E1DCB5C440064243F /* MSLiveWorkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkModel.m; sourceTree = "<group>"; };
+		BC5730A31DCB5F860064243F /* MSNetworking+LiveWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSNetworking+LiveWork.h"; sourceTree = "<group>"; };
+		BC5730A41DCB5F860064243F /* MSNetworking+LiveWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MSNetworking+LiveWork.m"; sourceTree = "<group>"; };
 		BC5814321DC051890077547E /* MSAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAccountManager.h; sourceTree = "<group>"; };
 		BC5814331DC051890077547E /* MSAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAccountManager.m; sourceTree = "<group>"; };
 		BC5CBE691DC6CFF8003FA945 /* MSBaseApiTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseApiTest.h; sourceTree = "<group>"; };
@@ -376,6 +388,12 @@
 		BC7C07651DBF66C200896351 /* MSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLoginViewController.m; sourceTree = "<group>"; };
 		BC7C07671DBF66D400896351 /* MSLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLoginView.h; sourceTree = "<group>"; };
 		BC7C07681DBF66D400896351 /* MSLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLoginView.m; sourceTree = "<group>"; };
+		BC9412FD1DC9C88000B68744 /* MSSearchStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchStoreViewController.h; sourceTree = "<group>"; };
+		BC9412FE1DC9C88000B68744 /* MSSearchStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchStoreViewController.m; sourceTree = "<group>"; };
+		BC9413001DC9CD0F00B68744 /* MSMaterialOutInModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialOutInModel.h; sourceTree = "<group>"; };
+		BC9413011DC9CD0F00B68744 /* MSMaterialOutInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialOutInModel.m; sourceTree = "<group>"; };
+		BC9413031DC9D02100B68744 /* MSSearchStaffViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchStaffViewController.h; sourceTree = "<group>"; };
+		BC9413041DC9D02100B68744 /* MSSearchStaffViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchStaffViewController.m; sourceTree = "<group>"; };
 		BCF898391DAB67EC001A825B /* DNAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAlbumTableViewController.h; sourceTree = "<group>"; };
 		BCF8983A1DAB67EC001A825B /* DNAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAlbumTableViewController.m; sourceTree = "<group>"; };
 		BCF8983B1DAB67EC001A825B /* DNAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAsset.h; sourceTree = "<group>"; };
@@ -651,6 +669,8 @@
 				BC25B9D31DA1F3E4008EDFB2 /* MSNetworking.m */,
 				BC5CBE701DC6D0B0003FA945 /* MSNetworking+Material.h */,
 				BC5CBE711DC6D0B0003FA945 /* MSNetworking+Material.m */,
+				BC5730A31DCB5F860064243F /* MSNetworking+LiveWork.h */,
+				BC5730A41DCB5F860064243F /* MSNetworking+LiveWork.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -658,6 +678,7 @@
 		BC25B9821DA1F10D008EDFB2 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BC2954EB1DC8A45B0044D9C9 /* MSDialog */,
 				BC25B9921DA1F1E2008EDFB2 /* NSDate+MSExtension */,
 				BC25B9951DA1F1E2008EDFB2 /* NSString+MSExtension */,
 				BC25B99A1DA1F1E2008EDFB2 /* UIColor+MSExtension */,
@@ -733,6 +754,15 @@
 				BC25B9B71DA1F3BB008EDFB2 /* UIViewController+CYLTabBarControllerExtention.m */,
 			);
 			path = CYLTabBarController;
+			sourceTree = "<group>";
+		};
+		BC2954EB1DC8A45B0044D9C9 /* MSDialog */ = {
+			isa = PBXGroup;
+			children = (
+				BC2954EC1DC8A46B0044D9C9 /* MSDialog.h */,
+				BC2954ED1DC8A46B0044D9C9 /* MSDialog.m */,
+			);
+			path = MSDialog;
 			sourceTree = "<group>";
 		};
 		BC5CBE761DC6EA07003FA945 /* ZCNetworking */ = {
@@ -858,6 +888,10 @@
 				BC5DAEA81DBE20A900D88C30 /* MSSearchPersonViewController.m */,
 				BC7C07521DBF4C5C00896351 /* MSSearchMaterialViewController.h */,
 				BC7C07531DBF4C5C00896351 /* MSSearchMaterialViewController.m */,
+				BC9413031DC9D02100B68744 /* MSSearchStaffViewController.h */,
+				BC9413041DC9D02100B68744 /* MSSearchStaffViewController.m */,
+				BC9412FD1DC9C88000B68744 /* MSSearchStoreViewController.h */,
+				BC9412FE1DC9C88000B68744 /* MSSearchStoreViewController.m */,
 				BC7C07551DBF4E5600896351 /* MSSearchToolViewController.h */,
 				BC7C07561DBF4E5600896351 /* MSSearchToolViewController.m */,
 				BC7C07641DBF66C200896351 /* MSLoginViewController.h */,
@@ -950,6 +984,8 @@
 		BC76019F1DB8695D0006A034 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC57309D1DCB5C440064243F /* MSLiveWorkModel.h */,
+				BC57309E1DCB5C440064243F /* MSLiveWorkModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1062,6 +1098,8 @@
 				BC5CBE741DC6E7AC003FA945 /* MSMaterialModel.m */,
 				BC5CBE8B1DC6F4FA003FA945 /* MSStaffModel.h */,
 				BC5CBE8C1DC6F4FA003FA945 /* MSStaffModel.m */,
+				BC9413001DC9CD0F00B68744 /* MSMaterialOutInModel.h */,
+				BC9413011DC9CD0F00B68744 /* MSMaterialOutInModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1464,6 +1502,7 @@
 				BCF8987A1DAB6E88001A825B /* UIImage+Custom.m in Sources */,
 				BCF8988D1DAB889D001A825B /* PBViewController.m in Sources */,
 				BC5CBE881DC6EA08003FA945 /* ZCApiUploadAction.m in Sources */,
+				BC9412FF1DC9C88000B68744 /* MSSearchStoreViewController.m in Sources */,
 				BC7C07691DBF66D400896351 /* MSLoginView.m in Sources */,
 				BC7601C01DB8695D0006A034 /* MSMaterialOutStoreViewController.m in Sources */,
 				BC7601721DB869440006A034 /* MSQRCodeReaderViewController.m in Sources */,
@@ -1508,8 +1547,10 @@
 				BC76016E1DB869440006A034 /* MSBaseSearchTableViewController.m in Sources */,
 				BC7601BB1DB8695D0006A034 /* MSOutInOneLineSection.m in Sources */,
 				BC25B9AE1DA1F1E2008EDFB2 /* UIView+MSUtil.m in Sources */,
+				BC9413021DC9CD0F00B68744 /* MSMaterialOutInModel.m in Sources */,
 				BCF8986B1DAB67EC001A825B /* UIColor+Hex.m in Sources */,
 				BC7601BE1DB8695D0006A034 /* MSMaterialFillInViewController.m in Sources */,
+				BC5730A51DCB5F860064243F /* MSNetworking+LiveWork.m in Sources */,
 				BCF898651DAB67EC001A825B /* DNImageFlowViewController.m in Sources */,
 				BC25B9AD1DA1F1E2008EDFB2 /* UIImageView+CornerRadius.m in Sources */,
 				BC7601D81DB886BB0006A034 /* MSToolInfoStateCell.m in Sources */,
@@ -1523,6 +1564,7 @@
 				BC5DAE9D1DBDB7DE00D88C30 /* MSLiveWorkNoteCell.m in Sources */,
 				BC7C07541DBF4C5C00896351 /* MSSearchMaterialViewController.m in Sources */,
 				BC7601B81DB8695D0006A034 /* MSMaterialFillInWithSearchSection.m in Sources */,
+				BC57309F1DCB5C440064243F /* MSLiveWorkModel.m in Sources */,
 				18580C9C1DB2259300631F00 /* QRCodeReaderViewController.m in Sources */,
 				BC5DAE971DBDB18200D88C30 /* MSLiveWorkQueryViewController.m in Sources */,
 				BC5814341DC051890077547E /* MSAccountManager.m in Sources */,
@@ -1537,9 +1579,11 @@
 				BC25B9C81DA1F3BB008EDFB2 /* CYLPlusButton.m in Sources */,
 				BC7C07631DBF51BB00896351 /* MSMyCenterHeaderView.m in Sources */,
 				BC7601691DB869440006A034 /* MSBaseButton.m in Sources */,
+				BC9413051DC9D02100B68744 /* MSSearchStaffViewController.m in Sources */,
 				BC770A831DBB6E1400B74772 /* MSLiveWorkFillinTagsSection.m in Sources */,
 				BC5CBE871DC6EA08003FA945 /* ZCApiRunner.m in Sources */,
 				18580C9B1DB2259300631F00 /* QRCodeReaderView.m in Sources */,
+				BC2954EE1DC8A46B0044D9C9 /* MSDialog.m in Sources */,
 				BCF8988A1DAB889D001A825B /* PBImageScrollerViewController.m in Sources */,
 				BC25B9A71DA1F1E2008EDFB2 /* NSDate+MSExtension.m in Sources */,
 				BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */,

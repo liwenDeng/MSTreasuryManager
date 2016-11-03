@@ -17,7 +17,6 @@
 - (instancetype)init {
     if (self = [super init]) {
         _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:(UITableViewStylePlain)];
-        _tableView.backgroundColor = [UIColor orangeColor];
         [self.view addSubview:_tableView];
     }
     return self;

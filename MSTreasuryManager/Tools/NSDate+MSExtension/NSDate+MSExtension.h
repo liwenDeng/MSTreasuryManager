@@ -43,6 +43,8 @@ typedef enum : NSUInteger {
  */
 - (MSDateItem *)ms_timeIntervalSinceDate:(NSDate *)anotherDate;
 
+- (NSString *)ms_dateString;
+
 /**
  *  获取当前时间
  *  @param format @"yyyy-MM-dd HH:mm:ss"、@"yyyy年MM月dd日 HH时mm分ss秒"

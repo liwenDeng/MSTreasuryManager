@@ -23,9 +23,18 @@
 
 @property (nonatomic, weak) id<MSPhotoPadViewDelegate>delegate;
 @property (nonatomic, strong) NSMutableArray *imageArray;
+@property (nonatomic, strong) NSMutableArray *urlArray;
 
 - (void)addImage:(UIImage *)image;
 
+- (void)clearImages;
+
 - (UIView *)cellViewAtIndex:(NSInteger)index;
+
+@end
+
+@interface MSPhotoPadView (AddOnly)
+
+- (void)addImageUrls:(NSArray *)imageUrls;
 
 @end

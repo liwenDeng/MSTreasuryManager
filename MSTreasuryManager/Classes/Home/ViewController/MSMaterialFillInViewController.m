@@ -56,7 +56,7 @@ static NSString *const kMaterialImageUrl = @"http://139.196.112.30:8080/web";
     [self setupSections];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboardAction)];
-    tap.cancelsTouchesInView = NO;//防止tap影响subView响应事件
+//    tap.cancelsTouchesInView = NO;//防止tap影响subView响应事件
     [self.view addGestureRecognizer:tap];
 }
 
@@ -426,9 +426,11 @@ static NSString *const kMaterialImageUrl = @"http://139.196.112.30:8080/web";
 
 #pragma mark - HTTP Request
 - (void)addMaterial:(UIButton *)sender {
-    
+
     //验证数据正确性
-    //to do
+    if (![self checkParams]) {
+        return;
+    }
     
     sender.enabled = NO;
     //先上传图片
@@ -439,6 +441,7 @@ static NSString *const kMaterialImageUrl = @"http://139.196.112.30:8080/web";
         dispatch_group_enter(group);
     }
     
+    [SVProgressHUD show];
     for (UIImage *image in self.photoPadView.imageArray) {
         [MSNetworking uploadImage:image success:^(NSDictionary *object) {
             NSArray *imgs = object[@"imgs"];
@@ -458,19 +461,53 @@ static NSString *const kMaterialImageUrl = @"http://139.196.112.30:8080/web";
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         if (self.photoPadView.imageArray.count == self.waitForUploadImgUrls.count) {
             //所有图片上传完成，上传物资数据
-            NSString *pictures = [self.waitForUploadImgUrls componentsJoinedByString:@","];
+            NSString *pictures = [self.waitForUploadImgUrls componentsJoinedByString:@";"];
             [MSNetworking addMaterialWithName:self.nameInput.text techParam:self.paramsInput.text storeRoom1:self.erfuField.text.integerValue storeRoom2:self.tuikuField.text.integerValue systemRoom:self.sysField.text.integerValue pictures:pictures success:^(NSDictionary *object) {
                 NSLog(@"上传成功");
+                [SVProgressHUD showSuccessWithStatus:@"填写成功"];
+//                [SVProgressHUD dismiss];
                 sender.enabled = YES;
+                [self cleanInputs];
             } failure:^(NSError *error) {
+                [SVProgressHUD showErrorWithStatus:@"数据上传失败"];
                 sender.enabled = NO;
             }];
         }else {
+            [SVProgressHUD showErrorWithStatus:@"数据上传失败"];
+//            [SVProgressHUD dismiss];
             //失败
             sender.enabled = YES;
         }
     });
 
+}
+
+- (BOOL)checkParams {
+    BOOL ret = YES;
+    
+    if (!self.nameInput.text.length) {
+        [MSDialog showAlert:@"请输入物资名称"];
+        return NO;
+    }
+    if (!self.paramsInput.text.length) {
+        [MSDialog showAlert:@"请输入物资参数"];
+        return NO;
+    }
+    if (!([self.erfuField.text ms_isAllNum] && [self.tuikuField.text ms_isAllNum] &&[self.sysField.text ms_isAllNum])) {
+        [MSDialog showAlert:@"请输入正确的数字"];
+        return NO;
+    }
+
+    return ret;
+}
+
+- (void)cleanInputs {
+    self.nameInput.text = nil;
+    self.paramsInput.text = nil;
+    self.erfuField.text = nil;
+    self.tuikuField.text = nil;
+    self.sysField.text = nil;
+    [self.photoPadView clearImages];
 }
 
 - (NSMutableArray *)waitForUploadImgUrls {

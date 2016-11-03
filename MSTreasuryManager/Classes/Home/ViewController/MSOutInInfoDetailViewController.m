@@ -10,6 +10,7 @@
 #import "YZInputView.h"
 #import "MSOutInMultiLineSection.h"
 #import "MSOutInOneLineSection.h"
+#import "MSNetworking+Material.h"
 
 @interface MSOutInInfoDetailViewController ()
 
@@ -39,6 +40,7 @@
     [super viewDidLoad];
     
     [self setupSubViews];
+    [self loadMaterialDetailInfo];
 }
 
 - (void)setupSubViews {
@@ -54,6 +56,20 @@
     self.scrollView.backgroundColor = kBackgroundColor;
     
     [self setupSections];
+}
+
+#pragma mark - HTTP Request
+- (void)loadMaterialDetailInfo {
+    [SVProgressHUD show];
+    [MSNetworking getMaterialOutInDetailInfo:self.materialId success:^(NSDictionary *object) {
+        MSMaterialOutInModel *outInModel = [MSMaterialOutInModel mj_objectWithKeyValues:object[@"data"]];
+        
+        [self fillPage:outInModel];
+        
+        [SVProgressHUD dismiss];
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络错误"];
+    }];
 }
 
 - (void)setupSections {
@@ -140,16 +156,15 @@
         make.edges.equalTo(self.view);
         make.edges.equalTo(bgView);
     }];
-    [self fillModels];
 }
 
-- (void)fillModels {
-    self.nameInput.text = @"XXXXX-XXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-    self.placeInput.text = @"XXXXX-XXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-    self.outCountInput.text = @"5";
-    self.dateInput.text = @"2016-10-02";
-    self.handleUserInput.text = @"王能进";
-    self.reviewUserInput.text = @"王能进";
+- (void)fillPage:(MSMaterialOutInModel *)model {
+    self.nameInput.text = self.materialName;
+    self.placeInput.text = [MSMaterialOutInModel storeNameWithLocationId:model.location];
+    self.outCountInput.text = [NSString stringWithFormat:@"%ld",(long)model.count];
+    self.dateInput.text =model.time;
+    self.handleUserInput.text = model.operator;
+    self.reviewUserInput.text = model.auditor;
 }
 
 @end

@@ -8,13 +8,27 @@
 
 #import "MSNetworking.h"
 #import "MSMaterialModel.h"
+#import "MSMaterialOutInModel.h"
+
+static const NSInteger kPageSize = 10;
 
 @interface MSNetworking (Material)
 
 /**
  查询物资列表
  */
-+ (NSURLSessionDataTask *)getMaterialListWithName:(NSString *)name success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
++ (NSURLSessionDataTask *)getMaterialListWithName:(NSString *)name pageNo:(NSInteger)pageNo success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ 人员列表
+ */
++ (NSURLSessionDataTask *)getStaffListWithName:(NSString *)name pageNo:(NSInteger)pageNo success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ 出入库列表
+ cate : 1 入库 2出库
+ */
++ (NSURLSessionDataTask *)getMaterialOutInListWithName:(NSString *)name cate:(NSInteger)cate pageNo:(NSInteger)pageNo success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 /**
  物资添加
@@ -28,10 +42,23 @@
                                     success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 /**
- 出入库时信息选择
+ 上传图片
  */
-+ (NSURLSessionDataTask *)getMaterialInfoSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
-
 + (NSURLSessionDataTask *)uploadImage:(UIImage *)image success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ 查询物资详情信息
+ */
++ (NSURLSessionDataTask *)getMaterialDetailInfo:(NSInteger )materialId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ 物资出入库操作
+ */
++ (NSURLSessionDataTask *)outInMaterial:(MSMaterialOutInModel * )outInModel success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ 查询物资出入库详情信息
+ */
++ (NSURLSessionDataTask *)getMaterialOutInDetailInfo:(NSInteger )materialId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 @end

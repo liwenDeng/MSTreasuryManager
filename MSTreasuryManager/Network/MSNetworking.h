@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ZCApiLauncher.h"
+#import <SVProgressHUD.h>
 
 typedef void(^MSSuccessBlock)(NSDictionary *object);
 typedef void(^MSFailureBlock)(NSError *error);

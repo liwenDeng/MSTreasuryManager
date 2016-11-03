@@ -70,12 +70,19 @@ static NSString * const kMSImageCellID = @"MSImageCell";
     self.indexPath = indexPath;
 }
 
+- (void)fillWithImageUrl:(NSString *)imageUrl atIndexPath:(NSIndexPath*)indexPath{
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+    self.deleteBtn.hidden = YES;
+    self.indexPath = indexPath;
+}
+
 @end
 
 @interface MSPhotoPadView () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,MSImageCellDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) UIImageView *imageView;
+
+@property (nonatomic, assign) BOOL useWebImage;
 
 @end
 
@@ -91,6 +98,8 @@ static NSString * const kMSImageCellID = @"MSImageCell";
 - (void)setupSubviews {
     self.backgroundColor = [UIColor whiteColor];
     self.imageArray = [NSMutableArray array];
+    self.urlArray = [NSMutableArray array];
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.minimumLineSpacing = 10.0f;
     flowLayout.minimumInteritemSpacing = 10.0f;
@@ -110,9 +119,16 @@ static NSString * const kMSImageCellID = @"MSImageCell";
 }
 
 - (void)addImage:(UIImage *)image {
+    self.useWebImage = NO;
     [self.imageArray addObject:image];
     NSIndexPath *path = [NSIndexPath indexPathForRow:(self.imageArray.count -1) inSection:0];
     [self.collectionView insertItemsAtIndexPaths:@[path]];
+}
+
+- (void)clearImages {
+    [self.imageArray removeAllObjects];
+    [self.urlArray removeAllObjects];
+    [self.collectionView reloadData];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -121,13 +137,19 @@ static NSString * const kMSImageCellID = @"MSImageCell";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.imageArray.count;
+    return self.useWebImage ? self.urlArray.count : self.imageArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MSImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kMSImageCellID forIndexPath:indexPath];
-    UIImage *image = self.imageArray[indexPath.row];
-    [cell fillWithImage:image atIndexPath:indexPath];
+    if (self.useWebImage) {
+        NSString *imageUrl = self.urlArray[indexPath.row];
+        [cell fillWithImageUrl:imageUrl atIndexPath:indexPath];
+        
+    }else {
+        UIImage *image = self.imageArray[indexPath.row];
+        [cell fillWithImage:image atIndexPath:indexPath];
+    }
     cell.delegate = self;
     return cell;
 }
@@ -150,6 +172,18 @@ static NSString * const kMSImageCellID = @"MSImageCell";
 - (UIView *)cellViewAtIndex:(NSInteger)index {
     MSImageCell *cell = [self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
     return cell;
+}
+
+@end
+
+
+@implementation MSPhotoPadView (AddOnly)
+
+- (void)addImageUrls:(NSArray *)imageUrls {
+    self.useWebImage = YES;
+    [self.urlArray removeAllObjects];
+    [self.urlArray addObjectsFromArray:imageUrls];
+    [self.collectionView reloadData];
 }
 
 @end

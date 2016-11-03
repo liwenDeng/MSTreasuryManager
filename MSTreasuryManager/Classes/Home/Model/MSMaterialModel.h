@@ -16,8 +16,15 @@
 @property (nonatomic, assign) NSInteger storeroom1;
 @property (nonatomic, assign) NSInteger storeroom2;
 @property (nonatomic, assign) NSInteger system;
+
+//剩余量
+@property (nonatomic, assign) NSInteger room1rest;
+@property (nonatomic, assign) NSInteger room2rest;
+@property (nonatomic, assign) NSInteger systemrest;
+
+//
 @property (nonatomic, copy) NSString *imgUrl;
-@property (nonatomic, copy) NSString *pictures;
+@property (nonatomic, copy) NSArray *pictures;
 
 //本地创建的数据
 @property (nonatomic, copy) NSString *localPics;

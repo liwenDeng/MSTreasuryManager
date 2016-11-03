@@ -25,5 +25,7 @@
 #import "UIView+MSUtil.h"
 #import "UIColor+MSUtil.h"
 #import "MSColor.h"
+#import "MSDialog.h"
+#import "NSString+Util.h"
 
 #endif /* MSPrefixHeader_pch */

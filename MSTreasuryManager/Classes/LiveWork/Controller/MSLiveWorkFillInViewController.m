@@ -12,10 +12,13 @@
 #import "MSLiveWorkFillinTagsSection.h"
 #import "MSToolInfoFillInSection.h"
 #import "MSBaseButton.h"
+#import "MSNetworking+LiveWork.h"
+#import "MSSearchStaffViewController.h"
+#import "MSStaffModel.h"
 
 static int i = 0;
 
-@interface MSLiveWorkFillInViewController () <MSBaseDatePickerViewDelegate>
+@interface MSLiveWorkFillInViewController () <MSBaseDatePickerViewDelegate,MSCommonSearchViewControllerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) MSBaseDatePickerView *datePickerView;
@@ -31,6 +34,8 @@ static int i = 0;
 @property (nonatomic, weak) MSLiveWorkFillinTagsSection *classMemberSection;
 @property (nonatomic, weak) MSLiveWorkFillinTagsSection *meetingMemberSection;
 
+@property (nonatomic, strong) MSLiveWorkModel *fillModel;
+
 @end
 
 @implementation MSLiveWorkFillInViewController
@@ -38,7 +43,8 @@ static int i = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    
+    self.fillModel = [[MSLiveWorkModel alloc]init];
     self.title = @"现场工作填写";
     [self setupSubViews];
 }
@@ -50,7 +56,7 @@ static int i = 0;
     self.scrollView.backgroundColor = kBackgroundColor;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboardAction:)];
-    tap.cancelsTouchesInView = NO;//防止tap影响subView响应事件
+//    tap.cancelsTouchesInView = NO;//防止tap影响subView响应事件
     [self.view addGestureRecognizer:tap];
     
     [self setupSections];
@@ -164,28 +170,28 @@ static int i = 0;
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - tap action
 - (void)chooseDate {
-
+    [self showDatePickerView];
 }
 
 - (void)chooseLeader {
-    
+    MSSearchStaffViewController *search = [[MSSearchStaffViewController alloc]initWithSearchType:(MSSearchTypeChargePerson)];
+    search.delegate = self;
+    [self.navigationController pushViewController:search animated:YES];
 }
 
 - (void)addClassMember {
-    [_classMemberSection addUser:[NSString stringWithFormat:@"dlw%ld",i]];
-    i++;
-    [self.view layoutSubviews];
+    MSSearchStaffViewController *search = [[MSSearchStaffViewController alloc]initWithSearchType:(MSSearchTypeMemberPerson)];
+    search.delegate = self;
+    [self.navigationController pushViewController:search animated:YES];
 }
 
 - (void)addMeetingMember {
-    
+    MSSearchStaffViewController *search = [[MSSearchStaffViewController alloc]initWithSearchType:(MSSearchTypeMettingPerson)];
+    search.delegate = self;
+    [self.navigationController pushViewController:search animated:YES];
 }
 
 - (void)submitBtnClicked {
@@ -197,9 +203,27 @@ static int i = 0;
     [self.view endEditing:YES];
 }
 
+#pragma mark - MSCommonSearchViewControllerDelegate
+- (void)searchViewController:(MSCommonSearchViewController *)searchController didSelectModel:(id)resultModel {
+    MSStaffModel *staff = (MSStaffModel *)resultModel;
+    //负责人
+    if (searchController.searchType == MSSearchTypeChargePerson) {
+        self.fillModel.charge_person = staff.name;
+        self.leaderField.text = staff.name;
+    }
+    
+    if (searchController.searchType == MSSearchTypeMemberPerson) {
+        [self.meetingMemberSection addUser:staff.name];
+    }
+    
+}
+
 #pragma mark - MSBaseDatePickerViewDelegate
 - (void)datePickerView:(MSBaseDatePickerView *)datePicker submitWithDate:(NSDate *)date {
-    NSLog(@"date:%@",date);
+
+    NSString *dateString = [date ms_dateString];
+    self.fillModel.work_time = dateString;
+    self.dateField.text = dateString;
     [self hideDatePickerView];
 }
 

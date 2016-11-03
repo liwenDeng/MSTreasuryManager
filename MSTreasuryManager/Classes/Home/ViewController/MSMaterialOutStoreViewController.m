@@ -13,9 +13,14 @@
 #import "MSBaseButton.h"
 #import "MSBaseDatePickerView.h"
 #import "NSDate+MSExtension.h"
-#import "MSCommonSearchViewController.h"
+#import "MSSearchStaffViewController.h"
+#import "MSSearchMaterialViewController.h"
+#import "MSSearchStoreViewController.h"
+#import "MSMaterialOutInModel.h"
+#import "MSNetworking+Material.h"
+#import "MSStaffModel.h"
 
-@interface MSMaterialOutStoreViewController () <MSBaseDatePickerViewDelegate>
+@interface MSMaterialOutStoreViewController () <MSBaseDatePickerViewDelegate,MSCommonSearchViewControllerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) YZInputView *nameInput;
@@ -27,7 +32,11 @@
 @property (nonatomic, strong) UITextField *reviewUserInput;   //审核人
 @property (nonatomic, strong) MSBaseDatePickerView *datePickerView;
 
+@property (nonatomic, strong) UILabel *maxCountLabel;
+
 @property (nonatomic, assign) MSCellIndexOfType type;
+
+@property (nonatomic, strong) MSMaterialOutInModel *outInModel;
 
 @end
 
@@ -59,7 +68,7 @@
     self.scrollView.backgroundColor = kBackgroundColor;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboardAction)];
-    tap.cancelsTouchesInView = NO;//防止tap影响subView响应事件
+//    tap.cancelsTouchesInView = YES;//防止tap影响subView响应事件
     [self.view addGestureRecognizer:tap];
     
     [self setupSections];
@@ -176,16 +185,38 @@
         make.edges.equalTo(self.view);
         make.edges.equalTo(bgView);
     }];
+    
+    self.maxCountLabel = ({
+        UILabel *label = [[UILabel alloc]init];
+        [bgView addSubview:label];
+        label.font = [UIFont systemFontOfSize:12];
+        label.textColor = [UIColor redColor];
+        label.text = @"(123)";
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(section3);
+            make.right.equalTo(section3.textField.mas_left).offset(-10);
+        }];
+        
+        label;
+    });
+    //最大数量
+    if (self.type == MSCellIndexOfTypeMaterialOut) {
+        self.maxCountLabel.hidden = NO;
+    }else {
+        self.maxCountLabel.hidden = YES;
+    }
 }
 
 #pragma mark - ClickAction
 - (void)searchNameBtnClicked:(UIButton *)sender {
-    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypeMaterialName)];
+    MSSearchMaterialViewController *s = [[MSSearchMaterialViewController alloc]initWithSearchType:(MSSearchTypeMaterialName)];
+    s.delegate = self;
     [self.navigationController pushViewController:s animated:YES];
 }
 
 - (void)searchPlaceBtnClicked:(UIButton *)sender {
-    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypeMaterialParams)];
+    MSSearchStoreViewController *s = [[MSSearchStoreViewController alloc]init];
+    s.delegate = self;
     [self.navigationController pushViewController:s animated:YES];
 }
 
@@ -194,12 +225,14 @@
 }
 
 - (void)handleUserInputClicked:(UIButton *)sender {
-    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypePerson)];
+    MSSearchStaffViewController *s = [[MSSearchStaffViewController alloc]initWithSearchType:(MSSearchTypeHandlePerson)];
+    s.delegate = self;
     [self.navigationController pushViewController:s animated:YES];
 }
 
 - (void)reviewUserInputClicked:(UIButton *)sender {
-    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypePerson)];
+    MSSearchStaffViewController *s = [[MSSearchStaffViewController alloc]initWithSearchType:(MSSearchTypeReviewPerson)];
+    s.delegate = self;
     [self.navigationController pushViewController:s animated:YES];
 }
 
@@ -209,24 +242,140 @@
 }
 
 - (void)submitBtnClicked:(UIButton *)sender {
+    
+    if (![self checkParams]) {
+        return;
+    }
+    
     switch (self.type) {
         case MSCellIndexOfTypeMaterialOut:
         {
             //物资出库
+            self.outInModel.cate = 2;
         }
             break;
         case MSCellIndexOfTypeMateriaIn:
         {
             //物资入库
+            self.outInModel.cate = 1;
         }
         default:
             break;
     }
+    [self materialOutInStore];
+}
+
+#pragma mark - Http Request
+
+- (void)materialOutInStore {
+    [SVProgressHUD show];
+    NSString *title = self.type == MSCellIndexOfTypeMateriaIn ? @"入库成功" : @"出库成功";
+    [MSNetworking outInMaterial:self.outInModel success:^(NSDictionary *object) {
+        
+        [SVProgressHUD showSuccessWithStatus:title];
+        [self cleanInputs];
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:title];
+    }];
+}
+
+- (BOOL)checkParams {
+    BOOL ret = YES;
+    if (!self.nameInput.text.length || self.outInModel.materialId <= 0) {
+        [MSDialog showAlert:@"请选择物资"];
+        return NO;
+    }
+    
+    if (!self.placeInput.text.length || self.outInModel.location <= 0) {
+        [MSDialog showAlert:@"请选择库房位置"];
+        return NO;
+    }
+    
+    if (!self.outCountInput.text.length) {
+        [MSDialog showAlert:@"请选择数量"];
+        return NO;
+    }
+    
+    if (!self.dateInput.text.length) {
+        [MSDialog showAlert:@"请选择日期"];
+        return NO;
+    }
+    
+    if (![self.outCountInput.text ms_isAllNum]) {
+        [MSDialog showAlert:@"库房数量：请选数字格式"];
+        return NO;
+    }
+    
+    if (!self.handleUserInput.text.length || !self.outInModel.operator.length) {
+        [MSDialog showAlert:@"请选择经办人"];
+        return NO;
+    }
+    
+    if (!self.reviewUserInput.text.length || !self.outInModel.auditor.length) {
+        [MSDialog showAlert:@"请选择审核人"];
+        return NO;
+    }
+    
+    self.outInModel.count = [self.outCountInput.text integerValue];
+    return ret;
+}
+
+- (void)cleanInputs {
+    self.nameInput.text = nil;
+    self.placeInput.text = nil;
+    self.outCountInput.text = nil;
+    self.handleUserInput.text = nil;
+    self.reviewUserInput.text = nil;
+}
+
+#pragma mark - MSCommonSearchViewControllerDelegate
+// 选择位置
+- (void)searchViewController:(MSCommonSearchViewController *)searchController didSelectDic:(NSDictionary *)resultDic {
+    NSString *placeName = resultDic[kPlaceNameKey];
+    NSInteger plcaeId = [resultDic[kPlaceIdKey] integerValue];
+    
+    self.placeInput.text = placeName;
+    self.outInModel.location = plcaeId;
+}
+
+//选择物资/人员
+- (void)searchViewController:(MSCommonSearchViewController *)searchController didSelectModel:(id)resultModel {
+    
+    switch (searchController.searchType) {
+        case MSSearchTypeMaterialName:
+        {
+            MSMaterialModel *searchModel = (MSMaterialModel *)resultModel;
+            self.nameInput.text = searchModel.name;
+            self.outInModel.materialId = searchModel.mid;
+        }
+            break;
+        case MSSearchTypeHandlePerson:
+        {
+            MSStaffModel *model = (MSStaffModel *)resultModel;
+            self.handleUserInput.text = model.name;
+            self.outInModel.operator = model.name;
+        }
+            break;
+        case MSSearchTypeReviewPerson:
+        {
+            MSStaffModel *model = (MSStaffModel *)resultModel;
+            self.reviewUserInput.text = model.name;
+            self.outInModel.auditor = model.name;
+        }
+            break;
+        default:
+            break;
+    }
+
 }
 
 #pragma mark - MSBaseDatePickerViewDelegate
 - (void)datePickerView:(MSBaseDatePickerView *)datePicker submitWithDate:(NSDate *)date {
-    NSLog(@"date:%@",date);
+    NSString *timeString = [date ms_dateString];
+    NSLog(@"timeString:%@",timeString);
+    
+    self.dateInput.text = timeString;
+    self.outInModel.time = timeString;
     [self hideDatePickerView];
 }
 
@@ -278,6 +427,13 @@
         [self.view layoutIfNeeded];
     }
     return _datePickerView;
+}
+
+- (MSMaterialOutInModel *)outInModel {
+    if (!_outInModel) {
+        _outInModel = [[MSMaterialOutInModel alloc]init];
+    }
+    return _outInModel;
 }
 
 @end

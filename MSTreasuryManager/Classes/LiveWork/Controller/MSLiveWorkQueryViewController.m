@@ -127,9 +127,14 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
         }
             break;
         case 1:
+        {
+            MSLiveWorkEditViewController *editVC = [[MSLiveWorkEditViewController alloc]initWithEditType:(MSEditTypeNote)];
+            [self.navigationController pushViewController:editVC animated:YES];
+        }
+            break;
         case 2:
         {
-            MSLiveWorkEditViewController *editVC = [[MSLiveWorkEditViewController alloc]init];
+            MSLiveWorkEditViewController *editVC = [[MSLiveWorkEditViewController alloc]initWithEditType:(MSEditTypeNote)];
             [self.navigationController pushViewController:editVC animated:YES];
         }
         default:

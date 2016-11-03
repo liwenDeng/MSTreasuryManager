@@ -15,7 +15,11 @@ typedef enum : NSUInteger {
     MSSearchTypeMaterialName = 0,
     MSSearchTypeMaterialParams,
     MSSearchTypeStorePlace,
-    MSSearchTypePerson,
+    MSSearchTypeHandlePerson,
+    MSSearchTypeReviewPerson,
+    MSSearchTypeChargePerson, //工作负责人
+    MSSearchTypeMemberPerson, //班组成员
+    MSSearchTypeMettingPerson,//参会人员
     MSSearchTypeToolName,
 } MSSearchType;
 
@@ -25,15 +29,27 @@ typedef enum : NSUInteger {
 
 - (void)searchViewController:(MSCommonSearchViewController*)searchController didSelectString:(NSString *)result;
 
-- (void)searchViewController:(MSCommonSearchViewController*)searchController didSelectModel:(NSDictionary *)resultDic;
+- (void)searchViewController:(MSCommonSearchViewController*)searchController didSelectModel:(id)resultModel;
+
+- (void)searchViewController:(MSCommonSearchViewController*)searchController didSelectDic:(NSDictionary *)resultDic;
+
+@end
+
+@protocol MSCommonLoadMoreResultProtocol <NSObject>
+
+@required
+- (void)loadMoreResult;
 
 @end
 
 @interface MSCommonSearchViewController : MSBaseSearchTableViewController
 
-@property (nonatomic, strong) NSArray *totalList;
+@property (nonatomic, assign) MSSearchType searchType;
+@property (nonatomic, strong) NSMutableArray *totalList;
 @property (nonatomic, strong) NSMutableArray *searchList;
 @property (nonatomic, weak) id<MSCommonSearchViewControllerDelegate> delegate;
+
+@property (nonatomic, assign) NSInteger pageNo;
 
 - (instancetype)initWithSearchType:(MSSearchType)type;
 

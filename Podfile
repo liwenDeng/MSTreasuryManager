@@ -8,6 +8,7 @@ target ‘MSTreasuryManager’ do
   pod 'Masonry', '~> 1.0.0'
   pod 'SDWebImage', '~> 3.7.5'
   pod 'UITableView+FDTemplateLayoutCell', '~> 1.5.beta'
+  pod 'SVProgressHUD', '~> 2.0.3'
   pod 'IQKeyboardManager'
   
   target 'MSTreasuryManagerTests' do

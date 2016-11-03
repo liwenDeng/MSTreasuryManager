@@ -15,8 +15,12 @@
 - (void)testMaterialList {
     [self waitForGroup:^(dispatch_group_t group) {
         NSLog(@"start");
-        [MSNetworking getMaterialListWithName:@"" success:^(NSDictionary *object) {
-
+        [MSNetworking getMaterialListWithName:@"" pageNo:1 success:^(NSDictionary *object) {
+            /*
+             {
+             id = 7;
+             name = "\U5b89\U6392";
+             */
             NSArray *list = [MSMaterialModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
             
             dispatch_group_leave(group);
@@ -59,6 +63,42 @@
             dispatch_group_leave(group);
         } failure:^(NSError *error) {
             
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
+- (void)testMaterialDetailInfo {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getMaterialDetailInfo:18 success:^(NSDictionary *object) {
+            MSMaterialModel *model = [MSMaterialModel mj_objectWithKeyValues:object[@"data"]];
+            
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
+- (void)testMaterialOutinList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getMaterialOutInListWithName:@"" cate:1 pageNo:1 success:^(NSDictionary *object) {
+            NSArray *list = [MSMaterialOutInModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+            
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
+- (void)testMaterialOutInDetailInfo {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getMaterialOutInDetailInfo:12 success:^(NSDictionary *object) {
+            MSMaterialOutInModel *list = [MSMaterialOutInModel mj_objectWithKeyValues:object[@"data"]];
+            
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
             dispatch_group_leave(group);
         }];
     }];

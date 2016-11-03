@@ -11,7 +11,11 @@
 @implementation MSMaterialModel
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
-    return @{@"roomId" : @"id"};
+    return @{@"mid" : @"id"};
+}
+
++ (NSDictionary *)mj_objectClassInArray {
+    return @{@"pictures":[NSString class]};
 }
 
 - (NSString *)localPics {

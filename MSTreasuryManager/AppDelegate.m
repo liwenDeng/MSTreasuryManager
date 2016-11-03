@@ -33,13 +33,9 @@
 
     
     [self networkGlobleSettings];
-//    [MSNetworking getMaterialInfoSuccess:^(NSDictionary *object) {
-//        
-//        NSLog(@"s");
-//    } failure:^(NSError *error) {
-//        
-//        NSLog(@"e");
-//    }];
+    
+    [SVProgressHUD setDefaultStyle:(SVProgressHUDStyleDark)];
+    [SVProgressHUD setMinimumDismissTimeInterval:1.5f];
     
     return YES;
 }

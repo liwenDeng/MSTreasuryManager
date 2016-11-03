@@ -46,27 +46,42 @@
     [_productLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10);
         make.top.equalTo(self.contentView).offset(5);
-        make.width.mas_lessThanOrEqualTo(kSCREEN_WIDTH/2 - 20);
+        make.right.equalTo(_dateLabel.mas_left).offset(-15);
         make.bottom.equalTo(self.contentView.mas_bottom).offset(-5);
     }];
     
-    _dateLabel.text = @"2016-09-11";
+    _dateLabel.text = @"2016-09-11 11:11";
     [_dateLabel sizeToFit];
     [_dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_productLabel.mas_right).offset(20);
-        make.centerY.equalTo(_productLabel);
+        make.right.equalTo(self.contentView.mas_right).offset(0);
+        make.top.equalTo(_userLabel.mas_bottom).offset(3);
+        
     }];
     
     [_userLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView.mas_right).offset(0);
-        make.centerY.equalTo(_productLabel);
-        make.left.equalTo(_dateLabel.mas_right).offset(20);
+        make.top.equalTo(self.contentView).offset(5);
     }];
     
-    //test
-    _productLabel.text = @"物资名称物资名称物资名物资名称物资名称物资物资名称物资名称物资名物资名称物资名称物资物资名称物资名称物资名物资名称物资名称物资";
+}
 
-    _userLabel.text = @"王能进进";
+- (void)fillWithOutInModel:(MSMaterialOutInModel *)model {
+    self.productLabel.text = model.materialName;
+    self.dateLabel.text = model.time;
+    self.userLabel.text = [self storeNameWithLocationId:model.location];
+}
+
+- (NSString *)storeNameWithLocationId:(NSInteger)location {
+    if (location == 1) {
+        return @"二库库房";
+    }
+    if (location == 2) {
+        return @"退库库房";
+    }
+    if (location == 3) {
+        return @"系统库房";
+    }
+    return @"";
 }
 
 @end

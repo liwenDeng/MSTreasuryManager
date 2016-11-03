@@ -10,10 +10,13 @@
 #import "MSMaterialFillInWithSearchSection.h"
 #import "MSPhotoPadView.h"
 #import "MSMaterialFillInNomalSection.h"
-#import "MSCommonSearchViewController.h"
-#import "MSQRCodeReaderViewController.h"
+#import "MSSearchMaterialViewController.h"
+#import "MSNetworking+Material.h"
+#import "PBViewController.h"
+//#import "MSQRCodeReaderViewController.h"
 
-@interface MSMaterialInfoFetchViewController () <MSLoadQRScannButtonProtocol,QRCodeReaderDelegate,MSQRCodeReaderViewControllerDelegate>
+//@interface MSMaterialInfoFetchViewController () <MSLoadQRScannButtonProtocol,QRCodeReaderDelegate,MSQRCodeReaderViewControllerDelegate>
+@interface MSMaterialInfoFetchViewController () <MSCommonSearchViewControllerDelegate,MSPhotoPadViewDelegate,PBViewControllerDataSource, PBViewControllerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) YZInputView *nameInput;   //物资名称
@@ -142,17 +145,8 @@
         make.height.mas_equalTo(44);
     }];
     
-//    UIButton *addBtn = [UIButton buttonWithType:(UIButtonTypeSystem)];
-//    [addBtn setImage:[UIImage imageNamed:@"add"] forState:(UIControlStateNormal)];
-//    [addBtn addTarget:self action:@selector(addImages:) forControlEvents:(UIControlEventTouchUpInside)];
-//    [section4HeaderView addSubview:addBtn];
-//    [addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.right.equalTo(section4HeaderView.mas_right).offset(-20);
-//        make.centerY.equalTo(section4HeaderView);
-//        make.size.mas_equalTo(CGSizeMake(20, 20));
-//    }];
-    
     MSPhotoPadView *photoPadView = [[MSPhotoPadView alloc]init];
+    photoPadView.delegate = self;
     
     [bgView addSubview:photoPadView];
     [photoPadView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -217,40 +211,107 @@
 
 #pragma mark - searchAction
 - (void)searchNameBtnClicked:(UIButton*)sender{
-    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypeMaterialName)];
+    MSSearchMaterialViewController *s = [[MSSearchMaterialViewController alloc]initWithSearchType:(MSSearchTypeMaterialName)];
+    s.delegate = self;
     [self.navigationController pushViewController:s animated:YES];
 }
 
 - (void)searchParamsBtnClicked:(UIButton*)sender {
-    MSCommonSearchViewController *s = [[MSCommonSearchViewController alloc]initWithSearchType:(MSSearchTypeMaterialParams)];
+    MSSearchMaterialViewController *s = [[MSSearchMaterialViewController alloc]initWithSearchType:(MSSearchTypeMaterialParams)];
+    s.delegate = self;
     [self.navigationController pushViewController:s animated:YES];
 }
 
-- (void)qrscannerBtnClick {
-//    if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
-//        static QRCodeReaderViewController *reader = nil;
-//        static dispatch_once_t onceToken;
-//        
-//        dispatch_once(&onceToken, ^{
-//            reader = [QRCodeReaderViewController new];
-//        });
-    MSQRCodeReaderViewController *reader = [[MSQRCodeReaderViewController alloc]init];
-        reader.delegate = self;
-        
-        [reader setCompletionWithBlock:^(NSString *resultAsString) {
-            NSLog(@"Completion with result: %@", resultAsString);
-        }];
-        
-//        [self presentViewController:reader animated:YES completion:NULL];
-    [self.navigationController pushViewController:reader animated:YES];
-//    }
-//    else {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Reader not supported by the current device" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//        
-//        [alert show];
-//    }
-
+#pragma mark - MSCommonSearchViewControllerDelegate
+- (void)searchViewController:(MSCommonSearchViewController *)searchController didSelectModel:(id)resultModel {
+    MSMaterialModel *searchModel = (MSMaterialModel *)resultModel;
+    self.nameInput.text = searchModel.name;
+    self.paramsInput.text = searchModel.techParam;
+    
+    [self getMaterialInfoWithMaterialId:searchModel.mid];
+    
 }
+
+#pragma mark - HTTP Request
+- (void)getMaterialInfoWithMaterialId:(NSInteger)materialId {
+    [SVProgressHUD show];
+    [MSNetworking getMaterialDetailInfo:materialId success:^(NSDictionary *object) {
+        MSMaterialModel *model = [MSMaterialModel mj_objectWithKeyValues:object[@"data"]];
+        [SVProgressHUD showSuccessWithStatus:@"查询成功"];
+        [self fillPagesWithMaterialModel:model];
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"查询失败"];
+    }];
+}
+
+- (void)fillPagesWithMaterialModel:(MSMaterialModel *)model {
+    self.erfuField.text = [NSString stringWithFormat:@"%ld",(long)model.room1rest];
+    self.tuikuField.text = [NSString stringWithFormat:@"%ld",(long)model.room2rest];
+    self.sysField.text = [NSString stringWithFormat:@"%ld",(long)model.systemrest];
+    [self.photoPadView addImageUrls:model.pictures];
+}
+
+#pragma mark - MSPhotoPadViewDelegate
+- (void)photoPadView:(MSPhotoPadView *)photoPadView clickedAtIndex:(NSInteger)currentIndex inImages:(NSArray *)images {
+    PBViewController *pbViewController = [PBViewController new];
+    pbViewController.pb_dataSource = self;
+    pbViewController.pb_delegate = self;
+    pbViewController.pb_startPage = currentIndex;
+    [self presentViewController:pbViewController animated:YES completion:nil];
+}
+
+#pragma mark - PBViewControllerDataSource
+- (NSInteger)numberOfPagesInViewController:(PBViewController *)viewController {
+    return self.photoPadView.urlArray.count;
+}
+
+#pragma mark - PBViewControllerDelegate
+- (void)viewController:(PBViewController *)viewController presentImageView:(UIImageView *)imageView forPageAtIndex:(NSInteger)index progressHandler:(void (^)(NSInteger, NSInteger))progressHandler {
+    NSString *url =  self.photoPadView.urlArray[index];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:url]
+                 placeholderImage:nil
+                          options:0
+                         progress:progressHandler
+                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                        }];
+}
+
+- (UIView *)thumbViewForPageAtIndex:(NSInteger)index {
+    return nil;
+}
+
+#pragma mark - PBViewControllerDelegate
+
+- (void)viewController:(PBViewController *)viewController didSingleTapedPageAtIndex:(NSInteger)index presentedImage:(UIImage *)presentedImage {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+//- (void)qrscannerBtnClick {
+////    if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
+////        static QRCodeReaderViewController *reader = nil;
+////        static dispatch_once_t onceToken;
+////        
+////        dispatch_once(&onceToken, ^{
+////            reader = [QRCodeReaderViewController new];
+////        });
+//    MSQRCodeReaderViewController *reader = [[MSQRCodeReaderViewController alloc]init];
+//        reader.delegate = self;
+//        
+//        [reader setCompletionWithBlock:^(NSString *resultAsString) {
+//            NSLog(@"Completion with result: %@", resultAsString);
+//        }];
+//        
+////        [self presentViewController:reader animated:YES completion:NULL];
+//    [self.navigationController pushViewController:reader animated:YES];
+////    }
+////    else {
+////        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Reader not supported by the current device" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+////        
+////        [alert show];
+////    }
+//
+//}
 
 
 @end

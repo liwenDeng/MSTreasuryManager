@@ -10,8 +10,6 @@
 
 @interface MSCommonSearchViewController ()
 
-@property (nonatomic, assign) MSSearchType searchType;
-
 @end
 
 @implementation MSCommonSearchViewController
@@ -19,8 +17,9 @@
 - (instancetype)initWithSearchType:(MSSearchType)type {
     if (self = [super init]) {
         _searchType = type;
-        _totalList = [NSArray array];
+        _totalList = [NSMutableArray array];
         _searchList = [NSMutableArray array];
+        _pageNo = 1;
     }
     return self;
 }
@@ -29,9 +28,9 @@
     [super viewDidLoad];
     
     [self requestAllData];
-
-    if (self.searchType == MSSearchTypePerson) {
-        
+    
+    if ([self respondsToSelector:@selector(loadMoreResult)]) {
+        self.resultViewController.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreResult)];
     }
 }
 
@@ -40,7 +39,7 @@
     NSArray *arr1 = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12"];
     NSArray *arr2 = @[];
     
-    self.totalList = [NSArray arrayWithArray:arr1];//数据数组
+    self.totalList = [NSMutableArray arrayWithArray:arr1];//数据数组
     self.searchList = [NSMutableArray arrayWithArray:arr2];//search到的数组
 }
 

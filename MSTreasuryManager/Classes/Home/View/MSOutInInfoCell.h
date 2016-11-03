@@ -7,10 +7,13 @@
 //
 
 #import "MSBaseTableViewCell.h"
+#import "MSMaterialOutInModel.h"
 
 /**
  出库如查询cell
  */
 @interface MSOutInInfoCell : MSBaseTableViewCell
+
+- (void)fillWithOutInModel:(MSMaterialOutInModel *)model;
 
 @end

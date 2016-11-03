@@ -77,6 +77,28 @@
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
+- (BOOL)ms_containsChinese {
+    for(NSInteger i = 0; i < [self length]; i++){
+        int a = [self characterAtIndex:i];
+        if (a > 0x4e00 && a < 0x9fff) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)ms_isAllNum {
+    unichar c;
+    for (int i=0; i<self.length; i++) {
+        c=[self characterAtIndex:i];
+        if (!isdigit(c)) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+#pragma mark - Class Method
 + (BOOL)ms_containsChineseInString:(NSString *)string{
     for(NSInteger i = 0; i < [string length]; i++){
         int a = [string characterAtIndex:i];

@@ -141,6 +141,15 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return item;
 }
 
+- (NSString *)ms_dateString {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+    [dateFormatter setLocale:usLocale];
+    NSString* dateString = [dateFormatter stringFromDate:self];
+    return dateString;
+}
+
 //获取当前时间
 //format: @"yyyy-MM-dd HH:mm:ss"、@"yyyy年MM月dd日 HH时mm分ss秒"
 + (NSString *)ms_currentDateWithFormat:(NSString *)format{

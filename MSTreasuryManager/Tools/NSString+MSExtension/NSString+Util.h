@@ -44,6 +44,17 @@
 /**
  *  是否包含中文
  */
+- (BOOL)ms_containsChinese;
+
+/**
+ *  是否全是数字
+ */
+- (BOOL)ms_isAllNum;
+
+#pragma mark - Class Method
+/**
+ *  是否包含中文
+ */
 + (BOOL)ms_containsChineseInString:(NSString *)string;
 
 /**

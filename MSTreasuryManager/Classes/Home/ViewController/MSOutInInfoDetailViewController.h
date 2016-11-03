@@ -14,6 +14,9 @@
  */
 @interface MSOutInInfoDetailViewController : MSBaseViewController
 
+@property (nonatomic, assign) NSInteger materialId;
+@property (nonatomic, copy) NSString *materialName;
+
 - (instancetype)initWithType:(MSCellIndexOfType)type;
 
 @end

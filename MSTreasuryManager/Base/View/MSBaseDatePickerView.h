@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSDate+MSExtension.h"
 
 @class MSBaseDatePickerView;
 
