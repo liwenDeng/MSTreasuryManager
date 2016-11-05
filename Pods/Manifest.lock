@@ -14,7 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Hoko (2.3.0)
   - IQKeyboardManager (4.0.6)
   - Masonry (1.0.2)
   - MJExtension (3.0.13)
@@ -27,7 +26,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
-  - Hoko (~> 2.3.0)
   - IQKeyboardManager
   - Masonry (~> 1.0.0)
   - MJExtension (~> 3.0.13)
@@ -38,7 +36,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Hoko: b015751f406d455da0c8acb9404d7c617cb66877
   IQKeyboardManager: c52debb1967799ae7addb98eab0cf328083a874f
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
@@ -47,6 +44,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   UITableView+FDTemplateLayoutCell: 02b508ab1cb4cea16a8c17ac83d2cd1fd72124f9
 
-PODFILE CHECKSUM: 861213dfa36f037cdb2fbe69c1c28137bd8b188a
+PODFILE CHECKSUM: eb95174d709839ab3cd0b182dade97b97a770413
 
 COCOAPODS: 1.0.1

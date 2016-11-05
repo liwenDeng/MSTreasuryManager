@@ -10,7 +10,6 @@ target ‘MSTreasuryManager’ do
   pod 'UITableView+FDTemplateLayoutCell', '~> 1.5.beta'
   pod 'SVProgressHUD', '~> 2.0.3'
   pod 'IQKeyboardManager'
-  pod 'Hoko', '~> 2.3.0'
   
   target 'MSTreasuryManagerTests' do
     inherit! :search_paths
