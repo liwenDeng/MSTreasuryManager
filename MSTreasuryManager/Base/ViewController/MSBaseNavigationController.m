@@ -11,7 +11,7 @@
 @implementation MSBaseNavigationController
 
 + (void)initialize {
-    
+    [super initialize];
     UIBarButtonItem *item = [UIBarButtonItem appearance];
     //设置item普通状态
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];

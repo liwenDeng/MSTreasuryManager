@@ -24,6 +24,14 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
 - (void)setupScanButton {
     UIBarButtonItem *scan = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"scan"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:(UIBarButtonItemStylePlain) target:self action:@selector(qrscannerBtnClick)];
     self.navigationItem.rightBarButtonItem = scan;

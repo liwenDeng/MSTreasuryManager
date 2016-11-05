@@ -34,6 +34,7 @@
 @property (nonatomic, weak) MSLiveWorkFillinTagsSection *meetingMemberSection;
 
 @property (nonatomic, strong) MSLiveWorkModel *fillModel;
+@property (nonatomic, assign) BOOL isFirstFill; //是否是第一记录
 
 @end
 
@@ -183,19 +184,20 @@
 - (void)addClassMember {
     MSMultiSearchViewController *search = [[MSMultiSearchViewController alloc]initWithSearchType:(MSSearchTypeMemberPerson)];
     search.delegate = self;
-
     [self.navigationController pushViewController:search animated:YES];
 }
 
 - (void)addMeetingMember {
     MSMultiSearchViewController *search = [[MSMultiSearchViewController alloc]initWithSearchType:(MSSearchTypeMettingPerson)];
     search.delegate = self;
-
     [self.navigationController pushViewController:search animated:YES];
 }
 
 - (void)submitBtnClicked {
-    [self.classMemberSection deleteAllUsers];
+    if (![self checkParams]) {
+        return;
+    }
+    [self fillLiveWork];
 }
 
 - (void)dismissKeyboardAction:(UITapGestureRecognizer *)tap {
@@ -213,9 +215,10 @@
             //已经填写注意事项、参会人员
             self.workNoteInput.text = model.attention;
             NSArray *persons = [MSLiveWorkModel personArrayFromPersonString:model.persons];
-            [self.meetingMemberSection deleteAllUsers];
-            [self.meetingMemberSection addUsers:persons];
-            
+             [self.meetingMemberSection deleteAllUsers];
+            if (persons.count > 0) {
+                [self.meetingMemberSection addUsers:persons];
+            }
             [SVProgressHUD showSuccessWithStatus:@"查询成功"];
             [self firstFillin:NO];
         }else {
@@ -232,12 +235,23 @@
     }];
 }
 
+- (void)fillLiveWork {
+    
+    [SVProgressHUD show];
+    [MSNetworking addLiveWork:self.fillModel success:^(NSDictionary *object) {
+        [SVProgressHUD showSuccessWithStatus:@"填写成功"];
+        [self cleanAllInputs];
+    } failure:^(NSError *error) {
+        
+        [SVProgressHUD showErrorWithStatus:@"填写失败"];
+    }];
+}
+
 #pragma mark - MSCommonSearchViewControllerDelegate
 - (void)searchViewController:(MSSearchType)searchType didSelectModel:(id)resultModel {
     MSStaffModel *staff = (MSStaffModel *)resultModel;
     //负责人
     if (searchType == MSSearchTypeChargePerson) {
-        self.fillModel.chargePerson = staff.name;
         self.leaderField.text = staff.name;
     }
 }
@@ -301,6 +315,80 @@
     }
 }
 
+#pragma mark - Util
+- (void)firstFillin:(BOOL)first {
+    self.meetingMemberSection.addBtn.enabled = first;
+    self.meetingMemberSection.tagList.userInteractionEnabled = first;
+    self.workNoteInput.editable = first;
+    self.isFirstFill = first;
+}
+
+- (void)cleanAllInputs {
+    self.dateField.text = nil;
+    self.leaderField.text = nil;
+    [self.classMemberSection deleteAllUsers];
+    self.workContentInput.text = nil;
+    self.workRecordInput.text = nil;
+    [self.meetingMemberSection deleteAllUsers];
+    self.workNoteInput.text = nil;
+}
+
+- (BOOL)checkParams {
+    BOOL ret = YES;
+    if (!self.dateField.text.length) {
+        [MSDialog showAlert:@"请选择日期"];
+        return NO;
+    }
+    if (!self.leaderField.text.length) {
+        [MSDialog showAlert:@"请选择工作负责人"];
+        return NO;
+    }
+    if (!self.classMemberSection.users.count) {
+        [MSDialog showAlert:@"请选择班组成员"];
+        return NO;
+    }
+    if (!self.workContentInput.text.length) {
+        [MSDialog showAlert:@"请填写工作内容"];
+        return NO;
+    }
+    if (!self.workRecordInput.text.length) {
+        [MSDialog showAlert:@"请填写工作记录"];
+        return NO;
+    }
+    
+    if (self.isFirstFill) {
+        if (!self.meetingMemberSection.users.count) {
+            [MSDialog showAlert:@"请择班参会人员"];
+            return NO;
+        }
+        if (!self.workNoteInput.text.length) {
+            [MSDialog showAlert:@"请填写注意事项"];
+            return NO;
+        }
+    }
+    
+    self.fillModel = [[MSLiveWorkModel alloc]init];
+    self.fillModel.work_time = self.dateField.text;
+    self.fillModel.chargePerson = self.leaderField.text;
+    self.fillModel.member = [MSLiveWorkModel personStringFromPersonArray:self.classMemberSection.users];
+    self.fillModel.context = self.workContentInput.text;
+    self.fillModel.workRecord = self.workRecordInput.text;
+    
+    //参会人员与注意事项
+//    if (self.isFirstFill) {
+//        self.fillModel.persons = [MSLiveWorkModel personStringFromPersonArray:self.meetingMemberSection.users];
+//        self.fillModel.attention = self.workNoteInput.text;
+//    }else {
+//        self.fillModel.persons = nil;
+//        self.fillModel.attention = nil;
+//    }
+    
+    self.fillModel.persons = [MSLiveWorkModel personStringFromPersonArray:self.meetingMemberSection.users];
+    self.fillModel.attention = self.workNoteInput.text;
+    
+    return ret;
+}
+
 #pragma mark - LazyLoad
 - (MSBaseDatePickerView *)datePickerView {
     if (!_datePickerView) {
@@ -332,11 +420,6 @@
         _meetingMemberList = [NSMutableArray array];
     }
     return _meetingMemberList;
-}
-
-- (void)firstFillin:(BOOL)first {
-    self.meetingMemberSection.addBtn.enabled = first;
-    self.workNoteInput.editable = first;
 }
 
 @end
