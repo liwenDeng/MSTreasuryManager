@@ -124,6 +124,15 @@
         make.height.mas_equalTo(height);
     }];
 }
+
+- (void)deleteAllUsers {
+    [self.tagList deleteAlltag];
+    CGFloat height = self.tagList.height;
+    [self.tagList mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(height);
+    }];
+}
+
 - (NSArray *)users {
     return self.tagList.tagArray;
 }

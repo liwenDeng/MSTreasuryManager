@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '33708D516F829599EAF0D3BB07E9579C'
+               BlueprintIdentifier = 'F0AD1FB31817DDD354599166FF8312A6'
                BlueprintName = 'Pods-MSTreasuryManager'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-MSTreasuryManager.a'>

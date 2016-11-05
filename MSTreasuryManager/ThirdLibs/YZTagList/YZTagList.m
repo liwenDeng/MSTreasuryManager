@@ -302,6 +302,43 @@ CGFloat const imageViewWH = 20;
 
 }
 
+- (void)deleteAlltag {
+    
+    for (NSString *key in self.tags.allKeys) {
+        // 获取对应的标题按钮
+        YZTagButton *button = self.tags[key];
+        
+        // 移除按钮
+        [button removeFromSuperview];
+    }
+    
+    // 移除数组
+    [self.tagButtons removeAllObjects];
+    
+    // 移除字典
+    [self.tags removeAllObjects];
+    
+    // 移除数组
+    [self.tagArray removeAllObjects];
+    
+    // 更新tag
+    [self updateTag];
+    
+//    // 更新后面按钮的frame
+//    [UIView animateWithDuration:0.25 animations:^{
+//        [self updateLaterTagButtonFrame:button.tag];
+//    }];
+//    
+    // 更新自己的frame
+    if (_isFitTagListH) {
+        CGRect frame = self.frame;
+        frame.size.height = self.tagListH;
+        [UIView animateWithDuration:0.25 animations:^{
+            self.frame = frame;
+        }];
+    }
+}
+
 // 更新标签
 - (void)updateTag
 {

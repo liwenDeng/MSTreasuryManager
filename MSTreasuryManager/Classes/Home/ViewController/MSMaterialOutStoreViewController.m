@@ -36,6 +36,7 @@
 
 @property (nonatomic, assign) MSCellIndexOfType type;
 
+@property (nonatomic, strong) MSMaterialModel *materialDetailInfo;
 @property (nonatomic, strong) MSMaterialOutInModel *outInModel;
 
 @end
@@ -191,7 +192,7 @@
         [bgView addSubview:label];
         label.font = [UIFont systemFontOfSize:12];
         label.textColor = [UIColor redColor];
-        label.text = @"(123)";
+        label.text = @"(0)";
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(section3);
             make.right.equalTo(section3.textField.mas_left).offset(-10);
@@ -279,6 +280,41 @@
     }];
 }
 
+- (void)loadMaterialDetailInfo {
+    [SVProgressHUD show];
+    [MSNetworking getMaterialDetailInfo:self.outInModel.materialId success:^(NSDictionary *object) {
+        MSMaterialModel *model = [MSMaterialModel mj_objectWithKeyValues:object[@"data"]];
+        self.materialDetailInfo = model;
+        [SVProgressHUD dismiss];
+        
+        [self showCountLabel];
+        
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"获取库房剩余适量失败"];
+        self.maxCountLabel.text = @"error";
+        self.materialDetailInfo = nil;
+    }];
+}
+
+- (void)showCountLabel {
+    if (self.type != MSCellIndexOfTypeMaterialOut) {
+        return;
+    }
+    
+    if (!(self.materialDetailInfo && self.outInModel.location > 0)) {
+        return;
+    }
+    if (self.outInModel.location == 1) {
+        self.maxCountLabel.text =[NSString stringWithFormat:@"%ld",(long)self.materialDetailInfo.room1rest];
+    }
+    if (self.outInModel.location == 2) {
+        self.maxCountLabel.text =[NSString stringWithFormat:@"%ld",(long)self.materialDetailInfo.room2rest];
+    }
+    if (self.outInModel.location == 3) {
+        self.maxCountLabel.text =[NSString stringWithFormat:@"%ld",(long)self.materialDetailInfo.systemrest];
+    }
+}
+
 - (BOOL)checkParams {
     BOOL ret = YES;
     if (!self.nameInput.text.length || self.outInModel.materialId <= 0) {
@@ -294,6 +330,13 @@
     if (!self.outCountInput.text.length) {
         [MSDialog showAlert:@"请选择数量"];
         return NO;
+    }
+    
+    if (self.type == MSCellIndexOfTypeMaterialOut) {
+        if (self.outCountInput.text.integerValue > self.maxCountLabel.text.integerValue) {
+            [MSDialog showAlert:@"数量不能超过库房存量！"];
+            return NO;
+        }
     }
     
     if (!self.dateInput.text.length) {
@@ -330,23 +373,28 @@
 
 #pragma mark - MSCommonSearchViewControllerDelegate
 // 选择位置
-- (void)searchViewController:(MSCommonSearchViewController *)searchController didSelectDic:(NSDictionary *)resultDic {
+- (void)searchViewController:(MSSearchType)searchType didSelectDic:(NSDictionary *)resultDic {
     NSString *placeName = resultDic[kPlaceNameKey];
     NSInteger plcaeId = [resultDic[kPlaceIdKey] integerValue];
     
     self.placeInput.text = placeName;
     self.outInModel.location = plcaeId;
+    [self showCountLabel];
 }
 
 //选择物资/人员
-- (void)searchViewController:(MSCommonSearchViewController *)searchController didSelectModel:(id)resultModel {
+- (void)searchViewController:(MSSearchType)searchType didSelectModel:(id)resultModel {
     
-    switch (searchController.searchType) {
+    switch (searchType) {
         case MSSearchTypeMaterialName:
         {
             MSMaterialModel *searchModel = (MSMaterialModel *)resultModel;
             self.nameInput.text = searchModel.name;
             self.outInModel.materialId = searchModel.mid;
+            //如果是出库，需要获取剩余数量
+            if (self.type == MSCellIndexOfTypeMaterialOut) {
+                [self loadMaterialDetailInfo];
+            }
         }
             break;
         case MSSearchTypeHandlePerson:

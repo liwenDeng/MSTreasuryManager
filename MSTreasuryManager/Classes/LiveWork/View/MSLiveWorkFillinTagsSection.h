@@ -24,4 +24,6 @@
 
 - (void)addUsers:(NSArray *)users;
 
+- (void)deleteAllUsers;
+
 @end

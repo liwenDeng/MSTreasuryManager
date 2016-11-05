@@ -223,7 +223,7 @@
 }
 
 #pragma mark - MSCommonSearchViewControllerDelegate
-- (void)searchViewController:(MSCommonSearchViewController *)searchController didSelectModel:(id)resultModel {
+- (void)searchViewController:(MSSearchType)searchType didSelectModel:(id)resultModel {
     MSMaterialModel *searchModel = (MSMaterialModel *)resultModel;
     self.nameInput.text = searchModel.name;
     self.paramsInput.text = searchModel.techParam;

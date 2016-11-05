@@ -12,10 +12,10 @@
 
 @property (nonatomic, assign) NSInteger workId;
 
-@property (nonatomic, copy) NSString *charge_person;
+@property (nonatomic, copy) NSString *chargePerson;
 @property (nonatomic, copy) NSString *member;
 @property (nonatomic, copy) NSString *context;
-@property (nonatomic, copy) NSString *work_record;
+@property (nonatomic, copy) NSString *workRecord;
 @property (nonatomic, copy) NSString *persons;
 @property (nonatomic, copy) NSString *attention;
 @property (nonatomic, copy) NSString *work_time;

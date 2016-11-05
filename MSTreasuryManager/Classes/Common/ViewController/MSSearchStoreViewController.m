@@ -57,7 +57,7 @@ static NSString *const kNomalCellId = @"kNomalCellId";
         NSString *storeName = self.stores[indexPath.row];
         NSDictionary *dic = @{kPlaceNameKey:storeName,
                               kPlaceIdKey:@(indexPath.row+1)};
-        [self.delegate searchViewController:nil didSelectDic:dic];
+        [self.delegate searchViewController:-1 didSelectDic:dic];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

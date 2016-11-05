@@ -14,9 +14,8 @@
 #import "MSBaseButton.h"
 #import "MSNetworking+LiveWork.h"
 #import "MSSearchStaffViewController.h"
+#import "MSMultiSearchViewController.h"
 #import "MSStaffModel.h"
-
-static int i = 0;
 
 @interface MSLiveWorkFillInViewController () <MSBaseDatePickerViewDelegate,MSCommonSearchViewControllerDelegate>
 
@@ -170,7 +169,6 @@ static int i = 0;
     }];
 }
 
-
 #pragma mark - tap action
 - (void)chooseDate {
     [self showDatePickerView];
@@ -183,19 +181,21 @@ static int i = 0;
 }
 
 - (void)addClassMember {
-    MSSearchStaffViewController *search = [[MSSearchStaffViewController alloc]initWithSearchType:(MSSearchTypeMemberPerson)];
+    MSMultiSearchViewController *search = [[MSMultiSearchViewController alloc]initWithSearchType:(MSSearchTypeMemberPerson)];
     search.delegate = self;
+
     [self.navigationController pushViewController:search animated:YES];
 }
 
 - (void)addMeetingMember {
-    MSSearchStaffViewController *search = [[MSSearchStaffViewController alloc]initWithSearchType:(MSSearchTypeMettingPerson)];
+    MSMultiSearchViewController *search = [[MSMultiSearchViewController alloc]initWithSearchType:(MSSearchTypeMettingPerson)];
     search.delegate = self;
+
     [self.navigationController pushViewController:search animated:YES];
 }
 
 - (void)submitBtnClicked {
-
+    [self.classMemberSection deleteAllUsers];
 }
 
 - (void)dismissKeyboardAction:(UITapGestureRecognizer *)tap {
@@ -203,19 +203,61 @@ static int i = 0;
     [self.view endEditing:YES];
 }
 
+#pragma mark - HTTP Request 
+- (void)loadExsitLiveWork {
+    [SVProgressHUD show];
+    [MSNetworking getExistLiveWork:self.dateField.text success:^(NSDictionary *object) {
+        
+        MSLiveWorkModel *model = [MSLiveWorkModel mj_objectWithKeyValues:object[@"data"]];
+        if (model.persons && model.attention) {
+            //已经填写注意事项、参会人员
+            self.workNoteInput.text = model.attention;
+            NSArray *persons = [MSLiveWorkModel personArrayFromPersonString:model.persons];
+            [self.meetingMemberSection deleteAllUsers];
+            [self.meetingMemberSection addUsers:persons];
+            
+            [SVProgressHUD showSuccessWithStatus:@"查询成功"];
+            [self firstFillin:NO];
+        }else {
+            //未填写
+            [self.meetingMemberSection deleteAllUsers ];
+            [SVProgressHUD showSuccessWithStatus:@"当天还未填写任何记录哦"];
+            [self firstFillin:YES];
+        }
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"查询失败，请重新选择日期"];
+        [self firstFillin:NO];
+        [self.meetingMemberSection deleteAllUsers];
+        self.workNoteInput.text = @"";
+    }];
+}
+
 #pragma mark - MSCommonSearchViewControllerDelegate
-- (void)searchViewController:(MSCommonSearchViewController *)searchController didSelectModel:(id)resultModel {
+- (void)searchViewController:(MSSearchType)searchType didSelectModel:(id)resultModel {
     MSStaffModel *staff = (MSStaffModel *)resultModel;
     //负责人
-    if (searchController.searchType == MSSearchTypeChargePerson) {
-        self.fillModel.charge_person = staff.name;
+    if (searchType == MSSearchTypeChargePerson) {
+        self.fillModel.chargePerson = staff.name;
         self.leaderField.text = staff.name;
     }
-    
-    if (searchController.searchType == MSSearchTypeMemberPerson) {
-        [self.meetingMemberSection addUser:staff.name];
+}
+
+- (void)searchViewController:(MSSearchType)searchType didSelectSet:(NSSet *)selectSet {
+    if (searchType == MSSearchTypeMettingPerson) {
+        for (NSString *personName in selectSet) {
+            if (![self.meetingMemberSection.tagList.tagArray containsObject:personName]) {
+                [self.meetingMemberSection addUser:personName];
+            }
+        }
     }
     
+    if (searchType == MSSearchTypeMemberPerson) {
+        for (NSString *personName in selectSet) {
+            if (![self.classMemberSection.tagList.tagArray containsObject:personName]) {
+                [self.classMemberSection addUser:personName];
+            }
+        }
+    }
 }
 
 #pragma mark - MSBaseDatePickerViewDelegate
@@ -225,6 +267,7 @@ static int i = 0;
     self.fillModel.work_time = dateString;
     self.dateField.text = dateString;
     [self hideDatePickerView];
+    [self loadExsitLiveWork];
 }
 
 - (void)datePickerView:(MSBaseDatePickerView *)datePicker cancleWithDate:(NSDate *)date {
@@ -289,6 +332,11 @@ static int i = 0;
         _meetingMemberList = [NSMutableArray array];
     }
     return _meetingMemberList;
+}
+
+- (void)firstFillin:(BOOL)first {
+    self.meetingMemberSection.addBtn.enabled = first;
+    self.workNoteInput.editable = first;
 }
 
 @end

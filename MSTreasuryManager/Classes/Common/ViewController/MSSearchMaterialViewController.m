@@ -128,7 +128,7 @@
         }else {
             model = self.searchList[indexPath.row];
         }
-        [self.delegate searchViewController:self didSelectModel:model];
+        [self.delegate searchViewController:self.searchType didSelectModel:model];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

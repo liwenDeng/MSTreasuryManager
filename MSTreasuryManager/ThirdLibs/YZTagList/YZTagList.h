@@ -124,6 +124,8 @@
  */
 - (void)deleteTag:(NSString *)tagStr;
 
+- (void)deleteAlltag;
+
 /**
  *  点击标签，执行Block
  */

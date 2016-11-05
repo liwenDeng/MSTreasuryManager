@@ -420,8 +420,8 @@ static NSString *const kMaterialImageUrl = @"http://139.196.112.30:8080/web";
 }
 
 #pragma mark - MSCommonSearchViewControllerDelegate
-- (void)searchViewController:(MSCommonSearchViewController *)searchController didSelectString:(NSString *)result {
-    
+- (void)searchViewController:(MSSearchType)searchType didSelectString:(NSString *)result {
+
 }
 
 #pragma mark - HTTP Request
