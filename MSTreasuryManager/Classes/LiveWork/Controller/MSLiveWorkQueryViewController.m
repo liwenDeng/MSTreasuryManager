@@ -14,6 +14,7 @@
 #import "MSLiveWorkMeetingCell.h"
 #import "MSLiveWorkQueryDetailViewController.h"
 #import "MSLiveWorkEditViewController.h"
+#import "MSNetworking+LiveWork.h"
 
 static NSString * const kLiveWorkLeaderCell = @"LiveWorkLeaderCell";
 static NSString * const kLiveWorkMeetingCell = @"LiveWorkMeetingCell";
@@ -23,6 +24,9 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 
 @property (nonatomic, strong) UITextField *dateTextField;
 @property (nonatomic, strong) MSBaseDatePickerView *datePickerView;
+@property (nonatomic, strong) NSArray *workList;
+@property (nonatomic, strong) NSString *persons;
+@property (nonatomic, strong) NSString *attention;
 
 @end
 
@@ -38,7 +42,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 
 - (void)setupSubViews {
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kLiveWorkLeaderCell];
+//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kLiveWorkLeaderCell];
     [self.tableView registerClass:[MSLiveWorkMeetingCell class] forCellReuseIdentifier:kLiveWorkMeetingCell];
     [self.tableView registerClass:[MSLiveWorkNoteCell class] forCellReuseIdentifier:kLiveWorkNoteCell];
     self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
@@ -60,7 +64,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return 3;
+            return self.workList.count ? : 0;
             break;
         case 1:
         case 2:
@@ -74,8 +78,13 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
     switch (indexPath.section) {
         case 0:
         {
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kLiveWorkLeaderCell forIndexPath:indexPath];
-            cell.textLabel.text = @"XXX";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kLiveWorkLeaderCell];
+            if (!cell) {
+                cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:kLiveWorkLeaderCell];
+            }
+            MSLiveWorkModel *model = self.workList[indexPath.row];
+            cell.textLabel.text = model.chargePerson;
+            cell.detailTextLabel.text = model.workTime;
             [cell setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
             return cell;
         }
@@ -83,7 +92,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
         case 1:
         {
             MSLiveWorkMeetingCell *cell = [tableView dequeueReusableCellWithIdentifier:kLiveWorkMeetingCell forIndexPath:indexPath];
-            cell.contentLabel.text = @"短裤在家爱看了没打开市场经理卡就卡了死";
+            cell.contentLabel.text = self.persons ? : @"";
             return cell;
             
         }
@@ -91,7 +100,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
         case 2:
         {
             MSLiveWorkNoteCell *cell = [tableView dequeueReusableCellWithIdentifier:kLiveWorkNoteCell forIndexPath:indexPath];
-            cell.contentLabel.text = @"短裤在家爱看了没打开市场经理卡就卡了死手机卡上的健康教案上看到就爱看了世界的警察在下降快拉我的卡萨春节阿萨德";
+            cell.contentLabel.text = self.attention ? : @"";
             return cell;
         }
             break;
@@ -115,7 +124,25 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 }
 
 #pragma mark - HTTP Request
-
+- (void)loadLiveWorkList:(NSString *)workTime {
+    [SVProgressHUD show];
+    [MSNetworking getLiveWorkList:workTime success:^(NSDictionary *object) {
+        
+        NSString *attention = object[@"data"][@"attention"];
+        self.attention = attention;
+        
+        NSString *personString = object[@"data"][@"persons"];
+//        NSArray *persons = [MSLiveWorkModel personArrayFromPersonString:personString];
+        self.persons = personString;
+        
+        self.workList = [MSLiveWorkModel mj_objectArrayWithKeyValuesArray:object[@"data"][@"list"]];
+        [self.tableView reloadData];
+        
+        [SVProgressHUD showSuccessWithStatus:nil];
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"查询失败"];
+    }];
+}
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -183,8 +210,8 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 - (void)datePickerView:(MSBaseDatePickerView *)datePicker submitWithDate:(NSDate *)date {
     NSLog(@"date:%@",date);
     self.dateTextField.text = [date ms_dateString];
-    
     [self hideDatePickerView];
+    [self loadLiveWorkList:[date ms_dateString]];
 }
 
 - (void)datePickerView:(MSBaseDatePickerView *)datePicker cancleWithDate:(NSDate *)date {
@@ -196,7 +223,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
         self.datePickerView.hidden = NO;
         [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{
             [self.datePickerView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(-244);
+                make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(-264);
             }];
             [self.view layoutIfNeeded];
         } completion:^(BOOL finished) {

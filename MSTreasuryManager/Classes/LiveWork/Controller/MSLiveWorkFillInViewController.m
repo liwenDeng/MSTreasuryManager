@@ -278,7 +278,7 @@
 - (void)datePickerView:(MSBaseDatePickerView *)datePicker submitWithDate:(NSDate *)date {
 
     NSString *dateString = [date ms_dateString];
-    self.fillModel.work_time = dateString;
+    self.fillModel.workTime = dateString;
     self.dateField.text = dateString;
     [self hideDatePickerView];
     [self loadExsitLiveWork];
@@ -293,7 +293,7 @@
         self.datePickerView.hidden = NO;
         [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{
             [self.datePickerView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(-200);
+                make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(-240);
             }];
             [self.view layoutIfNeeded];
         } completion:^(BOOL finished) {
@@ -368,7 +368,7 @@
     }
     
     self.fillModel = [[MSLiveWorkModel alloc]init];
-    self.fillModel.work_time = self.dateField.text;
+    self.fillModel.workTime = self.dateField.text;
     self.fillModel.chargePerson = self.leaderField.text;
     self.fillModel.member = [MSLiveWorkModel personStringFromPersonArray:self.classMemberSection.users];
     self.fillModel.context = self.workContentInput.text;

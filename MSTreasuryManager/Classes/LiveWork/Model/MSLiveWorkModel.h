@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSString *workRecord;
 @property (nonatomic, copy) NSString *persons;
 @property (nonatomic, copy) NSString *attention;
-@property (nonatomic, copy) NSString *work_time;
+@property (nonatomic, copy) NSString *workTime;
 
 + (NSArray *)personArrayFromPersonString:(NSString *)personString;
 

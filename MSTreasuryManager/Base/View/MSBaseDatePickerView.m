@@ -24,20 +24,7 @@
 }
 
 - (void)setupSubviews {
-
-    UIDatePicker *datePicker = [[UIDatePicker alloc]init];
-    [self addSubview:datePicker];
-    [datePicker setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"zh_CN"]];
-    // 设置时区
-    [datePicker setTimeZone:[NSTimeZone localTimeZone]];
-    
-    datePicker.backgroundColor = kBackgroundColor;
-    [datePicker setDatePickerMode:(UIDatePickerModeDateAndTime)];
-    [datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
-    self.datePicker = datePicker;
-    
+    self.backgroundColor = kBackgroundColor;
     UIButton *cancleBtn = [UIButton buttonWithType:(UIButtonTypeSystem)];
     [cancleBtn setTitle:@"取 消" forState:(UIControlStateNormal)];
     [self addSubview:cancleBtn];
@@ -49,18 +36,32 @@
     [submitBtn sizeToFit];
     
     [cancleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.mas_top);
+        make.top.equalTo(self.mas_top);
         make.left.mas_equalTo(15);
     }];
     
     [submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.mas_right).offset(-15);
-        make.bottom.equalTo(self.mas_top);
+        make.top.equalTo(self.mas_top);
     }];
     
     [cancleBtn addTarget:self action:@selector(cancleBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     
     [submitBtn addTarget:self action:@selector(submitBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    UIDatePicker *datePicker = [[UIDatePicker alloc]init];
+    [self addSubview:datePicker];
+    [datePicker setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"zh_CN"]];
+    // 设置时区
+    [datePicker setTimeZone:[NSTimeZone localTimeZone]];
+    
+    datePicker.backgroundColor = kBackgroundColor;
+    [datePicker setDatePickerMode:(UIDatePickerModeDateAndTime)];
+    [datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self);
+        make.top.equalTo(submitBtn.mas_bottom);
+    }];
+    self.datePicker = datePicker;
 }
 
 - (void)cancleBtnClicked:(UIButton *)sender {

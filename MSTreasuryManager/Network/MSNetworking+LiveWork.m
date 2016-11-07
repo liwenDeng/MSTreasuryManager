@@ -20,7 +20,7 @@
     action.params[@"workRecord"] = liveWorkModel.workRecord;
     action.params[@"persons"] = liveWorkModel.persons;
     action.params[@"attention"] = liveWorkModel.attention;
-    action.params[@"work_time"] = liveWorkModel.work_time;
+    action.params[@"work_time"] = liveWorkModel.workTime;
     action.params[@"member"] = liveWorkModel.member;
     
     [action setHttpMethod:HttpPost];

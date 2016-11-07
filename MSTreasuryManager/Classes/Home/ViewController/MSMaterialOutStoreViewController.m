@@ -436,7 +436,7 @@
         self.datePickerView.hidden = NO;
         [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{
             [self.datePickerView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(-200);
+                make.top.equalTo(self.mas_bottomLayoutGuideBottom).offset(-240);
             }];
             [self.view layoutIfNeeded];
         } completion:^(BOOL finished) {
