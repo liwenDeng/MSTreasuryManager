@@ -49,13 +49,13 @@
     [submitBtn sizeToFit];
     
     [cancleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self);
+        make.bottom.equalTo(self.mas_top);
         make.left.mas_equalTo(15);
     }];
     
     [submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.mas_right).offset(-15);
-        make.top.equalTo(self);
+        make.bottom.equalTo(self.mas_top);
     }];
     
     [cancleBtn addTarget:self action:@selector(cancleBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];

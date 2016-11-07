@@ -114,6 +114,9 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
     }
 }
 
+#pragma mark - HTTP Request
+
+
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -179,6 +182,8 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 #pragma mark - MSBaseDatePickerViewDelegate
 - (void)datePickerView:(MSBaseDatePickerView *)datePicker submitWithDate:(NSDate *)date {
     NSLog(@"date:%@",date);
+    self.dateTextField.text = [date ms_dateString];
+    
     [self hideDatePickerView];
 }
 

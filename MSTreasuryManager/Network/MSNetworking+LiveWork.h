@@ -23,4 +23,11 @@
  */
 + (NSURLSessionDataTask *)getExistLiveWork:(NSString *)workTime success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
+
+/**
+ 查询当天现场工作注意事项与参会人员
+ 
+ */
++ (NSURLSessionDataTask *)getLiveWorkList:(NSString *)workTime success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
 @end

@@ -29,4 +29,25 @@
     }];
 }
 
+- (void)testLiveWorkList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getLiveWorkList:@"2016-11-07" success:^(NSDictionary *object) {
+            NSString *attention = object[@"data"][@"attention"];
+            if (attention.length) {
+                //已经填写
+            }else {
+                //未填写
+            }
+            
+            NSArray *list = [MSLiveWorkModel mj_objectArrayWithKeyValuesArray:object[@"data"][@"list"]];
+            
+            
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
 @end

@@ -45,4 +45,18 @@
         failure(error);
     }];
 }
+
++ (NSURLSessionDataTask *)getLiveWorkList:(NSString *)workTime success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/dayscenework"];
+    
+    action.params[@"workTime"] = workTime;
+    
+    [action setHttpMethod:HttpPost];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 @end
