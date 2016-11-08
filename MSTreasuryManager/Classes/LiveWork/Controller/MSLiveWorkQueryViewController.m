@@ -113,7 +113,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return @"工作负责人";
+            return @"工作记录列表";
         case 1:
             return @"参会人员";
         case 2:
@@ -152,7 +152,8 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
     switch (indexPath.section) {
         case 0:
         {
-            MSLiveWorkQueryDetailViewController *detailVC = [[MSLiveWorkQueryDetailViewController alloc]init];
+            MSLiveWorkModel *model = self.workList[indexPath.row];
+            MSLiveWorkQueryDetailViewController *detailVC = [[MSLiveWorkQueryDetailViewController alloc]initWithLiveWorkId:model.workId];
             [self.navigationController pushViewController:detailVC animated:YES];
         }
             break;
@@ -180,14 +181,14 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
         case 1:
         {
             return [tableView fd_heightForCellWithIdentifier:kLiveWorkMeetingCell configuration:^(MSLiveWorkMeetingCell * cell) {
-                cell.contentLabel.text = @"短裤在家爱看了没打开市场经理卡就卡了死";
+                cell.contentLabel.text = self.persons ? : @"";
             }];
         }
             break;
         case 2:
         {
             return [tableView fd_heightForCellWithIdentifier:kLiveWorkNoteCell configuration:^(MSLiveWorkNoteCell * cell) {
-                cell.contentLabel.text = @"短裤在家爱看了没打开市场经理卡就卡了死手机卡上的健康教案上看到就爱看了世界的警察在下降快拉我的卡萨春节阿萨德";
+                cell.contentLabel.text = self.attention ? : @"";
             }];
         }
             break;

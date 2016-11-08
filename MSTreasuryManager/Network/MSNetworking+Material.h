@@ -10,8 +10,6 @@
 #import "MSMaterialModel.h"
 #import "MSMaterialOutInModel.h"
 
-static const NSInteger kPageSize = 10;
-
 @interface MSNetworking (Material)
 
 /**

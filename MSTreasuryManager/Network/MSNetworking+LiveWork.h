@@ -30,4 +30,10 @@
  */
 + (NSURLSessionDataTask *)getLiveWorkList:(NSString *)workTime success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
+/**
+ 查询现场工作详情
+ 
+ */
++ (NSURLSessionDataTask *)getLiveWorkDetailInfo:(NSInteger )liveWorkId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
 @end

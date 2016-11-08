@@ -50,4 +50,16 @@
     }];
 }
 
+- (void)testLiveWorkDetailInfo {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getLiveWorkDetailInfo:7 success:^(NSDictionary *object) {
+            
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
 @end

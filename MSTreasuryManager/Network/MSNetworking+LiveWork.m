@@ -59,4 +59,19 @@
         failure(error);
     }];
 }
+
++ (NSURLSessionDataTask *)getLiveWorkDetailInfo:(NSInteger )liveWorkId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/scenework/detail"];
+    
+    action.params[@"id"] = @(liveWorkId);
+    
+    [action setHttpMethod:HttpPost];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 @end

@@ -10,4 +10,6 @@
 
 @interface MSLiveWorkQueryDetailViewController : MSBaseViewController
 
+- (instancetype)initWithLiveWorkId:(NSInteger)liveWorkId;
+
 @end

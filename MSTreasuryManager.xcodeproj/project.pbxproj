@@ -121,6 +121,9 @@
 		BC7C07631DBF51BB00896351 /* MSMyCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C07621DBF51BB00896351 /* MSMyCenterHeaderView.m */; };
 		BC7C07661DBF66C200896351 /* MSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C07651DBF66C200896351 /* MSLoginViewController.m */; };
 		BC7C07691DBF66D400896351 /* MSLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C07681DBF66D400896351 /* MSLoginView.m */; };
+		BC8CB01D1DD16E7900B31AE7 /* MSNetworking+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8CB01C1DD16E7900B31AE7 /* MSNetworking+Tool.m */; };
+		BC8CB0201DD16F2300B31AE7 /* MSToolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8CB01F1DD16F2300B31AE7 /* MSToolModel.m */; };
+		BC8CB0231DD1AB3000B31AE7 /* MSToolApiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8CB0221DD1AB3000B31AE7 /* MSToolApiTest.m */; };
 		BC9412FF1DC9C88000B68744 /* MSSearchStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9412FE1DC9C88000B68744 /* MSSearchStoreViewController.m */; };
 		BC9413021DC9CD0F00B68744 /* MSMaterialOutInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9413011DC9CD0F00B68744 /* MSMaterialOutInModel.m */; };
 		BC9413051DC9D02100B68744 /* MSSearchStaffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9413041DC9D02100B68744 /* MSSearchStaffViewController.m */; };
@@ -394,6 +397,12 @@
 		BC7C07651DBF66C200896351 /* MSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLoginViewController.m; sourceTree = "<group>"; };
 		BC7C07671DBF66D400896351 /* MSLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLoginView.h; sourceTree = "<group>"; };
 		BC7C07681DBF66D400896351 /* MSLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLoginView.m; sourceTree = "<group>"; };
+		BC8CB01B1DD16E7900B31AE7 /* MSNetworking+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSNetworking+Tool.h"; sourceTree = "<group>"; };
+		BC8CB01C1DD16E7900B31AE7 /* MSNetworking+Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MSNetworking+Tool.m"; sourceTree = "<group>"; };
+		BC8CB01E1DD16F2300B31AE7 /* MSToolModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolModel.h; sourceTree = "<group>"; };
+		BC8CB01F1DD16F2300B31AE7 /* MSToolModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolModel.m; sourceTree = "<group>"; };
+		BC8CB0211DD1AB3000B31AE7 /* MSToolApiTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSToolApiTest.h; sourceTree = "<group>"; };
+		BC8CB0221DD1AB3000B31AE7 /* MSToolApiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSToolApiTest.m; sourceTree = "<group>"; };
 		BC9412FD1DC9C88000B68744 /* MSSearchStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchStoreViewController.h; sourceTree = "<group>"; };
 		BC9412FE1DC9C88000B68744 /* MSSearchStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchStoreViewController.m; sourceTree = "<group>"; };
 		BC9413001DC9CD0F00B68744 /* MSMaterialOutInModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialOutInModel.h; sourceTree = "<group>"; };
@@ -630,6 +639,8 @@
 				BC5CBE6D1DC6D039003FA945 /* MSMaterialApiTest.m */,
 				BC4D23B81DCC33DE00FC962D /* MSLiveWorkTest.h */,
 				BC4D23B91DCC33DE00FC962D /* MSLiveWorkTest.m */,
+				BC8CB0211DD1AB3000B31AE7 /* MSToolApiTest.h */,
+				BC8CB0221DD1AB3000B31AE7 /* MSToolApiTest.m */,
 				BC25B91E1DA1ED8C008EDFB2 /* Info.plist */,
 			);
 			path = MSTreasuryManagerTests;
@@ -679,6 +690,8 @@
 				BC5CBE711DC6D0B0003FA945 /* MSNetworking+Material.m */,
 				BC5730A31DCB5F860064243F /* MSNetworking+LiveWork.h */,
 				BC5730A41DCB5F860064243F /* MSNetworking+LiveWork.m */,
+				BC8CB01B1DD16E7900B31AE7 /* MSNetworking+Tool.h */,
+				BC8CB01C1DD16E7900B31AE7 /* MSNetworking+Tool.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1084,6 +1097,8 @@
 		BC7601B11DB8695D0006A034 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC8CB01E1DD16F2300B31AE7 /* MSToolModel.h */,
+				BC8CB01F1DD16F2300B31AE7 /* MSToolModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1532,6 +1547,7 @@
 				BC5DAEA31DBDED7100D88C30 /* MSLiveWorkQueryDetailViewController.m in Sources */,
 				BC25B9CB1DA1F3BB008EDFB2 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				BC25B9A91DA1F1E2008EDFB2 /* NSString+Util.m in Sources */,
+				BC8CB0201DD16F2300B31AE7 /* MSToolModel.m in Sources */,
 				BC7601CA1DB8695D0006A034 /* MSToolStateInfoQueryViewController.m in Sources */,
 				BC7601701DB869440006A034 /* MSBaseTableViewController.m in Sources */,
 				BC7601B51DB8695D0006A034 /* MSCommonSearchViewController.m in Sources */,
@@ -1605,6 +1621,7 @@
 				BC7601C51DB8695D0006A034 /* MSLiveWorkViewController.m in Sources */,
 				BC76016A1DB869440006A034 /* MSBaseDatePickerView.m in Sources */,
 				BC7601B71DB8695D0006A034 /* MSMaterialFillInNomalSection.m in Sources */,
+				BC8CB01D1DD16E7900B31AE7 /* MSNetworking+Tool.m in Sources */,
 				BC5CBE8D1DC6F4FA003FA945 /* MSStaffModel.m in Sources */,
 				BC7C07601DBF516000896351 /* MSBaseView.m in Sources */,
 				BC76016B1DB869440006A034 /* MSBaseTableViewCell.m in Sources */,
@@ -1624,6 +1641,7 @@
 				BC25B91D1DA1ED8C008EDFB2 /* MSTreasuryManagerTests.m in Sources */,
 				BC4D23BA1DCC33DE00FC962D /* MSLiveWorkTest.m in Sources */,
 				BC5CBE6B1DC6CFF8003FA945 /* MSBaseApiTest.m in Sources */,
+				BC8CB0231DD1AB3000B31AE7 /* MSToolApiTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

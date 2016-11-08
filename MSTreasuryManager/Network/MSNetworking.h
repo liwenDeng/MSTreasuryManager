@@ -10,6 +10,8 @@
 #import "ZCApiLauncher.h"
 #import <SVProgressHUD.h>
 
+static const NSInteger kPageSize = 10;
+
 typedef void(^MSSuccessBlock)(NSDictionary *object);
 typedef void(^MSFailureBlock)(NSError *error);
 

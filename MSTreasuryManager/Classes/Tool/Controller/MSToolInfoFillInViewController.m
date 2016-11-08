@@ -22,13 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [MSLoginViewController loginSuccess:^{
-        
-    } failure:^{
-        [self.navigationController popViewControllerAnimated:NO];
-    }];
-    
+//    
+//    [MSLoginViewController loginSuccess:^{
+//        
+//    } failure:^{
+//        [self.navigationController popViewControllerAnimated:NO];
+//    }];
+//    
     self.title = @"工器具信息填写";
     self.scrollView = [[UIScrollView alloc]init];
     [self.view addSubview:self.scrollView];
@@ -37,7 +37,6 @@
     [self setupSections];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboardAction)];
-//    tap.cancelsTouchesInView = NO;//防止tap影响subView响应事件
     [self.view addGestureRecognizer:tap];
 }
 
@@ -88,7 +87,5 @@
 - (void)dismissKeyboardAction {
     [self.view endEditing:YES];
 }
-
-
 
 @end

@@ -11,6 +11,7 @@
 #import "MSToolInfoFillInSection.h"
 #import "MSMaterialFillInNomalSection.h"
 #import "MSOutInMultiLineSection.h"
+#import "MSNetworking+LiveWork.h"
 
 @interface MSLiveWorkQueryDetailViewController ()
 
@@ -27,9 +28,18 @@
 @property (nonatomic, weak) MSLiveWorkFillinTagsSection *classMemberSection;
 @property (nonatomic, weak) MSLiveWorkFillinTagsSection *meetingMemberSection;
 
+@property (nonatomic, assign) NSInteger liveWorkId;
+
 @end
 
 @implementation MSLiveWorkQueryDetailViewController
+
+- (instancetype)initWithLiveWorkId:(NSInteger)liveWorkId {
+    if (self = [super init]) {
+        _liveWorkId = liveWorkId;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,9 +54,8 @@
     [self.view addSubview:self.scrollView];
     self.scrollView.backgroundColor = kBackgroundColor;
     
-
     [self setupSections];
-    
+    [self loadLiveWorkDetailInfo];
 }
 
 - (void)setupSections {
@@ -154,18 +163,34 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.classMemberSection addUsers:@[@"爱迪生啊",@"摩擦出",@"哈里发啊",@"什么鬼",@"沙阿斯顿",@"随意吧"]];
-    self.workContentInput.text = @"短裤在家爱看了没打开市场经理卡就卡了死手机卡上的健康教案上看到就爱看了世界的警察在下降快拉我的卡萨春节阿萨德";
+
 }
 
-/*
-#pragma mark - Navigation
+- (void)fillInWithLiveWork:(MSLiveWorkModel *)model {
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    self.dateField.text = model.workTime;
+    self.leaderField.text = model.chargePerson;
+    NSArray *member = [MSLiveWorkModel personArrayFromPersonString:model.member];
+    [self.classMemberSection addUsers:member];
+    self.workContentInput.text = model.context;
+    self.workRecordInput.text = model.workRecord;
+    
+    NSArray *persons = [MSLiveWorkModel personArrayFromPersonString:model.persons];
+    [self.meetingMemberSection addUsers:persons];
+    self.workNoteInput.text = model.attention;
+    
 }
-*/
+
+#pragma mark - HTTP Request
+- (void)loadLiveWorkDetailInfo {
+    [SVProgressHUD show];
+    [MSNetworking getLiveWorkDetailInfo:self.liveWorkId success:^(NSDictionary *object) {
+        [SVProgressHUD showSuccessWithStatus:@"查询成功"];
+        MSLiveWorkModel *model = [MSLiveWorkModel mj_objectWithKeyValues:object[@"data"]];
+        [self fillInWithLiveWork:model];
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"查询失败"];
+    }];
+}
 
 @end
