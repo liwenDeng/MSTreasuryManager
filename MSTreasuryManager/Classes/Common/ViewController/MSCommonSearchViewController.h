@@ -21,6 +21,10 @@ typedef enum : NSUInteger {
     MSSearchTypeMemberPerson, //班组成员
     MSSearchTypeMettingPerson,//参会人员
     MSSearchTypeToolName,
+    MSSearchTypeToolInStore,
+    MSSearchTypeToolOutStore,
+    MSSearchTypeBorrowPerson,   //借用人
+    MSSearchTypeLoanPerson      //归还人
 } MSSearchType;
 
 @class MSCommonSearchViewController;

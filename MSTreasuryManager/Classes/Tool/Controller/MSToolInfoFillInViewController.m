@@ -10,10 +10,12 @@
 #import "MSBaseButton.h"
 #import "MSToolInfoFillInSection.h"
 #import "MSLoginViewController.h"
+#import "MSNetworking+Tool.h"
 
 @interface MSToolInfoFillInViewController ()
 
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) YZInputView *toolNameInput;
 
 @end
 
@@ -50,7 +52,7 @@
     
     MSToolInfoFillInSection *section1 = [[MSToolInfoFillInSection alloc]initWithTitle:@"工器具名称" placeholder:@"请输入工器具名称"];
     [bgView addSubview:section1];
-    
+    self.toolNameInput = section1.fillInView;
     [section1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.top.mas_equalTo(20);
@@ -81,7 +83,15 @@
 }
 
 - (void)submitBtnClicked:(UIButton *)sender {
-
+    [SVProgressHUD show];
+    [MSNetworking addTool:self.toolNameInput.text success:^(NSDictionary *object) {
+       
+        [SVProgressHUD showSuccessWithStatus:@"添加成功"];
+        self.toolNameInput.text = nil;
+    } failure:^(NSError *error) {
+        self.toolNameInput.text = nil;
+        [SVProgressHUD showErrorWithStatus:@"添加失败"];
+    }];
 }
 
 - (void)dismissKeyboardAction {

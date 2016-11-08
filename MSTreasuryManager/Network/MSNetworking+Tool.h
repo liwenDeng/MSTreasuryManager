@@ -18,9 +18,21 @@
 + (NSURLSessionDataTask *)addTool:(NSString* )toolName success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 /**
- 工器具添加
+ 工器具列表
  
  */
 + (NSURLSessionDataTask *)getToolList:(NSString* )toolName pageNo:(NSInteger)pageNo success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ 工器具查询
+ 
+ */
++ (NSURLSessionDataTask *)getToolList:(NSString* )toolName status:(NSInteger)status pageNo:(NSInteger)pageNo success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ 工器出入库
+ 
+ */
++ (NSURLSessionDataTask *)changeTool:(MSToolModel* )toolModel borrowOut:(BOOL)borrowOut success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 @end

@@ -14,5 +14,18 @@
     return @{@"toolId":@"id"};
 }
 
+- (NSString *)statusName {
+    switch ([self.status integerValue]) {
+        case 0:
+            return @"在库";
+            break;
+        case 1:
+            return @"借出";
+            break;
+        default:
+            return @"未知";
+            break;
+    }
+}
 
 @end

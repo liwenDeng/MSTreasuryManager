@@ -24,6 +24,7 @@
 
 - (void)loadMore {
     self.pageNo++;
+    [SVProgressHUD show];
     [MSNetworking getMaterialListWithName:@"" pageNo:self.pageNo success:^(NSDictionary *object) {
         
         [SVProgressHUD dismiss];

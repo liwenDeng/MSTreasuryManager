@@ -7,9 +7,10 @@
 //
 
 #import "MSBaseSearchTableViewController.h"
+#import "MSCommonSearchViewController.h"
 /**
  工器具状态查询
  */
-@interface MSToolStateInfoQueryViewController : MSBaseSearchTableViewController
+@interface MSToolStateInfoQueryViewController : MSCommonSearchViewController
 
 @end

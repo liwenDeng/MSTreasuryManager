@@ -14,7 +14,7 @@
     return [self initWithTitle:title placeholder:placeholder canTouch:NO];
 }
 
-- (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder canTouch:(BOOL)canTouch {
+- (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder canTouch:(BOOL)canTouch showSearchButton:(BOOL)showSearch {
     if (self = [super init]) {
         
         self.backgroundColor = [UIColor whiteColor];
@@ -45,17 +45,27 @@
         });
         
         self.actionBtn = ({
-            UIButton *btn = [UIButton buttonWithType:(UIButtonTypeSystem)];
+            UIButton *btn = [UIButton buttonWithType:(UIButtonTypeCustom)];
             [self addSubview:btn];
-            
-            [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.edges.equalTo(self.textField);
-            }];
+            if (showSearch) {
+                [btn setImage:[UIImage imageNamed:@"search"] forState:(UIControlStateNormal)];
+                [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.right.equalTo(self.mas_right).offset(-20);
+                    make.centerY.equalTo(self);
+                    make.size.mas_equalTo(CGSizeMake(20, 20));
+                }];
+            }else {
+                [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.edges.equalTo(self.textField);
+                }];
+            }
             
             btn;
         });
         
-        if (!canTouch) {
+        if (canTouch) {
+            self.actionBtn.hidden = NO;
+        }else {
             self.actionBtn.hidden = YES;
         }
         
@@ -73,13 +83,22 @@
         
         [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(kSCREEN_WIDTH / 4 + 25);
-            make.right.mas_equalTo(self.mas_right).offset(-15);
+            if (showSearch) {
+                make.right.mas_equalTo(self.actionBtn.mas_left).offset(-5);
+            }else {
+                make.right.mas_equalTo(self.mas_right).offset(-15);
+            }
             make.centerY.equalTo(self);
             make.height.mas_equalTo(44 * 0.7);
         }];
         
     }
     return self;
+
+}
+
+- (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder canTouch:(BOOL)canTouch {
+    return [self initWithTitle:title placeholder:placeholder canTouch:canTouch showSearchButton:NO];
 }
 
 @end

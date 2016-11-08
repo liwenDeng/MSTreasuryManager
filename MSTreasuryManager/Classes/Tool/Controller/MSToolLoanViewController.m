@@ -13,8 +13,13 @@
 #import "YZInputView.h"
 #import "MSBaseDatePickerView.h"
 #import "MSBaseButton.h"
+#import "MSSearchToolViewController.h"
+#import "MSStaffModel.h"
+#import "MSToolModel.h"
+#import "MSNetworking+Tool.h"
+#import "MSSearchStaffViewController.h"
 
-@interface MSToolLoanViewController () <MSBaseDatePickerViewDelegate>
+@interface MSToolLoanViewController () <MSBaseDatePickerViewDelegate,MSCommonSearchViewControllerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
@@ -24,6 +29,8 @@
 @property (nonatomic, strong) UITextField *reviewUserInput;
 
 @property (nonatomic, strong) MSBaseDatePickerView *datePickerView;
+
+@property (nonatomic, strong) MSToolModel *toolModel;
 
 @end
 
@@ -54,8 +61,8 @@
     });
     
     MSMaterialFillInWithSearchSection *section1 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:@"工器具名称" placeholder:@"请选择工器具"];
-    MSMaterialFillInNomalSection *section2 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"借用时间" placeholder:@"选择日期" canTouch:YES];
-    MSMaterialFillInNomalSection *section3 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"借用人" placeholder:@"选择人员" canTouch:YES];
+    MSMaterialFillInNomalSection *section2 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"归还时间" placeholder:@"选择日期" canTouch:YES];
+    MSMaterialFillInNomalSection *section3 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"归还人" placeholder:@"选择人员" canTouch:YES showSearchButton:YES];
     MSMaterialFillInNomalSection *section4 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"审核人" placeholder:@"选择人员" canTouch:YES];
     
     [bgView addSubview:section1];
@@ -130,7 +137,9 @@
 
 #pragma mark - ClickAction
 - (void)searchNameBtnClicked:(UIButton *)sender {
-    NSLog(@"搜索工器具名称");
+    MSSearchToolViewController *s = [[MSSearchToolViewController alloc]initWithSearchType:(MSSearchTypeToolOutStore)];
+    s.delegate = self;
+    [self.navigationController pushViewController:s animated:YES];
 }
 
 - (void)dateInputClicked:(UIButton *)sender {
@@ -138,24 +147,104 @@
 }
 
 - (void)borrowUserInputClicked:(UIButton *)sender {
-    
+    MSSearchStaffViewController * s = [[MSSearchStaffViewController alloc]initWithSearchType:(MSSearchTypeLoanPerson)];
+    s.delegate = self;
+    [self.navigationController pushViewController:s animated:YES];
 }
 
 - (void)reviewUserInputClicked:(UIButton *)sender {
-    
+    MSSearchStaffViewController * s = [[MSSearchStaffViewController alloc]initWithSearchType:(MSSearchTypeReviewPerson)];
+    s.delegate = self;
+    [self.navigationController pushViewController:s animated:YES];
 }
 
 - (void)submitBtnClicked:(UIButton *)sender {
+    if (![self checkParams]) {
+        return;
+    }
+    [SVProgressHUD show];
+    [MSNetworking changeTool:self.toolModel borrowOut:YES success:^(NSDictionary *object) {
+        [SVProgressHUD showSuccessWithStatus:@"借用成功"];
+        [self resetPages];
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"借用失败"];
+    }];
     
+}
+
+- (BOOL)checkParams {
+    BOOL ret = YES;
+    if (!self.toolNameInput.text.length ) {
+        [MSDialog showAlert:@"请选择工器具名称"];
+        return NO;
+    }
+    if (!self.dateInput.text.length ) {
+        [MSDialog showAlert:@"请选择时间"];
+        return NO;
+    }
+    if (!self.borrowUserInput.text.length ) {
+        [MSDialog showAlert:@"请选择或填写借用人"];
+        return NO;
+    }
+
+    //    if (!self.reviewUserInput.text.length ) {
+    //        [MSDialog showAlert:@"请选择审核人"];
+    //        return NO;
+    //    }
+    
+    self.toolModel.reason = self.reviewUserInput.text;
+    self.toolModel.time = self.dateInput.text;
+    self.toolModel.operator = self.borrowUserInput.text;
+    
+    return ret;
+}
+
+- (void)resetPages {
+    self.toolNameInput.text = nil;
+    self.dateInput.text = nil;
+    self.borrowUserInput.text = nil;
 }
 
 - (void)dismissKeyboardAction:(UITapGestureRecognizer *)tap {
     [self.view endEditing:YES];
 }
 
+#pragma mark - MSCommonSearchViewControllerDelegate
+- (void)searchViewController:(MSSearchType)searchType didSelectModel:(id)resultModel {
+    switch (searchType) {
+        case MSSearchTypeLoanPerson:
+            //归还人
+        {
+            MSStaffModel *model = (MSStaffModel *)resultModel;
+            self.borrowUserInput.text = model.name;
+        }
+            break;
+        case MSSearchTypeReviewPerson:
+        {
+            //审核人
+            MSStaffModel *model = (MSStaffModel *)resultModel;
+            self.reviewUserInput.text = model.name;
+        }
+            break;
+            
+        case MSSearchTypeToolOutStore:
+        {
+            //在库工具
+            MSToolModel *model = (MSToolModel *)resultModel;
+            self.toolNameInput.text = model.name;
+            self.toolModel.name = model.name;
+            self.toolModel.toolId = model.toolId;
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 #pragma mark - MSBaseDatePickerViewDelegate
 - (void)datePickerView:(MSBaseDatePickerView *)datePicker submitWithDate:(NSDate *)date {
     NSLog(@"date:%@",date);
+    self.dateInput.text = [date ms_dateString];
     [self hideDatePickerView];
 }
 
