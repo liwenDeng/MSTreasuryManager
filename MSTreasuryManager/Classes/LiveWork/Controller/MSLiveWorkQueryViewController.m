@@ -159,13 +159,18 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
             break;
         case 1:
         {
-            MSLiveWorkEditViewController *editVC = [[MSLiveWorkEditViewController alloc]initWithEditType:(MSEditTypeNote)];
+            MSLiveWorkEditViewController *editVC = [[MSLiveWorkEditViewController alloc]initWithEditType:(MSEditTypePersons)];
+            MSLiveWorkModel *model = [self editWorkModel];
+            model.persons = self.persons;
+            editVC.editModel = model;
             [self.navigationController pushViewController:editVC animated:YES];
         }
             break;
         case 2:
         {
-            MSLiveWorkEditViewController *editVC = [[MSLiveWorkEditViewController alloc]initWithEditType:(MSEditTypeNote)];
+            MSLiveWorkEditViewController *editVC = [[MSLiveWorkEditViewController alloc]initWithEditType:(MSEditTypeAttention)];
+            MSLiveWorkModel *model = [self editWorkModel];
+            editVC.editModel = model;
             [self.navigationController pushViewController:editVC animated:YES];
         }
         default:
@@ -263,6 +268,16 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
         [self.view layoutIfNeeded];
     }
     return _datePickerView;
+}
+
+#pragma mark - Util
+- (MSLiveWorkModel *)editWorkModel {
+    for (MSLiveWorkModel *model in self.workList) {
+        if (model.sort == 1) {
+            return model;
+        }
+    }
+    return nil;
 }
 
 @end

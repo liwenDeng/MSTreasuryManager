@@ -7,15 +7,17 @@
 //
 
 #import "MSBaseViewController.h"
+#import "MSLiveWorkModel.h"
 
 typedef enum : NSUInteger {
-    MSEditTypeContent = 0,
-    MSEditTypeNote,
+    MSEditTypeAttention = 0,
+    MSEditTypePersons,
 } MSEditType;
 
 @interface MSLiveWorkEditViewController : MSBaseViewController
 
 @property (nonatomic, assign) MSEditType editType;
+@property (nonatomic, strong) MSLiveWorkModel *editModel;
 
 - (instancetype)initWithEditType:(MSEditType)type;
 

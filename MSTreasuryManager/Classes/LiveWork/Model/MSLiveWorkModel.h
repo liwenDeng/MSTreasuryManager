@@ -19,6 +19,7 @@
 @property (nonatomic, copy) NSString *persons;
 @property (nonatomic, copy) NSString *attention;
 @property (nonatomic, copy) NSString *workTime;
+@property (nonatomic, assign) NSInteger sort;
 
 + (NSArray *)personArrayFromPersonString:(NSString *)personString;
 

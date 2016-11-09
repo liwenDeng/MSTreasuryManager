@@ -144,7 +144,7 @@ static NSString * const kNomalCell = @"normalCell";
 #pragma mark - MSLoginViewDelegate
 - (void)loginView:(MSLoginView *)loginView loginButtonClicked:(UIButton *)sender userName:(NSString *)userName password:(NSString *)password {
     
-    NSString *secPass = [[NSString stringWithFormat:@"%@abcd1234",password] ms_md5];
+    NSString *secPass = [[NSString stringWithFormat:@"abcd1234%@",password] ms_md5];
     [SVProgressHUD show];
     [MSNetworking loginUserName:userName password:secPass success:^(NSDictionary *object) {
          [self hideLoginView];

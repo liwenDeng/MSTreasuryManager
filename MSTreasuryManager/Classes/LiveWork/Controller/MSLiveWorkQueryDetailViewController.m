@@ -145,8 +145,6 @@
         make.width.mas_equalTo(kSCREEN_WIDTH);
     }];
     
-
-    
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(kSCREEN_WIDTH);
         make.bottom.equalTo(section7).offset(20);

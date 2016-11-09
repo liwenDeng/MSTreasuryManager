@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSString *title = self.editType == MSEditTypeContent ? @"现场工作内容-编辑" : @"注意事项-编辑";
+    NSString *title = self.editType == MSEditTypeAttention ? @"注意事项-编辑" : @"参会人员-编辑";
     self.title = title;
     [self setupSubViews];
 }
@@ -45,7 +45,16 @@
     [self.view addGestureRecognizer:tap];
     
     [self setupSections];
+    [self fillPages];
     
+}
+
+- (void)fillPages {
+    if (self.editType == MSEditTypeAttention) {
+        self.fillInview.text = self.editModel.attention;
+    }else {
+        self.fillInview.text = self.editModel.persons;
+    }
 }
 
 - (void)setupSections {
@@ -56,7 +65,7 @@
         view;
     });
     
-    NSString *title = self.editType == MSEditTypeContent ? @"工作内容" : @"注意事项";
+    NSString *title = self.editType == MSEditTypeAttention ? @"注意事项" : @"参会人员";
     
     MSToolInfoFillInSection *section1 = [[MSToolInfoFillInSection alloc]initWithTitle:title placeholder:nil];
     
