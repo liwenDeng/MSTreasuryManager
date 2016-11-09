@@ -10,6 +10,8 @@
 #import "MSMyCenterHeaderView.h"
 #import "MSAccountManager.h"
 #import "MSLoginView.h"
+#import "MSNetworking.h"
+#import "NSString+Code.h"
 
 static NSString * const kHeaderCell = @"headerCell";
 static NSString * const kNomalCell = @"normalCell";
@@ -26,8 +28,14 @@ static NSString * const kNomalCell = @"normalCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kBackgroundColor;
-    
-    
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (![[MSAccountManager sharedManager] hasLogin]) {
+        [self showLoginView];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -105,6 +113,7 @@ static NSString * const kNomalCell = @"normalCell";
         make.left.top.mas_equalTo(0);
         make.size.equalTo(self.view);
     }];
+    [self.view bringSubviewToFront:self.loginView];
 }
 
 - (void)hideLoginView {
@@ -123,16 +132,35 @@ static NSString * const kNomalCell = @"normalCell";
 }
 
 - (void)logOut {
-    [[MSAccountManager sharedManager]logOut];
+    [SVProgressHUD show];
+    [MSNetworking logoutSuccess:^(NSDictionary *object) {
+        [SVProgressHUD showSuccessWithStatus:@""];
+        [[MSAccountManager sharedManager]logOut];
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@""];
+    }];
 }
 
 #pragma mark - MSLoginViewDelegate
-- (void)loginView:(MSLoginView *)loginView loginButtonClicked:(UIButton *)sender {
-    [self hideLoginView];
+- (void)loginView:(MSLoginView *)loginView loginButtonClicked:(UIButton *)sender userName:(NSString *)userName password:(NSString *)password {
+    
+    NSString *secPass = [[NSString stringWithFormat:@"%@abcd1234",password] ms_md5];
+    [SVProgressHUD show];
+    [MSNetworking loginUserName:userName password:secPass success:^(NSDictionary *object) {
+         [self hideLoginView];
+        
+        [[MSAccountManager sharedManager]loginWithUserName:nil userId:nil password:nil token:nil];
+
+        
+        [SVProgressHUD showSuccessWithStatus:@""];
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"登录失败"];
+    }];
+    
 }
 
 - (void)loginView:(MSLoginView *)loginView cancleButtonClicked:(UIButton *)sender {
-    
+
 }
 
 - (void)loginView:(MSLoginView *)loginView loginSuccessed:(BOOL)successed {

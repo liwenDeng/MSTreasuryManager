@@ -222,16 +222,17 @@
         [MSDialog showAlert:@"请填写借用人电话"];
         return NO;
     }
-//    if (!self.reviewUserInput.text.length ) {
-//        [MSDialog showAlert:@"请选择审核人"];
-//        return NO;
-//    }
+    if (!self.reviewUserInput.text.length ) {
+        [MSDialog showAlert:@"请选择审核人"];
+        return NO;
+    }
 
-    self.toolModel.reason = self.reviewUserInput.text;
+    self.toolModel.reason = self.reasonInput.text;
     self.toolModel.time = self.dateInput.text;
     self.toolModel.operator = self.borrowUserInput.text;
     self.toolModel.phone = self.borrowUserTelInput.text;
-    
+    self.toolModel.auditor = self.reviewUserInput.text;
+//    
     return ret;
 }
 
@@ -341,6 +342,7 @@
 - (MSToolModel *)toolModel {
     if (!_toolModel) {
         _toolModel = [[MSToolModel alloc]init];
+        _toolModel.status = @"1";
     }
     
     return _toolModel;

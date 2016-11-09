@@ -12,28 +12,13 @@
 
 @implementation MSNetworking
 
-+ (NSURLSessionDataTask *)requestSomethingWithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
-    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"api/api_open.php"];
-    //参数
-    action.params[@"a"] = @"user_login_report";
-    action.params[@"appname"] = @"baisishequ";
-    action.params[@"c"] = @"user";
-    action.params[@"client"] = @"iphone";
++ (NSURLSessionDataTask *)loginUserName:(NSString *)userName password:(NSString *)password success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/login"];
     
-    //可选属性
-    action.showLog = YES;
-    action.actionWillInvokeBlock = ^{
-        NSLog(@"will start");
-    };
+    action.params[@"username"] = userName ? : @"";
+    action.params[@"password"] = password ? : @"";
     
-    action.actionDidInvokeBlock = ^(BOOL isSuccess) {
-        if (isSuccess) {
-            NSLog(@"success");
-        }
-        else {
-            NSLog(@"failure");
-        }
-    };
+    [action setHttpMethod:HttpPost];
     
     return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
         success(object);
@@ -41,6 +26,48 @@
         failure(error);
     }];
 }
+
++ (NSURLSessionDataTask *)logoutSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/logout"];
+    
+    [action setHttpMethod:HttpPost];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+//+ (NSURLSessionDataTask *)requestSomethingWithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+//    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"api/api_open.php"];
+//    //参数
+//    action.params[@"a"] = @"user_login_report";
+//    action.params[@"appname"] = @"baisishequ";
+//    action.params[@"c"] = @"user";
+//    action.params[@"client"] = @"iphone";
+//    
+//    //可选属性
+//    action.showLog = YES;
+//    action.actionWillInvokeBlock = ^{
+//        NSLog(@"will start");
+//    };
+//    
+//    action.actionDidInvokeBlock = ^(BOOL isSuccess) {
+//        if (isSuccess) {
+//            NSLog(@"success");
+//        }
+//        else {
+//            NSLog(@"failure");
+//        }
+//    };
+//    
+//    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+//        success(object);
+//    } failure:^(NSError *error) {
+//        failure(error);
+//    }];
+//}
 
 #pragma mark - 斗鱼API
 

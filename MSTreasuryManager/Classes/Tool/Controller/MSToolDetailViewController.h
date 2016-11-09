@@ -12,12 +12,12 @@
 /**
  工器具状态
 
- - MSToolTypeOut: 借出
  - MSToolTypeIn:  在库
+ - MSToolTypeOut: 借出
  */
 typedef NS_ENUM(NSUInteger, MSToolType) {
-    MSToolTypeOut,
-    MSToolTypeIn,
+    MSToolTypeIn = 0,
+    MSToolTypeOut = 1,
 };
 
 /**
@@ -25,6 +25,7 @@ typedef NS_ENUM(NSUInteger, MSToolType) {
  */
 @interface MSToolDetailViewController : MSBaseViewController
 
+@property (nonatomic, assign) NSInteger logId;
 - (instancetype)initWithType:(MSToolType)type;
 
 @end

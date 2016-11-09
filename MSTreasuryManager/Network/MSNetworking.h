@@ -54,6 +54,15 @@ typedef void(^MSFailureBlock)(NSError *error);
 // */
 //+ (NSURLSessionDataTask *)getDYWatchHistroy:(NSArray *)roomIds success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
+/**
+ *  登录
+ */
++ (NSURLSessionDataTask *)loginUserName:(NSString *)userName password:(NSString*)password success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ *  登出
+ */
++ (NSURLSessionDataTask *)logoutSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 @end
 

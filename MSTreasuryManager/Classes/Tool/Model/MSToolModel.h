@@ -18,6 +18,7 @@
 @property (nonatomic, copy) NSString* reason;
 @property (nonatomic, copy) NSString* operator; //归还人/借出人
 @property (nonatomic, copy) NSString* phone;
+@property (nonatomic, copy) NSString* auditor;  //审核人
 
 - (NSString *)statusName;
 

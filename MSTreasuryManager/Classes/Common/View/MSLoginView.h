@@ -12,7 +12,7 @@
 
 @protocol MSLoginViewDelegate <NSObject>
 
-- (void)loginView:(MSLoginView *)loginView loginButtonClicked:(UIButton *)sender;
+- (void)loginView:(MSLoginView *)loginView loginButtonClicked:(UIButton *)sender userName:(NSString *)userName password:(NSString *)password;
 
 - (void)loginView:(MSLoginView *)loginView cancleButtonClicked:(UIButton *)sender;
 

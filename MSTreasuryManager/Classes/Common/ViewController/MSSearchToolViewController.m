@@ -27,7 +27,7 @@
 - (void)loadMore {
     self.pageNo++;
 
-    NSInteger status = self.searchType == MSSearchTypeToolInStore ? 0 : -1;
+    NSInteger status = self.searchType == MSSearchTypeToolInStore ? 0 : 1;
     
     [MSNetworking getToolList:@"" status:status pageNo:self.pageNo success:^(NSDictionary *object) {
         NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
@@ -48,7 +48,7 @@
     self.pageNo = 1;
     [SVProgressHUD show];
     
-    NSInteger status = self.searchType == MSSearchTypeToolInStore ? 0 : -1;
+    NSInteger status = self.searchType == MSSearchTypeToolInStore ? 0 : 1;
     
     [MSNetworking getToolList:@"" status:status pageNo:self.pageNo success:^(NSDictionary *object) {
         NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
@@ -68,7 +68,7 @@
     self.resPageNo = 1;
     [SVProgressHUD show];
     
-    NSInteger status = self.searchType == MSSearchTypeToolInStore ? 0 : -1;
+    NSInteger status = self.searchType == MSSearchTypeToolInStore ? 0 : 1;
     
     [MSNetworking getToolList:self.searchController.searchBar.text status:status pageNo:self.resPageNo success:^(NSDictionary *object) {
         NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
@@ -84,7 +84,7 @@
 - (void)loadMoreResult {
     self.resPageNo++;
     
-    NSInteger status = self.searchType == MSSearchTypeToolInStore ? 0 : -1;
+    NSInteger status = self.searchType == MSSearchTypeToolInStore ? 0 : 1;
     [MSNetworking getToolList:self.searchController.searchBar.text status:status pageNo:self.resPageNo success:^(NSDictionary *object) {
         [SVProgressHUD dismiss];
         NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];

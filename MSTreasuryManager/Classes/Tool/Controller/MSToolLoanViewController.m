@@ -163,7 +163,7 @@
         return;
     }
     [SVProgressHUD show];
-    [MSNetworking changeTool:self.toolModel borrowOut:YES success:^(NSDictionary *object) {
+    [MSNetworking changeTool:self.toolModel borrowOut:NO success:^(NSDictionary *object) {
         [SVProgressHUD showSuccessWithStatus:@"借用成功"];
         [self resetPages];
     } failure:^(NSError *error) {
@@ -187,14 +187,14 @@
         return NO;
     }
 
-    //    if (!self.reviewUserInput.text.length ) {
-    //        [MSDialog showAlert:@"请选择审核人"];
-    //        return NO;
-    //    }
+    if (!self.reviewUserInput.text.length ) {
+        [MSDialog showAlert:@"请选择审核人"];
+        return NO;
+    }
     
-    self.toolModel.reason = self.reviewUserInput.text;
     self.toolModel.time = self.dateInput.text;
     self.toolModel.operator = self.borrowUserInput.text;
+    self.toolModel.auditor = self.reviewUserInput.text;
     
     return ret;
 }
@@ -298,5 +298,13 @@
     return _datePickerView;
 }
 
+- (MSToolModel *)toolModel {
+    if (!_toolModel) {
+        _toolModel = [[MSToolModel alloc]init];
+        _toolModel.status = @"0";
+    }
+    
+    return _toolModel;
+}
 
 @end

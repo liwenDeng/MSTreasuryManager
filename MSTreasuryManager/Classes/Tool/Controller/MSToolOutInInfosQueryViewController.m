@@ -8,6 +8,8 @@
 
 #import "MSToolOutInInfosQueryViewController.h"
 #import "MSBaseDatePickerView.h"
+#import "MSNetworking+Tool.h"
+#import "MSToolDetailViewController.h"
 
 static NSString * const kToolInfoCell = @"toolInfoCell";
 static NSString * const kToolResultInfoCell = @"toolResInfoCell";
@@ -17,10 +19,11 @@ typedef enum : NSUInteger {
     MSToolSearchTypeDate,
 } MSToolSearchType;
 
-@interface MSToolOutInInfosQueryViewController () <MSBaseDatePickerViewDelegate>
+@interface MSToolOutInInfosQueryViewController () <MSHTTPRequestDelegate,MSCommonLoadMoreResultProtocol>
 
-@property (nonatomic, strong) MSBaseDatePickerView *datePickerView;
 @property (nonatomic, assign) MSToolCellIndexOfType type;
+
+@property (nonatomic, assign) NSInteger status;
 
 @end
 
@@ -29,46 +32,76 @@ typedef enum : NSUInteger {
 - (instancetype)initWithType:(MSToolCellIndexOfType)type {
     if (self = [super init]) {
         _type = type;
+        if (type == MSToolCellIndexOfTypeBorrowList) {
+            _status = 1; //借用记录
+        }else {
+            _status = 0; //归还记录
+        }
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = self.type == MSToolCellIndexOfTypeBorrowList ? @"借出记录查询" : @"借入记录查询";
+    self.title = self.type == MSToolCellIndexOfTypeBorrowList ? @"借用记录查询" : @"归还记录查询";
     
-    self.searchController.searchBar.scopeButtonTitles = @[@"工具名称",@"时间"];
     // Do any additional setup after loading the view.
+}
+
+- (void)requestAllData {
+    self.pageNo = 1;
+    [SVProgressHUD show];
+    [MSNetworking getToolOutInList:@"" status:self.status success:^(NSDictionary *object) {
+    
+        NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+        self.totalList = [NSMutableArray arrayWithArray:list];
+        [self.tableView reloadData];
+            [SVProgressHUD dismiss];
+    } failure:^(NSError *error) {
+
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:@"获取数据失败"];
+        
+    }];
+    
+}
+
+#pragma mark - Search for result
+- (void)requestSearchData {
+    self.resultViewController.tableView.mj_footer.hidden = NO;
+    [SVProgressHUD show];
+    [MSNetworking getToolOutInList:self.searchController.searchBar.text status:self.status success:^(NSDictionary *object) {
+        NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+        self.searchList = [NSMutableArray arrayWithArray:list];
+        [self.resultViewController.tableView reloadData];
+        [SVProgressHUD dismiss];
+    } failure:^(NSError *error) {
+        
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:@"获取数据失败"];
+    }];
 }
 
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //    return 10;
-    if (tableView == self.tableView) {
-        return 20;
-    }
-    return 10;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.tableView) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kToolInfoCell];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSearchCell];
         if (!cell) {
-            cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:kToolInfoCell];
+            cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:kSearchCell];
         }
-        cell.textLabel.text = @"全部内容";
+        MSToolModel *model = self.totalList[indexPath.row];
+        cell.detailTextLabel.text = model.time;
+        [cell.textLabel setText:model.name];
         return cell;
     }else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kToolResultInfoCell];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kResultCell];
         if (!cell) {
-            cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:kToolResultInfoCell];
+            cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:kResultCell];
         }
-        cell.textLabel.text = @"筛选内容";
+        MSToolModel *model = self.searchList[indexPath.row];
+        cell.detailTextLabel.text = model.time;
+        [cell.textLabel setText:model.name];
         return cell;
     }
     
@@ -76,103 +109,35 @@ typedef enum : NSUInteger {
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    MSToolModel *model = nil;
+    if (tableView == self.tableView) {
+        model = self.totalList[indexPath.row];
+    }else {
+        model = self.searchList[indexPath.row];
+    }
+    //借用记录-->借用详情
+    //归还记录--> 归还详情
+    MSToolDetailViewController *detail = [[MSToolDetailViewController alloc]initWithType:_status];
+    detail.logId = model.toolId;
+    [self.navigationController pushViewController:detail animated:YES];
+}
+
+#pragma mark - UISearchResultsUpdating
+//展示搜索结果
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     
-}
-
-
-#pragma mark - UISearchBarDelegate
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [self hideDatePickerView];
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    [self hideDatePickerView];
-}
-
-- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
-    MSToolSearchType type = selectedScope;
-    switch (type) {
-        case MSToolSearchTypeName:
-        {
-            searchBar.text = nil;
-            [self hideDatePickerView];
-        }
-            break;
-        case MSToolSearchTypeDate:
-        {
-            searchBar.text = @"";
-            [self showDatePickerView];
-        }
+    NSString *searchString = [self.searchController.searchBar text];
+    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF.name CONTAINS[c] %@", searchString];
+    if (self.searchList!= nil) {
+        [self.searchList removeAllObjects];
     }
-}
-
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    //    self.resultViewController.tableView.hidden = YES;
+    //过滤数据
+    self.searchList= [NSMutableArray arrayWithArray:[self.totalList filteredArrayUsingPredicate:preicate]];
     
-}
-
-- (void)didDismissSearchController:(UISearchController *)searchController {
-    //搜索结束后是否重置选项
-    searchController.searchBar.selectedScopeButtonIndex = 0;
-}
-
-#pragma mark - MSBaseDatePickerViewDelegate
-- (void)datePickerView:(MSBaseDatePickerView *)datePicker submitWithDate:(NSDate *)date {
-    NSLog(@"date:%@",date);
-    [self hideDatePickerView];
-    self.searchController.searchBar.text = @"2015-09-01";
-}
-
-- (void)datePickerView:(MSBaseDatePickerView *)datePicker cancleWithDate:(NSDate *)date {
-    [self hideDatePickerView];
-}
-
-#pragma mark - LazyLoad
-- (MSBaseDatePickerView *)datePickerView {
-    if (!_datePickerView) {
-        _datePickerView = [[MSBaseDatePickerView alloc]init];
-        [self.view addSubview:_datePickerView];
-        
-        [_datePickerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(0);
-            make.top.equalTo(self.mas_bottomLayoutGuideBottom);
-            make.width.mas_equalTo(kSCREEN_WIDTH);
-            make.height.mas_equalTo(200);
-        }];
-        _datePickerView.delegate = self;
-        _datePickerView.hidden = YES;
-        [self.view layoutIfNeeded];
-    }
-    return _datePickerView;
-}
-
-- (void)showDatePickerView {
-    if (self.datePickerView.hidden) {
-        self.datePickerView.hidden = NO;
-        [self.searchController.searchBar resignFirstResponder];
-        [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{
-            [self.datePickerView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self.mas_bottomLayoutGuideTop).offset(-244);
-            }];
-            [self.view layoutIfNeeded];
-        } completion:^(BOOL finished) {
-            
-        }];
-    }
-}
-
-- (void)hideDatePickerView {
-    if (!self.datePickerView.hidden) {
-        [self.searchController.searchBar becomeFirstResponder];
-        [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseIn) animations:^{
-            [self.datePickerView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self.mas_bottomLayoutGuideTop).offset(0);
-            }];
-            [self.view layoutIfNeeded];
-        } completion:^(BOOL finished) {
-            self.datePickerView.hidden = YES;
-        }];
-    }
+    self.resultViewController.tableView.mj_footer.hidden = YES;
+    [self.resultViewController.tableView.mj_footer resetNoMoreData];
+    [self.resultViewController.tableView reloadData];
 }
 
 

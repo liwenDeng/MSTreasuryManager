@@ -6,13 +6,13 @@
 //  Copyright © 2016年 邓利文. All rights reserved.
 //
 
-#import "MSBaseSearchTableViewController.h"
+#import "MSCommonSearchViewController.h"
 #import "MSToolManageViewController.h"
 
 /**
  工器具出入库记录列表
  */
-@interface MSToolOutInInfosQueryViewController : MSBaseSearchTableViewController
+@interface MSToolOutInInfosQueryViewController : MSCommonSearchViewController
 
 - (instancetype)initWithType:(MSToolCellIndexOfType)type;
 

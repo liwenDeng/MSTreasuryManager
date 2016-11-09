@@ -10,6 +10,8 @@
 #import "MSLoginView.h"
 #import "AppDelegate.h"
 #import "MSBaseNavigationController.h"
+#import "NSString+Code.h"
+#import "MSAccountManager.h"
 
 @interface MSLoginViewController () <MSLoginViewDelegate>
 
@@ -81,20 +83,44 @@
     }
 }
 
-- (void)loginView:(MSLoginView *)loginView loginButtonClicked:(UIButton *)sender {
+- (void)loginView:(MSLoginView *)loginView loginButtonClicked:(UIButton *)sender userName:(NSString *)userName password:(NSString *)password{
     MSWeakSelf(self, weakSelf);
     
-    void(^completionBlock)(void) = ^ {
-        if (weakSelf.successCallback) {
-            weakSelf.successCallback();
+    [SVProgressHUD show];
+     NSString *secPass = [[NSString stringWithFormat:@"%@abcd1234",password] ms_md5];
+    [MSNetworking loginUserName:userName password:secPass success:^(NSDictionary *object) {
+        [SVProgressHUD showSuccessWithStatus:@""];
+        
+        [[MSAccountManager sharedManager]loginWithUserName:nil userId:nil password:nil token:nil];
+        
+        void(^completionBlock)(void) = ^ {
+            if (weakSelf.successCallback) {
+                weakSelf.successCallback();
+            }
+        };
+        
+        if (self.navigationController.presentingViewController) {
+            [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:completionBlock];
+        }else {
+            [self.navigationController dismissViewControllerAnimated:YES completion:completionBlock];
         }
-    };
+        
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"登录失败"];
+        void(^completionBlock)(void) = ^ {
+            if (weakSelf.cancelCallback) {
+                weakSelf.cancelCallback();
+            }
+        };
+        
+        if (self.navigationController.presentingViewController) {
+            [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:completionBlock];
+        }else {
+            [self.navigationController dismissViewControllerAnimated:YES completion:completionBlock];
+        }
+    }];
     
-    if (self.navigationController.presentingViewController) {
-        [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:completionBlock];
-    }else {
-        [self.navigationController dismissViewControllerAnimated:YES completion:completionBlock];
-    }
+
 }
 
 - (void)dismissKeyboardAction {
