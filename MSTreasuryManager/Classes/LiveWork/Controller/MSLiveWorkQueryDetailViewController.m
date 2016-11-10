@@ -68,14 +68,14 @@
     
     MSMaterialFillInNomalSection *section1 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"工作日期" placeholder:@"选择日期" canTouch:YES];
     MSMaterialFillInNomalSection *section2 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"工作负责人" placeholder:@"选择人员" canTouch:YES];
-    MSLiveWorkFillinTagsSection *section3 = [[MSLiveWorkFillinTagsSection alloc]initWithTitle:@"工作班成员" placeholder:nil];
+    MSLiveWorkFillinTagsSection *section3 = [[MSLiveWorkFillinTagsSection alloc]initWithTitle:@"工作班成员" placeholder:nil showDeleteBtn:NO];
     section3.addBtn.hidden = YES;
     
     MSOutInMultiLineSection *section4 = [[MSOutInMultiLineSection alloc]initWithTitle:@"工作内容"];
     
     MSOutInMultiLineSection *section5 = [[MSOutInMultiLineSection alloc]initWithTitle:@"工作记录"];
     
-    MSLiveWorkFillinTagsSection *section6 = [[MSLiveWorkFillinTagsSection alloc]initWithTitle:@"参会人员" placeholder:nil];
+    MSLiveWorkFillinTagsSection *section6 = [[MSLiveWorkFillinTagsSection alloc]initWithTitle:@"参会人员" placeholder:nil showDeleteBtn:NO];
     section6.addBtn.hidden = YES;
     
     MSOutInMultiLineSection *section7 = [[MSOutInMultiLineSection alloc]initWithTitle:@"注意事项"];
@@ -117,7 +117,7 @@
     
     [section3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
-        make.top.equalTo(section2.mas_bottom).offset(0);
+        make.top.equalTo(section2.mas_bottom).offset(20);
         make.width.mas_equalTo(kSCREEN_WIDTH);
     }];
     

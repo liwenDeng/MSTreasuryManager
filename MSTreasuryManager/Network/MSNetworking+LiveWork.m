@@ -32,6 +32,28 @@
     }];
 }
 
++ (NSURLSessionDataTask *)updateLiveWork:(MSLiveWorkModel *)liveWorkModel success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    
+    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/scenework/save"];
+    
+    action.params[@"id"] = @(liveWorkModel.workId);
+    action.params[@"chargePerson"] = liveWorkModel.chargePerson;
+    action.params[@"context"] = liveWorkModel.context;
+    action.params[@"workRecord"] = liveWorkModel.workRecord;
+    action.params[@"persons"] = liveWorkModel.persons;
+    action.params[@"attention"] = liveWorkModel.attention;
+    action.params[@"work_time"] = liveWorkModel.workTime;
+    action.params[@"member"] = liveWorkModel.member;
+    
+    [action setHttpMethod:HttpPost];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 + (NSURLSessionDataTask *)getExistLiveWork:(NSString *)workTime success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/dayscenework/check"];
     

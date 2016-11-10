@@ -17,7 +17,7 @@ typedef enum : NSUInteger {
 @interface MSLiveWorkEditViewController : MSBaseViewController
 
 @property (nonatomic, assign) MSEditType editType;
-@property (nonatomic, strong) MSLiveWorkModel *editModel;
+@property (nonatomic, assign) NSInteger workId;
 
 - (instancetype)initWithEditType:(MSEditType)type;
 

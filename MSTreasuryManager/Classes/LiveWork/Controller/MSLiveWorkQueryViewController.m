@@ -58,7 +58,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return self.workList.count ? 3 : 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -161,17 +161,21 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
         {
             MSLiveWorkEditViewController *editVC = [[MSLiveWorkEditViewController alloc]initWithEditType:(MSEditTypePersons)];
             MSLiveWorkModel *model = [self editWorkModel];
-            model.persons = self.persons;
-            editVC.editModel = model;
-            [self.navigationController pushViewController:editVC animated:YES];
+            if (model) {
+                editVC.workId = model.workId;
+                [self.navigationController pushViewController:editVC animated:YES];
+            }
         }
             break;
         case 2:
         {
             MSLiveWorkEditViewController *editVC = [[MSLiveWorkEditViewController alloc]initWithEditType:(MSEditTypeAttention)];
             MSLiveWorkModel *model = [self editWorkModel];
-            editVC.editModel = model;
-            [self.navigationController pushViewController:editVC animated:YES];
+            model.attention = self.attention;
+            if (model) {
+                editVC.workId = model.workId;
+                [self.navigationController pushViewController:editVC animated:YES];
+            }
         }
         default:
             break;

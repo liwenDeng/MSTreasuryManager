@@ -16,6 +16,10 @@
  */
 + (NSURLSessionDataTask *)addLiveWork:(MSLiveWorkModel *)liveWorkModel success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
+/**
+ 修改现场工作
+ */
++ (NSURLSessionDataTask *)updateLiveWork:(MSLiveWorkModel *)liveWorkModel success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 /**
  查询当天现场工作注意事项与参会人员

@@ -8,6 +8,7 @@
 
 #import "MSToolApiTest.h"
 #import "MSNetworking+Tool.h"
+#import "NSString+Code.h"
 
 @implementation MSToolApiTest
 
@@ -35,4 +36,13 @@
     }];
 }
 
+- (void)testMd5{
+    NSString *s = @"ABCD1234123456";
+    NSString *md5S = [s ms_md5];
+    NSLog(@"%@",md5S);
+    NSString *decodeMd5 = [md5S ms_stringFromMD5];
+    NSLog(@"%@",decodeMd5);
+    
+    NSLog(@"finish");
+}
 @end

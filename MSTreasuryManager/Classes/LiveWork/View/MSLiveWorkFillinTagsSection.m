@@ -13,15 +13,22 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *placeholder;
 
+@property (nonatomic, assign) BOOL showDeleteBtn;
+
 @end
 
 @implementation MSLiveWorkFillinTagsSection
 
 - (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder {
+    return [self initWithTitle:title placeholder:placeholder showDeleteBtn:YES];
+}
+
+- (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder showDeleteBtn:(BOOL)show {
     if (self = [super init]) {
         self.backgroundColor = [UIColor whiteColor];
         _title = title;
         _placeholder = placeholder;
+        _showDeleteBtn = show;
         [self setupSubviews];
     }
     return self;
@@ -83,7 +90,9 @@
     // 设置标签颜色
     tagList.tagColor = [UIColor whiteColor];
     // 设置标签删除图片
-    tagList.tagDeleteimage = [UIImage imageNamed:@"chose_tag_close_icon"];
+    if (_showDeleteBtn) {
+        tagList.tagDeleteimage = [UIImage imageNamed:@"chose_tag_close_icon"];
+    }
     [self addSubview:tagList];
     
     [tagList mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -102,6 +111,9 @@
     _tagList.clickTagBlock = ^(NSString *tag){
         [weakTagList deleteTag:tag];
         CGFloat height = weakTagList.height;
+        if (height <= 20) {
+            height = 44;
+        }
         [weakTagList mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(height);
         }];

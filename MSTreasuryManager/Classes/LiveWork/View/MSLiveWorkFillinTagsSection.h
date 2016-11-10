@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UIButton *addBtn;
 @property (nonatomic, strong) YZTagList *tagList;
 
+- (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder showDeleteBtn:(BOOL)show;
 - (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder;
 
 - (void)addUser:(NSString *)user;
