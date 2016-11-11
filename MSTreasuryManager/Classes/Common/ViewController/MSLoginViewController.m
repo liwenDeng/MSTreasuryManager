@@ -11,7 +11,6 @@
 #import "AppDelegate.h"
 #import "MSBaseNavigationController.h"
 #import "NSString+Code.h"
-#import "MSAccountManager.h"
 
 @interface MSLoginViewController () <MSLoginViewDelegate>
 

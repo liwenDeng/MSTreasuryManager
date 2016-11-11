@@ -10,6 +10,7 @@
 #import "MSHomeCollectionCell.h"
 #import "MSLiveWorkFillInViewController.h"
 #import "MSLiveWorkQueryViewController.h"
+#import "MSLoginViewController.h"
 
 #define kCellWidth ((kSCREEN_WIDTH - 30) / 2.0f)
 #define kCellHeight 100
@@ -68,6 +69,12 @@ static NSString * const kLiveWorkCell = @"LiveWorkCell";
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (![[MSAccountManager sharedManager] hasLogin]) {
+        [MSLoginViewController loginSuccess:nil failure:nil];
+        return;
+    }
+    
     MSLiveWorkCellIndexType type = indexPath.row;
     UIViewController *vc = nil;
     switch (type) {

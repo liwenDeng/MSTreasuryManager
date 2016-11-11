@@ -13,6 +13,16 @@
 #import "MSSearchMaterialViewController.h"
 #import "MSNetworking+Material.h"
 #import "PBViewController.h"
+#import "MSMaterialRightHandleSection.h"
+#import "MSMaterialOutStoreViewController.h"
+
+//1-二副库房，2-退库库房，3-系统库房
+typedef enum : NSUInteger {
+    MSStoreTypeErku = 1,
+    MSStoreTypeTuiku = 2,
+    MSStoreTypeSys = 3,
+} MSStoreType;
+
 //#import "MSQRCodeReaderViewController.h"
 
 //@interface MSMaterialInfoFetchViewController () <MSLoadQRScannButtonProtocol,QRCodeReaderDelegate,MSQRCodeReaderViewControllerDelegate>
@@ -27,6 +37,8 @@
 @property (nonatomic, strong) UITextField *sysField;
 
 @property (nonatomic, strong) MSPhotoPadView *photoPadView;
+
+@property (nonatomic, strong) MSMaterialModel *fetchMaterial;
 
 @end
 
@@ -69,23 +81,24 @@
     }];
     [section1.searchBtn addTarget:self action:@selector(searchNameBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    MSMaterialFillInWithSearchSection *section2 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:@"物资技术参数" placeholder:@"通过物资技术参数搜索"];
+//    MSMaterialFillInWithSearchSection *section2 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:@"物资技术参数" placeholder:@"通过物资技术参数搜索"];
+    MSMaterialFillInWithSearchSection *section2 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:@"物资技术参数" placeholder:@"请输入物资技术参数" hideSearchButton:YES];
     self.paramsInput = section2.inputView;
-    self.nameInput.editable = NO;
+    self.paramsInput.editable = NO;
     [bgView addSubview:section2];
     [section2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.top.equalTo(section1.mas_bottom).offset(20);
         make.width.mas_equalTo(kSCREEN_WIDTH);
     }];
-    [section2.searchBtn addTarget:self action:@selector(searchParamsBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+//    [section2.searchBtn addTarget:self action:@selector(searchParamsBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     
     //为物资名称和技术参数输入框添加点击事件
     UITapGestureRecognizer *tapName = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchNameBtnClicked:)];
     [self.nameInput addGestureRecognizer:tapName];
     
-    UITapGestureRecognizer *tapParams = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchParamsBtnClicked:)];
-    [self.paramsInput addGestureRecognizer:tapParams];
+//    UITapGestureRecognizer *tapParams = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchParamsBtnClicked:)];
+//    [self.paramsInput addGestureRecognizer:tapParams];
     
     
     //物资库存
@@ -98,9 +111,17 @@
         make.top.equalTo(section2.mas_bottom).offset(20);
     }];
     
-    MSMaterialFillInNomalSection *section3 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"二副库房" placeholder:@""];
-    MSMaterialFillInNomalSection *section4 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"退库库房" placeholder:@""];
-    MSMaterialFillInNomalSection *section5 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"系统库房" placeholder:@""];
+    MSMaterialRightHandleSection *section3 = [[MSMaterialRightHandleSection alloc]initWithTitle:@"二副库房" placeholder:@""];
+    MSMaterialRightHandleSection *section4 = [[MSMaterialRightHandleSection alloc]initWithTitle:@"退库库房" placeholder:@""];
+    MSMaterialRightHandleSection *section5 = [[MSMaterialRightHandleSection alloc]initWithTitle:@"系统库房" placeholder:@""];
+    
+    section3.actionBtn.tag = MSStoreTypeErku;
+    section4.actionBtn.tag = MSStoreTypeTuiku;
+    section5.actionBtn.tag = MSStoreTypeSys;
+    
+    [section3.actionBtn addTarget:self action:@selector(outMaterialButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+    [section4.actionBtn addTarget:self action:@selector(outMaterialButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+    [section5.actionBtn addTarget:self action:@selector(outMaterialButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     
     self.erfuField = section3.textField;
     self.tuikuField = section4.textField;
@@ -209,6 +230,50 @@
     return titleBgView;
 }
 
+#pragma mark - Out Action
+- (void)outMaterialButtonClicked:(UIButton *)sender {
+    MSStoreType type = sender.tag;
+    
+    if (!self.nameInput.text.length) {
+        [SVProgressHUD showInfoWithStatus:@"请先选择物资"];
+        return;
+    }
+    
+    NSInteger count = -1;
+    switch (type) {
+        case MSStoreTypeErku:
+        {
+            count = [self.erfuField.text integerValue];
+        }
+            break;
+        case MSStoreTypeTuiku:
+        {
+            count = [self.tuikuField.text integerValue];
+        }
+            break;
+        case MSStoreTypeSys:
+        {
+            count = [self.sysField.text integerValue];
+        }
+            break;
+        default:
+            break;
+    }
+    
+    if (count < 1) {
+        [SVProgressHUD showInfoWithStatus:@"数量不足无法出库!"];
+        return;
+    }
+    
+    MSMaterialOutInModel *outModel = [[MSMaterialOutInModel alloc]init];
+    outModel.materialId = self.fetchMaterial.mid;
+    outModel.materialName = self.fetchMaterial.name;
+    outModel.location = type;
+    
+    MSMaterialOutStoreViewController *outVC = [[MSMaterialOutStoreViewController alloc]initWithType:(MSCellIndexOfTypeMaterialOut) outMaterialModel:outModel];
+    [self.navigationController pushViewController:outVC animated:YES];
+}
+
 #pragma mark - searchAction
 - (void)searchNameBtnClicked:(UIButton*)sender{
     MSSearchMaterialViewController *s = [[MSSearchMaterialViewController alloc]initWithSearchType:(MSSearchTypeMaterialName)];
@@ -238,6 +303,7 @@
     [MSNetworking getMaterialDetailInfo:materialId success:^(NSDictionary *object) {
         MSMaterialModel *model = [MSMaterialModel mj_objectWithKeyValues:object[@"data"]];
         [SVProgressHUD showSuccessWithStatus:@"查询成功"];
+        self.fetchMaterial = model;
         [self fillPagesWithMaterialModel:model];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"查询失败"];

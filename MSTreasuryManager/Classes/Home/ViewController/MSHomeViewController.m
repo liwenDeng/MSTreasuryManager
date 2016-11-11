@@ -12,6 +12,7 @@
 #import "MSMaterialInfoFetchViewController.h"
 #import "MSMaterialOutStoreViewController.h"
 #import "MSOutInInfosQueryViewController.h"
+#import "MSLoginViewController.h"
 
 #define kCellWidth ((kSCREEN_WIDTH - 30) / 2.0f)
 #define kCellHeight 100
@@ -66,7 +67,14 @@ static NSString * const kHomeCellId = @"kHomeCell";
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (![[MSAccountManager sharedManager] hasLogin]) {
+        [MSLoginViewController loginSuccess:nil failure:nil];
+        return;
+    }
+    
     MSCellIndexOfType type = indexPath.row;
+    
     switch (type) {
         case MSCellIndexOfTypeMaterialFillIn:
         {

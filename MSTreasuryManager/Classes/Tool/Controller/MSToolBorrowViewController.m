@@ -38,6 +38,13 @@
 
 @implementation MSToolBorrowViewController
 
+- (instancetype)initWithToolModel:(MSToolModel *)tool {
+    if (self = [super init]) {
+        _toolModel = tool;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -56,6 +63,11 @@
     [self.view addGestureRecognizer:tap];
     
     [self setupSections];
+    
+    self.dateInput.text = [[NSDate date] ms_dateString];
+    if (self.toolModel.name.length) {
+        self.toolNameInput.text = self.toolModel.name;
+    }
 }
 
 - (void)setupSections {
@@ -232,6 +244,7 @@
     self.toolModel.operator = self.borrowUserInput.text;
     self.toolModel.phone = self.borrowUserTelInput.text;
     self.toolModel.auditor = self.reviewUserInput.text;
+    self.toolModel.status = @"1";
 //    
     return ret;
 }

@@ -9,6 +9,8 @@
 #import "MSToolStateInfoQueryViewController.h"
 #import "MSToolSectionHeaderView.h"
 #import "MSNetworking+Tool.h"
+#import "MSToolBorrowViewController.h"
+#import "MSToolLoanViewController.h"
 
 static NSString *const kToolInfoCell = @"ToolInfoCell";
 static NSString *const kToolResultInfoCell = @"ToolResultInfoCell";
@@ -130,16 +132,23 @@ typedef enum : NSUInteger {
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self.delegate respondsToSelector:@selector(searchViewController:didSelectModel:)]) {
-        MSToolModel *model = nil;
-        if (tableView == self.tableView) {
-            model = self.totalList[indexPath.row];
-        }else {
-            model = self.searchList[indexPath.row];
-        }
-        [self.delegate searchViewController:self.searchType didSelectModel:model];
-        [self.navigationController popViewControllerAnimated:YES];
+
+    MSToolModel *model = nil;
+    if (tableView == self.tableView) {
+        model = self.totalList[indexPath.row];
+    }else {
+        model = self.searchList[indexPath.row];
     }
+    if ([model.status isEqualToString:@"0"]) {
+        //在库--走借用流程
+        MSToolBorrowViewController *borrow = [[MSToolBorrowViewController alloc]initWithToolModel:model];
+        [self.navigationController pushViewController:borrow animated:YES];
+    }else if([model.status isEqualToString:@"1"]){
+        //借出--走归还流程
+        MSToolLoanViewController *laon = [[MSToolLoanViewController alloc]initWithToolModel:model];
+        [self.navigationController pushViewController:laon animated:YES];
+    }
+    
 }
 
 #pragma mark - UISearchResultsUpdating

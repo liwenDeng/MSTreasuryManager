@@ -159,9 +159,6 @@ static const CGFloat kHeadIconWidth = 80;
     if ([self.delegate respondsToSelector:@selector(loginView:loginButtonClicked:userName:password:)]) {
         [self.delegate loginView:self loginButtonClicked:sender userName:self.userNameField.text password:self.passWordField.text];
     }
-    
-//    [[MSAccountManager sharedManager]loginWithUserName:self.userNameField.text password:self.passWordField.text token:@"123"];
-    
 }
 
 - (void)cancleButtonClicked:(UIButton *)sender {

@@ -44,6 +44,7 @@
     action.params[@"attention"] = liveWorkModel.attention;
     action.params[@"work_time"] = liveWorkModel.workTime;
     action.params[@"member"] = liveWorkModel.member;
+    action.params[@"member"] = @(1);
     
     [action setHttpMethod:HttpPost];
     

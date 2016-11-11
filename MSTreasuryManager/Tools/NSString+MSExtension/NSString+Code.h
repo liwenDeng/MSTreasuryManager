@@ -20,4 +20,9 @@
 - (NSString *)ms_urlEncode;
 - (NSString *)ms_urlDecode;
 
+//将十六进制的字符串转换成NSString则可使用如下方式:
+- (NSString *)ms_convertHexStrToString;
+
+- (NSString *)ms_convertStringToHexStr;
+
 @end

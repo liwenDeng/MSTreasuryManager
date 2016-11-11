@@ -40,8 +40,8 @@
     NSString *s = @"ABCD1234123456";
     NSString *md5S = [s ms_md5];
     NSLog(@"%@",md5S);
-    NSString *decodeMd5 = [md5S ms_stringFromMD5];
-    NSLog(@"%@",decodeMd5);
+    
+    NSString *hexMd5 = [@"abcd1234123456" ms_md5];
     
     NSLog(@"finish");
 }

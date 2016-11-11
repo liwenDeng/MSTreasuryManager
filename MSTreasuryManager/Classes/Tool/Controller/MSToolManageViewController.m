@@ -8,6 +8,7 @@
 
 #import "MSToolManageViewController.h"
 #import "MSHomeCollectionCell.h"
+#import "MSLoginViewController.h"
 
 #import "MSToolInfoFillInViewController.h"
 #import "MSToolStateInfoQueryViewController.h"
@@ -72,6 +73,12 @@ static NSString * const kToolCellId = @"kToolCell";
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (![[MSAccountManager sharedManager] hasLogin]) {
+        [MSLoginViewController loginSuccess:nil failure:nil];
+        return;
+    }
+    
     MSToolCellIndexOfType type = indexPath.row;
     UIViewController *vc = nil;
     switch (type) {

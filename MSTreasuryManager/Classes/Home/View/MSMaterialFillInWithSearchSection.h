@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) YZInputView *inputView;
 @property (nonatomic, strong) UIButton *searchBtn;
+@property (nonatomic, strong) UIButton *handleBtn;
 
 - (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder;
 

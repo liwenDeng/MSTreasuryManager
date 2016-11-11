@@ -7,6 +7,7 @@
 //
 
 #import "MSBaseViewController.h"
+#import "MSAccountManager.h"
 
 typedef void(^LoginSuccessCallback)(void);
 typedef void(^LoginCancelCallback)(void);

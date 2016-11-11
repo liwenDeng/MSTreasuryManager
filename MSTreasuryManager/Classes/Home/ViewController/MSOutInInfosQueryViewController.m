@@ -40,6 +40,10 @@ static NSString * const kResCellIdentifier = @"OutInInfosResult";
 
 @implementation MSOutInInfosQueryViewController
 
+- (void)dealloc {
+    [self.searchController.view removeFromSuperview];
+}
+
 - (instancetype)initWithType:(MSCellIndexOfType)type {
     if (self = [super init]) {
         self.type = type;

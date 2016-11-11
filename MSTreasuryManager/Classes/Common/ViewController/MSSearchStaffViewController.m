@@ -19,7 +19,6 @@
 @implementation MSSearchStaffViewController
 
 - (void)dealloc {
-    
     NSLog(@"staff");
 }
 
@@ -136,9 +135,10 @@
         }else {
             model = self.searchList[indexPath.row];
         }
-        [self.delegate searchViewController:self.searchType didSelectModel:model];
-        [self.navigationController performSelector:@selector(popViewControllerAnimated:) withObject:@(YES) afterDelay:0.5];
-//        [self.navigationController popViewControllerAnimated:YES];
+        if ([self.delegate respondsToSelector:@selector(searchViewController:didSelectModel:)]) {
+            [self.delegate searchViewController:self.searchType didSelectModel:model];
+            [self.navigationController performSelector:@selector(popViewControllerAnimated:) withObject:@(YES) afterDelay:0.5];
+        }
     }
 }
 

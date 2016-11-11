@@ -151,7 +151,6 @@ static NSString * const kNomalCell = @"normalCell";
         
         [[MSAccountManager sharedManager]loginWithUserName:nil userId:nil password:nil token:nil];
 
-        
         [SVProgressHUD showSuccessWithStatus:@""];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"登录失败"];

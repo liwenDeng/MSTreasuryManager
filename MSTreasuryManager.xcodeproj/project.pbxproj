@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185522B51DD6023D0093EFF8 /* MSMaterialRightHandleSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 185522B41DD6023D0093EFF8 /* MSMaterialRightHandleSection.m */; };
 		18580C971DB2259300631F00 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C7F1DB2259300631F00 /* QRCameraSwitchButton.m */; };
 		18580C981DB2259300631F00 /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C811DB2259300631F00 /* QRCodeReader.m */; };
 		18580C991DB2259300631F00 /* QRCodeReaderAanimationLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C851DB2259300631F00 /* QRCodeReaderAanimationLineView.m */; };
@@ -176,6 +177,8 @@
 
 /* Begin PBXFileReference section */
 		03C01CE9C2B33EF403CE9DCC /* Pods-MSTreasuryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.debug.xcconfig"; sourceTree = "<group>"; };
+		185522B31DD6023D0093EFF8 /* MSMaterialRightHandleSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialRightHandleSection.h; sourceTree = "<group>"; };
+		185522B41DD6023D0093EFF8 /* MSMaterialRightHandleSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialRightHandleSection.m; sourceTree = "<group>"; };
 		18580C7E1DB2259300631F00 /* QRCameraSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCameraSwitchButton.h; sourceTree = "<group>"; };
 		18580C7F1DB2259300631F00 /* QRCameraSwitchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCameraSwitchButton.m; sourceTree = "<group>"; };
 		18580C801DB2259300631F00 /* QRCodeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReader.h; sourceTree = "<group>"; };
@@ -940,6 +943,8 @@
 				BC76017D1DB8695D0006A034 /* MSHomeCollectionCell.m */,
 				BC76017E1DB8695D0006A034 /* MSMaterialFillInNomalSection.h */,
 				BC76017F1DB8695D0006A034 /* MSMaterialFillInNomalSection.m */,
+				185522B31DD6023D0093EFF8 /* MSMaterialRightHandleSection.h */,
+				185522B41DD6023D0093EFF8 /* MSMaterialRightHandleSection.m */,
 				BC7601801DB8695D0006A034 /* MSMaterialFillInWithSearchSection.h */,
 				BC7601811DB8695D0006A034 /* MSMaterialFillInWithSearchSection.m */,
 				BC7601821DB8695D0006A034 /* MSOutInInfoCell.h */,
@@ -1622,6 +1627,7 @@
 				BC76016A1DB869440006A034 /* MSBaseDatePickerView.m in Sources */,
 				BC7601B71DB8695D0006A034 /* MSMaterialFillInNomalSection.m in Sources */,
 				BC8CB01D1DD16E7900B31AE7 /* MSNetworking+Tool.m in Sources */,
+				185522B51DD6023D0093EFF8 /* MSMaterialRightHandleSection.m in Sources */,
 				BC5CBE8D1DC6F4FA003FA945 /* MSStaffModel.m in Sources */,
 				BC7C07601DBF516000896351 /* MSBaseView.m in Sources */,
 				BC76016B1DB869440006A034 /* MSBaseTableViewCell.m in Sources */,

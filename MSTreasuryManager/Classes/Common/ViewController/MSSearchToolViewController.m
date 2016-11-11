@@ -20,8 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"工器具状态查询";
-    self.searchController.searchBar.scopeButtonTitles = @[@"工具名称",@"在库",@"借出"];
+    self.title = self.searchType == MSSearchTypeToolInStore ? @"在库工器具查询" : @"借出工器具查询";;
 }
 
 - (void)loadMore {

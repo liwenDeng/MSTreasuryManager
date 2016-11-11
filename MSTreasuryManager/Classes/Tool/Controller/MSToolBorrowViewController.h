@@ -7,7 +7,10 @@
 //
 
 #import "MSBaseViewController.h"
+#import "MSToolModel.h"
 
 @interface MSToolBorrowViewController : MSBaseViewController
+
+- (instancetype)initWithToolModel:(MSToolModel *)tool;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "MSBaseViewController.h"
 #import "MSHomeViewController.h"
+#import "MSMaterialOutInModel.h"
 
 /**
  物资出库
@@ -15,5 +16,7 @@
 @interface MSMaterialOutStoreViewController : MSBaseViewController
 
 - (instancetype)initWithType:(MSCellIndexOfType)type;
+
+- (instancetype)initWithType:(MSCellIndexOfType)type outMaterialModel:(MSMaterialOutInModel *)outModel;
 
 @end

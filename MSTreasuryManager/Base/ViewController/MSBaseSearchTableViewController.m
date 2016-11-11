@@ -13,6 +13,10 @@ static NSString *const kResultCell = @"ResultCell";
 
 @implementation MSBaseSearchTableViewController
 
+- (void)dealloc {
+    [self.searchController.view removeFromSuperview];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

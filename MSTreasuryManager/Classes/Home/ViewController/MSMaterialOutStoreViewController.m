@@ -43,6 +43,14 @@
 
 @implementation MSMaterialOutStoreViewController
 
+- (instancetype)initWithType:(MSCellIndexOfType)type outMaterialModel:(id)outModel {
+    if (self = [super init]) {
+        self.type = type;
+        self.outInModel = outModel;
+    }
+    return self;
+}
+
 - (instancetype)initWithType:(MSCellIndexOfType)type {
     if (self = [super init]) {
         self.type = type;
@@ -54,6 +62,10 @@
     [super viewDidLoad];
     
     [self setupSubViews];
+    if (self.outInModel.materialId && self.outInModel.materialName.length) {
+        [self loadMaterialDetailInfo];
+        self.placeInput.text = [MSMaterialOutInModel storeNameWithLocationId:self.outInModel.location];
+    }
 }
 
 - (void)setupSubViews {
@@ -247,22 +259,6 @@
     if (![self checkParams]) {
         return;
     }
-    
-    switch (self.type) {
-        case MSCellIndexOfTypeMaterialOut:
-        {
-            //物资出库
-            self.outInModel.cate = 2;
-        }
-            break;
-        case MSCellIndexOfTypeMateriaIn:
-        {
-            //物资入库
-            self.outInModel.cate = 1;
-        }
-        default:
-            break;
-    }
     [self materialOutInStore];
 }
 
@@ -286,14 +282,18 @@
         MSMaterialModel *model = [MSMaterialModel mj_objectWithKeyValues:object[@"data"]];
         self.materialDetailInfo = model;
         [SVProgressHUD dismiss];
-        
-        [self showCountLabel];
+        [self fillWithDetailInfo:model];
         
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"获取库房剩余适量失败"];
         self.maxCountLabel.text = @"error";
         self.materialDetailInfo = nil;
     }];
+}
+
+- (void)fillWithDetailInfo:(MSMaterialModel *)model {
+    self.nameInput.text = model.name;
+    [self showCountLabel];
 }
 
 - (void)showCountLabel {
@@ -359,6 +359,21 @@
         return NO;
     }
     
+    switch (self.type) {
+        case MSCellIndexOfTypeMaterialOut:
+        {
+            //物资出库
+            self.outInModel.cate = 2;
+        }
+            break;
+        case MSCellIndexOfTypeMateriaIn:
+        {
+            //物资入库
+            self.outInModel.cate = 1;
+        }
+        default:
+            break;
+    }
     self.outInModel.count = [self.outCountInput.text integerValue];
     return ret;
 }
