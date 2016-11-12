@@ -42,7 +42,6 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 
 - (void)setupSubViews {
     
-//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kLiveWorkLeaderCell];
     [self.tableView registerClass:[MSLiveWorkMeetingCell class] forCellReuseIdentifier:kLiveWorkMeetingCell];
     [self.tableView registerClass:[MSLiveWorkNoteCell class] forCellReuseIdentifier:kLiveWorkNoteCell];
     self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
@@ -93,6 +92,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
         {
             MSLiveWorkMeetingCell *cell = [tableView dequeueReusableCellWithIdentifier:kLiveWorkMeetingCell forIndexPath:indexPath];
             cell.contentLabel.text = self.persons ? : @"";
+            [cell setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
             return cell;
             
         }
@@ -101,6 +101,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
         {
             MSLiveWorkNoteCell *cell = [tableView dequeueReusableCellWithIdentifier:kLiveWorkNoteCell forIndexPath:indexPath];
             cell.contentLabel.text = self.attention ? : @"";
+            [cell setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
             return cell;
         }
             break;
@@ -265,7 +266,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
             make.left.mas_equalTo(0);
             make.top.equalTo(self.mas_bottomLayoutGuideBottom);
             make.width.mas_equalTo(kSCREEN_WIDTH);
-            make.height.mas_equalTo(200);
+            make.height.mas_equalTo(240);
         }];
         _datePickerView.delegate = self;
         _datePickerView.hidden = YES;

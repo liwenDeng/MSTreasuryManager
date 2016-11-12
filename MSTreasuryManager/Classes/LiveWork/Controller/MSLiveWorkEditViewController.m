@@ -84,6 +84,16 @@
     [SVProgressHUD show];
     [MSNetworking updateLiveWork:self.updateModel success:^(NSDictionary *object) {
         [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+        
+        if (self.editType == MSEditTypeAttention && [self.delegate respondsToSelector:@selector(editViewController:editType:resultString:)]) {
+            [self.delegate editViewController:self editType:self.editType resultString:self.fillInview.text];
+        }
+        
+        if (self.editType == MSEditTypePersons && [self.delegate respondsToSelector:@selector(editViewController:editType:resultString:)]) {
+            NSString *persons = self.updateModel.persons;
+            [self.delegate editViewController:self editType:self.editType resultString:persons];
+        }
+        
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"修改失败"];
     }];

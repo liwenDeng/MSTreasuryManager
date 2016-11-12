@@ -74,7 +74,6 @@
             weakSelf.cancelCallback();
         }
     };
-    
     if (self.navigationController.presentingViewController) {
         [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:completionBlock];
     }else {
@@ -88,10 +87,7 @@
     [SVProgressHUD show];
      NSString *secPass = [[NSString stringWithFormat:@"%@abcd1234",password] ms_md5];
     [MSNetworking loginUserName:userName password:secPass success:^(NSDictionary *object) {
-        [SVProgressHUD showSuccessWithStatus:@""];
-        
-        [[MSAccountManager sharedManager]loginWithUserName:nil userId:nil password:nil token:nil];
-        
+        [SVProgressHUD showSuccessWithStatus:@"登录成功"];
         void(^completionBlock)(void) = ^ {
             if (weakSelf.successCallback) {
                 weakSelf.successCallback();
@@ -111,15 +107,12 @@
                 weakSelf.cancelCallback();
             }
         };
-        
         if (self.navigationController.presentingViewController) {
             [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:completionBlock];
         }else {
             [self.navigationController dismissViewControllerAnimated:YES completion:completionBlock];
         }
     }];
-    
-
 }
 
 - (void)dismissKeyboardAction {

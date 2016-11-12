@@ -215,7 +215,7 @@
             //已经填写注意事项、参会人员
             self.workNoteInput.text = model.attention;
             NSArray *persons = [MSLiveWorkModel personArrayFromPersonString:model.persons];
-             [self.meetingMemberSection deleteAllUsers];
+            [self.meetingMemberSection deleteAllUsers];
             if (persons.count > 0) {
                 [self.meetingMemberSection addUsers:persons];
             }
@@ -224,11 +224,12 @@
         }else {
             //未填写
             [self.meetingMemberSection deleteAllUsers ];
-            [SVProgressHUD showSuccessWithStatus:@"当天还未填写任何记录哦"];
+            self.workNoteInput.text = @"";
+            [SVProgressHUD showSuccessWithStatus:@"还未填写记录"];
             [self firstFillin:YES];
         }
     } failure:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"查询失败，请重新选择日期"];
+        [SVProgressHUD showErrorWithStatus:@"查询失败"];
         [self firstFillin:NO];
         [self.meetingMemberSection deleteAllUsers];
         self.workNoteInput.text = @"";
@@ -374,15 +375,6 @@
     self.fillModel.context = self.workContentInput.text;
     self.fillModel.workRecord = self.workRecordInput.text;
     
-    //参会人员与注意事项
-//    if (self.isFirstFill) {
-//        self.fillModel.persons = [MSLiveWorkModel personStringFromPersonArray:self.meetingMemberSection.users];
-//        self.fillModel.attention = self.workNoteInput.text;
-//    }else {
-//        self.fillModel.persons = nil;
-//        self.fillModel.attention = nil;
-//    }
-    
     self.fillModel.persons = [MSLiveWorkModel personStringFromPersonArray:self.meetingMemberSection.users];
     self.fillModel.attention = self.workNoteInput.text;
     
@@ -399,7 +391,7 @@
             make.left.mas_equalTo(0);
             make.top.equalTo(self.mas_bottomLayoutGuideBottom);
             make.width.mas_equalTo(kSCREEN_WIDTH);
-            make.height.mas_equalTo(200);
+            make.height.mas_equalTo(240);
         }];
         _datePickerView.delegate = self;
         _datePickerView.hidden = YES;

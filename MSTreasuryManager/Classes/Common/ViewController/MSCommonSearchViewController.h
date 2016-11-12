@@ -31,6 +31,7 @@ typedef enum : NSUInteger {
 
 @protocol MSCommonSearchViewControllerDelegate <NSObject>
 
+@optional
 - (void)searchViewController:(MSSearchType)searchType didSelectString:(NSString *)result;
 
 - (void)searchViewController:(MSSearchType)searchType didSelectModel:(id)resultModel;

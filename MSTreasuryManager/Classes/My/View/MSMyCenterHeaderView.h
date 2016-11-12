@@ -10,4 +10,6 @@
 
 @interface MSMyCenterHeaderView : MSBaseTableViewCell
 
+- (void)fillWithuserName:(NSString *)userName;
+
 @end

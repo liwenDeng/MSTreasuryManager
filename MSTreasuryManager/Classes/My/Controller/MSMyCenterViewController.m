@@ -60,6 +60,7 @@ static NSString * const kNomalCell = @"normalCell";
             header = [[MSMyCenterHeaderView alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:kHeaderCell];
         }
         [header setSelectionStyle:(UITableViewCellSelectionStyleNone)];
+        [header fillWithuserName:[MSAccountManager sharedManager].userName];
         return header;
     }else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kNomalCell];
@@ -86,8 +87,6 @@ static NSString * const kNomalCell = @"normalCell";
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.section == 2) {
         [self logOut];
-        //退出登录
-        [self showLoginView];
     }else {
 
     }
@@ -135,7 +134,8 @@ static NSString * const kNomalCell = @"normalCell";
     [SVProgressHUD show];
     [MSNetworking logoutSuccess:^(NSDictionary *object) {
         [SVProgressHUD showSuccessWithStatus:@""];
-        [[MSAccountManager sharedManager]logOut];
+        //退出登录
+        [self showLoginView];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@""];
     }];
@@ -143,14 +143,10 @@ static NSString * const kNomalCell = @"normalCell";
 
 #pragma mark - MSLoginViewDelegate
 - (void)loginView:(MSLoginView *)loginView loginButtonClicked:(UIButton *)sender userName:(NSString *)userName password:(NSString *)password {
-    
-    NSString *secPass = [[NSString stringWithFormat:@"abcd1234%@",password] ms_md5];
-    [SVProgressHUD show];
-    [MSNetworking loginUserName:userName password:secPass success:^(NSDictionary *object) {
-         [self hideLoginView];
-        
-        [[MSAccountManager sharedManager]loginWithUserName:nil userId:nil password:nil token:nil];
 
+    [SVProgressHUD show];
+    [MSNetworking loginUserName:userName password:password success:^(NSDictionary *object) {
+         [self hideLoginView];
         [SVProgressHUD showSuccessWithStatus:@""];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"登录失败"];

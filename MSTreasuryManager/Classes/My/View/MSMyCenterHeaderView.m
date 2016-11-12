@@ -49,6 +49,10 @@ static const CGFloat kHeadIconWidth = 50;
     
 }
 
+- (void)fillWithuserName:(NSString *)userName {
+    self.nickLabel.text = userName;
+}
+
 + (CGFloat)cellHeight {
     return 80;
 }

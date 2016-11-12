@@ -14,10 +14,19 @@ typedef enum : NSUInteger {
     MSEditTypePersons,
 } MSEditType;
 
+@class MSLiveWorkEditViewController;
+
+@protocol MSLiveWorkEditViewControllerDelegate <NSObject>
+
+- (void)editViewController:(MSLiveWorkEditViewController *)vc editType:(MSEditType)editType resultString:(NSString *)resultString;
+
+@end
+
 @interface MSLiveWorkEditViewController : MSBaseViewController
 
 @property (nonatomic, assign) MSEditType editType;
 @property (nonatomic, assign) NSInteger workId;
+@property (nonatomic, weak) id<MSLiveWorkEditViewControllerDelegate> delegate;
 
 - (instancetype)initWithEditType:(MSEditType)type;
 

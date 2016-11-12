@@ -18,7 +18,6 @@
 
 - (void)setupSubviews {
     [super setupSubviews];
-    [self setSelectionStyle:(UITableViewCellSelectionStyleNone)];
     _contentLabel = ({
         UILabel *label = [[UILabel alloc]init];
         label.numberOfLines = 0;
@@ -30,9 +29,6 @@
             make.right.equalTo(self.contentView.mas_right).offset(-15);
             make.bottom.equalTo(self.contentView.mas_bottom).offset(-8);
         }];
-        
-        label.layer.borderWidth = 1.0f;
-        label.layer.borderColor = kBackgroundColor.CGColor;
         
         label;
     });

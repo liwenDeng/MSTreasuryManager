@@ -9,6 +9,7 @@
 #import "MSToolApiTest.h"
 #import "MSNetworking+Tool.h"
 #import "NSString+Code.h"
+#import "MSNetworking.h"
 
 @implementation MSToolApiTest
 
@@ -45,4 +46,31 @@
     
     NSLog(@"finish");
 }
+
+- (void)testMSLogin {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking loginUserName:@"admin" password:@"123456" success:^(NSDictionary *object) {
+            
+            
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            
+            dispatch_group_leave(group);
+        }];
+    }];
+
+}
+
+- (void)testLogOut {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking logoutSuccess:^(NSDictionary *object) {
+           
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
 @end

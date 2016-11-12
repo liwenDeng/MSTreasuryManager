@@ -67,7 +67,7 @@ static NSString * const kHttpTokenKey = @"";
 - (void)loginWithUserName:(NSString *)userName userId:(NSString *)userId password:(NSString *)password token:(NSString *)token {
     
     [self saveUserName:userName userId:userId password:password token:token];
-    self.hasLogin = YES;
+    self.hasLogin = token.length > 0;
     //设置全局请求头
     [[ZCApiRunner sharedInstance] addValue:token forHeaderKey:@"token"];
 }

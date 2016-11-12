@@ -140,6 +140,9 @@
 - (void)deleteAllUsers {
     [self.tagList deleteAlltag];
     CGFloat height = self.tagList.height;
+    if (height <= 20) {
+        height = 44;
+    }
     [self.tagList mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(height);
     }];
