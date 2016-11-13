@@ -41,7 +41,7 @@
 }
 
 - (void)networkGlobleSettings {
-    [[ZCApiRunner sharedInstance] startWithDebugDomain:@"http://139.196.112.30:8080/web/" releaseDomain:@""];
+    [[ZCApiRunner sharedInstance] startWithDebugDomain:@"http://139.196.112.30:8080/web/" releaseDomain:@"http://139.196.112.30:8080/web/"];
     [[ZCApiRunner sharedInstance] codeKey:@"code"];
     [[ZCApiRunner sharedInstance] successCodes:@[@"200"]];
     [[ZCApiRunner sharedInstance] warningReturnCodes:@[@"-1"] withHandler:^(NSString *code) {
