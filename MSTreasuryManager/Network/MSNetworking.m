@@ -37,7 +37,6 @@
 
 + (NSURLSessionDataTask *)logoutSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/logout"];
-    
     [action setHttpMethod:HttpPost];
     
     return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {

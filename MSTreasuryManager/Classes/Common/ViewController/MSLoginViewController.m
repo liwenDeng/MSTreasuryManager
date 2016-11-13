@@ -85,8 +85,7 @@
     MSWeakSelf(self, weakSelf);
     
     [SVProgressHUD show];
-     NSString *secPass = [[NSString stringWithFormat:@"%@abcd1234",password] ms_md5];
-    [MSNetworking loginUserName:userName password:secPass success:^(NSDictionary *object) {
+    [MSNetworking loginUserName:userName password:password success:^(NSDictionary *object) {
         [SVProgressHUD showSuccessWithStatus:@"登录成功"];
         void(^completionBlock)(void) = ^ {
             if (weakSelf.successCallback) {

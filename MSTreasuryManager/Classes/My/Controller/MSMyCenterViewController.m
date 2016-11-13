@@ -146,7 +146,8 @@ static NSString * const kNomalCell = @"normalCell";
 
     [SVProgressHUD show];
     [MSNetworking loginUserName:userName password:password success:^(NSDictionary *object) {
-         [self hideLoginView];
+        [self hideLoginView];
+        [self.tableView reloadData];
         [SVProgressHUD showSuccessWithStatus:@""];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"登录失败"];
