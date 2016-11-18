@@ -65,6 +65,11 @@
     [self setupSections];
     
     self.dateInput.text = [[NSDate date] ms_dateString];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     if (self.toolModel.name.length) {
         self.toolNameInput.text = self.toolModel.name;
     }

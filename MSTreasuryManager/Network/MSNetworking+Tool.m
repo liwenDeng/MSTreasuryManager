@@ -60,7 +60,7 @@
         action.params[@"reason"] = toolModel.reason;
         action.params[@"time"] = toolModel.time;
         action.params[@"operator"] = toolModel.operator;
-        action.params[@"operator"] = toolModel.phone;
+        action.params[@"phone"] = toolModel.phone;
         //审核人
 
     }else {
