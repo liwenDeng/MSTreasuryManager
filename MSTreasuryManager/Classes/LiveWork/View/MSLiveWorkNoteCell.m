@@ -22,6 +22,7 @@
             make.top.equalTo(self.contentView).offset(8);
             make.right.equalTo(self.contentView.mas_right).offset(-15);
             make.bottom.equalTo(self.contentView.mas_bottom).offset(-8);
+            make.height.mas_greaterThanOrEqualTo(20);
         }];
         
         

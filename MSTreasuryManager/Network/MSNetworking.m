@@ -43,6 +43,7 @@
         [[MSAccountManager sharedManager]logOut];
         success(object);
     } failure:^(NSError *error) {
+        [[MSAccountManager sharedManager]logOut];
         failure(error);
     }];
 }

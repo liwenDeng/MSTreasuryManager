@@ -36,9 +36,23 @@
 @property (nonatomic, strong) MSLiveWorkModel *fillModel;
 @property (nonatomic, assign) BOOL isFirstFill; //是否是第一记录
 
+@property (nonatomic, assign) BOOL firstLoad;
+@property (nonatomic, strong) MSLiveWorkModel *editModel;
+@property (nonatomic, assign) BOOL isEdit;
+
 @end
 
 @implementation MSLiveWorkFillInViewController
+
+- (instancetype)initWithLiveWorkModel:(MSLiveWorkModel *)liveWorkModel {
+    if (self = [super init]) {
+        _editModel = liveWorkModel;
+        _isEdit = YES;
+        _firstLoad = YES;
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,6 +61,14 @@
     self.fillModel = [[MSLiveWorkModel alloc]init];
     self.title = @"现场工作填写";
     [self setupSubViews];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.isEdit && self.firstLoad) {
+        [self fillPageWithEditLiveWork];
+        self.firstLoad = NO;
+    }
 }
 
 - (void)setupSubViews {
@@ -168,6 +190,12 @@
         make.edges.equalTo(self.view);
         make.edges.equalTo(bgView);
     }];
+    
+    if (self.isEdit) {
+        _meetingMemberSection.userInteractionEnabled = NO;
+        _meetingMemberSection.addBtn.enabled = NO;
+        _workNoteInput.userInteractionEnabled = NO;
+    }
 }
 
 #pragma mark - tap action
@@ -194,9 +222,17 @@
 }
 
 - (void)submitBtnClicked {
+    
     if (![self checkParams]) {
         return;
     }
+    
+    //修改
+    if (self.isEdit) {
+        [self updateLiveWork];
+        return;
+    }
+    
     [self fillLiveWork];
 }
 
@@ -243,9 +279,30 @@
         [SVProgressHUD showSuccessWithStatus:@"填写成功"];
         [self cleanAllInputs];
     } failure:^(NSError *error) {
-        
         [SVProgressHUD showErrorWithStatus:@"填写失败"];
     }];
+}
+
+- (void)updateLiveWork {
+    [SVProgressHUD show];
+    self.fillModel.workId = self.editModel.workId;
+    [MSNetworking updateLiveWork:self.fillModel success:^(NSDictionary *object) {
+        [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"填写失败"];
+    }];
+}
+
+- (void)fillPageWithEditLiveWork {
+    self.dateField.text = self.editModel.workTime;
+    self.leaderField.text = self.editModel.chargePerson;
+    [self.classMemberSection addUsers:[MSLiveWorkModel personArrayFromPersonString:self.editModel.member]];
+    self.workContentInput.text = self.editModel.context;
+    self.workRecordInput.text = self.editModel.workRecord;
+    [self.meetingMemberSection addUsers:[MSLiveWorkModel personArrayFromPersonString:self.editModel.persons]];
+    self.workNoteInput.text = self.editModel.attention;
+    
 }
 
 #pragma mark - MSCommonSearchViewControllerDelegate

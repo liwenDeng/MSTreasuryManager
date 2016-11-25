@@ -73,6 +73,7 @@
 		BC5DAEA31DBDED7100D88C30 /* MSLiveWorkQueryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5DAEA21DBDED7100D88C30 /* MSLiveWorkQueryDetailViewController.m */; };
 		BC5DAEA61DBDFADA00D88C30 /* MSLiveWorkEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5DAEA51DBDFADA00D88C30 /* MSLiveWorkEditViewController.m */; };
 		BC5DAEA91DBE20A900D88C30 /* MSSearchPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5DAEA81DBE20A900D88C30 /* MSSearchPersonViewController.m */; };
+		BC5E0DD91DE8274D006CDDF6 /* loginBg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC5E0DD81DE8274D006CDDF6 /* loginBg.jpg */; };
 		BC7250321DCDB4E800908E66 /* MSMultiSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7250311DCDB4E800908E66 /* MSMultiSearchViewController.m */; };
 		BC7601691DB869440006A034 /* MSBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601551DB869440006A034 /* MSBaseButton.m */; };
 		BC76016A1DB869440006A034 /* MSBaseDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7601571DB869440006A034 /* MSBaseDatePickerView.m */; };
@@ -128,6 +129,7 @@
 		BC9412FF1DC9C88000B68744 /* MSSearchStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9412FE1DC9C88000B68744 /* MSSearchStoreViewController.m */; };
 		BC9413021DC9CD0F00B68744 /* MSMaterialOutInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9413011DC9CD0F00B68744 /* MSMaterialOutInModel.m */; };
 		BC9413051DC9D02100B68744 /* MSSearchStaffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9413041DC9D02100B68744 /* MSSearchStaffViewController.m */; };
+		BCE61A961DE8655F005560B6 /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE61A951DE8655F005560B6 /* UITextField+Placeholder.m */; };
 		BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983A1DAB67EC001A825B /* DNAlbumTableViewController.m */; };
 		BCF898641DAB67EC001A825B /* DNAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983C1DAB67EC001A825B /* DNAsset.m */; };
 		BCF898651DAB67EC001A825B /* DNImageFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983E1DAB67EC001A825B /* DNImageFlowViewController.m */; };
@@ -302,6 +304,7 @@
 		BC5DAEA51DBDFADA00D88C30 /* MSLiveWorkEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkEditViewController.m; sourceTree = "<group>"; };
 		BC5DAEA71DBE20A900D88C30 /* MSSearchPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchPersonViewController.h; sourceTree = "<group>"; };
 		BC5DAEA81DBE20A900D88C30 /* MSSearchPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchPersonViewController.m; sourceTree = "<group>"; };
+		BC5E0DD81DE8274D006CDDF6 /* loginBg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loginBg.jpg; sourceTree = "<group>"; };
 		BC7250301DCDB4E800908E66 /* MSMultiSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMultiSearchViewController.h; sourceTree = "<group>"; };
 		BC7250311DCDB4E800908E66 /* MSMultiSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMultiSearchViewController.m; sourceTree = "<group>"; };
 		BC7601541DB869440006A034 /* MSBaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseButton.h; sourceTree = "<group>"; };
@@ -412,6 +415,8 @@
 		BC9413011DC9CD0F00B68744 /* MSMaterialOutInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialOutInModel.m; sourceTree = "<group>"; };
 		BC9413031DC9D02100B68744 /* MSSearchStaffViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchStaffViewController.h; sourceTree = "<group>"; };
 		BC9413041DC9D02100B68744 /* MSSearchStaffViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchStaffViewController.m; sourceTree = "<group>"; };
+		BCE61A941DE8655F005560B6 /* UITextField+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
+		BCE61A951DE8655F005560B6 /* UITextField+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
 		BCF898391DAB67EC001A825B /* DNAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAlbumTableViewController.h; sourceTree = "<group>"; };
 		BCF8983A1DAB67EC001A825B /* DNAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAlbumTableViewController.m; sourceTree = "<group>"; };
 		BCF8983B1DAB67EC001A825B /* DNAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAsset.h; sourceTree = "<group>"; };
@@ -750,6 +755,8 @@
 				BC25B9A61DA1F1E2008EDFB2 /* UIView+MSUtil.m */,
 				BCF898781DAB6E88001A825B /* UIImage+Custom.h */,
 				BCF898791DAB6E88001A825B /* UIImage+Custom.m */,
+				BCE61A941DE8655F005560B6 /* UITextField+Placeholder.h */,
+				BCE61A951DE8655F005560B6 /* UITextField+Placeholder.m */,
 			);
 			path = "UIView+MSUtil";
 			sourceTree = "<group>";
@@ -1228,6 +1235,7 @@
 		BCF8988F1DAB983C001A825B /* sources */ = {
 			isa = PBXGroup;
 			children = (
+				BC5E0DD81DE8274D006CDDF6 /* loginBg.jpg */,
 				BCF898901DAB983C001A825B /* delete.png */,
 			);
 			path = sources;
@@ -1350,6 +1358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18580CA11DB2259300631F00 /* QRCodeLine@2x.png in Resources */,
+				BC5E0DD91DE8274D006CDDF6 /* loginBg.jpg in Resources */,
 				18580CA61DB2259300631F00 /* QRCodeTopRight@3x.png in Resources */,
 				18580CA31DB2259300631F00 /* QRCodeTopLeft@2x.png in Resources */,
 				18580CA51DB2259300631F00 /* QRCodeTopRight@2x.png in Resources */,
@@ -1571,6 +1580,7 @@
 				BC7601D21DB874080006A034 /* MSToolOutInInfosQueryViewController.m in Sources */,
 				BCF898731DAB67EC001A825B /* DNFullImageButton.m in Sources */,
 				BC5DAE9A1DBDB7CC00D88C30 /* MSLiveWorkMeetingCell.m in Sources */,
+				BCE61A961DE8655F005560B6 /* UITextField+Placeholder.m in Sources */,
 				BC7601BD1DB8695D0006A034 /* MSHomeViewController.m in Sources */,
 				18580C991DB2259300631F00 /* QRCodeReaderAanimationLineView.m in Sources */,
 				BCF8986C1DAB67EC001A825B /* UIView+DNImagePicker.m in Sources */,

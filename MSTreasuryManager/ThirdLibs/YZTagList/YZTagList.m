@@ -105,7 +105,9 @@ CGFloat const imageViewWH = 20;
     }
     
     for (NSString *tagStr in tagStrs) {
-        [self addTag:tagStr];
+        if (tagStr.length) {
+            [self addTag:tagStr];
+        }
     }
 }
 // 添加标签

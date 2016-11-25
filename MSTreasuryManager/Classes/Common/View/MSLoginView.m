@@ -10,6 +10,7 @@
 #import "MSBaseButton.h"
 #import "UIImageView+CornerRadius.h"
 #import "MSAccountManager.h"
+#import "UITextField+Placeholder.h"
 
 static const CGFloat kHeadIconWidth = 80;
 
@@ -27,6 +28,13 @@ static const CGFloat kHeadIconWidth = 80;
 
 - (void)setupSubviews {
     self.backgroundColor = [UIColor whiteColor];
+    
+    UIImageView *bgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"loginBg.jpg"]];
+    [self addSubview:bgView];
+    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
+    
     _headIcon = ({
         UIImageView *view = [[UIImageView alloc]init];
         [self addSubview:view];
@@ -46,7 +54,7 @@ static const CGFloat kHeadIconWidth = 80;
         [self addSubview:label];
         label.text = @"账号";
         [label sizeToFit];
-        
+        label.textColor = kTitleColor;
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(15);
             make.top.equalTo(_headIcon.mas_bottom).offset(30);
@@ -58,8 +66,7 @@ static const CGFloat kHeadIconWidth = 80;
     UIView *line1 = ({
         UIView *view = [[UIView alloc]init];
         [self addSubview:view];
-        view.backgroundColor = kBackgroundColor;
-        
+        view.backgroundColor = kTitleColor;
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(nameLabel.mas_bottom).offset(10);
             make.left.width.equalTo(self);
@@ -74,6 +81,8 @@ static const CGFloat kHeadIconWidth = 80;
         [view setClearButtonMode:(UITextFieldViewModeWhileEditing)];
         [self addSubview:view];
         view.placeholder = @"用户名";
+        view.textColor = kTitleColor;
+        [view ms_setPlaceholderColor:[UIColor grayColor]];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(nameLabel.mas_right).offset(25);
             make.width.mas_equalTo(kSCREEN_WIDTH - 100);
@@ -88,6 +97,7 @@ static const CGFloat kHeadIconWidth = 80;
         UILabel *label = [[UILabel alloc]init];
         [self addSubview:label];
         label.text = @"密码";
+        label.textColor = kTitleColor;
         [label sizeToFit];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(15);
@@ -103,6 +113,8 @@ static const CGFloat kHeadIconWidth = 80;
         [view setClearButtonMode:(UITextFieldViewModeWhileEditing)];
         [view setSecureTextEntry:YES];
         view.placeholder = @"密码";
+        view.textColor = kTitleColor;
+        [view ms_setPlaceholderColor:[UIColor grayColor]];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(passLabel.mas_right).offset(25);
             make.width.mas_equalTo(kSCREEN_WIDTH - 100);
@@ -116,7 +128,7 @@ static const CGFloat kHeadIconWidth = 80;
     UIView *line2 = ({
         UIView *view = [[UIView alloc]init];
         [self addSubview:view];
-        view.backgroundColor = kBackgroundColor;
+        view.backgroundColor = kTitleColor;
         
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(passLabel.mas_bottom).offset(10);

@@ -12,6 +12,7 @@
 #import "MSMaterialFillInNomalSection.h"
 #import "MSOutInMultiLineSection.h"
 #import "MSNetworking+LiveWork.h"
+#import "MSLiveWorkFillInViewController.h"
 
 @interface MSLiveWorkQueryDetailViewController ()
 
@@ -28,6 +29,7 @@
 @property (nonatomic, weak) MSLiveWorkFillinTagsSection *classMemberSection;
 @property (nonatomic, weak) MSLiveWorkFillinTagsSection *meetingMemberSection;
 
+@property (nonatomic, strong) MSLiveWorkModel *detailLiveWork;
 @property (nonatomic, assign) NSInteger liveWorkId;
 
 @end
@@ -46,6 +48,10 @@
     // Do any additional setup after loading the view.
     self.title = @"现场工作详情";
     [self setupSubViews];
+    
+    UIBarButtonItem *edit = [[UIBarButtonItem alloc]initWithTitle:@"修改" style:(UIBarButtonItemStylePlain) target:self action:@selector(editLiveWork)];
+    self.navigationItem.rightBarButtonItem = edit;
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
 - (void)setupSubViews {
@@ -55,7 +61,6 @@
     self.scrollView.backgroundColor = kBackgroundColor;
     
     [self setupSections];
-    [self loadLiveWorkDetailInfo];
 }
 
 - (void)setupSections {
@@ -161,7 +166,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
+    [self loadLiveWorkDetailInfo];
 }
 
 - (void)fillInWithLiveWork:(MSLiveWorkModel *)model {
@@ -169,14 +174,20 @@
     self.dateField.text = model.workTime;
     self.leaderField.text = model.chargePerson;
     NSArray *member = [MSLiveWorkModel personArrayFromPersonString:model.member];
+    [self.classMemberSection deleteAllUsers];
     [self.classMemberSection addUsers:member];
     self.workContentInput.text = model.context;
     self.workRecordInput.text = model.workRecord;
     
     NSArray *persons = [MSLiveWorkModel personArrayFromPersonString:model.persons];
+    [self.meetingMemberSection deleteAllUsers];
     [self.meetingMemberSection addUsers:persons];
     self.workNoteInput.text = model.attention;
-    
+}
+
+- (void)editLiveWork {
+    MSLiveWorkFillInViewController *editVC = [[MSLiveWorkFillInViewController alloc]initWithLiveWorkModel:self.detailLiveWork];
+    [self.navigationController pushViewController:editVC animated:YES];
 }
 
 #pragma mark - HTTP Request
@@ -185,6 +196,8 @@
     [MSNetworking getLiveWorkDetailInfo:self.liveWorkId success:^(NSDictionary *object) {
         [SVProgressHUD showSuccessWithStatus:@"查询成功"];
         MSLiveWorkModel *model = [MSLiveWorkModel mj_objectWithKeyValues:object[@"data"]];
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+        self.detailLiveWork = model;
         [self fillInWithLiveWork:model];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"查询失败"];

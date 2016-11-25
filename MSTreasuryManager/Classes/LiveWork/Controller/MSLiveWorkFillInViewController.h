@@ -8,9 +8,12 @@
 
 #import "MSBaseViewController.h"
 
+@class MSLiveWorkModel;
 /**
  现场工作填写
  */
 @interface MSLiveWorkFillInViewController : MSBaseViewController
+
+- (instancetype)initWithLiveWorkModel:(MSLiveWorkModel *)liveWorkModel;
 
 @end

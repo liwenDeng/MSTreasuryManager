@@ -137,6 +137,8 @@ static NSString * const kNomalCell = @"normalCell";
         //退出登录
         [self showLoginView];
     } failure:^(NSError *error) {
+        //退出登录
+        [self showLoginView];
         [SVProgressHUD showErrorWithStatus:@""];
     }];
 }

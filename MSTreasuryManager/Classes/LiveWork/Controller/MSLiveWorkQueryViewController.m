@@ -40,6 +40,13 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
     [self setupSubViews];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.dateTextField.text.length > 0) {
+        [self loadLiveWorkList:self.dateTextField.text];
+    }
+}
+
 - (void)setupSubViews {
     
     [self.tableView registerClass:[MSLiveWorkMeetingCell class] forCellReuseIdentifier:kLiveWorkMeetingCell];
@@ -191,14 +198,14 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
         case 1:
         {
             return [tableView fd_heightForCellWithIdentifier:kLiveWorkMeetingCell configuration:^(MSLiveWorkMeetingCell * cell) {
-                cell.contentLabel.text = self.persons ? : @"";
+                cell.contentLabel.text = self.persons ? : @"无";
             }];
         }
             break;
         case 2:
         {
             return [tableView fd_heightForCellWithIdentifier:kLiveWorkNoteCell configuration:^(MSLiveWorkNoteCell * cell) {
-                cell.contentLabel.text = self.attention ? : @"";
+                cell.contentLabel.text = self.attention ? : @"无";
             }];
         }
             break;
