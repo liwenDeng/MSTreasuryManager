@@ -12,9 +12,12 @@
 #import "MSLoginView.h"
 #import "MSNetworking.h"
 #import "NSString+Code.h"
+#import "MSLiveWorkFillInViewController.h"
+#import "MSLiveWorkQueryViewController.h"
 
 static NSString * const kHeaderCell = @"headerCell";
 static NSString * const kNomalCell = @"normalCell";
+static NSString * const kLiveWorkCell = @"liveWorkCell";
 
 @interface MSMyCenterViewController () <MSLoginViewDelegate>
 
@@ -45,10 +48,13 @@ static NSString * const kNomalCell = @"normalCell";
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 1) {
+        return 2;   //@[@"现场工作填写",@"现场工作查询"];
+    }
     return 1;
 }
 
@@ -62,16 +68,32 @@ static NSString * const kNomalCell = @"normalCell";
         [header setSelectionStyle:(UITableViewCellSelectionStyleNone)];
         [header fillWithuserName:[MSAccountManager sharedManager].userName];
         return header;
-    }else {
+    }
+    else if (indexPath.section == 1){
+        //@[@"现场工作填写",@"现场工作查询"];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kNomalCell];
+        if (!cell) {
+            cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:kLiveWorkCell];
+        }
+        if (indexPath.row == 0) {
+            cell.textLabel.text = @"现场工作填写";
+        }else {
+            cell.textLabel.text = @"现场工作查询";
+        }
+        [cell setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
+        [cell setSelectionStyle:(UITableViewCellSelectionStyleNone)];
+        return cell;
+    }
+    else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kNomalCell];
         if (!cell) {
             cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:kNomalCell];
         }
-        if (indexPath.section == 1) {
+        if (indexPath.section == 2) {
             cell.textLabel.text = @"版本信息";
             cell.detailTextLabel.text = @"1.0";
         }
-        if (indexPath.section == 2) {
+        if (indexPath.section == 3) {
             cell.textLabel.text = @"退出登录";
             cell.detailTextLabel.text = @"";
         }
@@ -85,10 +107,23 @@ static NSString * const kNomalCell = @"normalCell";
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    if (indexPath.section == 2) {
+    
+    if (indexPath.section == 3) {
         [self logOut];
-    }else {
+    }
+    
+    if (indexPath.section == 2) {
+        UIViewController *vc = nil;
 
+        if (indexPath.row == 0) {
+            //现场工作填写
+            vc = [[MSLiveWorkFillInViewController alloc]init];
+        }else {
+            //现场工作查询
+            vc = [[MSLiveWorkQueryViewController alloc]init];
+        }
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

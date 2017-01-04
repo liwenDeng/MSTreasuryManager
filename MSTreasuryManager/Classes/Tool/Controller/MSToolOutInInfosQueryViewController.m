@@ -56,7 +56,7 @@ typedef enum : NSUInteger {
         NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
         self.totalList = [NSMutableArray arrayWithArray:list];
         [self.tableView reloadData];
-            [SVProgressHUD dismiss];
+        [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
 
         [SVProgressHUD dismiss];
@@ -66,8 +66,30 @@ typedef enum : NSUInteger {
     
 }
 
+- (void)loadMore {
+    self.pageNo++;
+    [MSNetworking getToolOutInList:@"" status:self.status success:^(NSDictionary *object) {
+        
+        NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+        [self.tableView.mj_footer endRefreshing];
+        if (list.count >= kPageSize) {
+            [self.totalList addObjectsFromArray:list];
+            [self.tableView reloadData];
+        }else {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        
+        [SVProgressHUD dismiss];
+    } failure:^(NSError *error) {
+        self.pageNo--;
+        [SVProgressHUD showErrorWithStatus:@"获取数据失败"];
+    }];
+}
+
+
 #pragma mark - Search for result
 - (void)requestSearchData {
+    self.searchPageNo = 1;
     self.resultViewController.tableView.mj_footer.hidden = NO;
     [SVProgressHUD show];
     [MSNetworking getToolOutInList:self.searchController.searchBar.text status:self.status success:^(NSDictionary *object) {
@@ -82,6 +104,25 @@ typedef enum : NSUInteger {
     }];
 }
 
+- (void)loadMoreResult {
+    self.searchPageNo++;
+    [MSNetworking getToolOutInList:self.searchController.searchBar.text status:self.status success:^(NSDictionary *object) {
+        NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+        [self.resultViewController.tableView.mj_footer endRefreshing];
+        [SVProgressHUD dismiss];
+        if (list.count >= kPageSize) {
+            [self.searchList addObjectsFromArray:list];
+            [self.resultViewController.tableView reloadData];
+        }else {
+            [self.resultViewController.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+    } failure:^(NSError *error) {
+        
+        self.searchPageNo--;
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:@"获取数据失败"];
+    }];
+}
 
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

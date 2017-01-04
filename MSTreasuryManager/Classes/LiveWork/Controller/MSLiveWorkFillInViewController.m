@@ -290,6 +290,7 @@
 }
 
 - (void)showDatePickerView {
+    [self.view endEditing:YES];
     if (self.datePickerView.hidden) {
         self.datePickerView.hidden = NO;
         [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{

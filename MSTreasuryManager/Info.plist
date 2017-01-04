@@ -12,7 +12,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>是否允许此App使用你的相机？</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>china</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

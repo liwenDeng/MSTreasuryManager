@@ -127,7 +127,7 @@
     
     NSURLSessionDataTask *task;
     __weak typeof(self) weakSelf = self;
-    if (action.headers) {
+    if (action.headers || _addtionalHeaders) {
         NSURLSessionConfiguration *configuration = [ZCNetworking sharedInstance].defaultConfigration.copy;
         NSMutableDictionary *headers = _addtionalHeaders.mutableCopy;
         [headers addEntriesFromDictionary:action.headers];

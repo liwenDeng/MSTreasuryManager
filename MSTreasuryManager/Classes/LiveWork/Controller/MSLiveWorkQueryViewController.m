@@ -53,6 +53,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
     
     section1.frame = CGRectMake(0, 20, kSCREEN_WIDTH, 64);
     self.tableView.tableHeaderView = section1;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 #pragma mark - UITableViewDataSource
@@ -212,6 +213,10 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
     return 44;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
+}
+
 #pragma mark - tap action
 - (void)chooseDate {
     [self showDatePickerView];
@@ -230,6 +235,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 }
 
 - (void)showDatePickerView {
+    [self.view endEditing:YES];
     if (self.datePickerView.hidden) {
         self.datePickerView.hidden = NO;
         [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{

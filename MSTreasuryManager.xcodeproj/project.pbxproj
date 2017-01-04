@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18542F961E1D27630094DC13 /* MSNewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18542F951E1D27630094DC13 /* MSNewHomeViewController.m */; };
+		18542FA11E1D280B0094DC13 /* MSMaterialToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18542FA01E1D280B0094DC13 /* MSMaterialToolViewController.m */; };
+		18542FA41E1D28230094DC13 /* MSBugNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18542FA31E1D28230094DC13 /* MSBugNotesViewController.m */; };
 		185522B51DD6023D0093EFF8 /* MSMaterialRightHandleSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 185522B41DD6023D0093EFF8 /* MSMaterialRightHandleSection.m */; };
 		18580C971DB2259300631F00 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C7F1DB2259300631F00 /* QRCameraSwitchButton.m */; };
 		18580C981DB2259300631F00 /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C811DB2259300631F00 /* QRCodeReader.m */; };
@@ -177,6 +180,12 @@
 
 /* Begin PBXFileReference section */
 		03C01CE9C2B33EF403CE9DCC /* Pods-MSTreasuryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.debug.xcconfig"; sourceTree = "<group>"; };
+		18542F941E1D27630094DC13 /* MSNewHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNewHomeViewController.h; sourceTree = "<group>"; };
+		18542F951E1D27630094DC13 /* MSNewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNewHomeViewController.m; sourceTree = "<group>"; };
+		18542F9F1E1D280B0094DC13 /* MSMaterialToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialToolViewController.h; sourceTree = "<group>"; };
+		18542FA01E1D280B0094DC13 /* MSMaterialToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialToolViewController.m; sourceTree = "<group>"; };
+		18542FA21E1D28230094DC13 /* MSBugNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBugNotesViewController.h; sourceTree = "<group>"; };
+		18542FA31E1D28230094DC13 /* MSBugNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBugNotesViewController.m; sourceTree = "<group>"; };
 		185522B31DD6023D0093EFF8 /* MSMaterialRightHandleSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialRightHandleSection.h; sourceTree = "<group>"; };
 		185522B41DD6023D0093EFF8 /* MSMaterialRightHandleSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialRightHandleSection.m; sourceTree = "<group>"; };
 		18580C7E1DB2259300631F00 /* QRCameraSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCameraSwitchButton.h; sourceTree = "<group>"; };
@@ -501,6 +510,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18542F971E1D27E60094DC13 /* BugNotes */ = {
+			isa = PBXGroup;
+			children = (
+				18542F981E1D27E60094DC13 /* Model */,
+				18542F991E1D27E60094DC13 /* View */,
+				18542F9A1E1D27E60094DC13 /* ViewController */,
+			);
+			path = BugNotes;
+			sourceTree = "<group>";
+		};
+		18542F981E1D27E60094DC13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18542F991E1D27E60094DC13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18542F9A1E1D27E60094DC13 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18542FA21E1D28230094DC13 /* MSBugNotesViewController.h */,
+				18542FA31E1D28230094DC13 /* MSBugNotesViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		18542F9B1E1D27E60094DC13 /* MaterialTool */ = {
+			isa = PBXGroup;
+			children = (
+				18542F9C1E1D27E60094DC13 /* Model */,
+				18542F9D1E1D27E60094DC13 /* View */,
+				18542F9E1E1D27E60094DC13 /* ViewController */,
+			);
+			path = MaterialTool;
+			sourceTree = "<group>";
+		};
+		18542F9C1E1D27E60094DC13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18542F9D1E1D27E60094DC13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18542F9E1E1D27E60094DC13 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18542F9F1E1D280B0094DC13 /* MSMaterialToolViewController.h */,
+				18542FA01E1D280B0094DC13 /* MSMaterialToolViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		18580C7D1DB2259300631F00 /* QRCodeReaderViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -866,6 +941,8 @@
 		BC7601731DB8695D0006A034 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				18542F971E1D27E60094DC13 /* BugNotes */,
+				18542F9B1E1D27E60094DC13 /* MaterialTool */,
 				BC7601741DB8695D0006A034 /* Common */,
 				BC76017A1DB8695D0006A034 /* Home */,
 				BC76019B1DB8695D0006A034 /* LiveWork */,
@@ -964,6 +1041,8 @@
 			children = (
 				BC76018B1DB8695D0006A034 /* MSHomeViewController.h */,
 				BC76018C1DB8695D0006A034 /* MSHomeViewController.m */,
+				18542F941E1D27630094DC13 /* MSNewHomeViewController.h */,
+				18542F951E1D27630094DC13 /* MSNewHomeViewController.m */,
 				BC76018D1DB8695D0006A034 /* MSMaterialFillInViewController.h */,
 				BC76018E1DB8695D0006A034 /* MSMaterialFillInViewController.m */,
 				BC76018F1DB8695D0006A034 /* MSMaterialInfoFetchViewController.h */,
@@ -1532,6 +1611,7 @@
 				BCF8987A1DAB6E88001A825B /* UIImage+Custom.m in Sources */,
 				BCF8988D1DAB889D001A825B /* PBViewController.m in Sources */,
 				BC5CBE881DC6EA08003FA945 /* ZCApiUploadAction.m in Sources */,
+				18542FA41E1D28230094DC13 /* MSBugNotesViewController.m in Sources */,
 				BC9412FF1DC9C88000B68744 /* MSSearchStoreViewController.m in Sources */,
 				BC7C07691DBF66D400896351 /* MSLoginView.m in Sources */,
 				BC7601C01DB8695D0006A034 /* MSMaterialOutStoreViewController.m in Sources */,
@@ -1539,6 +1619,7 @@
 				BC7601C71DB8695D0006A034 /* MSToolInfoFillInViewController.m in Sources */,
 				BCF898641DAB67EC001A825B /* DNAsset.m in Sources */,
 				BCF8988B1DAB889D001A825B /* PBImageScrollView.m in Sources */,
+				18542F961E1D27630094DC13 /* MSNewHomeViewController.m in Sources */,
 				BC7601BC1DB8695D0006A034 /* MSPhotoPadView.m in Sources */,
 				BCF8988E1DAB889D001A825B /* UIView+PBSnapshot.m in Sources */,
 				BC5CBE721DC6D0B0003FA945 /* MSNetworking+Material.m in Sources */,
@@ -1614,6 +1695,7 @@
 				BC9413051DC9D02100B68744 /* MSSearchStaffViewController.m in Sources */,
 				BC770A831DBB6E1400B74772 /* MSLiveWorkFillinTagsSection.m in Sources */,
 				BC5CBE871DC6EA08003FA945 /* ZCApiRunner.m in Sources */,
+				18542FA11E1D280B0094DC13 /* MSMaterialToolViewController.m in Sources */,
 				18580C9B1DB2259300631F00 /* QRCodeReaderView.m in Sources */,
 				BC2954EE1DC8A46B0044D9C9 /* MSDialog.m in Sources */,
 				BCF8988A1DAB889D001A825B /* PBImageScrollerViewController.m in Sources */,

@@ -14,6 +14,8 @@
 #import "MSToolManageViewController.h"
 #import "MSMyCenterViewController.h"
 
+#import "MSMaterialToolViewController.h"
+
 //#pragma mark -HideTabBarMethod
 //@interface CYLBaseNavigationController : UINavigationController
 //
@@ -111,15 +113,15 @@
     MSBaseNavigationController *navi1 = [[MSBaseNavigationController alloc]initWithRootViewController:vc1];
     vc1.navigationItem.title = @"首页";
     
-    MSLiveWorkViewController *vc2 = [[MSLiveWorkViewController alloc]init];
+    MSMaterialToolViewController *vc2 = [[MSMaterialToolViewController alloc]initWithStyle:(UITableViewStyleGrouped)];
     MSBaseNavigationController *navi2 = [[MSBaseNavigationController alloc]initWithRootViewController:vc2];
-    vc2.navigationItem.title = @"现场工作";
+    vc2.navigationItem.title = @"物资工具";
     
     MSToolManageViewController *vc3 = [[MSToolManageViewController alloc]init];
     MSBaseNavigationController *navi3 = [[MSBaseNavigationController alloc]initWithRootViewController:vc3];
     vc3.navigationItem.title = @"工器具";
     
-    MSMyCenterViewController *vc4 = [[MSMyCenterViewController alloc]init];
+    MSMyCenterViewController *vc4 = [[MSMyCenterViewController alloc]initWithStyle:(UITableViewStyleGrouped)];
     MSBaseNavigationController *navi4 = [[MSBaseNavigationController alloc]initWithRootViewController:vc4];
     vc4.navigationItem.title = @"我的";
     
@@ -137,7 +139,7 @@
                                                  CYLTabBarItemSelectedImage : @"material_s",
                                                  };
     NSDictionary *secondTabBarItemsAttributes = @{
-                                                  CYLTabBarItemTitle : @"现场工作",
+                                                  CYLTabBarItemTitle : @"物资工具",
                                                   CYLTabBarItemImage : @"livework",
                                                   CYLTabBarItemSelectedImage : @"livework_s",
                                                   };
