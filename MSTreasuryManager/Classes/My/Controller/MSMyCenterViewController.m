@@ -112,9 +112,8 @@ static NSString * const kLiveWorkCell = @"liveWorkCell";
         [self logOut];
     }
     
-    if (indexPath.section == 2) {
+    if (indexPath.section == 1) {
         UIViewController *vc = nil;
-
         if (indexPath.row == 0) {
             //现场工作填写
             vc = [[MSLiveWorkFillInViewController alloc]init];

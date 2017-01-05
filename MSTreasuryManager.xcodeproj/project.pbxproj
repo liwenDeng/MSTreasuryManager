@@ -27,6 +27,7 @@
 		18580CA41DB2259300631F00 /* QRCodeTopLeft@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C941DB2259300631F00 /* QRCodeTopLeft@3x.png */; };
 		18580CA51DB2259300631F00 /* QRCodeTopRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C951DB2259300631F00 /* QRCodeTopRight@2x.png */; };
 		18580CA61DB2259300631F00 /* QRCodeTopRight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C961DB2259300631F00 /* QRCodeTopRight@3x.png */; };
+		18D4C12A1E1E819D0031A74E /* MSLiveWorkRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C1291E1E819D0031A74E /* MSLiveWorkRecordCell.m */; };
 		37B909AF91BD9E1EEA2AC706 /* libPods-MSTreasuryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50451818B7BCADBBF7EDF5D /* libPods-MSTreasuryManager.a */; };
 		3A7C5FDB01369BBDCA4DC293 /* libPods-MSTreasuryManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */; };
 		43690FD02A5F3C579B2F199B /* libPods-MSTreasuryManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD14FB8AD8938064E1CA623 /* libPods-MSTreasuryManagerTests.a */; };
@@ -212,6 +213,8 @@
 		18580C951DB2259300631F00 /* QRCodeTopRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopRight@2x.png"; sourceTree = "<group>"; };
 		18580C961DB2259300631F00 /* QRCodeTopRight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopRight@3x.png"; sourceTree = "<group>"; };
 		18580CAA1DB25D9A00631F00 /* MSColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSColor.h; sourceTree = "<group>"; };
+		18D4C1281E1E819D0031A74E /* MSLiveWorkRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveWorkRecordCell.h; sourceTree = "<group>"; };
+		18D4C1291E1E819D0031A74E /* MSLiveWorkRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkRecordCell.m; sourceTree = "<group>"; };
 		3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSTreasuryManagerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8E0C5D4687480595A21928 /* Pods-MSTreasuryManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManagerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManagerUITests/Pods-MSTreasuryManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75F47D9C8AB86418EDA43784 /* Pods-MSTreasuryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -1106,6 +1109,8 @@
 				BC5DAE991DBDB7CC00D88C30 /* MSLiveWorkMeetingCell.m */,
 				BC5DAE9B1DBDB7DE00D88C30 /* MSLiveWorkNoteCell.h */,
 				BC5DAE9C1DBDB7DE00D88C30 /* MSLiveWorkNoteCell.m */,
+				18D4C1281E1E819D0031A74E /* MSLiveWorkRecordCell.h */,
+				18D4C1291E1E819D0031A74E /* MSLiveWorkRecordCell.m */,
 				BC5DAE9E1DBDDBA400D88C30 /* MSLiveWorkHeaderView.h */,
 				BC5DAE9F1DBDDBA400D88C30 /* MSLiveWorkHeaderView.m */,
 			);
@@ -1668,6 +1673,7 @@
 				BC25B9AD1DA1F1E2008EDFB2 /* UIImageView+CornerRadius.m in Sources */,
 				BC7601D81DB886BB0006A034 /* MSToolInfoStateCell.m in Sources */,
 				BCF898741DAB67EC001A825B /* DNSendButton.m in Sources */,
+				18D4C12A1E1E819D0031A74E /* MSLiveWorkRecordCell.m in Sources */,
 				BC25B9AA1DA1F1E2008EDFB2 /* UIColor+MSUtil.m in Sources */,
 				BC25B9041DA1ED8B008EDFB2 /* main.m in Sources */,
 				BC7C075D1DBF511400896351 /* MSMyCenterViewController.m in Sources */,

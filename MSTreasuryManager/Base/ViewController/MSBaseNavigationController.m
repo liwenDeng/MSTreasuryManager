@@ -16,18 +16,18 @@
     //设置item普通状态
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSFontAttributeName] = [UIFont systemFontOfSize:15];
-    attrs[NSForegroundColorAttributeName] =  kTitleColor;//[UIColor ms_colorWithHexString:@"#11cd6e"];
+    attrs[NSForegroundColorAttributeName] =  [UIColor whiteColor];//[UIColor ms_colorWithHexString:@"#11cd6e"];
     [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
     
     //设置item不可用状态
     NSMutableDictionary *disabledAttrs = [NSMutableDictionary dictionary];
     disabledAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:15];
-    disabledAttrs[NSForegroundColorAttributeName] = kTitleColor;//[UIColor ms_colorWithHexString:@"#11cd6e"];
+    disabledAttrs[NSForegroundColorAttributeName] = [UIColor whiteColor];//[UIColor ms_colorWithHexString:@"#11cd6e"];
     [item setTitleTextAttributes:disabledAttrs forState:UIControlStateDisabled];
     
-    [[UINavigationBar appearance]setTintColor:kTitleColor];
+    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
     
-    NSDictionary *dict = [NSDictionary dictionaryWithObject:kTitleColor forKey:UITextAttributeTextColor];
+    NSDictionary *dict = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
     [[UINavigationBar appearance] setTitleTextAttributes:dict];
 }
 

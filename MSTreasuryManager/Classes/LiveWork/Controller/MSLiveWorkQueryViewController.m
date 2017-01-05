@@ -15,6 +15,7 @@
 #import "MSLiveWorkQueryDetailViewController.h"
 #import "MSLiveWorkEditViewController.h"
 #import "MSNetworking+LiveWork.h"
+#import "MSLiveWorkRecordCell.h"
 
 static NSString * const kLiveWorkLeaderCell = @"LiveWorkLeaderCell";
 static NSString * const kLiveWorkMeetingCell = @"LiveWorkMeetingCell";
@@ -44,7 +45,9 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
     
     [self.tableView registerClass:[MSLiveWorkMeetingCell class] forCellReuseIdentifier:kLiveWorkMeetingCell];
     [self.tableView registerClass:[MSLiveWorkNoteCell class] forCellReuseIdentifier:kLiveWorkNoteCell];
+    [self.tableView registerClass:[MSLiveWorkRecordCell class] forCellReuseIdentifier:kLiveWorkLeaderCell];
     self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+    [self.tableView setSeparatorStyle:(UITableViewCellSeparatorStyleNone)];
     
     MSMaterialFillInNomalSection *section1 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"工作日期" placeholder:@"选择日期" canTouch:YES];
     self.dateTextField = section1.textField;
@@ -64,11 +67,10 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return self.workList.count ? : 0;
-            break;
         case 1:
-        case 2:
             return 1;
+        case 2:
+            return self.workList.count ? : 0;
         default:
             return 0;
     }
@@ -78,31 +80,29 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
     switch (indexPath.section) {
         case 0:
         {
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kLiveWorkLeaderCell];
-            if (!cell) {
-                cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:kLiveWorkLeaderCell];
-            }
-            MSLiveWorkModel *model = self.workList[indexPath.row];
-            cell.textLabel.text = model.chargePerson;
-            cell.detailTextLabel.text = model.workTime;
+            MSLiveWorkMeetingCell *cell = [tableView dequeueReusableCellWithIdentifier:kLiveWorkMeetingCell forIndexPath:indexPath];
+            cell.contentLabel.text = self.persons ? : @"";
             [cell setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
             return cell;
         }
             break;
         case 1:
         {
-            MSLiveWorkMeetingCell *cell = [tableView dequeueReusableCellWithIdentifier:kLiveWorkMeetingCell forIndexPath:indexPath];
-            cell.contentLabel.text = self.persons ? : @"";
+            MSLiveWorkNoteCell *cell = [tableView dequeueReusableCellWithIdentifier:kLiveWorkNoteCell forIndexPath:indexPath];
+            cell.contentLabel.text = self.attention ? : @"";
             [cell setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
             return cell;
-            
         }
             break;
         case 2:
         {
-            MSLiveWorkNoteCell *cell = [tableView dequeueReusableCellWithIdentifier:kLiveWorkNoteCell forIndexPath:indexPath];
-            cell.contentLabel.text = self.attention ? : @"";
-            [cell setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
+            MSLiveWorkRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:kLiveWorkLeaderCell];
+            if (!cell) {
+                cell = [[MSLiveWorkRecordCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:kLiveWorkLeaderCell];
+            }
+            MSLiveWorkModel *model = self.workList[indexPath.row];
+            cell.liveWorkModel = model;
+//            [cell setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
             return cell;
         }
             break;
@@ -115,11 +115,11 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return @"工作记录列表";
-        case 1:
             return @"参会人员";
-        case 2:
+        case 1:
             return @"注意事项";
+        case 2:
+            return @"工作记录列表";
         default:
             return @"";
     }
@@ -154,13 +154,6 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
     switch (indexPath.section) {
         case 0:
         {
-            MSLiveWorkModel *model = self.workList[indexPath.row];
-            MSLiveWorkQueryDetailViewController *detailVC = [[MSLiveWorkQueryDetailViewController alloc]initWithLiveWorkId:model.workId];
-            [self.navigationController pushViewController:detailVC animated:YES];
-        }
-            break;
-        case 1:
-        {
             MSLiveWorkEditViewController *editVC = [[MSLiveWorkEditViewController alloc]initWithEditType:(MSEditTypePersons)];
             MSLiveWorkModel *model = [self editWorkModel];
             if (model) {
@@ -169,7 +162,7 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
             }
         }
             break;
-        case 2:
+        case 1:
         {
             MSLiveWorkEditViewController *editVC = [[MSLiveWorkEditViewController alloc]initWithEditType:(MSEditTypeAttention)];
             MSLiveWorkModel *model = [self editWorkModel];
@@ -179,6 +172,13 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
                 [self.navigationController pushViewController:editVC animated:YES];
             }
         }
+            break;
+        case 2:
+        {
+            MSLiveWorkModel *model = self.workList[indexPath.row];
+            MSLiveWorkQueryDetailViewController *detailVC = [[MSLiveWorkQueryDetailViewController alloc]initWithLiveWorkId:model.workId];
+            [self.navigationController pushViewController:detailVC animated:YES];
+        }
         default:
             break;
     }
@@ -187,19 +187,22 @@ static NSString * const kLiveWorkNoteCell = @"LiveWorkNoteCell";
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:
-            return 44;
+            return [tableView fd_heightForCellWithIdentifier:kLiveWorkMeetingCell configuration:^(MSLiveWorkMeetingCell * cell) {
+                cell.contentLabel.text = self.persons ? : @"";
+            }];
             break;
         case 1:
         {
-            return [tableView fd_heightForCellWithIdentifier:kLiveWorkMeetingCell configuration:^(MSLiveWorkMeetingCell * cell) {
-                cell.contentLabel.text = self.persons ? : @"";
+            return [tableView fd_heightForCellWithIdentifier:kLiveWorkNoteCell configuration:^(MSLiveWorkNoteCell * cell) {
+                cell.contentLabel.text = self.attention ? : @"";
             }];
         }
             break;
         case 2:
         {
-            return [tableView fd_heightForCellWithIdentifier:kLiveWorkNoteCell configuration:^(MSLiveWorkNoteCell * cell) {
-                cell.contentLabel.text = self.attention ? : @"";
+            MSLiveWorkModel *model = self.workList[indexPath.row];
+            return [tableView fd_heightForCellWithIdentifier:kLiveWorkLeaderCell configuration:^(MSLiveWorkRecordCell * cell) {
+                cell.liveWorkModel = model;
             }];
         }
             break;
