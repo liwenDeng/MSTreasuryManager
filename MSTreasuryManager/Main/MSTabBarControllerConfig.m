@@ -15,6 +15,7 @@
 #import "MSMyCenterViewController.h"
 
 #import "MSMaterialToolViewController.h"
+#import "MSNewHomeViewController.h"
 
 //#pragma mark -HideTabBarMethod
 //@interface CYLBaseNavigationController : UINavigationController
@@ -109,7 +110,7 @@
 
 
 - (NSArray *)viewControllers {
-    MSHomeViewController *vc1 = [[MSHomeViewController alloc]init];
+    MSNewHomeViewController *vc1 = [[MSNewHomeViewController alloc]init];
     MSBaseNavigationController *navi1 = [[MSBaseNavigationController alloc]initWithRootViewController:vc1];
     vc1.navigationItem.title = @"首页";
     

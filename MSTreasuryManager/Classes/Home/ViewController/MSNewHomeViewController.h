@@ -6,8 +6,8 @@
 //  Copyright © 2017年 邓利文. All rights reserved.
 //
 
-#import "MSBaseViewController.h"
+#import "MSBaseTableViewController.h"
 
-@interface MSNewHomeViewController : MSBaseViewController
+@interface MSNewHomeViewController : MSBaseTableViewController
 
 @end

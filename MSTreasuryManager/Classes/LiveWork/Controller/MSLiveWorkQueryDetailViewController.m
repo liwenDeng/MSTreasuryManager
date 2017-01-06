@@ -90,7 +90,7 @@
     
     MSMaterialFillInNomalSection *section1 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"工作日期" placeholder:@"选择日期" canTouch:YES];
     MSMaterialFillInNomalSection *section2 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"工作负责人" placeholder:@"选择人员" canTouch:YES];
-    MSLiveWorkFillinTagsSection *section3 = [[MSLiveWorkFillinTagsSection alloc]initWithTitle:@"工作班成员" placeholder:nil showDeleteBtn:NO];
+    MSLiveWorkFillinTagsSection *section3 = [[MSLiveWorkFillinTagsSection alloc]initWithTitle:@"工作班成员" placeholder:nil showDeleteBtn:YES];
     section3.addBtn.hidden = YES;
     
     MSToolInfoFillInSection *section4 = [[MSToolInfoFillInSection alloc]initWithTitle:@"工作内容" placeholder:@"请填写工作内容"];
@@ -216,7 +216,6 @@
 
 #pragma mark - EditAction 
 - (void)editLiveWorkDetail:(UIBarButtonItem *)editItem {
-    
     if ([editItem.title isEqualToString:@"修改"]) {
         //点击修改
         editItem.title = @"提交";
@@ -225,8 +224,8 @@
         //点击提交
         editItem.title = @"修改";
         [self changeViewCanEdit:NO];
+        [self commitEdit];
     }
-    
 }
 
 - (void)changeViewCanEdit:(BOOL)canEdit {
@@ -277,6 +276,25 @@
         [self fillInWithLiveWork:model];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"查询失败"];
+    }];
+}
+
+- (void)commitEdit {
+    MSLiveWorkModel *fillModel = [[MSLiveWorkModel alloc]init];
+    
+    fillModel.workId = self.liveWorkId;
+    fillModel.workTime = self.dateField.text;
+    fillModel.chargePerson = self.leaderField.text;
+    fillModel.member = [MSLiveWorkModel personStringFromPersonArray:self.classMemberSection.users];
+    fillModel.context = self.workContentInput.text;
+    fillModel.workRecord = self.workRecordInput.text;
+    fillModel.persons = [MSLiveWorkModel personStringFromPersonArray:self.meetingMemberSection.users];
+    fillModel.attention = self.workNoteInput.text;
+    
+    [MSNetworking updateLiveWork:fillModel success:^(NSDictionary *object) {
+        [SVProgressHUD showSuccessWithStatus:@"填写成功"];
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"填写失败"];
     }];
 }
 

@@ -27,6 +27,14 @@
 		18580CA41DB2259300631F00 /* QRCodeTopLeft@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C941DB2259300631F00 /* QRCodeTopLeft@3x.png */; };
 		18580CA51DB2259300631F00 /* QRCodeTopRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C951DB2259300631F00 /* QRCodeTopRight@2x.png */; };
 		18580CA61DB2259300631F00 /* QRCodeTopRight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C961DB2259300631F00 /* QRCodeTopRight@3x.png */; };
+		18B287E91E1FD8ED00FFC27C /* MSCircleBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287E61E1FD8ED00FFC27C /* MSCircleBaseCell.m */; };
+		18B287EA1E1FD8ED00FFC27C /* MSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287E81E1FD8ED00FFC27C /* MSCircleView.m */; };
+		18B287ED1E1FD99200FFC27C /* MSPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287EC1E1FD99200FFC27C /* MSPersonModel.m */; };
+		18B287F01E1FD9A200FFC27C /* MSClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287EF1E1FD9A200FFC27C /* MSClassModel.m */; };
+		18B287F31E1FDC4700FFC27C /* MSHomeBannaerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287F21E1FDC4700FFC27C /* MSHomeBannaerCell.m */; };
+		18B287F61E1FDDA100FFC27C /* MSHomeBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287F51E1FDDA100FFC27C /* MSHomeBannerModel.m */; };
+		18B287FC1E1FE00500FFC27C /* MSHomeClassBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287FB1E1FE00500FFC27C /* MSHomeClassBannerCell.m */; };
+		18B287FF1E1FE25900FFC27C /* MSHomePersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287FE1E1FE25900FFC27C /* MSHomePersonCell.m */; };
 		18D4C12A1E1E819D0031A74E /* MSLiveWorkRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C1291E1E819D0031A74E /* MSLiveWorkRecordCell.m */; };
 		37B909AF91BD9E1EEA2AC706 /* libPods-MSTreasuryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50451818B7BCADBBF7EDF5D /* libPods-MSTreasuryManager.a */; };
 		3A7C5FDB01369BBDCA4DC293 /* libPods-MSTreasuryManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */; };
@@ -213,6 +221,22 @@
 		18580C951DB2259300631F00 /* QRCodeTopRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopRight@2x.png"; sourceTree = "<group>"; };
 		18580C961DB2259300631F00 /* QRCodeTopRight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopRight@3x.png"; sourceTree = "<group>"; };
 		18580CAA1DB25D9A00631F00 /* MSColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSColor.h; sourceTree = "<group>"; };
+		18B287E51E1FD8ED00FFC27C /* MSCircleBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCircleBaseCell.h; sourceTree = "<group>"; };
+		18B287E61E1FD8ED00FFC27C /* MSCircleBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCircleBaseCell.m; sourceTree = "<group>"; };
+		18B287E71E1FD8ED00FFC27C /* MSCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCircleView.h; sourceTree = "<group>"; };
+		18B287E81E1FD8ED00FFC27C /* MSCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCircleView.m; sourceTree = "<group>"; };
+		18B287EB1E1FD99200FFC27C /* MSPersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPersonModel.h; sourceTree = "<group>"; };
+		18B287EC1E1FD99200FFC27C /* MSPersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPersonModel.m; sourceTree = "<group>"; };
+		18B287EE1E1FD9A200FFC27C /* MSClassModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSClassModel.h; sourceTree = "<group>"; };
+		18B287EF1E1FD9A200FFC27C /* MSClassModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSClassModel.m; sourceTree = "<group>"; };
+		18B287F11E1FDC4700FFC27C /* MSHomeBannaerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeBannaerCell.h; sourceTree = "<group>"; };
+		18B287F21E1FDC4700FFC27C /* MSHomeBannaerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeBannaerCell.m; sourceTree = "<group>"; };
+		18B287F41E1FDDA100FFC27C /* MSHomeBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeBannerModel.h; sourceTree = "<group>"; };
+		18B287F51E1FDDA100FFC27C /* MSHomeBannerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeBannerModel.m; sourceTree = "<group>"; };
+		18B287FA1E1FE00500FFC27C /* MSHomeClassBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeClassBannerCell.h; sourceTree = "<group>"; };
+		18B287FB1E1FE00500FFC27C /* MSHomeClassBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeClassBannerCell.m; sourceTree = "<group>"; };
+		18B287FD1E1FE25900FFC27C /* MSHomePersonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomePersonCell.h; sourceTree = "<group>"; };
+		18B287FE1E1FE25900FFC27C /* MSHomePersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomePersonCell.m; sourceTree = "<group>"; };
 		18D4C1281E1E819D0031A74E /* MSLiveWorkRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveWorkRecordCell.h; sourceTree = "<group>"; };
 		18D4C1291E1E819D0031A74E /* MSLiveWorkRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkRecordCell.m; sourceTree = "<group>"; };
 		3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSTreasuryManagerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -625,6 +649,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		18B287E41E1FD8ED00FFC27C /* MSCircleView */ = {
+			isa = PBXGroup;
+			children = (
+				18B287E51E1FD8ED00FFC27C /* MSCircleBaseCell.h */,
+				18B287E61E1FD8ED00FFC27C /* MSCircleBaseCell.m */,
+				18B287E71E1FD8ED00FFC27C /* MSCircleView.h */,
+				18B287E81E1FD8ED00FFC27C /* MSCircleView.m */,
+			);
+			path = MSCircleView;
+			sourceTree = "<group>";
+		};
 		36406599D4298859C276174F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -739,6 +774,7 @@
 		BC25B9351DA1F0B5008EDFB2 /* ThirdLibs */ = {
 			isa = PBXGroup;
 			children = (
+				18B287E41E1FD8ED00FFC27C /* MSCircleView */,
 				BC5CBE761DC6EA07003FA945 /* ZCNetworking */,
 				BC770A841DBB6E9D00B74772 /* YZTagList */,
 				18580C7D1DB2259300631F00 /* QRCodeReaderViewController */,
@@ -1021,6 +1057,12 @@
 			children = (
 				BC76017C1DB8695D0006A034 /* MSHomeCollectionCell.h */,
 				BC76017D1DB8695D0006A034 /* MSHomeCollectionCell.m */,
+				18B287F11E1FDC4700FFC27C /* MSHomeBannaerCell.h */,
+				18B287F21E1FDC4700FFC27C /* MSHomeBannaerCell.m */,
+				18B287FA1E1FE00500FFC27C /* MSHomeClassBannerCell.h */,
+				18B287FB1E1FE00500FFC27C /* MSHomeClassBannerCell.m */,
+				18B287FD1E1FE25900FFC27C /* MSHomePersonCell.h */,
+				18B287FE1E1FE25900FFC27C /* MSHomePersonCell.m */,
 				BC76017E1DB8695D0006A034 /* MSMaterialFillInNomalSection.h */,
 				BC76017F1DB8695D0006A034 /* MSMaterialFillInNomalSection.m */,
 				185522B31DD6023D0093EFF8 /* MSMaterialRightHandleSection.h */,
@@ -1214,6 +1256,12 @@
 				BC5CBE8C1DC6F4FA003FA945 /* MSStaffModel.m */,
 				BC9413001DC9CD0F00B68744 /* MSMaterialOutInModel.h */,
 				BC9413011DC9CD0F00B68744 /* MSMaterialOutInModel.m */,
+				18B287EB1E1FD99200FFC27C /* MSPersonModel.h */,
+				18B287EC1E1FD99200FFC27C /* MSPersonModel.m */,
+				18B287EE1E1FD9A200FFC27C /* MSClassModel.h */,
+				18B287EF1E1FD9A200FFC27C /* MSClassModel.m */,
+				18B287F41E1FDDA100FFC27C /* MSHomeBannerModel.h */,
+				18B287F51E1FDDA100FFC27C /* MSHomeBannerModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1614,10 +1662,12 @@
 				BC7601BF1DB8695D0006A034 /* MSMaterialInfoFetchViewController.m in Sources */,
 				BC7601D51DB882170006A034 /* MSToolSectionHeaderView.m in Sources */,
 				BCF8987A1DAB6E88001A825B /* UIImage+Custom.m in Sources */,
+				18B287F01E1FD9A200FFC27C /* MSClassModel.m in Sources */,
 				BCF8988D1DAB889D001A825B /* PBViewController.m in Sources */,
 				BC5CBE881DC6EA08003FA945 /* ZCApiUploadAction.m in Sources */,
 				18542FA41E1D28230094DC13 /* MSBugNotesViewController.m in Sources */,
 				BC9412FF1DC9C88000B68744 /* MSSearchStoreViewController.m in Sources */,
+				18B287FC1E1FE00500FFC27C /* MSHomeClassBannerCell.m in Sources */,
 				BC7C07691DBF66D400896351 /* MSLoginView.m in Sources */,
 				BC7601C01DB8695D0006A034 /* MSMaterialOutStoreViewController.m in Sources */,
 				BC7601721DB869440006A034 /* MSQRCodeReaderViewController.m in Sources */,
@@ -1645,6 +1695,7 @@
 				BC770A8A1DBB6E9D00B74772 /* YZTagList.m in Sources */,
 				BC5DAEA01DBDDBA400D88C30 /* MSLiveWorkHeaderView.m in Sources */,
 				BC25B9A81DA1F1E2008EDFB2 /* NSString+Code.m in Sources */,
+				18B287FF1E1FE25900FFC27C /* MSHomePersonCell.m in Sources */,
 				BC7601C41DB8695D0006A034 /* MSSearchTableViewController.m in Sources */,
 				BC770A801DBB68BA00B74772 /* MSLiveWorkFillInViewController.m in Sources */,
 				BC7601C91DB8695D0006A034 /* MSToolManageViewController.m in Sources */,
@@ -1652,11 +1703,13 @@
 				BCF898771DAB67EC001A825B /* JKPromptView.m in Sources */,
 				BC25B9D41DA1F3E4008EDFB2 /* MSNetworking.m in Sources */,
 				BCF8986A1DAB67EC001A825B /* NSURL+DNIMagePickerUrlEqual.m in Sources */,
+				18B287EA1E1FD8ED00FFC27C /* MSCircleView.m in Sources */,
 				BCF898661DAB67EC001A825B /* DNImagePickerController.m in Sources */,
 				BC25B9AC1DA1F1E2008EDFB2 /* UIView+RoundedCorner.m in Sources */,
 				BC7601D21DB874080006A034 /* MSToolOutInInfosQueryViewController.m in Sources */,
 				BCF898731DAB67EC001A825B /* DNFullImageButton.m in Sources */,
 				BC5DAE9A1DBDB7CC00D88C30 /* MSLiveWorkMeetingCell.m in Sources */,
+				18B287E91E1FD8ED00FFC27C /* MSCircleBaseCell.m in Sources */,
 				BC7601BD1DB8695D0006A034 /* MSHomeViewController.m in Sources */,
 				18580C991DB2259300631F00 /* QRCodeReaderAanimationLineView.m in Sources */,
 				BCF8986C1DAB67EC001A825B /* UIView+DNImagePicker.m in Sources */,
@@ -1704,6 +1757,8 @@
 				18542FA11E1D280B0094DC13 /* MSMaterialToolViewController.m in Sources */,
 				18580C9B1DB2259300631F00 /* QRCodeReaderView.m in Sources */,
 				BC2954EE1DC8A46B0044D9C9 /* MSDialog.m in Sources */,
+				18B287F31E1FDC4700FFC27C /* MSHomeBannaerCell.m in Sources */,
+				18B287F61E1FDDA100FFC27C /* MSHomeBannerModel.m in Sources */,
 				BCF8988A1DAB889D001A825B /* PBImageScrollerViewController.m in Sources */,
 				BC25B9A71DA1F1E2008EDFB2 /* NSDate+MSExtension.m in Sources */,
 				BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */,
@@ -1720,6 +1775,7 @@
 				BC7C07601DBF516000896351 /* MSBaseView.m in Sources */,
 				BC76016B1DB869440006A034 /* MSBaseTableViewCell.m in Sources */,
 				BC7601B91DB8695D0006A034 /* MSOutInInfoCell.m in Sources */,
+				18B287ED1E1FD99200FFC27C /* MSPersonModel.m in Sources */,
 				BC76016D1DB869440006A034 /* MSBaseSearchResultViewController.m in Sources */,
 				BC7601CB1DB8695D0006A034 /* MSToolInfoFillInSection.m in Sources */,
 				18580C981DB2259300631F00 /* QRCodeReader.m in Sources */,
