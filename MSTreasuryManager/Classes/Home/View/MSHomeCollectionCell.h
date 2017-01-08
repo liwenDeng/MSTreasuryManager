@@ -6,9 +6,9 @@
 //  Copyright © 2016年 邓利文. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MSBaseCollectionViewCell.h"
 
-@interface MSHomeCollectionCell : UICollectionViewCell
+@interface MSHomeCollectionCell : MSBaseCollectionViewCell
 
 - (void)fillWithTitle:(NSString *)title;
 

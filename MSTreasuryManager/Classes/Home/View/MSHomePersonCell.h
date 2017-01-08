@@ -6,9 +6,13 @@
 //  Copyright © 2017年 邓利文. All rights reserved.
 //
 
-#import "MSBaseTableViewCell.h"
+#import "MSBaseCollectionViewCell.h"
 #import "MSPersonModel.h"
 
-@interface MSHomePersonCell : MSBaseTableViewCell
+#define kMSPersonCellWidth  (kSCREEN_WIDTH / 3.0)
+#define kMSPersonCellHeight (kSCREEN_WIDTH / 2.0)
+//static CGFloat const kMSPersonCellHeight = 104;
+
+@interface MSHomePersonCell : MSBaseCollectionViewCell
 
 @end

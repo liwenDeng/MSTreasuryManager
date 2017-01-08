@@ -105,8 +105,8 @@
     
     [self.circleView addTapBlock:^(NSInteger index) {
         if ([weakSelf.delegate respondsToSelector:@selector(classBanner:clickedAtIndex:classBannerModel:)]) {
-            MSClassModel *bannerModel = baseBanners[index];
-            [weakSelf.delegate classBanner:weakSelf clickedAtIndex:index classBannerModel:bannerModel];
+//            MSClassModel *bannerModel = baseBanners[index];
+            [weakSelf.delegate classBanner:weakSelf clickedAtIndex:index classBannerModel:nil];
         }
     }];
 }

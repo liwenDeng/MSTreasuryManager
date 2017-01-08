@@ -6,7 +6,7 @@
 //  Copyright © 2017年 邓利文. All rights reserved.
 //
 
-#import "MSBaseTableViewCell.h"
+#import "MSBaseCollectionViewCell.h"
 #import "MSHomeBannerModel.h"
 
 static CGFloat const kMSHomeBannerHeight = 140;
@@ -20,7 +20,7 @@ static CGFloat const kMSHomeControlHeight = 30;
 
 @end
 
-@interface MSHomeBannaerCell : MSBaseTableViewCell
+@interface MSHomeBannaerCell : MSBaseCollectionViewCell
 
 @property (nonatomic, weak) id<MSHomeBannaerCellDelegate> delegate;
 

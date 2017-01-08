@@ -122,6 +122,9 @@
 }
 
 - (void)addUser:(NSString *)user {
+    if (!user.length) {
+        return;
+    }
     [self.tagList addTag:user];
     CGFloat height = self.tagList.height;
     [self.tagList mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -130,6 +133,9 @@
 }
 
 - (void)addUsers:(NSArray *)users {
+    if (!users.count) {
+        return;
+    }
     [self.tagList addTags:users];
     CGFloat height = self.tagList.height;
     [self.tagList mas_updateConstraints:^(MASConstraintMaker *make) {

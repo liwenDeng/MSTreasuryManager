@@ -68,8 +68,24 @@ typedef enum : NSUInteger {
 
 - (void)loadMore {
     self.pageNo++;
-    [MSNetworking getToolOutInList:@"" status:self.status success:^(NSDictionary *object) {
-        
+//    [MSNetworking getToolOutInList:@"" status:self.status success:^(NSDictionary *object) {
+//        
+//        NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+//        [self.tableView.mj_footer endRefreshing];
+//        if (list.count >= kPageSize) {
+//            [self.totalList addObjectsFromArray:list];
+//            [self.tableView reloadData];
+//        }else {
+//            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+//        }
+//        
+//        [SVProgressHUD dismiss];
+//    } failure:^(NSError *error) {
+//        self.pageNo--;
+//        [SVProgressHUD showErrorWithStatus:@"获取数据失败"];
+//    }];
+    
+    [MSNetworking getToolList:@"" status:self.status pageNo:self.pageNo success:^(NSDictionary *object) {
         NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
         [self.tableView.mj_footer endRefreshing];
         if (list.count >= kPageSize) {
