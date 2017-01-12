@@ -50,6 +50,8 @@
 		18B288461E22792900FFC27C /* KINWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B2883A1E22792900FFC27C /* KINWebBrowserViewController.m */; };
 		18B288471E22792900FFC27C /* TUSafariActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B2883C1E22792900FFC27C /* TUSafariActivity.m */; };
 		18D4C12A1E1E819D0031A74E /* MSLiveWorkRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C1291E1E819D0031A74E /* MSLiveWorkRecordCell.m */; };
+		18D9B02A1E27C1A200300244 /* MSHomeApiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9B0291E27C1A200300244 /* MSHomeApiTest.m */; };
+		18D9B02D1E27C2B200300244 /* MSNetworking+HomeApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9B02C1E27C2B200300244 /* MSNetworking+HomeApi.m */; };
 		37B909AF91BD9E1EEA2AC706 /* libPods-MSTreasuryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50451818B7BCADBBF7EDF5D /* libPods-MSTreasuryManager.a */; };
 		3A7C5FDB01369BBDCA4DC293 /* libPods-MSTreasuryManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */; };
 		43690FD02A5F3C579B2F199B /* libPods-MSTreasuryManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD14FB8AD8938064E1CA623 /* libPods-MSTreasuryManagerTests.a */; };
@@ -273,6 +275,10 @@
 		18B2883C1E22792900FFC27C /* TUSafariActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUSafariActivity.m; sourceTree = "<group>"; };
 		18D4C1281E1E819D0031A74E /* MSLiveWorkRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveWorkRecordCell.h; sourceTree = "<group>"; };
 		18D4C1291E1E819D0031A74E /* MSLiveWorkRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkRecordCell.m; sourceTree = "<group>"; };
+		18D9B0281E27C1A200300244 /* MSHomeApiTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeApiTest.h; sourceTree = "<group>"; };
+		18D9B0291E27C1A200300244 /* MSHomeApiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeApiTest.m; sourceTree = "<group>"; };
+		18D9B02B1E27C2B200300244 /* MSNetworking+HomeApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSNetworking+HomeApi.h"; sourceTree = "<group>"; };
+		18D9B02C1E27C2B200300244 /* MSNetworking+HomeApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MSNetworking+HomeApi.m"; sourceTree = "<group>"; };
 		3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSTreasuryManagerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8E0C5D4687480595A21928 /* Pods-MSTreasuryManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManagerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManagerUITests/Pods-MSTreasuryManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75F47D9C8AB86418EDA43784 /* Pods-MSTreasuryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -812,6 +818,8 @@
 				BC4D23B91DCC33DE00FC962D /* MSLiveWorkTest.m */,
 				BC8CB0211DD1AB3000B31AE7 /* MSToolApiTest.h */,
 				BC8CB0221DD1AB3000B31AE7 /* MSToolApiTest.m */,
+				18D9B0281E27C1A200300244 /* MSHomeApiTest.h */,
+				18D9B0291E27C1A200300244 /* MSHomeApiTest.m */,
 				BC25B91E1DA1ED8C008EDFB2 /* Info.plist */,
 			);
 			path = MSTreasuryManagerTests;
@@ -865,6 +873,8 @@
 				BC5730A41DCB5F860064243F /* MSNetworking+LiveWork.m */,
 				BC8CB01B1DD16E7900B31AE7 /* MSNetworking+Tool.h */,
 				BC8CB01C1DD16E7900B31AE7 /* MSNetworking+Tool.m */,
+				18D9B02B1E27C2B200300244 /* MSNetworking+HomeApi.h */,
+				18D9B02C1E27C2B200300244 /* MSNetworking+HomeApi.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1731,6 +1741,7 @@
 				BC00DCC41DA8D5770063F7FE /* YZInputView.m in Sources */,
 				BCF898681DAB67EC001A825B /* DNPhotoBrowser.m in Sources */,
 				18580C9A1DB2259300631F00 /* QRCodeReaderMaskView.m in Sources */,
+				18D9B02D1E27C2B200300244 /* MSNetworking+HomeApi.m in Sources */,
 				BC7601BF1DB8695D0006A034 /* MSMaterialInfoFetchViewController.m in Sources */,
 				BC7601D51DB882170006A034 /* MSToolSectionHeaderView.m in Sources */,
 				BCF8987A1DAB6E88001A825B /* UIImage+Custom.m in Sources */,
@@ -1866,6 +1877,7 @@
 				BC5CBE6E1DC6D039003FA945 /* MSMaterialApiTest.m in Sources */,
 				BC25B91D1DA1ED8C008EDFB2 /* MSTreasuryManagerTests.m in Sources */,
 				BC4D23BA1DCC33DE00FC962D /* MSLiveWorkTest.m in Sources */,
+				18D9B02A1E27C1A200300244 /* MSHomeApiTest.m in Sources */,
 				BC5CBE6B1DC6CFF8003FA945 /* MSBaseApiTest.m in Sources */,
 				BC8CB0231DD1AB3000B31AE7 /* MSToolApiTest.m in Sources */,
 			);

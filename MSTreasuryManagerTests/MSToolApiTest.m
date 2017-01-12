@@ -10,6 +10,8 @@
 #import "MSNetworking+Tool.h"
 #import "NSString+Code.h"
 #import "MSNetworking.h"
+#import "MSAccountManager.h"
+
 
 @implementation MSToolApiTest
 
@@ -26,6 +28,8 @@
 }
 
 - (void)testToolList {
+    [MSAccountManager sharedManager];
+    
     [self waitForGroup:^(dispatch_group_t group) {
         [MSNetworking getToolList:nil pageNo:1 success:^(NSDictionary *object) {
             NSArray *toolList = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
