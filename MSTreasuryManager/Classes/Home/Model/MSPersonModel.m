@@ -10,4 +10,8 @@
 
 @implementation MSPersonModel
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{@"personId" : @"id"};
+}
+
 @end

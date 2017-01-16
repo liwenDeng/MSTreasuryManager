@@ -13,11 +13,16 @@
  */
 @interface MSPersonModel : NSObject
 
+@property (nonatomic, assign) NSInteger personId;
+
 @property (nonatomic, copy) NSString *name; //姓名
-@property (nonatomic, copy) NSString *des;  //介绍
+@property (nonatomic, copy) NSString *gender;   //性别
+@property (nonatomic, assign) NSInteger age;
 @property (nonatomic, copy) NSString *phone;    //电话
-@property (nonatomic, copy) NSString *zhiwei;   //职位
-@property (nonatomic, copy) NSString *className;//班组
-@property (nonatomic, copy) NSString *logoUrl;
+@property (nonatomic, copy) NSString *img;  //头像
+@property (nonatomic, copy) NSString *introduction;  //介绍
+@property (nonatomic, copy) NSString *job;   //职位 0-班组长，1-班组工程师，2-班组安全员，3-班组成员)
+@property (nonatomic, copy) NSString *teamId;//班组id
+@property (nonatomic, copy) NSString *createTime; //创建时间
 
 @end

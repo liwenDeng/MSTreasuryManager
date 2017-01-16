@@ -23,4 +23,37 @@
     }];
 }
 
+- (void)testClassList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getClassListSuccess:^(NSDictionary *object) {
+            
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
+- (void)testPersonList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getPersonListSuccess:^(NSDictionary *object) {
+            
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
+- (void)testPersonDetail {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getPersonDetailInfoPersonId:5 success:^(NSDictionary *object) {
+            
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
 @end

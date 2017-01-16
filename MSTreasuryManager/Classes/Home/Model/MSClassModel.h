@@ -13,10 +13,12 @@
  */
 @interface MSClassModel : NSObject
 
-@property (nonatomic, copy) NSString *name;//班组名称
-@property (nonatomic, copy) NSString *des;  //描述
-@property (nonatomic, copy) NSString *linian;   //理念
-@property (nonatomic, copy) NSString *kouhao;   //口号
-@property (nonatomic, copy) NSString *logoUrl;
+@property (nonatomic, assign) NSInteger classId;    //id
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *introduction;//班组简介
+@property (nonatomic, copy) NSString *ideal;  //班组理念
+@property (nonatomic, copy) NSString *catchWord;   //口号
+@property (nonatomic, copy) NSString *logo;
+@property (nonatomic, copy) NSString *timeAxis;
 
 @end

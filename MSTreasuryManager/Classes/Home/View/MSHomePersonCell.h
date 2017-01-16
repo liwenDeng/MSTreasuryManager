@@ -10,9 +10,11 @@
 #import "MSPersonModel.h"
 
 #define kMSPersonCellWidth  (kSCREEN_WIDTH / 3.0)
-#define kMSPersonCellHeight (kSCREEN_WIDTH / 2.0)
+#define kMSPersonCellHeight (kSCREEN_WIDTH / 3.0) + 15
 //static CGFloat const kMSPersonCellHeight = 104;
 
 @interface MSHomePersonCell : MSBaseCollectionViewCell
+
+- (void)fillWithPerson:(MSPersonModel *)personModel;
 
 @end

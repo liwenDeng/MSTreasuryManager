@@ -22,4 +22,42 @@
     }];
 }
 
++ (NSURLSessionDataTask *)getClassListSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/teamgroup"];
+    action.params[@"pageNo"] = @"0";
+    action.params[@"pageSize"] = @(kPageSize);
+    [action setHttpMethod:HttpPost];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
++ (NSURLSessionDataTask *)getPersonListSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/staff"];
+    action.params[@"pageNo"] = @"0";
+    action.params[@"pageSize"] = @(kPageSize);
+    [action setHttpMethod:HttpPost];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
++ (NSURLSessionDataTask *)getPersonDetailInfoPersonId:(NSInteger)personId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/staff/detail"];
+    action.params[@"id"] = @(personId);
+    [action setHttpMethod:HttpPost];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 @end

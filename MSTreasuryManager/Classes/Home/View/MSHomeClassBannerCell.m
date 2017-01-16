@@ -82,12 +82,11 @@
 
 - (void)fillWithBannerModels:(NSArray *)bannerModels {
     NSMutableArray *urls = [NSMutableArray array];
-    NSMutableArray *baseBanners = [NSMutableArray array];
+
     
     for ( MSClassModel * model in bannerModels) {
-        [urls addObject:@"http://139.196.112.30:8080/web/img/user-default.jpg"];
+        [urls addObject:model.logo.length ? model.logo : @""];
     }
-    
     self.circleView.imageArray = urls;
     
     self.pageControl.numberOfPages = urls.count;
@@ -98,15 +97,15 @@
     
     [self.circleView configCustomCell:^(MSCircleBaseCell *customCell, NSInteger index) {
         MSClassBannerCell *cell = (MSClassBannerCell *)customCell;
-//        MSClassModel *bannerModel = baseBanners[index];
-//        cell.titleLabel.text = bannerModel.title;
-        cell.titleLabel.text = @"测试";
+        MSClassModel *bannerModel = bannerModels[index];
+        cell.titleLabel.text = bannerModel.name;
+        [cell.imaView sd_setImageWithURL:[NSURL URLWithString:bannerModel.logo] placeholderImage:[UIImage imageNamed:@"tool"]];
     }];
     
     [self.circleView addTapBlock:^(NSInteger index) {
         if ([weakSelf.delegate respondsToSelector:@selector(classBanner:clickedAtIndex:classBannerModel:)]) {
-//            MSClassModel *bannerModel = baseBanners[index];
-            [weakSelf.delegate classBanner:weakSelf clickedAtIndex:index classBannerModel:nil];
+            MSClassModel *bannerModel = bannerModels[index];
+            [weakSelf.delegate classBanner:weakSelf clickedAtIndex:index classBannerModel:bannerModel];
         }
     }];
 }

@@ -12,4 +12,10 @@
 
 + (NSURLSessionDataTask *)getHomeBannerListSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
++ (NSURLSessionDataTask *)getClassListSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
++ (NSURLSessionDataTask *)getPersonListSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
++ (NSURLSessionDataTask *)getPersonDetailInfoPersonId:(NSInteger)personId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
 @end

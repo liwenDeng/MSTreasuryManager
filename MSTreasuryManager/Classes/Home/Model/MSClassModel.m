@@ -10,4 +10,8 @@
 
 @implementation MSClassModel
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{@"classId" : @"id"};
+}
+
 @end

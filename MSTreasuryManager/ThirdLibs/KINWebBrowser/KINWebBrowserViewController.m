@@ -419,6 +419,7 @@ static void *KINWebBrowserContext = &KINWebBrowserContext;
     self.fixedSeparator = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     self.fixedSeparator.width = 50.0f;
     self.flexibleSeparator = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    self.actionButtonHidden = YES;
 }
 
 #pragma mark - Done Button Action

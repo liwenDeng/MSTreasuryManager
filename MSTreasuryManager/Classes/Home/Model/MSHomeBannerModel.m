@@ -10,4 +10,8 @@
 
 @implementation MSHomeBannerModel
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{@"bannerId" : @"id"};
+}
+
 @end

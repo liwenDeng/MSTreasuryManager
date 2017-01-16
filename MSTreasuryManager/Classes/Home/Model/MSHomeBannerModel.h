@@ -10,4 +10,9 @@
 
 @interface MSHomeBannerModel : NSObject
 
+@property (nonatomic, assign) NSInteger bannerId;
+@property (nonatomic, copy)   NSString *img;    //banner图片地址
+@property (nonatomic, copy)   NSString *url;
+@property (nonatomic, assign) NSInteger cate;   //banner类型
+
 @end
