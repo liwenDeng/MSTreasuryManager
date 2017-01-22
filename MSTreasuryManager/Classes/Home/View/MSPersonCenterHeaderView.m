@@ -28,7 +28,6 @@
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);
         }];
-        view.image = [UIImage imageNamed:@"1.jpg"];
         view;
     });
     
@@ -59,7 +58,6 @@
             make.left.equalTo(_nameLabel.mas_right).offset(5);
             make.size.mas_equalTo(CGSizeMake(15, 15));
         }];
-        view.image = [UIImage imageNamed:@"male"];
         view;
     });
     
@@ -71,17 +69,27 @@
             make.size.mas_equalTo(CGSizeMake(60, 60));
             make.bottom.equalTo(_nameLabel.mas_top).offset(-15);
         }];
-        view.image = [UIImage imageNamed:@"1.jpg"];
         view.layer.cornerRadius = 30;
         view.clipsToBounds = YES;
         view;
     });
     
-    [self testData];
+//    [self testData];
 }
 
 - (void)testData{
     self.nameLabel.text = @"王能进";
+}
+
+- (void)fillWithPerson:(MSPersonModel *)person {
+    self.nameLabel.text = person.name;
+    [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:person.img] placeholderImage:[UIImage imageNamed:@"1.jpg"]];
+    [self.headIcon sd_setImageWithURL:[NSURL URLWithString:person.img] placeholderImage:[UIImage imageNamed:@"1.jpg"]];
+    if (person.gender == MSGenderMale) {
+        self.genderView.image = [UIImage imageNamed:@"male"];
+    }else {
+        self.genderView.image = [UIImage imageNamed:@"female"];
+    }
 }
 
 @end

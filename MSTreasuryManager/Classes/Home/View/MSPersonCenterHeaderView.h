@@ -7,9 +7,14 @@
 //
 
 #import "MSBaseView.h"
+#import "MSPersonModel.h"
 
 static CGFloat const kHeaderViewHeight = 200;
 
 @interface MSPersonCenterHeaderView : MSBaseView
+
+@property (nonatomic, strong) MSPersonModel *personModel;
+
+- (void)fillWithPerson:(MSPersonModel *)person;
 
 @end

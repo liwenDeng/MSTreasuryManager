@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1802F7821E30FFB40074134E /* MSPersonCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F7811E30FFB40074134E /* MSPersonCenterCell.m */; };
 		183698491E2A66B300132937 /* MSPersonCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183698481E2A66B300132937 /* MSPersonCenterViewController.m */; };
 		1836984C1E2A66F200132937 /* MSPersonCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1836984B1E2A66F200132937 /* MSPersonCenterHeaderView.m */; };
 		1836984E1E2A6B6500132937 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1836984D1E2A6B6500132937 /* 1.jpg */; };
@@ -209,6 +210,8 @@
 
 /* Begin PBXFileReference section */
 		03C01CE9C2B33EF403CE9DCC /* Pods-MSTreasuryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.debug.xcconfig"; sourceTree = "<group>"; };
+		1802F7801E30FFB40074134E /* MSPersonCenterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPersonCenterCell.h; sourceTree = "<group>"; };
+		1802F7811E30FFB40074134E /* MSPersonCenterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPersonCenterCell.m; sourceTree = "<group>"; };
 		183698471E2A66B300132937 /* MSPersonCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPersonCenterViewController.h; sourceTree = "<group>"; };
 		183698481E2A66B300132937 /* MSPersonCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPersonCenterViewController.m; sourceTree = "<group>"; };
 		1836984A1E2A66F200132937 /* MSPersonCenterHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPersonCenterHeaderView.h; sourceTree = "<group>"; };
@@ -1165,6 +1168,8 @@
 				BC7601891DB8695D0006A034 /* MSPhotoPadView.m */,
 				1836984A1E2A66F200132937 /* MSPersonCenterHeaderView.h */,
 				1836984B1E2A66F200132937 /* MSPersonCenterHeaderView.m */,
+				1802F7801E30FFB40074134E /* MSPersonCenterCell.h */,
+				1802F7811E30FFB40074134E /* MSPersonCenterCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1879,6 +1884,7 @@
 				BC76016A1DB869440006A034 /* MSBaseDatePickerView.m in Sources */,
 				BC7601B71DB8695D0006A034 /* MSMaterialFillInNomalSection.m in Sources */,
 				BC8CB01D1DD16E7900B31AE7 /* MSNetworking+Tool.m in Sources */,
+				1802F7821E30FFB40074134E /* MSPersonCenterCell.m in Sources */,
 				185522B51DD6023D0093EFF8 /* MSMaterialRightHandleSection.m in Sources */,
 				BC5CBE8D1DC6F4FA003FA945 /* MSStaffModel.m in Sources */,
 				BC7C07601DBF516000896351 /* MSBaseView.m in Sources */,
@@ -2054,6 +2060,7 @@
 			baseConfigurationReference = 03C01CE9C2B33EF403CE9DCC /* Pods-MSTreasuryManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5PE9ABT84P;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Main/MSPrefixHeader.pch";
@@ -2071,6 +2078,7 @@
 			baseConfigurationReference = 75F47D9C8AB86418EDA43784 /* Pods-MSTreasuryManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5PE9ABT84P;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Main/MSPrefixHeader.pch";

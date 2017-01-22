@@ -44,48 +44,26 @@ typedef enum : NSUInteger {
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.type == MSToolCellIndexOfTypeBorrowList ? @"借用记录查询" : @"归还记录查询";
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)requestAllData {
     self.pageNo = 1;
     [SVProgressHUD show];
-    [MSNetworking getToolOutInList:@"" status:self.status success:^(NSDictionary *object) {
-    
+    [MSNetworking getToolOutInList:@"" pageNo:self.pageNo status:self.status success:^(NSDictionary *object) {
         NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
         self.totalList = [NSMutableArray arrayWithArray:list];
         [self.tableView reloadData];
         [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
-
-        [SVProgressHUD dismiss];
+        self.pageNo--;
         [SVProgressHUD showErrorWithStatus:@"获取数据失败"];
-        
     }];
     
 }
 
 - (void)loadMore {
     self.pageNo++;
-//    [MSNetworking getToolOutInList:@"" status:self.status success:^(NSDictionary *object) {
-//        
-//        NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
-//        [self.tableView.mj_footer endRefreshing];
-//        if (list.count >= kPageSize) {
-//            [self.totalList addObjectsFromArray:list];
-//            [self.tableView reloadData];
-//        }else {
-//            [self.tableView.mj_footer endRefreshingWithNoMoreData];
-//        }
-//        
-//        [SVProgressHUD dismiss];
-//    } failure:^(NSError *error) {
-//        self.pageNo--;
-//        [SVProgressHUD showErrorWithStatus:@"获取数据失败"];
-//    }];
-    
-    [MSNetworking getToolList:@"" status:self.status pageNo:self.pageNo success:^(NSDictionary *object) {
+    [MSNetworking getToolOutInList:@"" pageNo:self.pageNo status:self.status  success:^(NSDictionary *object) {
         NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
         [self.tableView.mj_footer endRefreshing];
         if (list.count >= kPageSize) {
@@ -108,7 +86,7 @@ typedef enum : NSUInteger {
     self.searchPageNo = 1;
     self.resultViewController.tableView.mj_footer.hidden = NO;
     [SVProgressHUD show];
-    [MSNetworking getToolOutInList:self.searchController.searchBar.text status:self.status success:^(NSDictionary *object) {
+    [MSNetworking getToolOutInList:self.searchController.searchBar.text  pageNo:self.searchPageNo status:self.status success:^(NSDictionary *object) {
         NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
         self.searchList = [NSMutableArray arrayWithArray:list];
         [self.resultViewController.tableView reloadData];
@@ -122,7 +100,7 @@ typedef enum : NSUInteger {
 
 - (void)loadMoreResult {
     self.searchPageNo++;
-    [MSNetworking getToolOutInList:self.searchController.searchBar.text status:self.status success:^(NSDictionary *object) {
+    [MSNetworking getToolOutInList:self.searchController.searchBar.text  pageNo:self.searchPageNo status:self.status success:^(NSDictionary *object) {
         NSArray *list = [MSToolModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
         [self.resultViewController.tableView.mj_footer endRefreshing];
         [SVProgressHUD dismiss];

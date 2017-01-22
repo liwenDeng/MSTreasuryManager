@@ -85,7 +85,12 @@
 - (void)fillWithPerson:(MSPersonModel *)personModel {
     [_headIcon sd_setImageWithURL:[NSURL URLWithString:personModel.img] placeholderImage:[UIImage imageNamed:@"album"]];
     _nameLabel.text = personModel.name;
-//    _classNameLabel.text = personModel.
+    _classNameLabel.text = personModel.team;
+    if (personModel.gender == MSGenderMale) {
+        self.genderIcon.image = [UIImage imageNamed:@"male"];
+    }else {
+        self.genderIcon.image = [UIImage imageNamed:@"female"];
+    }
 }
 
 @end
