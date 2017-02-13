@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "MSNetworking.h"
 #import <MJExtension.h>
+#import "MSAccountManager.h"
 
 @interface MSBaseApiTest : XCTestCase
 

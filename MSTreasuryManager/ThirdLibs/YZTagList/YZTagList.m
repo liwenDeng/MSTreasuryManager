@@ -113,6 +113,9 @@ CGFloat const imageViewWH = 20;
 // 添加标签
 - (void)addTag:(NSString *)tagStr
 {
+    if (!tagStr.length) {
+        return;
+    }
     Class tagClass = _tagClass?_tagClass : [YZTagButton class];
   
     // 创建标签按钮

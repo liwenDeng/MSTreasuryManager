@@ -9,7 +9,7 @@
 #import "MSBaseTableViewController.h"
 #import "MSHomeViewController.h"
 /**
- 出库入库记录查询
+ 物资出库入库记录查询
  */
 @interface MSOutInInfosQueryViewController : MSBaseTableViewController
 

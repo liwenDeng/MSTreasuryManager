@@ -40,6 +40,8 @@
  
  */
 + (NSURLSessionDataTask *)getToolOutInList:(NSString* )toolName status:(NSInteger)status  success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+// 分页
++ (NSURLSessionDataTask *)getToolOutInList:(NSString *)toolName pageNo:(NSInteger)pageNo status:(NSInteger)status success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 /**
  工器具借用/借出详情

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1802F7821E30FFB40074134E /* MSPersonCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F7811E30FFB40074134E /* MSPersonCenterCell.m */; };
+		183698491E2A66B300132937 /* MSPersonCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183698481E2A66B300132937 /* MSPersonCenterViewController.m */; };
+		1836984C1E2A66F200132937 /* MSPersonCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1836984B1E2A66F200132937 /* MSPersonCenterHeaderView.m */; };
+		1836984E1E2A6B6500132937 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1836984D1E2A6B6500132937 /* 1.jpg */; };
+		183698511E2A72E800132937 /* MSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183698501E2A72E800132937 /* MSTableViewController.m */; };
+		18542F961E1D27630094DC13 /* MSNewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18542F951E1D27630094DC13 /* MSNewHomeViewController.m */; };
+		18542FA11E1D280B0094DC13 /* MSMaterialToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18542FA01E1D280B0094DC13 /* MSMaterialToolViewController.m */; };
+		18542FA41E1D28230094DC13 /* MSBugNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18542FA31E1D28230094DC13 /* MSBugNotesViewController.m */; };
 		185522B51DD6023D0093EFF8 /* MSMaterialRightHandleSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 185522B41DD6023D0093EFF8 /* MSMaterialRightHandleSection.m */; };
 		18580C971DB2259300631F00 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C7F1DB2259300631F00 /* QRCameraSwitchButton.m */; };
 		18580C981DB2259300631F00 /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 18580C811DB2259300631F00 /* QRCodeReader.m */; };
@@ -24,6 +32,31 @@
 		18580CA41DB2259300631F00 /* QRCodeTopLeft@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C941DB2259300631F00 /* QRCodeTopLeft@3x.png */; };
 		18580CA51DB2259300631F00 /* QRCodeTopRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C951DB2259300631F00 /* QRCodeTopRight@2x.png */; };
 		18580CA61DB2259300631F00 /* QRCodeTopRight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18580C961DB2259300631F00 /* QRCodeTopRight@3x.png */; };
+		18B287E91E1FD8ED00FFC27C /* MSCircleBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287E61E1FD8ED00FFC27C /* MSCircleBaseCell.m */; };
+		18B287EA1E1FD8ED00FFC27C /* MSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287E81E1FD8ED00FFC27C /* MSCircleView.m */; };
+		18B287ED1E1FD99200FFC27C /* MSPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287EC1E1FD99200FFC27C /* MSPersonModel.m */; };
+		18B287F01E1FD9A200FFC27C /* MSClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287EF1E1FD9A200FFC27C /* MSClassModel.m */; };
+		18B287F31E1FDC4700FFC27C /* MSHomeBannaerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287F21E1FDC4700FFC27C /* MSHomeBannaerCell.m */; };
+		18B287F61E1FDDA100FFC27C /* MSHomeBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287F51E1FDDA100FFC27C /* MSHomeBannerModel.m */; };
+		18B287FC1E1FE00500FFC27C /* MSHomeClassBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287FB1E1FE00500FFC27C /* MSHomeClassBannerCell.m */; };
+		18B287FF1E1FE25900FFC27C /* MSHomePersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B287FE1E1FE25900FFC27C /* MSHomePersonCell.m */; };
+		18B288271E22789E00FFC27C /* MSBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B288261E22789E00FFC27C /* MSBaseCollectionViewCell.m */; };
+		18B2882C1E2278C400FFC27C /* MSBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B288281E2278C400FFC27C /* MSBaseWebViewController.m */; };
+		18B2882D1E2278C400FFC27C /* MSBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B2882B1E2278C400FFC27C /* MSBaseCollectionViewController.m */; };
+		18B2883D1E22792900FFC27C /* ARChromeActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B288301E22792900FFC27C /* ARChromeActivity.m */; };
+		18B2883E1E22792900FFC27C /* ARChromeActivity.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B288311E22792900FFC27C /* ARChromeActivity.png */; };
+		18B2883F1E22792900FFC27C /* ARChromeActivity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B288321E22792900FFC27C /* ARChromeActivity@2x.png */; };
+		18B288401E22792900FFC27C /* ARChromeActivity@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B288331E22792900FFC27C /* ARChromeActivity@2x~ipad.png */; };
+		18B288411E22792900FFC27C /* ARChromeActivity@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B288341E22792900FFC27C /* ARChromeActivity@3x.png */; };
+		18B288421E22792900FFC27C /* ARChromeActivity@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B288351E22792900FFC27C /* ARChromeActivity@3x~ipad.png */; };
+		18B288431E22792900FFC27C /* ARChromeActivity~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B288361E22792900FFC27C /* ARChromeActivity~ipad.png */; };
+		18B288441E22792900FFC27C /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B288371E22792900FFC27C /* back.png */; };
+		18B288451E22792900FFC27C /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B288381E22792900FFC27C /* forward.png */; };
+		18B288461E22792900FFC27C /* KINWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B2883A1E22792900FFC27C /* KINWebBrowserViewController.m */; };
+		18B288471E22792900FFC27C /* TUSafariActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B2883C1E22792900FFC27C /* TUSafariActivity.m */; };
+		18D4C12A1E1E819D0031A74E /* MSLiveWorkRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C1291E1E819D0031A74E /* MSLiveWorkRecordCell.m */; };
+		18D9B02A1E27C1A200300244 /* MSHomeApiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9B0291E27C1A200300244 /* MSHomeApiTest.m */; };
+		18D9B02D1E27C2B200300244 /* MSNetworking+HomeApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9B02C1E27C2B200300244 /* MSNetworking+HomeApi.m */; };
 		37B909AF91BD9E1EEA2AC706 /* libPods-MSTreasuryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50451818B7BCADBBF7EDF5D /* libPods-MSTreasuryManager.a */; };
 		3A7C5FDB01369BBDCA4DC293 /* libPods-MSTreasuryManagerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */; };
 		43690FD02A5F3C579B2F199B /* libPods-MSTreasuryManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD14FB8AD8938064E1CA623 /* libPods-MSTreasuryManagerTests.a */; };
@@ -179,6 +212,21 @@
 
 /* Begin PBXFileReference section */
 		03C01CE9C2B33EF403CE9DCC /* Pods-MSTreasuryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.debug.xcconfig"; sourceTree = "<group>"; };
+		1802F7801E30FFB40074134E /* MSPersonCenterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPersonCenterCell.h; sourceTree = "<group>"; };
+		1802F7811E30FFB40074134E /* MSPersonCenterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPersonCenterCell.m; sourceTree = "<group>"; };
+		183698471E2A66B300132937 /* MSPersonCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPersonCenterViewController.h; sourceTree = "<group>"; };
+		183698481E2A66B300132937 /* MSPersonCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPersonCenterViewController.m; sourceTree = "<group>"; };
+		1836984A1E2A66F200132937 /* MSPersonCenterHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPersonCenterHeaderView.h; sourceTree = "<group>"; };
+		1836984B1E2A66F200132937 /* MSPersonCenterHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPersonCenterHeaderView.m; sourceTree = "<group>"; };
+		1836984D1E2A6B6500132937 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		1836984F1E2A72E800132937 /* MSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTableViewController.h; sourceTree = "<group>"; };
+		183698501E2A72E800132937 /* MSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTableViewController.m; sourceTree = "<group>"; };
+		18542F941E1D27630094DC13 /* MSNewHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNewHomeViewController.h; sourceTree = "<group>"; };
+		18542F951E1D27630094DC13 /* MSNewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNewHomeViewController.m; sourceTree = "<group>"; };
+		18542F9F1E1D280B0094DC13 /* MSMaterialToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialToolViewController.h; sourceTree = "<group>"; };
+		18542FA01E1D280B0094DC13 /* MSMaterialToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialToolViewController.m; sourceTree = "<group>"; };
+		18542FA21E1D28230094DC13 /* MSBugNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBugNotesViewController.h; sourceTree = "<group>"; };
+		18542FA31E1D28230094DC13 /* MSBugNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBugNotesViewController.m; sourceTree = "<group>"; };
 		185522B31DD6023D0093EFF8 /* MSMaterialRightHandleSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMaterialRightHandleSection.h; sourceTree = "<group>"; };
 		185522B41DD6023D0093EFF8 /* MSMaterialRightHandleSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialRightHandleSection.m; sourceTree = "<group>"; };
 		18580C7E1DB2259300631F00 /* QRCameraSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCameraSwitchButton.h; sourceTree = "<group>"; };
@@ -205,6 +253,48 @@
 		18580C951DB2259300631F00 /* QRCodeTopRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopRight@2x.png"; sourceTree = "<group>"; };
 		18580C961DB2259300631F00 /* QRCodeTopRight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeTopRight@3x.png"; sourceTree = "<group>"; };
 		18580CAA1DB25D9A00631F00 /* MSColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSColor.h; sourceTree = "<group>"; };
+		18B287E51E1FD8ED00FFC27C /* MSCircleBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCircleBaseCell.h; sourceTree = "<group>"; };
+		18B287E61E1FD8ED00FFC27C /* MSCircleBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCircleBaseCell.m; sourceTree = "<group>"; };
+		18B287E71E1FD8ED00FFC27C /* MSCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCircleView.h; sourceTree = "<group>"; };
+		18B287E81E1FD8ED00FFC27C /* MSCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCircleView.m; sourceTree = "<group>"; };
+		18B287EB1E1FD99200FFC27C /* MSPersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPersonModel.h; sourceTree = "<group>"; };
+		18B287EC1E1FD99200FFC27C /* MSPersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPersonModel.m; sourceTree = "<group>"; };
+		18B287EE1E1FD9A200FFC27C /* MSClassModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSClassModel.h; sourceTree = "<group>"; };
+		18B287EF1E1FD9A200FFC27C /* MSClassModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSClassModel.m; sourceTree = "<group>"; };
+		18B287F11E1FDC4700FFC27C /* MSHomeBannaerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeBannaerCell.h; sourceTree = "<group>"; };
+		18B287F21E1FDC4700FFC27C /* MSHomeBannaerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeBannaerCell.m; sourceTree = "<group>"; };
+		18B287F41E1FDDA100FFC27C /* MSHomeBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeBannerModel.h; sourceTree = "<group>"; };
+		18B287F51E1FDDA100FFC27C /* MSHomeBannerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeBannerModel.m; sourceTree = "<group>"; };
+		18B287FA1E1FE00500FFC27C /* MSHomeClassBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeClassBannerCell.h; sourceTree = "<group>"; };
+		18B287FB1E1FE00500FFC27C /* MSHomeClassBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeClassBannerCell.m; sourceTree = "<group>"; };
+		18B287FD1E1FE25900FFC27C /* MSHomePersonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomePersonCell.h; sourceTree = "<group>"; };
+		18B287FE1E1FE25900FFC27C /* MSHomePersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomePersonCell.m; sourceTree = "<group>"; };
+		18B288251E22789D00FFC27C /* MSBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		18B288261E22789E00FFC27C /* MSBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseCollectionViewCell.m; sourceTree = "<group>"; };
+		18B288281E2278C400FFC27C /* MSBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseWebViewController.m; sourceTree = "<group>"; };
+		18B288291E2278C400FFC27C /* MSBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseWebViewController.h; sourceTree = "<group>"; };
+		18B2882A1E2278C400FFC27C /* MSBaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseCollectionViewController.h; sourceTree = "<group>"; };
+		18B2882B1E2278C400FFC27C /* MSBaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseCollectionViewController.m; sourceTree = "<group>"; };
+		18B2882F1E22792900FFC27C /* ARChromeActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARChromeActivity.h; sourceTree = "<group>"; };
+		18B288301E22792900FFC27C /* ARChromeActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARChromeActivity.m; sourceTree = "<group>"; };
+		18B288311E22792900FFC27C /* ARChromeActivity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ARChromeActivity.png; sourceTree = "<group>"; };
+		18B288321E22792900FFC27C /* ARChromeActivity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity@2x.png"; sourceTree = "<group>"; };
+		18B288331E22792900FFC27C /* ARChromeActivity@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity@2x~ipad.png"; sourceTree = "<group>"; };
+		18B288341E22792900FFC27C /* ARChromeActivity@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity@3x.png"; sourceTree = "<group>"; };
+		18B288351E22792900FFC27C /* ARChromeActivity@3x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity@3x~ipad.png"; sourceTree = "<group>"; };
+		18B288361E22792900FFC27C /* ARChromeActivity~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity~ipad.png"; sourceTree = "<group>"; };
+		18B288371E22792900FFC27C /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		18B288381E22792900FFC27C /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		18B288391E22792900FFC27C /* KINWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KINWebBrowserViewController.h; sourceTree = "<group>"; };
+		18B2883A1E22792900FFC27C /* KINWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KINWebBrowserViewController.m; sourceTree = "<group>"; };
+		18B2883B1E22792900FFC27C /* TUSafariActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUSafariActivity.h; sourceTree = "<group>"; };
+		18B2883C1E22792900FFC27C /* TUSafariActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUSafariActivity.m; sourceTree = "<group>"; };
+		18D4C1281E1E819D0031A74E /* MSLiveWorkRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveWorkRecordCell.h; sourceTree = "<group>"; };
+		18D4C1291E1E819D0031A74E /* MSLiveWorkRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveWorkRecordCell.m; sourceTree = "<group>"; };
+		18D9B0281E27C1A200300244 /* MSHomeApiTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeApiTest.h; sourceTree = "<group>"; };
+		18D9B0291E27C1A200300244 /* MSHomeApiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeApiTest.m; sourceTree = "<group>"; };
+		18D9B02B1E27C2B200300244 /* MSNetworking+HomeApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSNetworking+HomeApi.h"; sourceTree = "<group>"; };
+		18D9B02C1E27C2B200300244 /* MSNetworking+HomeApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MSNetworking+HomeApi.m"; sourceTree = "<group>"; };
 		3B3996B452F466486FB1BF93 /* libPods-MSTreasuryManagerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSTreasuryManagerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8E0C5D4687480595A21928 /* Pods-MSTreasuryManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManagerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManagerUITests/Pods-MSTreasuryManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75F47D9C8AB86418EDA43784 /* Pods-MSTreasuryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSTreasuryManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSTreasuryManager/Pods-MSTreasuryManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -506,6 +596,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18542F971E1D27E60094DC13 /* BugNotes */ = {
+			isa = PBXGroup;
+			children = (
+				18542F981E1D27E60094DC13 /* Model */,
+				18542F991E1D27E60094DC13 /* View */,
+				18542F9A1E1D27E60094DC13 /* ViewController */,
+			);
+			path = BugNotes;
+			sourceTree = "<group>";
+		};
+		18542F981E1D27E60094DC13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18542F991E1D27E60094DC13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18542F9A1E1D27E60094DC13 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18542FA21E1D28230094DC13 /* MSBugNotesViewController.h */,
+				18542FA31E1D28230094DC13 /* MSBugNotesViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		18542F9B1E1D27E60094DC13 /* MaterialTool */ = {
+			isa = PBXGroup;
+			children = (
+				18542F9C1E1D27E60094DC13 /* Model */,
+				18542F9D1E1D27E60094DC13 /* View */,
+				18542F9E1E1D27E60094DC13 /* ViewController */,
+			);
+			path = MaterialTool;
+			sourceTree = "<group>";
+		};
+		18542F9C1E1D27E60094DC13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18542F9D1E1D27E60094DC13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18542F9E1E1D27E60094DC13 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18542F9F1E1D280B0094DC13 /* MSMaterialToolViewController.h */,
+				18542FA01E1D280B0094DC13 /* MSMaterialToolViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		18580C7D1DB2259300631F00 /* QRCodeReaderViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +706,38 @@
 				18580C961DB2259300631F00 /* QRCodeTopRight@3x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		18B287E41E1FD8ED00FFC27C /* MSCircleView */ = {
+			isa = PBXGroup;
+			children = (
+				18B287E51E1FD8ED00FFC27C /* MSCircleBaseCell.h */,
+				18B287E61E1FD8ED00FFC27C /* MSCircleBaseCell.m */,
+				18B287E71E1FD8ED00FFC27C /* MSCircleView.h */,
+				18B287E81E1FD8ED00FFC27C /* MSCircleView.m */,
+			);
+			path = MSCircleView;
+			sourceTree = "<group>";
+		};
+		18B2882E1E22792900FFC27C /* KINWebBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				18B2882F1E22792900FFC27C /* ARChromeActivity.h */,
+				18B288301E22792900FFC27C /* ARChromeActivity.m */,
+				18B288311E22792900FFC27C /* ARChromeActivity.png */,
+				18B288321E22792900FFC27C /* ARChromeActivity@2x.png */,
+				18B288331E22792900FFC27C /* ARChromeActivity@2x~ipad.png */,
+				18B288341E22792900FFC27C /* ARChromeActivity@3x.png */,
+				18B288351E22792900FFC27C /* ARChromeActivity@3x~ipad.png */,
+				18B288361E22792900FFC27C /* ARChromeActivity~ipad.png */,
+				18B288371E22792900FFC27C /* back.png */,
+				18B288381E22792900FFC27C /* forward.png */,
+				18B288391E22792900FFC27C /* KINWebBrowserViewController.h */,
+				18B2883A1E22792900FFC27C /* KINWebBrowserViewController.m */,
+				18B2883B1E22792900FFC27C /* TUSafariActivity.h */,
+				18B2883C1E22792900FFC27C /* TUSafariActivity.m */,
+			);
+			path = KINWebBrowser;
 			sourceTree = "<group>";
 		};
 		36406599D4298859C276174F /* Frameworks */ = {
@@ -649,6 +837,8 @@
 				BC4D23B91DCC33DE00FC962D /* MSLiveWorkTest.m */,
 				BC8CB0211DD1AB3000B31AE7 /* MSToolApiTest.h */,
 				BC8CB0221DD1AB3000B31AE7 /* MSToolApiTest.m */,
+				18D9B0281E27C1A200300244 /* MSHomeApiTest.h */,
+				18D9B0291E27C1A200300244 /* MSHomeApiTest.m */,
 				BC25B91E1DA1ED8C008EDFB2 /* Info.plist */,
 			);
 			path = MSTreasuryManagerTests;
@@ -666,6 +856,9 @@
 		BC25B9351DA1F0B5008EDFB2 /* ThirdLibs */ = {
 			isa = PBXGroup;
 			children = (
+				1836984D1E2A6B6500132937 /* 1.jpg */,
+				18B2882E1E22792900FFC27C /* KINWebBrowser */,
+				18B287E41E1FD8ED00FFC27C /* MSCircleView */,
 				BC5CBE761DC6EA07003FA945 /* ZCNetworking */,
 				BC770A841DBB6E9D00B74772 /* YZTagList */,
 				18580C7D1DB2259300631F00 /* QRCodeReaderViewController */,
@@ -700,6 +893,8 @@
 				BC5730A41DCB5F860064243F /* MSNetworking+LiveWork.m */,
 				BC8CB01B1DD16E7900B31AE7 /* MSNetworking+Tool.h */,
 				BC8CB01C1DD16E7900B31AE7 /* MSNetworking+Tool.m */,
+				18D9B02B1E27C2B200300244 /* MSNetworking+HomeApi.h */,
+				18D9B02C1E27C2B200300244 /* MSNetworking+HomeApi.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -845,6 +1040,8 @@
 				BC7601571DB869440006A034 /* MSBaseDatePickerView.m */,
 				BC7601581DB869440006A034 /* MSBaseTableViewCell.h */,
 				BC7601591DB869440006A034 /* MSBaseTableViewCell.m */,
+				18B288251E22789D00FFC27C /* MSBaseCollectionViewCell.h */,
+				18B288261E22789E00FFC27C /* MSBaseCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -852,6 +1049,10 @@
 		BC76015A1DB869440006A034 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				18B288281E2278C400FFC27C /* MSBaseWebViewController.m */,
+				18B288291E2278C400FFC27C /* MSBaseWebViewController.h */,
+				18B2882A1E2278C400FFC27C /* MSBaseCollectionViewController.h */,
+				18B2882B1E2278C400FFC27C /* MSBaseCollectionViewController.m */,
 				BC76015B1DB869440006A034 /* MSBaseNavigationController.h */,
 				BC76015C1DB869440006A034 /* MSBaseNavigationController.m */,
 				BC76015D1DB869440006A034 /* MSBaseSearchResultViewController.h */,
@@ -862,6 +1063,8 @@
 				BC7601621DB869440006A034 /* MSBaseTabBarController.m */,
 				BC7601631DB869440006A034 /* MSBaseTableViewController.h */,
 				BC7601641DB869440006A034 /* MSBaseTableViewController.m */,
+				1836984F1E2A72E800132937 /* MSTableViewController.h */,
+				183698501E2A72E800132937 /* MSTableViewController.m */,
 				BC7601651DB869440006A034 /* MSBaseViewController.h */,
 				BC7601661DB869440006A034 /* MSBaseViewController.m */,
 				BC7601671DB869440006A034 /* MSQRCodeReaderViewController.h */,
@@ -873,6 +1076,8 @@
 		BC7601731DB8695D0006A034 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				18542F971E1D27E60094DC13 /* BugNotes */,
+				18542F9B1E1D27E60094DC13 /* MaterialTool */,
 				BC7601741DB8695D0006A034 /* Common */,
 				BC76017A1DB8695D0006A034 /* Home */,
 				BC76019B1DB8695D0006A034 /* LiveWork */,
@@ -948,6 +1153,12 @@
 			children = (
 				BC76017C1DB8695D0006A034 /* MSHomeCollectionCell.h */,
 				BC76017D1DB8695D0006A034 /* MSHomeCollectionCell.m */,
+				18B287F11E1FDC4700FFC27C /* MSHomeBannaerCell.h */,
+				18B287F21E1FDC4700FFC27C /* MSHomeBannaerCell.m */,
+				18B287FA1E1FE00500FFC27C /* MSHomeClassBannerCell.h */,
+				18B287FB1E1FE00500FFC27C /* MSHomeClassBannerCell.m */,
+				18B287FD1E1FE25900FFC27C /* MSHomePersonCell.h */,
+				18B287FE1E1FE25900FFC27C /* MSHomePersonCell.m */,
 				BC76017E1DB8695D0006A034 /* MSMaterialFillInNomalSection.h */,
 				BC76017F1DB8695D0006A034 /* MSMaterialFillInNomalSection.m */,
 				185522B31DD6023D0093EFF8 /* MSMaterialRightHandleSection.h */,
@@ -962,6 +1173,10 @@
 				BC7601871DB8695D0006A034 /* MSOutInOneLineSection.m */,
 				BC7601881DB8695D0006A034 /* MSPhotoPadView.h */,
 				BC7601891DB8695D0006A034 /* MSPhotoPadView.m */,
+				1836984A1E2A66F200132937 /* MSPersonCenterHeaderView.h */,
+				1836984B1E2A66F200132937 /* MSPersonCenterHeaderView.m */,
+				1802F7801E30FFB40074134E /* MSPersonCenterCell.h */,
+				1802F7811E30FFB40074134E /* MSPersonCenterCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -971,6 +1186,10 @@
 			children = (
 				BC76018B1DB8695D0006A034 /* MSHomeViewController.h */,
 				BC76018C1DB8695D0006A034 /* MSHomeViewController.m */,
+				18542F941E1D27630094DC13 /* MSNewHomeViewController.h */,
+				18542F951E1D27630094DC13 /* MSNewHomeViewController.m */,
+				183698471E2A66B300132937 /* MSPersonCenterViewController.h */,
+				183698481E2A66B300132937 /* MSPersonCenterViewController.m */,
 				BC76018D1DB8695D0006A034 /* MSMaterialFillInViewController.h */,
 				BC76018E1DB8695D0006A034 /* MSMaterialFillInViewController.m */,
 				BC76018F1DB8695D0006A034 /* MSMaterialInfoFetchViewController.h */,
@@ -1034,6 +1253,8 @@
 				BC5DAE991DBDB7CC00D88C30 /* MSLiveWorkMeetingCell.m */,
 				BC5DAE9B1DBDB7DE00D88C30 /* MSLiveWorkNoteCell.h */,
 				BC5DAE9C1DBDB7DE00D88C30 /* MSLiveWorkNoteCell.m */,
+				18D4C1281E1E819D0031A74E /* MSLiveWorkRecordCell.h */,
+				18D4C1291E1E819D0031A74E /* MSLiveWorkRecordCell.m */,
 				BC5DAE9E1DBDDBA400D88C30 /* MSLiveWorkHeaderView.h */,
 				BC5DAE9F1DBDDBA400D88C30 /* MSLiveWorkHeaderView.m */,
 			);
@@ -1137,6 +1358,12 @@
 				BC5CBE8C1DC6F4FA003FA945 /* MSStaffModel.m */,
 				BC9413001DC9CD0F00B68744 /* MSMaterialOutInModel.h */,
 				BC9413011DC9CD0F00B68744 /* MSMaterialOutInModel.m */,
+				18B287EB1E1FD99200FFC27C /* MSPersonModel.h */,
+				18B287EC1E1FD99200FFC27C /* MSPersonModel.m */,
+				18B287EE1E1FD9A200FFC27C /* MSClassModel.h */,
+				18B287EF1E1FD9A200FFC27C /* MSClassModel.m */,
+				18B287F41E1FDDA100FFC27C /* MSHomeBannerModel.h */,
+				18B287F51E1FDDA100FFC27C /* MSHomeBannerModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1357,24 +1584,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B288421E22792900FFC27C /* ARChromeActivity@3x~ipad.png in Resources */,
 				18580CA11DB2259300631F00 /* QRCodeLine@2x.png in Resources */,
 				BC5E0DD91DE8274D006CDDF6 /* loginBg.jpg in Resources */,
 				18580CA61DB2259300631F00 /* QRCodeTopRight@3x.png in Resources */,
 				18580CA31DB2259300631F00 /* QRCodeTopLeft@2x.png in Resources */,
+				18B2883E1E22792900FFC27C /* ARChromeActivity.png in Resources */,
 				18580CA51DB2259300631F00 /* QRCodeTopRight@2x.png in Resources */,
+				18B288431E22792900FFC27C /* ARChromeActivity~ipad.png in Resources */,
 				18580CA01DB2259300631F00 /* QRCodeBottomRight@3x.png in Resources */,
 				18580CA41DB2259300631F00 /* QRCodeTopLeft@3x.png in Resources */,
 				BCF898911DAB983C001A825B /* delete.png in Resources */,
 				BCF8986F1DAB67EC001A825B /* ImagesPicker.xcassets in Resources */,
+				18B288441E22792900FFC27C /* back.png in Resources */,
+				18B288401E22792900FFC27C /* ARChromeActivity@2x~ipad.png in Resources */,
 				18580CA21DB2259300631F00 /* QRCodeLine@3x.png in Resources */,
+				18B288411E22792900FFC27C /* ARChromeActivity@3x.png in Resources */,
+				1836984E1E2A6B6500132937 /* 1.jpg in Resources */,
 				BC25B9121DA1ED8B008EDFB2 /* LaunchScreen.storyboard in Resources */,
 				18580C9F1DB2259300631F00 /* QRCodeBottomRight@2x.png in Resources */,
+				18B288451E22792900FFC27C /* forward.png in Resources */,
 				BCF8986E1DAB67EC001A825B /* imageResources.xcassets in Resources */,
 				18580C9D1DB2259300631F00 /* QRCodeBottomLeft@2x.png in Resources */,
 				18580C9E1DB2259300631F00 /* QRCodeBottomLeft@3x.png in Resources */,
 				BCF898691DAB67EC001A825B /* DNImagePicker.strings in Resources */,
 				BC25B90F1DA1ED8B008EDFB2 /* Assets.xcassets in Resources */,
 				BCF898671DAB67EC001A825B /* DNImagePickerController.strings in Resources */,
+				18B2883F1E22792900FFC27C /* ARChromeActivity@2x.png in Resources */,
 				BC25B90D1DA1ED8B008EDFB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1524,9 +1760,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC76016F1DB869440006A034 /* MSBaseTabBarController.m in Sources */,
+				18B2883D1E22792900FFC27C /* ARChromeActivity.m in Sources */,
 				BC5DAEA61DBDFADA00D88C30 /* MSLiveWorkEditViewController.m in Sources */,
 				BC25B9C91DA1F3BB008EDFB2 /* CYLTabBar.m in Sources */,
 				BC25B90A1DA1ED8B008EDFB2 /* ViewController.m in Sources */,
+				18B2882D1E2278C400FFC27C /* MSBaseCollectionViewController.m in Sources */,
 				BC25B9CA1DA1F3BB008EDFB2 /* CYLTabBarController.m in Sources */,
 				BC5CBE861DC6EA08003FA945 /* ZCApiDownloadAction.m in Sources */,
 				BC25B9D71DA1F41D008EDFB2 /* MSTabBarControllerConfig.m in Sources */,
@@ -1536,18 +1774,25 @@
 				BC00DCC41DA8D5770063F7FE /* YZInputView.m in Sources */,
 				BCF898681DAB67EC001A825B /* DNPhotoBrowser.m in Sources */,
 				18580C9A1DB2259300631F00 /* QRCodeReaderMaskView.m in Sources */,
+				18D9B02D1E27C2B200300244 /* MSNetworking+HomeApi.m in Sources */,
 				BC7601BF1DB8695D0006A034 /* MSMaterialInfoFetchViewController.m in Sources */,
 				BC7601D51DB882170006A034 /* MSToolSectionHeaderView.m in Sources */,
+				1836984C1E2A66F200132937 /* MSPersonCenterHeaderView.m in Sources */,
 				BCF8987A1DAB6E88001A825B /* UIImage+Custom.m in Sources */,
+				18B287F01E1FD9A200FFC27C /* MSClassModel.m in Sources */,
 				BCF8988D1DAB889D001A825B /* PBViewController.m in Sources */,
 				BC5CBE881DC6EA08003FA945 /* ZCApiUploadAction.m in Sources */,
+				18B288471E22792900FFC27C /* TUSafariActivity.m in Sources */,
+				18542FA41E1D28230094DC13 /* MSBugNotesViewController.m in Sources */,
 				BC9412FF1DC9C88000B68744 /* MSSearchStoreViewController.m in Sources */,
+				18B287FC1E1FE00500FFC27C /* MSHomeClassBannerCell.m in Sources */,
 				BC7C07691DBF66D400896351 /* MSLoginView.m in Sources */,
 				BC7601C01DB8695D0006A034 /* MSMaterialOutStoreViewController.m in Sources */,
 				BC7601721DB869440006A034 /* MSQRCodeReaderViewController.m in Sources */,
 				BC7601C71DB8695D0006A034 /* MSToolInfoFillInViewController.m in Sources */,
 				BCF898641DAB67EC001A825B /* DNAsset.m in Sources */,
 				BCF8988B1DAB889D001A825B /* PBImageScrollView.m in Sources */,
+				18542F961E1D27630094DC13 /* MSNewHomeViewController.m in Sources */,
 				BC7601BC1DB8695D0006A034 /* MSPhotoPadView.m in Sources */,
 				BCF8988E1DAB889D001A825B /* UIView+PBSnapshot.m in Sources */,
 				BC5CBE721DC6D0B0003FA945 /* MSNetworking+Material.m in Sources */,
@@ -1568,23 +1813,30 @@
 				BC770A8A1DBB6E9D00B74772 /* YZTagList.m in Sources */,
 				BC5DAEA01DBDDBA400D88C30 /* MSLiveWorkHeaderView.m in Sources */,
 				BC25B9A81DA1F1E2008EDFB2 /* NSString+Code.m in Sources */,
+				18B287FF1E1FE25900FFC27C /* MSHomePersonCell.m in Sources */,
 				BC7601C41DB8695D0006A034 /* MSSearchTableViewController.m in Sources */,
 				BC770A801DBB68BA00B74772 /* MSLiveWorkFillInViewController.m in Sources */,
+				183698511E2A72E800132937 /* MSTableViewController.m in Sources */,
+				18B2882C1E2278C400FFC27C /* MSBaseWebViewController.m in Sources */,
 				BC7601C91DB8695D0006A034 /* MSToolManageViewController.m in Sources */,
 				BC7601CE1DB869B70006A034 /* MSToolDetailViewController.m in Sources */,
 				BCF898771DAB67EC001A825B /* JKPromptView.m in Sources */,
 				BC25B9D41DA1F3E4008EDFB2 /* MSNetworking.m in Sources */,
 				BCF8986A1DAB67EC001A825B /* NSURL+DNIMagePickerUrlEqual.m in Sources */,
+				18B287EA1E1FD8ED00FFC27C /* MSCircleView.m in Sources */,
 				BCF898661DAB67EC001A825B /* DNImagePickerController.m in Sources */,
 				BC25B9AC1DA1F1E2008EDFB2 /* UIView+RoundedCorner.m in Sources */,
 				BC7601D21DB874080006A034 /* MSToolOutInInfosQueryViewController.m in Sources */,
 				BCF898731DAB67EC001A825B /* DNFullImageButton.m in Sources */,
 				BC5DAE9A1DBDB7CC00D88C30 /* MSLiveWorkMeetingCell.m in Sources */,
 				BCE61A961DE8655F005560B6 /* UITextField+Placeholder.m in Sources */,
+				18B287E91E1FD8ED00FFC27C /* MSCircleBaseCell.m in Sources */,
 				BC7601BD1DB8695D0006A034 /* MSHomeViewController.m in Sources */,
 				18580C991DB2259300631F00 /* QRCodeReaderAanimationLineView.m in Sources */,
+				18B288461E22792900FFC27C /* KINWebBrowserViewController.m in Sources */,
 				BCF8986C1DAB67EC001A825B /* UIView+DNImagePicker.m in Sources */,
 				BC770A891DBB6E9D00B74772 /* YZTagButton.m in Sources */,
+				18B288271E22789E00FFC27C /* MSBaseCollectionViewCell.m in Sources */,
 				BC76016E1DB869440006A034 /* MSBaseSearchTableViewController.m in Sources */,
 				BC7601BB1DB8695D0006A034 /* MSOutInOneLineSection.m in Sources */,
 				BC25B9AE1DA1F1E2008EDFB2 /* UIView+MSUtil.m in Sources */,
@@ -1597,6 +1849,7 @@
 				BC25B9AD1DA1F1E2008EDFB2 /* UIImageView+CornerRadius.m in Sources */,
 				BC7601D81DB886BB0006A034 /* MSToolInfoStateCell.m in Sources */,
 				BCF898741DAB67EC001A825B /* DNSendButton.m in Sources */,
+				18D4C12A1E1E819D0031A74E /* MSLiveWorkRecordCell.m in Sources */,
 				BC25B9AA1DA1F1E2008EDFB2 /* UIColor+MSUtil.m in Sources */,
 				BC25B9041DA1ED8B008EDFB2 /* main.m in Sources */,
 				BC7C075D1DBF511400896351 /* MSMyCenterViewController.m in Sources */,
@@ -1613,6 +1866,7 @@
 				BC7C07571DBF4E5600896351 /* MSSearchToolViewController.m in Sources */,
 				BC25B9AB1DA1F1E2008EDFB2 /* UIImage+RoundedCorner.m in Sources */,
 				BC7601C11DB8695D0006A034 /* MSOutInInfoDetailViewController.m in Sources */,
+				183698491E2A66B300132937 /* MSPersonCenterViewController.m in Sources */,
 				BCF898711DAB67EC001A825B /* DNBadgeLabel.m in Sources */,
 				BC7C07661DBF66C200896351 /* MSLoginViewController.m in Sources */,
 				BCF8986D1DAB67EC001A825B /* UIViewController+DNImagePicker.m in Sources */,
@@ -1624,8 +1878,11 @@
 				BC9413051DC9D02100B68744 /* MSSearchStaffViewController.m in Sources */,
 				BC770A831DBB6E1400B74772 /* MSLiveWorkFillinTagsSection.m in Sources */,
 				BC5CBE871DC6EA08003FA945 /* ZCApiRunner.m in Sources */,
+				18542FA11E1D280B0094DC13 /* MSMaterialToolViewController.m in Sources */,
 				18580C9B1DB2259300631F00 /* QRCodeReaderView.m in Sources */,
 				BC2954EE1DC8A46B0044D9C9 /* MSDialog.m in Sources */,
+				18B287F31E1FDC4700FFC27C /* MSHomeBannaerCell.m in Sources */,
+				18B287F61E1FDDA100FFC27C /* MSHomeBannerModel.m in Sources */,
 				BCF8988A1DAB889D001A825B /* PBImageScrollerViewController.m in Sources */,
 				BC25B9A71DA1F1E2008EDFB2 /* NSDate+MSExtension.m in Sources */,
 				BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */,
@@ -1637,11 +1894,13 @@
 				BC76016A1DB869440006A034 /* MSBaseDatePickerView.m in Sources */,
 				BC7601B71DB8695D0006A034 /* MSMaterialFillInNomalSection.m in Sources */,
 				BC8CB01D1DD16E7900B31AE7 /* MSNetworking+Tool.m in Sources */,
+				1802F7821E30FFB40074134E /* MSPersonCenterCell.m in Sources */,
 				185522B51DD6023D0093EFF8 /* MSMaterialRightHandleSection.m in Sources */,
 				BC5CBE8D1DC6F4FA003FA945 /* MSStaffModel.m in Sources */,
 				BC7C07601DBF516000896351 /* MSBaseView.m in Sources */,
 				BC76016B1DB869440006A034 /* MSBaseTableViewCell.m in Sources */,
 				BC7601B91DB8695D0006A034 /* MSOutInInfoCell.m in Sources */,
+				18B287ED1E1FD99200FFC27C /* MSPersonModel.m in Sources */,
 				BC76016D1DB869440006A034 /* MSBaseSearchResultViewController.m in Sources */,
 				BC7601CB1DB8695D0006A034 /* MSToolInfoFillInSection.m in Sources */,
 				18580C981DB2259300631F00 /* QRCodeReader.m in Sources */,
@@ -1656,6 +1915,7 @@
 				BC5CBE6E1DC6D039003FA945 /* MSMaterialApiTest.m in Sources */,
 				BC25B91D1DA1ED8C008EDFB2 /* MSTreasuryManagerTests.m in Sources */,
 				BC4D23BA1DCC33DE00FC962D /* MSLiveWorkTest.m in Sources */,
+				18D9B02A1E27C1A200300244 /* MSHomeApiTest.m in Sources */,
 				BC5CBE6B1DC6CFF8003FA945 /* MSBaseApiTest.m in Sources */,
 				BC8CB0231DD1AB3000B31AE7 /* MSToolApiTest.m in Sources */,
 			);
@@ -1734,8 +1994,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xiaofeng Huang (GFPVBJSX7Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xiaofeng Huang (GFPVBJSX7Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1783,8 +2043,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xiaofeng Huang (GFPVBJSX7Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xiaofeng Huang (GFPVBJSX7Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1810,11 +2070,12 @@
 			baseConfigurationReference = 03C01CE9C2B33EF403CE9DCC /* Pods-MSTreasuryManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5PE9ABT84P;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Main/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MSTreasuryManager/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MS.MSTreasuryManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1827,11 +2088,12 @@
 			baseConfigurationReference = 75F47D9C8AB86418EDA43784 /* Pods-MSTreasuryManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5PE9ABT84P;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Main/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MSTreasuryManager/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MS.MSTreasuryManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";

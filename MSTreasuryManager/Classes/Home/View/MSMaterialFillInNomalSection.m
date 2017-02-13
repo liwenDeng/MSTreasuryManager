@@ -39,8 +39,7 @@
             [self addSubview:textField];
             [textField setPlaceholder:placeholder];
             [textField setTextAlignment:(NSTextAlignmentCenter)];
-            [textField setKeyboardType:(UIKeyboardTypeNumberPad)];
-//            [textField setBorderStyle:(UITextBorderStyleLine)];
+//            [textField setKeyboardType:(UIKeyboardTypeNumberPad)];
             textField.layer.borderWidth = 1;
             textField.layer.borderColor = kBackgroundColor.CGColor;
             textField.layer.cornerRadius = 5;

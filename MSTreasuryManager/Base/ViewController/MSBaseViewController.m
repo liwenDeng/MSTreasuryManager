@@ -22,6 +22,8 @@
             [self setupScanButton];
         }
     }
+    
+    [self.navigationController.navigationBar setBarStyle:(UIBarStyleBlack)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

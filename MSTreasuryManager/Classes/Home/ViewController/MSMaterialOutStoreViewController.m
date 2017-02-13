@@ -63,8 +63,8 @@
     
     [self setupSubViews];
     if (self.outInModel.materialId && self.outInModel.materialName.length) {
+//        self.placeInput.text = [MSMaterialOutInModel storeNameWithLocationId:self.outInModel.location];
         [self loadMaterialDetailInfo];
-        self.placeInput.text = [MSMaterialOutInModel storeNameWithLocationId:self.outInModel.location];
     }
 }
 
@@ -176,7 +176,6 @@
     [section4.actionBtn addTarget:self action:@selector(dateInputClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     [section5.actionBtn addTarget:self action:@selector(handleUserInputClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     [section6.actionBtn addTarget:self action:@selector(reviewUserInputClicked:) forControlEvents:(UIControlEventTouchUpInside)];
-    
     
 //    //subMitBtn
     MSBaseButton *btn = [[MSBaseButton alloc]initWithTitle:@"提    交"];
@@ -293,6 +292,7 @@
 
 - (void)fillWithDetailInfo:(MSMaterialModel *)model {
     self.nameInput.text = model.name;
+    self.placeInput.text = [MSMaterialOutInModel storeNameWithLocationId:self.outInModel.location];
     [self showCountLabel];
 }
 
@@ -447,6 +447,7 @@
 }
 
 - (void)showDatePickerView {
+    [self.view endEditing:YES];
     if (self.datePickerView.hidden) {
         self.datePickerView.hidden = NO;
         [UIView animateWithDuration:0.3 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{

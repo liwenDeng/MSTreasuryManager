@@ -28,6 +28,7 @@ static NSString * const kCellId = @"cell";
         self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
     }
     // Do any additional setup after loading the view
+    [self.navigationController.navigationBar setBarStyle:(UIBarStyleBlack)];
 }
 
 - (void)didReceiveMemoryWarning {

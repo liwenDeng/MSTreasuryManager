@@ -94,6 +94,23 @@
     }];
 }
 
++ (NSURLSessionDataTask *)getToolOutInList:(NSString *)toolName pageNo:(NSInteger)pageNo status:(NSInteger)status success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/tools/log"];
+    
+    action.params[@"name"] = toolName ? : @"";
+    action.params[@"status"] = @(status);
+    action.params[@"pageNo"] = @(pageNo);
+    action.params[@"pageSize"] = @(kPageSize);
+    
+    [action setHttpMethod:HttpPost];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 + (NSURLSessionDataTask *)outInToolDetailInfo:(NSInteger)logId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/toolslog/detail"];
     

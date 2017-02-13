@@ -57,6 +57,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, weak) id<MSCommonSearchViewControllerDelegate> delegate;
 
 @property (nonatomic, assign) NSInteger pageNo;
+@property (nonatomic, assign) NSInteger searchPageNo;
 
 - (instancetype)initWithSearchType:(MSSearchType)type;
 
