@@ -118,9 +118,9 @@
     MSBaseNavigationController *navi2 = [[MSBaseNavigationController alloc]initWithRootViewController:vc2];
     vc2.navigationItem.title = @"物资工具";
     
-    MSToolManageViewController *vc3 = [[MSToolManageViewController alloc]init];
-    MSBaseNavigationController *navi3 = [[MSBaseNavigationController alloc]initWithRootViewController:vc3];
-    vc3.navigationItem.title = @"工器具";
+//    MSToolManageViewController *vc3 = [[MSToolManageViewController alloc]init];
+//    MSBaseNavigationController *navi3 = [[MSBaseNavigationController alloc]initWithRootViewController:vc3];
+//    vc3.navigationItem.title = @"工器具";
     
     MSMyCenterViewController *vc4 = [[MSMyCenterViewController alloc]initWithStyle:(UITableViewStyleGrouped)];
     MSBaseNavigationController *navi4 = [[MSBaseNavigationController alloc]initWithRootViewController:vc4];
@@ -128,7 +128,7 @@
     
     NSArray *viewControllers = @[navi1,
                                  navi2,
-                                 navi3,
+//                                 navi3,
                                  navi4];
     return viewControllers;
 }
@@ -144,11 +144,11 @@
                                                   CYLTabBarItemImage : @"livework",
                                                   CYLTabBarItemSelectedImage : @"livework_s",
                                                   };
-    NSDictionary *thirdTabBarItemsAttributes = @{
-                                                 CYLTabBarItemTitle : @"工器具",
-                                                 CYLTabBarItemImage : @"tool",
-                                                 CYLTabBarItemSelectedImage : @"tool_s",
-                                                 };
+//    NSDictionary *thirdTabBarItemsAttributes = @{
+//                                                 CYLTabBarItemTitle : @"工器具",
+//                                                 CYLTabBarItemImage : @"tool",
+//                                                 CYLTabBarItemSelectedImage : @"tool_s",
+//                                                 };
     NSDictionary *fourthTabBarItemsAttributes = @{
                                                   CYLTabBarItemTitle : @"我的",
                                                   CYLTabBarItemImage : @"my",
@@ -157,7 +157,7 @@
     NSArray *tabBarItemsAttributes = @[
                                        firstTabBarItemsAttributes,
                                        secondTabBarItemsAttributes,
-                                       thirdTabBarItemsAttributes,
+//                                       thirdTabBarItemsAttributes,
                                        fourthTabBarItemsAttributes
                                        ];
     return tabBarItemsAttributes;
