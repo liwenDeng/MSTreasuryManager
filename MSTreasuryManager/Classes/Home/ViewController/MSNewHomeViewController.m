@@ -13,6 +13,8 @@
 #import "KINWebBrowserViewController.h"
 #import "MSNetworking+HomeApi.h"
 #import "MSPersonCenterViewController.h"
+#import "MSAccountManager.h"
+#import "MSLoginViewController.h"
 
 static NSString *const kHomeBannerCell = @"HomeBannerCell";
 static NSString *const kClassesBanner = @"ClassesBannerCell";
@@ -51,10 +53,21 @@ typedef enum : NSUInteger {
     [self.collectionView registerClass:[MSHomeBannaerCell class] forCellWithReuseIdentifier:kHomeBannerCell];
     [self.collectionView registerClass:[MSHomeClassBannerCell class] forCellWithReuseIdentifier:kClassesBanner];
     [self.collectionView registerClass:[MSHomePersonCell class] forCellWithReuseIdentifier:kPersonCell];
+
+    [self refresh];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 #pragma mark - HttpRequest
 - (void)refresh {
+    
     dispatch_group_t group = dispatch_group_create();
     [self loadHomeBannerList:group];
     [self loadClassList:group];
@@ -93,7 +106,6 @@ typedef enum : NSUInteger {
         self.classes = [MSClassModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
         dispatch_group_leave(group);
     } failure:^(NSError *error) {
-        
         dispatch_group_leave(group);
     }];
 }
@@ -154,9 +166,9 @@ typedef enum : NSUInteger {
         case MSHomeSectionTypePerson:
         {
             cell = [collectionView dequeueReusableCellWithReuseIdentifier:kPersonCell forIndexPath:indexPath];
-            MSHomePersonCell *bannerCell = (MSHomePersonCell *)cell;
+            MSHomePersonCell *persomCell = (MSHomePersonCell *)cell;
             MSPersonModel *person = self.persons[indexPath.row];
-            [bannerCell fillWithPerson:person];
+            [persomCell fillWithPerson:person];
         }
             break;
         default:
@@ -199,13 +211,16 @@ typedef enum : NSUInteger {
 #pragma mark - MSHomeBannaerCellDelegate
 
 - (void)banner:(MSHomeBannaerCell*)banner clickedAtIndex:(NSInteger)index bannerModel:(MSHomeBannerModel *)bannerModel {
-
+    KINWebBrowserViewController *webVC = [[KINWebBrowserViewController alloc]init];
+    [webVC loadURLString:bannerModel.url];
+    webVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 #pragma mark - MSHomeClassBannerCellDelegate
 
 - (void)classBanner:(MSHomeClassBannerCell*)banner clickedAtIndex:(NSInteger)index classBannerModel:(MSClassModel *)classBannerModel {
     KINWebBrowserViewController *webVC = [[KINWebBrowserViewController alloc]init];
-    [webVC loadURLString:@"http://www.baidu.com"];
+    [webVC loadURLString:@"https://www.baidu.com"];
     webVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webVC animated:YES];
 }

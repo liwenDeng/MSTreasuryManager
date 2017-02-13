@@ -68,7 +68,7 @@ static NSString *const kPersonIntroCellIdentifier = @"IntroduceCell";
 
 - (void)fillData {
     [self.headerView fillWithPerson:self.mainPerson];
-    self.valueArray = @[self.mainPerson.team,self.mainPerson.job,self.mainPerson.phone];
+    self.valueArray = @[self.mainPerson.team,self.mainPerson.jobName,self.mainPerson.phone];
     [self.tableView reloadData];
 }
 
@@ -103,7 +103,7 @@ static NSString *const kPersonIntroCellIdentifier = @"IntroduceCell";
             [cell setSelectionStyle:(UITableViewCellSelectionStyleNone)];
             cell.textLabel.font = [UIFont systemFontOfSize:14];
         }
-        cell.textLabel.text = @"测试撒打开大家撒可大家来看撒娇的卢卡斯就离开大家来喀什的撒娇的卢卡斯建档立卡就是测试撒打开大家撒可大家来看撒娇的卢卡斯就离开大家来喀什的撒娇的卢卡斯建档立卡就是测试撒打开大家撒可大家来看撒娇的卢卡斯就离开大家来喀什的撒娇的卢卡斯建档立卡就是测试撒打开大家撒可大家来看撒娇的卢卡斯就离开大家来喀什的撒娇的卢卡斯建档立卡就是";
+        cell.textLabel.text = self.mainPerson.introduction;
         return cell;
     }
 }
@@ -129,7 +129,7 @@ static NSString *const kPersonIntroCellIdentifier = @"IntroduceCell";
     if (indexPath.section == 0) {
         return 44;
     }
-    CGSize textSize = [@"测试撒打开大家撒可大家来看撒娇的卢卡斯就离开大家来喀什的撒娇的卢卡斯建档立卡就是测试撒打开大家撒可大家来看撒娇的卢卡斯就离开大家来喀什的撒娇的卢卡斯建档立卡就是测试撒打开大家撒可大家来看撒娇的卢卡斯就离开大家来喀什的撒娇的卢卡斯建档立卡就是测试撒打开大家撒可大家来看撒娇的卢卡斯就离开大家来喀什的撒娇的卢卡斯建档立卡就是" ms_sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(kSCREEN_WIDTH - 30, 9999) lineBreakMode:(NSLineBreakByWordWrapping)];
+    CGSize textSize = [self.mainPerson.introduction ms_sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(kSCREEN_WIDTH - 30, 9999) lineBreakMode:(NSLineBreakByWordWrapping)];
     return MAX(textSize.height + 30, 44);
 }
 

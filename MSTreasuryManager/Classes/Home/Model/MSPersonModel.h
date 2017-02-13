@@ -13,6 +13,22 @@ typedef enum : NSUInteger {
     MSGenderFeMale,
 } MSGenderType;
 
+
+/**
+ 班组职位
+
+ - MSJobTypeGroupLeader: 班组组长
+ - MSJobTypeGroupEngineer: 班组工程师
+ - MSJobTypeGroupSafetyOfficer: 班组安全员
+ - MSJobTypeGroupMember: 班组成员
+ */
+typedef NS_ENUM(NSUInteger, MSJobType) {
+    MSJobTypeGroupLeader = 0,
+    MSJobTypeGroupEngineer,
+    MSJobTypeGroupSafetyOfficer,
+    MSJobTypeGroupMember,
+};
+
 /**
  人员
  */
@@ -26,9 +42,11 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy) NSString *phone;    //电话
 @property (nonatomic, copy) NSString *img;  //头像
 @property (nonatomic, copy) NSString *introduction;  //介绍
-@property (nonatomic, copy) NSString *job;   //职位 0-班组长，1-班组工程师，2-班组安全员，3-班组成员)
+@property (nonatomic, assign) MSJobType job;   //职位 0-班组长，1-班组工程师，2-班组安全员，3-班组成员)
 @property (nonatomic, copy) NSString *teamId;//班组id
 @property (nonatomic, copy) NSString *createTime; //创建时间
 @property (nonatomic, copy) NSString *team;
+
+@property (nonatomic, copy, readonly) NSString *jobName;
 
 @end

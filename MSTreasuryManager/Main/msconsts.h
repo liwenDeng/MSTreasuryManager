@@ -13,6 +13,9 @@
 #define msconsts_h
 #import <UIKit/UIKit.h>
 
+#define kBaseUrl @"http://139.196.112.30:8080/web/"
+#define KImageUrl @"http://139.196.112.30:8080/web"
+
 #pragma mark - SCREEN
 // 屏幕SIZE
 #define kSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width

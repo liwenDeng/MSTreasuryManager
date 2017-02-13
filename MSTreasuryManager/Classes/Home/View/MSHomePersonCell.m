@@ -20,8 +20,6 @@
 @implementation MSHomePersonCell
 
 - (void)setupSubviews {
-    self.layer.borderColor = [UIColor grayColor].CGColor;
-    self.layer.borderWidth = 0.5;
     self.contentView.backgroundColor = [UIColor whiteColor];
     _headIcon = ({
         UIImageView *view = [[UIImageView alloc]init];
@@ -32,7 +30,7 @@
             make.size.mas_equalTo(CGSizeMake(kMSPersonCellWidth - 50, kMSPersonCellWidth - 50));
         }];
         view.layer.cornerRadius = (kMSPersonCellWidth - 50)/2.0;
-        
+        view.clipsToBounds = YES;
         view;
     });
     
@@ -71,19 +69,10 @@
         
         label;
     });
-    
-//    [self testData];
-}
-
-- (void)testData {
-    _headIcon.backgroundColor = [UIColor redColor];
-    _nameLabel.text = @"王能进";
-    _genderIcon.image = [UIImage imageNamed:@"male"];
-    _classNameLabel.text = @"保护班";
 }
 
 - (void)fillWithPerson:(MSPersonModel *)personModel {
-    [_headIcon sd_setImageWithURL:[NSURL URLWithString:personModel.img] placeholderImage:[UIImage imageNamed:@"album"]];
+    [_headIcon sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",KImageUrl,personModel.img]] placeholderImage:[UIImage imageNamed:@"album"]];
     _nameLabel.text = personModel.name;
     _classNameLabel.text = personModel.team;
     if (personModel.gender == MSGenderMale) {

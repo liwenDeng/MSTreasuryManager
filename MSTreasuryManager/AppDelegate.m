@@ -23,25 +23,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
-    MSTabBarControllerConfig *config = [[MSTabBarControllerConfig alloc]init];
-    self.window.rootViewController = config.tabBarController;
-    
+
     [MSAccountManager sharedManager];
     [IQKeyboardManager sharedManager].enable = YES;
 
-    
     [self networkGlobleSettings];
     
     [SVProgressHUD setDefaultStyle:(SVProgressHUDStyleDark)];
     [SVProgressHUD setMinimumDismissTimeInterval:1.5f];
     
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    MSTabBarControllerConfig *config = [[MSTabBarControllerConfig alloc]init];
+    self.window.rootViewController = config.tabBarController;
+    
     return YES;
 }
 
 - (void)networkGlobleSettings {
-    [[ZCApiRunner sharedInstance] startWithDebugDomain:@"http://139.196.112.30:8080/web/" releaseDomain:@"http://139.196.112.30:8080/web/"];
+    [[ZCApiRunner sharedInstance] startWithDebugDomain:kBaseUrl releaseDomain:kBaseUrl];
     [[ZCApiRunner sharedInstance] codeKey:@"code"];
     [[ZCApiRunner sharedInstance] successCodes:@[@"200"]];
     [[ZCApiRunner sharedInstance] warningReturnCodes:@[@"-1"] withHandler:^(NSString *code) {

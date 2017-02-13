@@ -21,8 +21,6 @@
 #import "MSSearchPersonViewController.h"
 #import "MSNetworking+Material.h"
 
-static NSString *const kMaterialImageUrl = @"http://139.196.112.30:8080/web";
-
 @interface MSMaterialFillInViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,DNImagePickerControllerDelegate,MSPhotoPadViewDelegate,PBViewControllerDataSource, PBViewControllerDelegate,MSCommonSearchViewControllerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -448,7 +446,7 @@ static NSString *const kMaterialImageUrl = @"http://139.196.112.30:8080/web";
             if (imgs.count) {
                 NSString *url = [imgs firstObject];
                 if (url.length > 0) {
-                    url = [NSString stringWithFormat:@"%@%@",kMaterialImageUrl,url];
+                    url = [NSString stringWithFormat:@"%@%@",KImageUrl,url];
                     [self.waitForUploadImgUrls addObject:url];
                 }
             }

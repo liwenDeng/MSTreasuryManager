@@ -9,7 +9,7 @@
 #import "MSBaseCollectionViewCell.h"
 #import "MSHomeBannerModel.h"
 
-static CGFloat const kMSHomeBannerHeight = 140;
+static CGFloat const kMSHomeBannerHeight = 150;
 static CGFloat const kMSHomeControlHeight = 30;
 
 @class MSHomeBannaerCell;

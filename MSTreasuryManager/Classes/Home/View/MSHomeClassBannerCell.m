@@ -41,7 +41,7 @@
     self.titleLabel.backgroundColor = [UIColor clearColor];
     self.titleLabel.textColor = [UIColor whiteColor];
     
-    [self.imaView setContentMode:(UIViewContentModeScaleAspectFill)];
+    [self.imaView setContentMode:(UIViewContentModeScaleAspectFit)];
 }
 
 @end
@@ -58,7 +58,7 @@
 - (void)setupSubviews {
     [super setupSubviews];
     
-    _circleView = [MSCircleView circleViewWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kMSClassBannerHeight) urlImageArray:nil];
+    _circleView = [MSCircleView circleViewWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kMSClassBannerHeight - 10) urlImageArray:nil];
     _circleView.backgroundColor = [UIColor whiteColor];
     _circleView.cellClass = [MSClassBannerCell class];
     [self addSubview:_circleView];
@@ -85,7 +85,7 @@
 
     
     for ( MSClassModel * model in bannerModels) {
-        [urls addObject:model.logo.length ? model.logo : @""];
+        [urls addObject:model.logo.length ? [NSString stringWithFormat:@"%@%@",KImageUrl,model.logo] : @""];
     }
     self.circleView.imageArray = urls;
     

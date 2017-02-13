@@ -25,6 +25,8 @@
     _bgImageView =  ({
         UIImageView *view = [[UIImageView alloc]init];
         [self addSubview:view];
+        view.clipsToBounds = YES;
+        [view setContentMode:(UIViewContentModeScaleAspectFill)];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);
         }];
@@ -64,6 +66,7 @@
     _headIcon = ({
         UIImageView *view = [[UIImageView alloc]init];
         [self addSubview:view];
+        [view setContentMode:(UIViewContentModeScaleAspectFill)];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self);
             make.size.mas_equalTo(CGSizeMake(60, 60));
@@ -74,17 +77,13 @@
         view;
     });
     
-//    [self testData];
-}
-
-- (void)testData{
-    self.nameLabel.text = @"王能进";
 }
 
 - (void)fillWithPerson:(MSPersonModel *)person {
     self.nameLabel.text = person.name;
-    [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:person.img] placeholderImage:[UIImage imageNamed:@"1.jpg"]];
-    [self.headIcon sd_setImageWithURL:[NSURL URLWithString:person.img] placeholderImage:[UIImage imageNamed:@"1.jpg"]];
+    [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",KImageUrl,person.img]] placeholderImage:[UIImage imageNamed:@"1.jpg"]];
+    [self.headIcon sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",KImageUrl,person.img]] placeholderImage:[UIImage imageNamed:@"1.jpg"]];
+    
     if (person.gender == MSGenderMale) {
         self.genderView.image = [UIImage imageNamed:@"male"];
     }else {
