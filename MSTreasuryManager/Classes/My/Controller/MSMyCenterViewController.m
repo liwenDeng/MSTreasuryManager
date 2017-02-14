@@ -91,7 +91,7 @@ static NSString * const kLiveWorkCell = @"liveWorkCell";
         }
         if (indexPath.section == 2) {
             cell.textLabel.text = @"版本信息";
-            cell.detailTextLabel.text = @"1.0";
+            cell.detailTextLabel.text = @"2.0";
         }
         if (indexPath.section == 3) {
             cell.textLabel.text = @"退出登录";
