@@ -46,7 +46,7 @@
         [self addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self);
-            make.bottom.equalTo(self.mas_bottom).offset(-20);
+            make.bottom.equalTo(self.mas_bottom).offset(-40);
         }];
         
         label;

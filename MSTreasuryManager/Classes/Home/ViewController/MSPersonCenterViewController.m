@@ -18,7 +18,6 @@ static NSString *const kPersonIntroCellIdentifier = @"IntroduceCell";
 @interface MSPersonCenterViewController ()
 
 @property (nonatomic, strong) MSPersonCenterHeaderView *headerView;
-//@property (nonatomic, strong) MSPersonModel *detailInfo;
 @property (nonatomic, strong) NSArray *titleArray;
 @property (nonatomic, strong) NSArray *valueArray;
 
@@ -33,22 +32,8 @@ static NSString *const kPersonIntroCellIdentifier = @"IntroduceCell";
     self.headerView = [[MSPersonCenterHeaderView alloc]initWithFrame:CGRectMake(0, -kHeaderViewHeight, kSCREEN_WIDTH, kHeaderViewHeight)];
     [self.tableView addSubview:self.headerView];
     self.tableView.contentInset = UIEdgeInsetsMake(kHeaderViewHeight, 0, 0, 0);
-//    [self loadDetailInfo];
     [self fillData];
 }
-
-#pragma mark - HttpReques
-- (void)loadDetailInfo {
-//    [SVProgressHUD show];
-//    [MSNetworking getPersonDetailInfoPersonId:self.mainPerson.personId success:^(NSDictionary *object) {
-//        self.detailInfo = [MSPersonModel mj_objectWithKeyValues:object[@"data"]];
-//        [SVProgressHUD dismiss];
-//        [self fillData];
-//    } failure:^(NSError *error) {
-//        [SVProgressHUD dismiss];
-//    }];
-}
-
 
 #pragma mark - ScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

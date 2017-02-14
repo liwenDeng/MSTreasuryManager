@@ -60,4 +60,16 @@
     }];
 }
 
++ (NSURLSessionDataTask *)getClassDetailInfoClassId:(NSInteger)classId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/teamgroup/detail"];
+    action.params[@"id"] = @(classId);
+    [action setHttpMethod:HttpPost];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 @end

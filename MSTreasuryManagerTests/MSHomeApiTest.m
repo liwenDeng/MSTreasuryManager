@@ -34,6 +34,17 @@
     }];
 }
 
+- (void)testClassDetail {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getClassDetailInfoClassId:4 success:^(NSDictionary *object) {
+            
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
 - (void)testPersonList {
     [self waitForGroup:^(dispatch_group_t group) {
         [MSNetworking getPersonListSuccess:^(NSDictionary *object) {

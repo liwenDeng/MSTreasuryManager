@@ -41,7 +41,7 @@
     self.titleLabel.backgroundColor = [UIColor clearColor];
     self.titleLabel.textColor = [UIColor whiteColor];
     
-    [self.imaView setContentMode:(UIViewContentModeScaleAspectFit)];
+    [self.imaView setContentMode:(UIViewContentModeScaleAspectFill)];
 }
 
 @end
@@ -99,7 +99,7 @@
         MSClassBannerCell *cell = (MSClassBannerCell *)customCell;
         MSClassModel *bannerModel = bannerModels[index];
         cell.titleLabel.text = bannerModel.name;
-        [cell.imaView sd_setImageWithURL:[NSURL URLWithString:bannerModel.logo] placeholderImage:[UIImage imageNamed:@"tool"]];
+        [cell.imaView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",KImageUrl,bannerModel.logo]] placeholderImage:[UIImage imageNamed:@"tool"]];
     }];
     
     [self.circleView addTapBlock:^(NSInteger index) {

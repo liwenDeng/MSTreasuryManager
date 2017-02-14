@@ -162,6 +162,8 @@
 		BC9412FF1DC9C88000B68744 /* MSSearchStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9412FE1DC9C88000B68744 /* MSSearchStoreViewController.m */; };
 		BC9413021DC9CD0F00B68744 /* MSMaterialOutInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9413011DC9CD0F00B68744 /* MSMaterialOutInModel.m */; };
 		BC9413051DC9D02100B68744 /* MSSearchStaffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9413041DC9D02100B68744 /* MSSearchStaffViewController.m */; };
+		BCDB11991E52A252005D5A0F /* MSClassDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDB11981E52A252005D5A0F /* MSClassDetailViewController.m */; };
+		BCDB119C1E52A5AA005D5A0F /* MSClassHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDB119B1E52A5AA005D5A0F /* MSClassHeaderView.m */; };
 		BCE61A961DE8655F005560B6 /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE61A951DE8655F005560B6 /* UITextField+Placeholder.m */; };
 		BCF898631DAB67EC001A825B /* DNAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983A1DAB67EC001A825B /* DNAlbumTableViewController.m */; };
 		BCF898641DAB67EC001A825B /* DNAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8983C1DAB67EC001A825B /* DNAsset.m */; };
@@ -505,6 +507,10 @@
 		BC9413011DC9CD0F00B68744 /* MSMaterialOutInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMaterialOutInModel.m; sourceTree = "<group>"; };
 		BC9413031DC9D02100B68744 /* MSSearchStaffViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchStaffViewController.h; sourceTree = "<group>"; };
 		BC9413041DC9D02100B68744 /* MSSearchStaffViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchStaffViewController.m; sourceTree = "<group>"; };
+		BCDB11971E52A252005D5A0F /* MSClassDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSClassDetailViewController.h; sourceTree = "<group>"; };
+		BCDB11981E52A252005D5A0F /* MSClassDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSClassDetailViewController.m; sourceTree = "<group>"; };
+		BCDB119A1E52A5AA005D5A0F /* MSClassHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSClassHeaderView.h; sourceTree = "<group>"; };
+		BCDB119B1E52A5AA005D5A0F /* MSClassHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSClassHeaderView.m; sourceTree = "<group>"; };
 		BCE61A941DE8655F005560B6 /* UITextField+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
 		BCE61A951DE8655F005560B6 /* UITextField+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
 		BCF898391DAB67EC001A825B /* DNAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAlbumTableViewController.h; sourceTree = "<group>"; };
@@ -1177,6 +1183,8 @@
 				1836984B1E2A66F200132937 /* MSPersonCenterHeaderView.m */,
 				1802F7801E30FFB40074134E /* MSPersonCenterCell.h */,
 				1802F7811E30FFB40074134E /* MSPersonCenterCell.m */,
+				BCDB119A1E52A5AA005D5A0F /* MSClassHeaderView.h */,
+				BCDB119B1E52A5AA005D5A0F /* MSClassHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1188,6 +1196,8 @@
 				BC76018C1DB8695D0006A034 /* MSHomeViewController.m */,
 				18542F941E1D27630094DC13 /* MSNewHomeViewController.h */,
 				18542F951E1D27630094DC13 /* MSNewHomeViewController.m */,
+				BCDB11971E52A252005D5A0F /* MSClassDetailViewController.h */,
+				BCDB11981E52A252005D5A0F /* MSClassDetailViewController.m */,
 				183698471E2A66B300132937 /* MSPersonCenterViewController.h */,
 				183698481E2A66B300132937 /* MSPersonCenterViewController.m */,
 				BC76018D1DB8695D0006A034 /* MSMaterialFillInViewController.h */,
@@ -1800,6 +1810,7 @@
 				BC7601C31DB8695D0006A034 /* MSSearchResultViewController.m in Sources */,
 				BC7601B61DB8695D0006A034 /* MSHomeCollectionCell.m in Sources */,
 				BCF8988C1DAB889D001A825B /* PBPresentAnimatedTransitioningController.m in Sources */,
+				BCDB11991E52A252005D5A0F /* MSClassDetailViewController.m in Sources */,
 				BCF898761DAB67EC001A825B /* DNUnAuthorizedTipsView.m in Sources */,
 				BC5DAEA91DBE20A900D88C30 /* MSSearchPersonViewController.m in Sources */,
 				BCF898701DAB67EC001A825B /* DNAssetsViewCell.m in Sources */,
@@ -1854,6 +1865,7 @@
 				BC25B9041DA1ED8B008EDFB2 /* main.m in Sources */,
 				BC7C075D1DBF511400896351 /* MSMyCenterViewController.m in Sources */,
 				BC7601C81DB8695D0006A034 /* MSToolLoanViewController.m in Sources */,
+				BCDB119C1E52A5AA005D5A0F /* MSClassHeaderView.m in Sources */,
 				BCF898751DAB67EC001A825B /* DNTapDetectingImageView.m in Sources */,
 				BC76016C1DB869440006A034 /* MSBaseNavigationController.m in Sources */,
 				BC5DAE9D1DBDB7DE00D88C30 /* MSLiveWorkNoteCell.m in Sources */,

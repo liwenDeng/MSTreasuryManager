@@ -15,6 +15,7 @@
 #import "MSPersonCenterViewController.h"
 #import "MSAccountManager.h"
 #import "MSLoginViewController.h"
+#import "MSClassDetailViewController.h"
 
 static NSString *const kHomeBannerCell = @"HomeBannerCell";
 static NSString *const kClassesBanner = @"ClassesBannerCell";
@@ -219,12 +220,13 @@ typedef enum : NSUInteger {
 #pragma mark - MSHomeClassBannerCellDelegate
 
 - (void)classBanner:(MSHomeClassBannerCell*)banner clickedAtIndex:(NSInteger)index classBannerModel:(MSClassModel *)classBannerModel {
-    KINWebBrowserViewController *webVC = [[KINWebBrowserViewController alloc]init];
-    [webVC loadURLString:@"https://www.baidu.com"];
-    webVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:webVC animated:YES];
+    MSClassDetailViewController *detailClassVC = [[MSClassDetailViewController alloc]initWithStyle:(UITableViewStyleGrouped)];
+    detailClassVC.classModel = classBannerModel;
+    detailClassVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:detailClassVC animated:YES];
 }
 
+#pragma mark - Util
 - (MSHomeSectionType)sectionTypeAtSection:(NSInteger)section {
     if (!self.sections.count) {
         return MSHomeSectionTypeUnKnow;

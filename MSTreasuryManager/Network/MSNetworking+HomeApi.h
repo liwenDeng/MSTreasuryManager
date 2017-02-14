@@ -18,4 +18,6 @@
 
 + (NSURLSessionDataTask *)getPersonDetailInfoPersonId:(NSInteger)personId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
++ (NSURLSessionDataTask *)getClassDetailInfoClassId:(NSInteger)classId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
 @end
