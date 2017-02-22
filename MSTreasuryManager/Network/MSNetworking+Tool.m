@@ -79,6 +79,38 @@
     }];
 }
 
++ (NSURLSessionDataTask *)changeTool:(MSToolModel *)toolModel toolNames:(NSArray *)toolNames borrowOut:(BOOL)borrowOut success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/tools/batch"];
+        
+//    action.params[@"id"] = @(toolModel.toolId);
+    action.params[@"name"] = toolModel.name;
+    action.params[@"auditor"] = toolModel.auditor ? : @"";
+    action.params[@"tools"] = [toolNames componentsJoinedByString:@","];
+    if (borrowOut) {
+        //借出操作
+        action.params[@"status"] = @"1";
+        action.params[@"reason"] = toolModel.reason;
+        action.params[@"time"] = toolModel.time;
+        action.params[@"operator"] = toolModel.operator;
+        action.params[@"phone"] = toolModel.phone;
+        //审核人
+        
+    }else {
+        action.params[@"status"] = @"0";
+        action.params[@"time"] = toolModel.time;
+        action.params[@"operator"] = toolModel.operator;
+        
+    }
+    
+    [action setHttpMethod:HttpPost];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 + (NSURLSessionDataTask *)getToolOutInList:(NSString *)toolName status:(NSInteger)status success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/tools/log"];
     

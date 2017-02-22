@@ -30,11 +30,16 @@
 + (NSURLSessionDataTask *)getToolList:(NSString* )toolName status:(NSInteger)status pageNo:(NSInteger)pageNo success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 /**
- 工器出入库操作
+ 工器具出入库操作
  
  */
 + (NSURLSessionDataTask *)changeTool:(MSToolModel* )toolModel borrowOut:(BOOL)borrowOut success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
+/**
+ 工器具批量出入库操作
+ 
+ */
++ (NSURLSessionDataTask *)changeTool:(MSToolModel* )toolModel toolNames:(NSArray *)toolNames borrowOut:(BOOL)borrowOut success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 /**
  工器具在库/借出 列表查询
  

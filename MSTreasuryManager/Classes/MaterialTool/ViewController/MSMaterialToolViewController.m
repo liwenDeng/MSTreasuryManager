@@ -139,12 +139,12 @@ static NSString *const kCellId = @"CellId";
                 break;
             case 2:
             {
-                vc = [[MSToolBorrowViewController alloc]init];
+                vc = [[MSToolBorrowViewController alloc]initWithMultiSelect:YES];
             }
                 break;
             case 3:
             {
-                vc = [[MSToolLoanViewController alloc]init];
+                vc = [[MSToolLoanViewController alloc]initWithMultiSelect:YES];
             }
                 break;
             case 4:

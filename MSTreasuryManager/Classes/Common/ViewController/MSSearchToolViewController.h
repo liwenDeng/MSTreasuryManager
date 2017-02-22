@@ -10,4 +10,6 @@
 
 @interface MSSearchToolViewController : MSCommonSearchViewController
 
+@property (nonatomic, assign) BOOL allowMultiselect;
+
 @end

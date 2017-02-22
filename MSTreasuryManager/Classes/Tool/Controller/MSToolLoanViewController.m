@@ -18,6 +18,7 @@
 #import "MSToolModel.h"
 #import "MSNetworking+Tool.h"
 #import "MSSearchStaffViewController.h"
+#import "MSLiveWorkFillinTagsSection.h"
 
 @interface MSToolLoanViewController () <MSBaseDatePickerViewDelegate,MSCommonSearchViewControllerDelegate>
 
@@ -27,6 +28,9 @@
 @property (nonatomic, strong) UITextField *dateInput;
 @property (nonatomic, strong) UITextField *borrowUserInput;
 @property (nonatomic, strong) UITextField *reviewUserInput;
+
+// multiSection
+@property (nonatomic, strong) MSLiveWorkFillinTagsSection *multiToolNameSection;
 
 @property (nonatomic, strong) MSBaseDatePickerView *datePickerView;
 
@@ -39,6 +43,13 @@
 - (instancetype)initWithToolModel:(MSToolModel *)tool {
     if (self = [super init]) {
         _toolModel = tool;
+    }
+    return self;
+}
+
+- (instancetype)initWithMultiSelect:(BOOL)multiSelect {
+    if (self = [super init]) {
+        _multiLoan = multiSelect;
     }
     return self;
 }
@@ -72,44 +83,66 @@
         view;
     });
     
-    MSMaterialFillInWithSearchSection *section1 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:@"工器具名称" placeholder:@"请选择工器具"];
     MSMaterialFillInNomalSection *section2 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"归还时间" placeholder:@"选择日期" canTouch:YES];
     MSMaterialFillInNomalSection *section3 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"归还人" placeholder:@"选择人员" canTouch:YES showSearchButton:YES];
     MSMaterialFillInNomalSection *section4 = [[MSMaterialFillInNomalSection alloc]initWithTitle:@"审核人" placeholder:@"选择人员" canTouch:YES];
     
-    [bgView addSubview:section1];
+    
     [bgView addSubview:section2];
     [bgView addSubview:section3];
     [bgView addSubview:section4];
-
-    self.toolNameInput = section1.inputView;
-    self.toolNameInput.editable = NO;
     
+    if (!self.multiLoan) {
+        MSMaterialFillInWithSearchSection *section1 = [[MSMaterialFillInWithSearchSection alloc]initWithTitle:@"工器具名称" placeholder:@"请选择工器具"];
+        [bgView addSubview:section1];
+        
+        self.toolNameInput = section1.inputView;
+        self.toolNameInput.editable = NO;
+        [section1.searchBtn addTarget:self action:@selector(searchNameBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+        
+        [section1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(0);
+            make.top.mas_equalTo(20);
+            make.width.mas_equalTo(kSCREEN_WIDTH);
+        }];
+        
+        [section2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(section1.mas_bottom).offset(20);
+            make.left.mas_equalTo(0);
+            make.height.mas_equalTo(44);
+            make.width.mas_equalTo(kSCREEN_WIDTH);
+        }];
+        
+        ////为工器具名称添加点击事件
+        UITapGestureRecognizer *tapName = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchNameBtnClicked:)];
+        [self.toolNameInput addGestureRecognizer:tapName];
+        
+    }else {
+        MSLiveWorkFillinTagsSection *multiSection1 = [[MSLiveWorkFillinTagsSection alloc]initWithTitle:@"工器具名称" placeholder:nil];
+        [bgView addSubview:multiSection1];
+        [multiSection1.addBtn addTarget:self action:@selector(multiSearchNameBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+        self.multiToolNameSection = multiSection1;
+        [multiSection1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(0);
+            make.top.mas_equalTo(20);
+            make.width.mas_equalTo(kSCREEN_WIDTH);
+        }];
+        
+        [section2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(multiSection1.mas_bottom).offset(20);
+            make.left.mas_equalTo(0);
+            make.height.mas_equalTo(44);
+            make.width.mas_equalTo(kSCREEN_WIDTH);
+        }];
+    }
+
     self.dateInput = section2.textField;
     self.borrowUserInput = section3.textField;
     self.reviewUserInput = section4.textField;
     
-    [section1.searchBtn addTarget:self action:@selector(searchNameBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     [section2.actionBtn addTarget:self action:@selector(dateInputClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     [section3.actionBtn addTarget:self action:@selector(borrowUserInputClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     [section4.actionBtn addTarget:self action:@selector(reviewUserInputClicked:) forControlEvents:(UIControlEventTouchUpInside)];
-    
-    ////为工器具名称添加点击事件
-    UITapGestureRecognizer *tapName = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchNameBtnClicked:)];
-    [self.toolNameInput addGestureRecognizer:tapName];
-    
-    [section1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.top.mas_equalTo(20);
-        make.width.mas_equalTo(kSCREEN_WIDTH);
-    }];
-    
-    [section2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(section1.mas_bottom).offset(20);
-        make.left.mas_equalTo(0);
-        make.height.mas_equalTo(44);
-        make.width.mas_equalTo(kSCREEN_WIDTH);
-    }];
     
     [section3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
@@ -154,6 +187,13 @@
     [self.navigationController pushViewController:s animated:YES];
 }
 
+- (void)multiSearchNameBtnClicked:(UIButton *)sender {
+    MSSearchToolViewController *s = [[MSSearchToolViewController alloc]initWithSearchType:(MSSearchTypeToolOutStore)];
+    s.delegate = self;
+    s.allowMultiselect = YES;
+    [self.navigationController pushViewController:s animated:YES];
+}
+
 - (void)dateInputClicked:(UIButton *)sender {
     [self showDatePickerView];
 }
@@ -174,22 +214,41 @@
     if (![self checkParams]) {
         return;
     }
-    [SVProgressHUD show];
-    [MSNetworking changeTool:self.toolModel borrowOut:NO success:^(NSDictionary *object) {
-        [SVProgressHUD showSuccessWithStatus:@"借用成功"];
-        [self resetPages];
-    } failure:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"借用失败"];
-    }];
     
+    if (self.multiLoan) {
+        [SVProgressHUD show];
+        [MSNetworking changeTool:self.toolModel toolNames:self.multiToolNameSection.users borrowOut:NO success:^(NSDictionary *object) {
+            [SVProgressHUD showSuccessWithStatus:@"归还成功"];
+            [self resetPages];
+        } failure:^(NSError *error) {
+            [SVProgressHUD showErrorWithStatus:@"归还失败"];
+        }];
+    }else {
+        [SVProgressHUD show];
+        [MSNetworking changeTool:self.toolModel borrowOut:NO success:^(NSDictionary *object) {
+            [SVProgressHUD showSuccessWithStatus:@"归还成功"];
+            [self resetPages];
+        } failure:^(NSError *error) {
+            [SVProgressHUD showErrorWithStatus:@"归还失败"];
+        }];
+    }
 }
 
 - (BOOL)checkParams {
     BOOL ret = YES;
-    if (!self.toolNameInput.text.length ) {
-        [MSDialog showAlert:@"请选择工器具名称"];
-        return NO;
+    
+    if (self.multiLoan) {
+        if (!self.multiToolNameSection.users.count ) {
+            [MSDialog showAlert:@"请选择工器具名称"];
+            return NO;
+        }
+    }else {
+        if (!self.toolNameInput.text.length ) {
+            [MSDialog showAlert:@"请选择工器具名称"];
+            return NO;
+        }
     }
+    
     if (!self.dateInput.text.length ) {
         [MSDialog showAlert:@"请选择时间"];
         return NO;
@@ -216,6 +275,7 @@
     self.toolNameInput.text = nil;
     self.dateInput.text = nil;
     self.borrowUserInput.text = nil;
+    [self.multiToolNameSection deleteAllUsers];
 }
 
 - (void)dismissKeyboardAction:(UITapGestureRecognizer *)tap {
@@ -251,6 +311,16 @@
             break;
         default:
             break;
+    }
+}
+
+- (void)searchViewController:(MSSearchType)searchType didSelectSet:(NSSet *)selectSet {
+    if (searchType == MSSearchTypeToolOutStore && self.multiLoan) {
+        for (NSString *personName in selectSet) {
+            if (![self.multiToolNameSection.tagList.tagArray containsObject:personName]) {
+                [self.multiToolNameSection addUser:personName];
+            }
+        }
     }
 }
 

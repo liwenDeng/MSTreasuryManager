@@ -11,6 +11,10 @@
 
 @interface MSToolBorrowViewController : MSBaseViewController
 
+@property (nonatomic, assign) BOOL multiBorrow;
+
 - (instancetype)initWithToolModel:(MSToolModel *)tool;
+
+- (instancetype)initWithMultiSelect:(BOOL)multiSelect;
 
 @end

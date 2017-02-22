@@ -12,6 +12,7 @@
 @interface MSSearchToolViewController ()
 
 @property (nonatomic, assign) NSInteger resPageNo;
+@property (nonatomic, strong) NSMutableSet *selectedTools;
 
 @end
 
@@ -20,7 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = self.searchType == MSSearchTypeToolInStore ? @"在库工器具查询" : @"借出工器具查询";;
+    self.title = self.searchType == MSSearchTypeToolInStore ? @"在库工器具查询" : @"借出工器具查询";
+    
+    if (self.allowMultiselect) {
+        //多选
+        UIBarButtonItem *selectButton = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:(UIBarButtonItemStylePlain) target:self action:@selector(multiSelect)];
+        [self.navigationItem setRightBarButtonItem:selectButton];
+        self.tableView.allowsMultipleSelection = YES;
+        self.resultViewController.tableView.allowsMultipleSelection = YES;
+        self.searchController.hidesNavigationBarDuringPresentation = NO;
+    }
 }
 
 - (void)loadMore {
@@ -58,7 +68,14 @@
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:@"获取数据失败"];
     }];
-    
+}
+
+// 多选确定
+- (void)multiSelect {
+    if ([self.delegate respondsToSelector:@selector(searchViewController:didSelectSet:)]) {
+        [self.delegate searchViewController:self.searchType didSelectSet:self.selectedTools];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 #pragma mark - Search for result
@@ -104,6 +121,14 @@
 
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    MSToolModel *model = nil;
+    if (tableView == self.tableView) {
+        model = self.totalList[indexPath.row];
+    }else {
+        model = self.searchList[indexPath.row];
+    }
+    
     if (tableView == self.tableView) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSearchCell];
         if (!cell) {
@@ -112,6 +137,17 @@
         MSToolModel *model = self.totalList[indexPath.row];
         [cell.textLabel setText:model.name];
         cell.detailTextLabel.text = model.statusName;
+        
+        if (self.allowMultiselect) {
+            if ([self.selectedTools containsObject:model.name]) {
+                [cell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
+                [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:(UITableViewScrollPositionNone)];
+            }else {
+                [cell setAccessoryType:(UITableViewCellAccessoryNone)];
+                [tableView deselectRowAtIndexPath:indexPath animated:NO];
+            }
+        }
+
         return cell;
     }else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kResultCell];
@@ -121,6 +157,17 @@
         MSToolModel *model = self.searchList[indexPath.row];
         [cell.textLabel setText:model.name];
         cell.detailTextLabel.text = model.statusName;
+        
+        if (self.allowMultiselect) {
+            if ([self.selectedTools containsObject:model.name]) {
+                [cell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
+                [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:(UITableViewScrollPositionNone)];
+            }else {
+                [cell setAccessoryType:(UITableViewCellAccessoryNone)];
+                [tableView deselectRowAtIndexPath:indexPath animated:NO];
+            }
+        }
+        
         return cell;
     }
     
@@ -128,16 +175,45 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self.delegate respondsToSelector:@selector(searchViewController:didSelectModel:)]) {
+    
+    if (self.allowMultiselect) {
         MSToolModel *model = nil;
         if (tableView == self.tableView) {
             model = self.totalList[indexPath.row];
         }else {
             model = self.searchList[indexPath.row];
         }
-        [self.delegate searchViewController:self.searchType didSelectModel:model];
-        [self.navigationController popViewControllerAnimated:YES];
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        [self.selectedTools addObject:model.name];
+        [cell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
+        
+    }else {
+        if ([self.delegate respondsToSelector:@selector(searchViewController:didSelectModel:)]) {
+            MSToolModel *model = nil;
+            if (tableView == self.tableView) {
+                model = self.totalList[indexPath.row];
+            }else {
+                model = self.searchList[indexPath.row];
+            }
+            [self.delegate searchViewController:self.searchType didSelectModel:model];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!self.allowMultiselect) {
+        return;
+    }
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    MSToolModel *model = nil;
+    if (tableView == self.tableView) {
+        model = self.totalList[indexPath.row];
+    }else {
+        model = self.searchList[indexPath.row];
+    }
+    [self.selectedTools removeObject:model.name];
+    [cell setAccessoryType:(UITableViewCellAccessoryNone)];
 }
 
 #pragma mark - UISearchResultsUpdating
@@ -157,5 +233,15 @@
     [self.resultViewController.tableView reloadData];
 }
 
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self.tableView reloadData];
+}
+
+- (NSMutableSet *)selectedTools {
+    if (!_selectedTools) {
+        _selectedTools = [NSMutableSet set];
+    }
+    return _selectedTools;
+}
 
 @end

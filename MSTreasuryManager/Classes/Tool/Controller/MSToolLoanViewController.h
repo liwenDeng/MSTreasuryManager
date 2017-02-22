@@ -11,6 +11,10 @@
 
 @interface MSToolLoanViewController : MSBaseViewController
 
+@property (nonatomic, assign) BOOL multiLoan;
+
 - (instancetype)initWithToolModel:(MSToolModel *)tool;
+
+- (instancetype)initWithMultiSelect:(BOOL)multiSelect;
 
 @end
