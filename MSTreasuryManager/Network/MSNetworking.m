@@ -17,7 +17,7 @@
     ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"admin/app/login"];
     
     NSString *md5Password = [[NSString stringWithFormat:@"abcd1234%@",password] ms_md5];
-    action.params[@"username"] = userName ? : @"";
+    action.params[@"username"] = userName ? : md5Password;
     action.params[@"password"] = md5Password ? : @"";
     
     [action setHttpMethod:HttpPost];
